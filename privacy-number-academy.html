@@ -3,87 +3,544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - أكاديمية الأرقام</title>
+    <meta name="description" content="سياسة الخصوصية لتطبيق أكاديمية الأرقام - Privacy Policy for Number Academy App">
+    <title>سياسة الخصوصية - أكاديمية الأرقام | Privacy Policy - Number Academy</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #fff; color: #000; margin: 0; padding: 0; }
-        .content { max-width: 900px; margin: 50px auto; padding: 30px; }
-        h1 { text-align: center; margin-bottom: 30px; }
-        h2 { margin-top: 25px; margin-bottom: 15px; }
-        p, li { margin-bottom: 12px; line-height: 1.6; }
-        ul { margin-left: 20px; }
-        .arabic { text-align: right; direction: rtl; }
-        .english { text-align: left; direction: ltr; }
-        footer { text-align: center; margin-top: 50px; padding: 20px 10px; border-top: 1px solid #000; }
-        a { color: #000; text-decoration: underline; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #333;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .intro {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            border-right: 5px solid #2c3e50;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+        }
+        
+        .arabic {
+            text-align: right;
+            direction: rtl;
+            margin-bottom: 15px;
+        }
+        
+        .english {
+            text-align: left;
+            direction: ltr;
+            color: #666;
+            font-style: italic;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            border-right: 4px solid #2c3e50;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border-right: 4px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        ul li:before {
+            content: "•";
+            position: absolute;
+            right: 0;
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #2c3e50 0%, #34495e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+        
+        .contact-box {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .contact-box h2 {
+            color: white;
+            border: none;
+            margin-bottom: 15px;
+        }
+        
+        .contact-box a {
+            color: #f39c12;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .contact-box a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+        }
+        
+        .update-date {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .section h2 {
+                font-size: 1.4em;
+            }
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        th {
+            background: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
     </style>
 </head>
 <body>
 
-<main class="content">
-    <h1>سياسة الخصوصية | Privacy Policy</h1>
+<div class="container">
+    <div class="header">
+        <h1>🔒 سياسة الخصوصية</h1>
+        <div class="subtitle">Privacy Policy</div>
+        <div class="subtitle">أكاديمية الأرقام | Number Academy</div>
+    </div>
 
-    <p class="arabic">مرحباً بك في تطبيق <strong>أكاديمية الأرقام</strong>. نحن نلتزم بحماية خصوصية المستخدمين، وتوضح سياسة الخصوصية هذه كيفية جمع البيانات واستخدامها وحمايتها عند استخدامك للتطبيق.</p>
-    <p class="english">Welcome to <strong>Number Academy</strong>. We are committed to protecting users’ privacy. This Privacy Policy explains how information is collected, used, and safeguarded when using the app.</p>
+    <div class="content">
+        <div class="intro">
+            <p class="arabic">
+                مرحباً بك في تطبيق <span class="highlight">أكاديمية الأرقام</span>. نحن نلتزم التزاماً تاماً بحماية خصوصيتك وبياناتك الشخصية. تم إعداد سياسة الخصوصية هذه وفقاً لمتطلبات Google Play وأفضل الممارسات العالمية لحماية البيانات.
+            </p>
+            <p class="english">
+                Welcome to <strong>Number Academy</strong> app. We are fully committed to protecting your privacy and personal data. This Privacy Policy has been prepared in accordance with Google Play requirements and global best practices for data protection.
+            </p>
+        </div>
 
-    <h2>1. المعلومات التي نجمعها | Information We Collect</h2>
-    <ul>
-        <li class="arabic">معلومات غير شخصية مثل نوع الجهاز، نظام التشغيل، لغة الجهاز، وبيانات استخدام التطبيق.</li>
-        <li class="arabic">معلومات شخصية مثل الاسم أو البريد الإلكتروني، فقط إذا قام المستخدم بإدخالها طوعًا.</li>
-        <li class="english">Non-personal information such as device type, operating system, device language, and app usage data.</li>
-        <li class="english">Personal information (if any), such as name or email address, only when voluntarily provided by the user.</li>
-    </ul>
+        <div class="section">
+            <h2><span class="section-icon">📋</span> 1. نطاق السياسة | Policy Scope</h2>
+            <p class="arabic">
+                تنطبق هذه السياسة على جميع المستخدمين لتطبيق أكاديمية الأرقام المتوفر على متجر Google Play. باستخدامك للتطبيق، فإنك توافق على جمع واستخدام المعلومات وفقاً لهذه السياسة.
+            </p>
+            <p class="english">
+                This policy applies to all users of the Number Academy app available on Google Play Store. By using the app, you consent to the collection and use of information in accordance with this policy.
+            </p>
+        </div>
 
-    <h2>2. كيفية استخدام المعلومات | How We Use Information</h2>
-    <ul>
-        <li class="arabic">تحسين المحتوى التعليمي ووظائف التطبيق.</li>
-        <li class="arabic">تحليل الأداء، إصلاح الأخطاء، وتحسين الاستقرار.</li>
-        <li class="arabic">التواصل مع المستخدم عند الضرورة في حال توفر وسيلة اتصال.</li>
-        <li class="english">To improve educational content and app functionality.</li>
-        <li class="english">To analyze performance, fix bugs, and enhance stability.</li>
-        <li class="english">To communicate with users when necessary, if contact details are provided.</li>
-    </ul>
+        <div class="section">
+            <h2><span class="section-icon">📊</span> 2. المعلومات التي نجمعها | Information We Collect</h2>
+            
+            <div class="info-box">
+                <h3 class="arabic">2.1 المعلومات التي يتم جمعها تلقائياً:</h3>
+                <ul class="arabic">
+                    <li>معلومات الجهاز: نوع الجهاز، طراز الجهاز، نظام التشغيل وإصداره</li>
+                    <li>معلومات الاستخدام: الوقت المستغرق في التطبيق، الصفحات المشاهدة، النقرات</li>
+                    <li>البيانات التقنية: عنوان IP، معرف الإعلانات، اللغة المفضلة</li>
+                    <li>تقارير الأعطال والأخطاء البرمجية</li>
+                </ul>
+            </div>
 
-    <h2>3. مشاركة المعلومات | Information Sharing</h2>
-    <ul>
-        <li class="arabic">لا نبيع أو نشارك البيانات الشخصية مع أي طرف ثالث، باستثناء مزودي الخدمات أو الحالات التي يتطلبها القانون.</li>
-        <li class="english">We do not sell, rent, or share personal data with third parties except with service providers or when required by law.</li>
-    </ul>
+            <p class="english">
+                <strong>2.1 Automatically Collected Information:</strong> Device information (type, model, OS version), usage data (time spent, pages viewed, clicks), technical data (IP address, advertising ID, preferred language), crash reports and bug logs.
+            </p>
 
-    <h2>4. خدمات الطرف الثالث | Third-Party Services</h2>
-    <ul>
-        <li class="arabic">قد يستخدم التطبيق خدمات خارجية لتحسين الأداء أو عرض الإعلانات، مثل Google AdMob وGoogle Analytics for Firebase.</li>
-        <li class="english">The app may use third-party services to improve performance or display ads, such as Google AdMob and Google Analytics for Firebase.</li>
-    </ul>
+            <div class="info-box">
+                <h3 class="arabic">2.2 المعلومات التي يقدمها المستخدم طوعاً:</h3>
+                <ul class="arabic">
+                    <li>الاسم (إن وجد)</li>
+                    <li>البريد الإلكتروني (للتواصل أو الدعم الفني)</li>
+                    <li>تقدم الطالب التعليمي والإنجازات</li>
+                    <li>التفضيلات والإعدادات الشخصية</li>
+                </ul>
+            </div>
 
-    <h2>5. الإعلانات وجمع البيانات التلقائي | Ads & Automatic Data Collection</h2>
-    <ul>
-        <li class="arabic">قد يتم عرض الإعلانات وجمع بيانات تقنية تلقائيًا مثل تقارير الأعطال دون تتبع شخصي للمستخدم.</li>
-        <li class="english">Ads may be displayed, and technical data like crash reports may be collected automatically without personal user tracking.</li>
-    </ul>
+            <p class="english">
+                <strong>2.2 User-Provided Information:</strong> Name (if provided), email address (for communication or support), educational progress and achievements, personal preferences and settings.
+            </p>
+        </div>
 
-    <h2>6. أمان البيانات | Data Security</h2>
-    <p class="arabic">نستخدم إجراءات أمان مناسبة لحماية بيانات المستخدمين، ولا يمكن ضمان الأمان الكامل عبر الإنترنت.</p>
-    <p class="english">We implement appropriate security measures to protect user data, but complete security over the internet cannot be guaranteed.</p>
+        <div class="section">
+            <h2><span class="section-icon">🎯</span> 3. كيفية استخدام المعلومات | How We Use Information</h2>
+            <ul class="arabic">
+                <li><strong>تحسين التجربة التعليمية:</strong> تخصيص المحتوى التعليمي وفقاً لمستوى المستخدم</li>
+                <li><strong>تطوير التطبيق:</strong> تحسين الأداء، إصلاح الأخطاء، وإضافة ميزات جديدة</li>
+                <li><strong>التحليلات:</strong> فهم كيفية استخدام التطبيق لتحسين الخدمة</li>
+                <li><strong>الدعم الفني:</strong> الاستجابة لاستفساراتك ومشاكلك التقنية</li>
+                <li><strong>التواصل:</strong> إرسال إشعارات مهمة حول التطبيق والتحديثات</li>
+                <li><strong>الأمان:</strong> حماية التطبيق من الاحتيال والاستخدام غير المشروع</li>
+            </ul>
 
-    <h2>7. خصوصية الأطفال | Children’s Privacy</h2>
-    <p class="arabic">التطبيق تعليمي ولا يستهدف جمع أي معلومات شخصية من الأطفال دون سن 13 عامًا عن قصد.</p>
-    <p class="english">The app is educational and does not knowingly collect personal information from children under 13 years of age.</p>
+            <p class="english">
+                We use collected information to: enhance educational experience, develop and improve the app, conduct analytics, provide technical support, communicate important updates, and ensure security against fraud and misuse.
+            </p>
+        </div>
 
-    <h2>8. التغييرات على سياسة الخصوصية | Policy Updates</h2>
-    <p class="arabic">قد نقوم بتحديث سياسة الخصوصية من وقت لآخر، واستمرار استخدام التطبيق بعد التحديث يعني الموافقة على التغييرات.</p>
-    <p class="english">We may update this Privacy Policy from time to time, and continued use of the app after updates constitutes acceptance of the changes.</p>
+        <div class="section">
+            <h2><span class="section-icon">🤝</span> 4. مشاركة المعلومات مع الأطراف الثالثة | Third-Party Sharing</h2>
+            
+            <div class="warning-box">
+                <p class="arabic">
+                    <strong>تعهدنا:</strong> نحن لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية مع أي طرف ثالث لأغراض تجارية.
+                </p>
+            </div>
 
-    <h2>9. الاتصال بنا | Contact Us</h2>
-    <p class="arabic">إذا كان لديك أي استفسار بخصوص سياسة الخصوصية، يمكنك التواصل معنا عبر البريد الإلكتروني:</p>
-    <p class="english">If you have any questions regarding this Privacy Policy, please contact us at:</p>
-    <p>📧 <a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p>
+            <p class="arabic">قد نشارك بعض المعلومات مع الأطراف التالية فقط:</p>
 
-    <p class="arabic">تاريخ آخر تحديث: 18 أغسطس 2024</p>
-</main>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الطرف الثالث</th>
+                            <th>الغرض</th>
+                            <th>نوع البيانات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google AdMob</td>
+                            <td>عرض الإعلانات</td>
+                            <td>معرف الإعلانات، بيانات الاستخدام</td>
+                        </tr>
+                        <tr>
+                            <td>Google Analytics for Firebase</td>
+                            <td>تحليل الأداء</td>
+                            <td>بيانات الاستخدام المجهولة</td>
+                        </tr>
+                        <tr>
+                            <td>Firebase Crashlytics</td>
+                            <td>تقارير الأعطال</td>
+                            <td>معلومات تقنية عن الأخطاء</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-<footer>
-    <p>&copy; 2024 أكاديمية الأرقام. جميع الحقوق محفوظة.</p>
-</footer>
+            <p class="english">
+                <strong>Our Commitment:</strong> We do not sell, rent, or trade your personal data with any third party for commercial purposes. We may share limited information only with service providers listed above for specific operational purposes.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">📱</span> 5. الإعلانات | Advertising</h2>
+            <p class="arabic">
+                يستخدم التطبيق خدمة <strong>Google AdMob</strong> لعرض الإعلانات. قد تستخدم هذه الخدمة ملفات تعريف الارتباط (Cookies) ومعرفات الإعلانات لتقديم إعلانات ذات صلة.
+            </p>
+            
+            <div class="info-box">
+                <h3 class="arabic">حقوقك المتعلقة بالإعلانات:</h3>
+                <ul class="arabic">
+                    <li>يمكنك إلغاء الاشتراك في الإعلانات المخصصة من إعدادات Google على جهازك</li>
+                    <li>يمكنك إعادة تعيين معرف الإعلانات في أي وقت</li>
+                    <li>للمزيد من المعلومات، راجع <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: #2c3e50;">سياسة إعلانات Google</a></li>
+                </ul>
+            </div>
+
+            <p class="english">
+                The app uses <strong>Google AdMob</strong> for displaying ads. This service may use cookies and advertising identifiers to deliver relevant ads. Users can opt-out of personalized ads through Google settings on their device.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">👶</span> 6. خصوصية الأطفال | Children's Privacy</h2>
+            
+            <div class="warning-box">
+                <p class="arabic">
+                    <strong>حماية الأطفال أولوية قصوى:</strong> تم تصميم التطبيق ليكون آمناً تماماً للأطفال والمناسب للاستخدام من قبل الأطفال دون سن 13 عاماً تحت إشراف الوالدين.
+                </p>
+            </div>
+
+            <ul class="arabic">
+                <li>لا نجمع عن قصد معلومات شخصية قابلة للتعريف من الأطفال دون سن 13 عاماً</li>
+                <li>لا يحتوي التطبيق على روابط خارجية غير آمنة</li>
+                <li>لا يسمح التطبيق بالتواصل مع الغرباء</li>
+                <li>جميع الإعلانات المعروضة متوافقة مع سياسات Google للإعلانات الموجهة للعائلات</li>
+                <li>إذا اكتشفنا أننا جمعنا معلومات من طفل دون سن 13 عاماً، سنحذفها فوراً</li>
+            </ul>
+
+            <p class="english">
+                <strong>Children's Protection is Top Priority:</strong> The app is designed to be completely safe for children and suitable for use by children under 13 under parental supervision. We do not knowingly collect personally identifiable information from children under 13. All ads comply with Google's Families Ads policies.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🔐</span> 7. أمان البيانات | Data Security</h2>
+            <p class="arabic">
+                نتخذ إجراءات أمنية صارمة لحماية بياناتك:
+            </p>
+            <ul class="arabic">
+                <li>تشفير البيانات أثناء النقل والتخزين</li>
+                <li>استخدام بروتوكولات أمان متقدمة (HTTPS/SSL)</li>
+                <li>الوصول المحدود للبيانات من قبل الموظفين المصرح لهم فقط</li>
+                <li>مراجعة دورية للإجراءات الأمنية</li>
+                <li>النسخ الاحتياطي المنتظم للبيانات</li>
+            </ul>
+
+            <p class="english">
+                We implement strict security measures including data encryption, HTTPS/SSL protocols, limited data access, regular security audits, and data backups to protect your information.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⚖️</span> 8. حقوق المستخدم | User Rights</h2>
+            <p class="arabic">لديك الحق في:</p>
+            <ul class="arabic">
+                <li><strong>الوصول:</strong> طلب نسخة من بياناتك الشخصية</li>
+                <li><strong>التصحيح:</strong> تحديث أو تصحيح بياناتك</li>
+                <li><strong>الحذف:</strong> طلب حذف بياناتك الشخصية</li>
+                <li><strong>الاعتراض:</strong> الاعتراض على معالجة بياناتك</li>
+                <li><strong>إلغاء الموافقة:</strong> سحب موافقتك في أي وقت</li>
+                <li><strong>نقل البيانات:</strong> طلب نقل بياناتك إلى خدمة أخرى</li>
+            </ul>
+
+            <p class="english">
+                <strong>Your Rights:</strong> You have the right to access, correct, delete, object to processing, withdraw consent, and request data portability. Contact us to exercise any of these rights.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🌍</span> 9. تخزين البيانات ونقلها | Data Storage and Transfer</h2>
+            <p class="arabic">
+                يتم تخزين بياناتك على خوادم آمنة. قد يتم نقل بياناتك ومعالجتها في دول أخرى حيث توجد خوادمنا أو خوادم مزودي الخدمة لدينا. نضمن حماية بياناتك وفقاً لهذه السياسة بغض النظر عن موقع المعالجة.
+            </p>
+
+            <p class="english">
+                Your data is stored on secure servers and may be transferred and processed in other countries where our servers or service providers operate. We ensure your data is protected according to this policy regardless of processing location.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">⏱️</span> 10. الاحتفاظ بالبيانات | Data Retention</h2>
+            <p class="arabic">
+                نحتفظ بمعلوماتك الشخصية طالما كان حسابك نشطاً أو حسب الحاجة لتقديم خدماتنا. عند حذف التطبيق، سيتم حذف معظم البيانات المحلية تلقائياً. للحذف الكامل، يمكنك الاتصال بنا.
+            </p>
+
+            <p class="english">
+                We retain your information as long as your account is active or as needed to provide services. When you delete the app, most local data is automatically deleted. For complete deletion, you can contact us.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">🔄</span> 11. التحديثات والتعديلات | Updates and Modifications</h2>
+            <p class="arabic">
+                قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنقوم بإخطارك بأي تغييرات جوهرية عبر:
+            </p>
+            <ul class="arabic">
+                <li>إشعار داخل التطبيق</li>
+                <li>تحديث تاريخ "آخر تحديث" أعلى هذه الصفحة</li>
+                <li>البريد الإلكتروني (إن كان متوفراً)</li>
+            </ul>
+            <p class="arabic">
+                استمرارك في استخدام التطبيق بعد نشر التغييرات يعني موافقتك على السياسة المحدثة.
+            </p>
+
+            <p class="english">
+                We may update this Privacy Policy from time to time. We will notify you of material changes through in-app notifications, updating the "last updated" date, or email (if available). Continued use after changes constitutes acceptance of the updated policy.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2><span class="section-icon">📜</span> 12. الامتثال القانوني | Legal Compliance</h2>
+            <p class="arabic">
+                نلتزم بالامتثال لجميع القوانين واللوائح المعمول بها لحماية البيانات، بما في ذلك:
+            </p>
+            <ul class="arabic">
+                <li>اللائحة العامة لحماية البيانات (GDPR) للمستخدمين الأوروبيين</li>
+                <li>قانون حماية خصوصية الأطفال على الإنترنت (COPPA)</li>
+                <li>قانون خصوصية المستهلك في كاليفورنيا (CCPA)</li>
+                <li>متطلبات Google Play للتطبيقات الموجهة للعائلات</li>
+            </ul>
+
+            <p class="english">
+                We comply with all applicable data protection laws including GDPR for European users, COPPA, CCPA, and Google Play's requirements for family-friendly apps.
+            </p>
+        </div>
+
+        <div class="contact-box">
+            <h2>📞 الاتصال بنا | Contact Us</h2>
+            <p class="arabic" style="margin-bottom: 20px;">
+                لأي استفسارات أو طلبات بخصوص سياسة الخصوصية، تواصل معنا:
+            </p>
+            <p class="english" style="margin-bottom: 25px;">
+                For any questions or requests regarding this Privacy Policy, contact us:
+            </p>
+            
+            <div class="contact-info">
+                <p><strong>مطور التطبيق | Developer:</strong></p>
+                <p>Ahmed Sultan</p>
+                <p style="margin-top: 15px;">
+                    📧 <a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a>
+                </p>
+                <p style="margin-top: 15px; font-size: 0.95em; opacity: 0.9;">
+                    نلتزم بالرد خلال 48 ساعة | We respond within 48 hours
+                </p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <div class="update-date">
+                📅 آخر تحديث: ديسمبر 2024 | Last Updated: December 2024
+            </div>
+            <p class="arabic" style="margin-top: 20px; color: #666;">
+                إصدار 2.0 | Version 2.0
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><strong>© 2024 أكاديمية الأرقام | Number Academy</strong></p>
+        <p>جميع الحقوق محفوظة | All Rights Reserved</p>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            🌐 <a href="https://ahmed2sultan2555.github.io/website/privacy-number-academy.html" style="color: #f39c12;">https://ahmed2sultan2555.github.io/website/privacy-number-academy.html</a>
+        </p>
+    </div>
+</div>
 
 </body>
 </html>
