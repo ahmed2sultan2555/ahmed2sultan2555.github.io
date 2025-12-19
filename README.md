@@ -1,2 +1,14 @@
-# website
- "A simple to-do list app built with React and Redux for managing daily tasks and improving productivity."  "An e-commerce website designed with Node.js and MongoDB, featuring a secure payment system and a full shopping cart experience."  "A tool for compressing image files to improve website performance, developed entirely in Python."
+# Modern Arabic Tech Blog
+
+مدونة تقنية عربية بتصميم عصري عالي الأداء باستخدام TailwindCSS.
+
+## ⭐ المزايا
+- تصميم حديث
+- دعم RTL كامل
+- سريع وخفيف
+- بدون مكتبات ثقيلة
+- جاهز للنشر على GitHub Pages
+
+## 📌 تشغيل المشروع
+افتح الملف:
+index.html
