@@ -1,82 +1,138 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gpt_hub - تطبيقات و مدونة</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="مدونة تقنية حديثة لمقالات الذكاء الاصطناعي والبرمجة والتقنية المستقبلية">
+  <title>المدونة التقنية | Modern Tech Blog</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+      body{font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial}
+  </style>
 </head>
-<body>
 
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">gpt_hub</a>
-            <nav class="nav">
-                <a href="index.html">الرئيسية</a>
-                <a href="blog.html">المدونة</a>
-                <a href="privacy.html">سياسة الخصوصية</a>
-                          <ahref="https://www.facebook.com/alhamdlla225/"              target="_blank">حسابنا على الفيس بوك</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <section class="hero-section">
-        <div class="container">
-            <h1>مرحباً بك في gpt_hub</h1>
-            <p>منصتك لكل ما هو جديد في عالم التطبيقات والبرمجة</p>
-        </div>
-    </section>
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b shadow-sm">
+  <div class="container mx-auto px-6 h-16 flex justify-between items-center">
 
-    <section class="apps-section">
-        <div class="container">
-            <h2>تطبيقاتنا المميزة</h2>
-            <div class="apps-container">
-                <div class="app-card">
-                    <img src="images/auto_care_logo_final_v2.jpg" alt="أيقونة تطبيق">
-                    <h3>Auto Care</h3>
-                    <p>تطبيق لمتابعة صيانة سيارتك وإدارة المهام المتعلقة بها.</p>
-                    <a href="https://play.google.com/store/apps/details?id=your.app.package.name" target="_blank" class="btn-download"><i class="fab fa-google-play"></i> Google Play</a>
-                </div>
-                <div class="app-card">
-                    <img src="images/cloud.png" alt="أيقونة تطبيق">
-                    <h3>تطبيق تخزين سحابي</h3>
-                    <p>تطبيق بسيط لتخزين ملفاتك ومشاركتها مع الآخرين بسهولة.</p>
-                    <a href="#" class="btn-download"><i class="fas fa-link"></i> تعرف على المزيد</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      <a class="text-2xl font-bold tracking-tight">
+          Tech<span class="text-blue-600">Blog</span>
+      </a>
 
-    <section class="blog-section">
-        <div class="container">
-            <h2>آخر التدوينات</h2>
-            <div class="blog-container">
-                <div class="blog-post">
-                    <h3>عنوان التدوينة الأولى</h3>
-                    <p>مقدمة مختصرة عن التدوينة. يمكنك تعديل هذا النص ليناسب المحتوى...</p>
-                    <a href="blog.html#post1" class="read-more">اقرأ المزيد</a>
-                </div>
-                <div class="blog-post">
-                    <h3>عنوان التدوينة الثانية</h3>
-                    <p>مقدمة مختصرة عن التدوينة. يمكنك تعديل هذا النص ليناسب المحتوى...</p>
-                    <a href="blog.html#post2" class="read-more">اقرأ المزيد</a>
-                </div>
-            </div>
-            <a href="blog.html" class="btn-all-posts">عرض جميع التدوينات</a>
-        </div>
-    </section>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a class="hover:text-blue-600">الرئيسية</a>
+          <a class="text-blue-600 font-semibold">المقالات</a>
+          <a class="hover:text-blue-600">حول</a>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">
+              اشتراك
+          </button>
+      </nav>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 gpt_hub. جميع الحقوق محفوظة.</p>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
+      <button class="md:hidden p-2 rounded-lg border">
+          ☰
+      </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="container mx-auto px-6 py-16 text-center">
+  <h1 class="text-4xl font-extrabold mb-4">
+      منصة مقالات تقنية بواجهة عصرية
+  </h1>
+  <p class="text-gray-600 text-lg max-w-2xl mx-auto mb-6">
+      مقالات احترافية حول الذكاء الاصطناعي – البرمجة – التطوير – مستقبل التقنية
+  </p>
+
+  <button class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
+      ابدأ القراءة
+  </button>
+</section>
+
+<!-- Articles -->
+<main class="container mx-auto px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3 pb-16">
+
+  <!-- Card -->
+  <article class="group bg-white rounded-2xl border shadow-sm hover:-translate-y-1 hover:shadow-xl transition p-4 flex flex-col">
+      <div class="aspect-video bg-gradient-to-tr from-blue-200 to-gray-100 mb-4 rounded-xl flex items-center justify-center text-gray-500">
+          صورة
+      </div>
+
+      <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full w-fit">
+          تطوير
+      </span>
+
+      <h2 class="text-xl font-bold mt-3 group-hover:text-blue-600 transition">
+          مستقبل الويب بعد 2025
+      </h2>
+
+      <p class="text-sm text-gray-600 mt-2">
+          تحليل شامل لمستقبل تطوير الويب والتقنيات القادمة…
+      </p>
+
+      <div class="mt-auto border-t pt-3 text-sm text-gray-500 flex justify-between">
+          <span>أحمد محمد</span>
+          <span>5 دقائق</span>
+      </div>
+  </article>
+
+  <!-- Duplicate 2 -->
+  <article class="group bg-white rounded-2xl border shadow-sm hover:-translate-y-1 hover:shadow-xl transition p-4 flex flex-col">
+      <div class="aspect-video bg-gradient-to-tr from-green-200 to-gray-100 mb-4 rounded-xl flex items-center justify-center text-gray-500">
+          صورة
+      </div>
+
+      <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full w-fit">
+          ذكاء اصطناعي
+      </span>
+
+      <h2 class="text-xl font-bold mt-3 group-hover:text-green-600 transition">
+          كيف سيغير الذكاء الاصطناعي العالم؟
+      </h2>
+
+      <p class="text-sm text-gray-600 mt-2">
+          دراسة تأثير الذكاء الاصطناعي على الأعمال والحياة اليومية…
+      </p>
+
+      <div class="mt-auto border-t pt-3 text-sm text-gray-500 flex justify-between">
+          <span>سارة علي</span>
+          <span>7 دقائق</span>
+      </div>
+  </article>
+
+  <!-- Duplicate 3 -->
+  <article class="group bg-white rounded-2xl border shadow-sm hover:-translate-y-1 hover:shadow-xl transition p-4 flex flex-col">
+      <div class="aspect-video bg-gradient-to-tr from-purple-200 to-gray-100 mb-4 rounded-xl flex items-center justify-center text-gray-500">
+          صورة
+      </div>
+
+      <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-3 py-1 rounded-full w-fit">
+          تصميم
+      </span>
+
+      <h2 class="text-xl font-bold mt-3 group-hover:text-purple-600 transition">
+          مبادئ تصميم UI الحديثة
+      </h2>
+
+      <p class="text-sm text-gray-600 mt-2">
+          أفضل ممارسات تحسين تجربة المستخدم…
+      </p>
+
+      <div class="mt-auto border-t pt-3 text-sm text-gray-500 flex justify-between">
+          <span>عمر خالد</span>
+          <span>4 دقائق</span>
+      </div>
+  </article>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-white border-t py-6 text-center text-gray-500">
+  © 2025 TechBlog — جميع الحقوق محفوظة
+</footer>
 
 </body>
 </html>
