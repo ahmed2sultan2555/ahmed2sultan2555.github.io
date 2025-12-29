@@ -1,508 +1,186 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
     <title>GPT Hub | موقع التطبيقات والمقالات التقنية</title>
-    <meta name="description" content="موقع GPT Hub يقدم مقالات تقنية وتطبيقات تعليمية مثل أكاديمية الأرقام ولعبة الذاكرة وصيانة السيارات">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 0;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 5rem 0;
-            color: white;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        /* AdSense Placeholder */
-        .ad-container {
-            background: rgba(255,255,255,0.9);
-            padding: 2rem;
-            margin: 2rem auto;
-            border-radius: 15px;
-            text-align: center;
-            max-width: 800px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .ad-placeholder {
-            background: #f0f0f0;
-            border: 2px dashed #ccc;
-            padding: 3rem;
-            border-radius: 10px;
-            color: #666;
-        }
-
-        /* Content Section */
-        .content-section {
-            background: white;
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 2px;
-        }
-
-        /* Cards Grid */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .card h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .card p {
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-link {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .card-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        /* App Section */
-        .app-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
-        }
-
-        .app-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .app-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .download-button {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 1rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .download-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        /* Footer */
-        footer {
-            background: #2d3748;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            margin-bottom: 2rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-
-        .social-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-5px);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Loading Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out;
-        }
-    </style>
+    <meta name="description" content="موقع GPT Hub يقدم مقالات تقنية وتطبيقات تعليمية مثل أكاديمية الأرقام">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <!-- الهيدر -->
+    <header class="header">
         <div class="container">
-            <div class="header-content">
+            <nav class="navbar">
                 <div class="logo">GPT Hub</div>
-                <nav>
-                    <a href="#home">الرئيسية</a>
-                    <a href="#blog">المدونة</a>
-                    <a href="#privacy">سياسة الخصوصية</a>
-                </nav>
-            </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="blog.html">المدونة</a></li>
+                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container fade-in">
+    <!-- قسم البطل -->
+    <section class="hero">
+        <div class="container">
             <h1>مرحباً بك في GPT Hub</h1>
-            <p>منصة عربية متخصصة في التطبيقات التعليمية والمقالات التقنية المفيدة للمستخدم العربي</p>
-            <a href="#blog" class="cta-button">استكشف المحتوى</a>
+            <p>منصة عربية متخصصة في التطبيقات التعليمية والمقالات التقنية المفيدة</p>
+            <div class="hero-buttons">
+                <a href="blog.html" class="btn btn-primary">استكشف المقالات</a>
+                <a href="#apps" class="btn btn-secondary">تطبيقاتنا</a>
+            </div>
         </div>
     </section>
 
-    <!-- AdSense Ad Space -->
-    <div class="ad-container">
-        <div class="ad-placeholder">
-            <!-- Google AdSense Code Here -->
-            <p>مساحة إعلانية - Google AdSense</p>
-            <small>728x90 أو 336x280</small>
-        </div>
-    </div>
-
-    <section class="content-section" id="blog">
+    <!-- إعلان أدسنس 1 -->
+    <section class="ad-section">
         <div class="container">
-            <h2 class="section-title">أقسام الموقع</h2>
-            
-            <div class="cards-grid">
-                <div class="card fade-in">
-                    <div class="card-icon">📘</div>
+            <div class="ad-box">
+                <!-- AdSense Code -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7137238144396709"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المميزات -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">لماذا GPT Hub؟</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🎓</div>
+                    <h3>محتوى تعليمي</h3>
+                    <p>نقدم محتوى تعليمي عالي الجودة مناسب لجميع الأعمار</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📱</div>
+                    <h3>تطبيقات مبتكرة</h3>
+                    <p>تطبيقات تفاعلية مصممة بعناية لتجربة مستخدم مميزة</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🔒</div>
+                    <h3>آمن وموثوق</h3>
+                    <p>نحترم خصوصيتك ونلتزم بأعلى معايير الأمان</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🌟</div>
+                    <h3>محتوى حصري</h3>
+                    <p>مقالات وأدلة حصرية باللغة العربية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التطبيقات -->
+    <section class="apps-section" id="apps">
+        <div class="container">
+            <h2 class="section-title">تطبيقاتنا ومقالاتنا</h2>
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon">📘</div>
                     <h3>أكاديمية الأرقام</h3>
-                    <p>تطبيق تعليمي للأطفال لتعلم الأرقام والعد والجمع بطريقة ممتعة وتفاعلية</p>
-                    <a href="#" class="card-link">عرض المقال</a>
+                    <p>تطبيق تعليمي شامل للأطفال لتعلم الأرقام والعد والجمع بطريقة ممتعة وتفاعلية</p>
+                    <a href="blog.html#numbers-academy" class="btn-link">قراءة المزيد ←</a>
                 </div>
-
-                <div class="card fade-in">
-                    <div class="card-icon">🧠</div>
+                <div class="app-card">
+                    <div class="app-icon">🧠</div>
                     <h3>لعبة الذاكرة</h3>
-                    <p>لعبة تعليمية تساعد الأطفال على تنمية الذاكرة والتركيز بأسلوب شيق</p>
-                    <a href="#" class="card-link">عرض المقال</a>
+                    <p>لعبة تعليمية مسلية تساعد الأطفال على تنمية الذاكرة والتركيز بأسلوب شيق</p>
+                    <a href="blog.html#memory-game" class="btn-link">قراءة المزيد ←</a>
                 </div>
-
-                <div class="card fade-in">
-                    <div class="card-icon">🚗</div>
-                    <h3>صيانة السيارة</h3>
+                <div class="app-card">
+                    <div class="app-icon">🚗</div>
+                    <h3>دليل صيانة السيارة</h3>
                     <p>دليل شامل ومبسط لصيانة السيارة وتجنب الأعطال الشائعة</p>
-                    <a href="#" class="card-link">عرض المقال</a>
-                </div>
-            </div>
-
-            <!-- Additional Ad Space -->
-            <div class="ad-container">
-                <div class="ad-placeholder">
-                    <!-- Google AdSense Code Here -->
-                    <p>مساحة إعلانية - Google AdSense</p>
-                    <small>مساحة مرنة</small>
+                    <a href="blog.html#car-maintenance" class="btn-link">قراءة المزيد ←</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="app-section">
+    <!-- إعلان أدسنس 2 -->
+    <section class="ad-section">
         <div class="container">
-            <h2>تطبيق أكاديمية الأرقام</h2>
-            <p>حمّل التطبيق الآن واجعل أطفالك يتعلمون الأرقام بطريقة ممتعة وتفاعلية</p>
-            <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" 
-               target="_blank" 
-               class="download-button">
-                📱 تحميل من Google Play
-            </a>
+            <div class="ad-box">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7137238144396709"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
         </div>
     </section>
 
-    <!-- Privacy Policy Section -->
-    <section class="content-section" id="privacy">
+    <!-- قسم التطبيق -->
+    <section class="download-section">
         <div class="container">
-            <h2 class="section-title">سياسة الخصوصية</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto; text-align: right; line-height: 1.8;">
-                <p style="margin-bottom: 2rem;">
-                    نحن في <strong>GPT Hub</strong> نحترم خصوصية زوارنا ونلتزم بحماية بياناتهم.
-                    توضح هذه السياسة كيفية جمع المعلومات واستخدامها.
-                </p>
-
-                <h3 style="margin: 2rem 0 1rem; color: #667eea;">1. المعلومات التي نجمعها</h3>
-                <p>لا نقوم بجمع معلومات شخصية حساسة. قد يتم جمع معلومات غير شخصية مثل:</p>
-                <ul style="margin: 1rem 0 1rem 2rem;">
-                    <li>نوع المتصفح والجهاز</li>
-                    <li>نظام التشغيل</li>
-                    <li>الصفحات المزارة</li>
-                    <li>مدة التصفح</li>
-                </ul>
-
-                <h3 style="margin: 2rem 0 1rem; color: #667eea;">2. استخدام ملفات تعريف الارتباط</h3>
-                <p>نستخدم ملفات تعريف الارتباط (Cookies) لتحسين تجربة المستخدم وعرض الإعلانات المناسبة عبر Google AdSense.</p>
-
-                <h3 style="margin: 2rem 0 1rem; color: #667eea;">3. إعلانات Google AdSense</h3>
-                <p>
-                    يستخدم موقعنا خدمة Google AdSense لعرض الإعلانات. يمكن تعطيل الإعلانات المخصصة عبر:
-                    <a href="https://adssettings.google.com" target="_blank" style="color: #667eea; text-decoration: none; font-weight: bold;">
-                        إعدادات الإعلانات
+            <div class="download-content">
+                <div class="download-text">
+                    <h2>حمّل تطبيق أكاديمية الأرقام</h2>
+                    <p>تطبيق تعليمي متكامل يساعد أطفالك على تعلم الأرقام والحساب بطريقة ممتعة</p>
+                    <ul class="features-list">
+                        <li>✓ واجهة سهلة الاستخدام للأطفال</li>
+                        <li>✓ ألعاب تعليمية متنوعة</li>
+                        <li>✓ مستويات متدرجة الصعوبة</li>
+                        <li>✓ بدون إعلانات مزعجة</li>
+                    </ul>
+                    <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" 
+                       target="_blank" class="btn btn-download">
+                        📱 تحميل من Google Play
                     </a>
-                </p>
-
-                <h3 style="margin: 2rem 0 1rem; color: #667eea;">4. خصوصية الأطفال</h3>
-                <p>نولي اهتماماً خاصاً بخصوصية الأطفال ولا نجمع بيانات شخصية دون موافقة ولي الأمر.</p>
-
-                <p style="margin-top: 2rem; font-weight: bold;">آخر تحديث: 2025</p>
+                </div>
+                <div class="download-image">
+                    <div class="phone-icon">📱</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- الفوتر -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <h3>GPT Hub</h3>
-                <p>© 2025 GPT Hub – جميع الحقوق محفوظة</p>
+                <div class="footer-col">
+                    <h3>GPT Hub</h3>
+                    <p>منصة عربية متخصصة في التطبيقات التعليمية والمقالات التقنية</p>
+                </div>
+                <div class="footer-col">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#">📘</a>
+                        <a href="#">🐦</a>
+                        <a href="#">📸</a>
+                        <a href="#">📺</a>
+                    </div>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook">📘</a>
-                <a href="#" aria-label="Twitter">🐦</a>
-                <a href="#" aria-label="GitHub">💻</a>
+            <div class="footer-bottom">
+                <p>© 2025 GPT Hub – جميع الحقوق محفوظة</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.card').forEach(card => {
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
+
+
