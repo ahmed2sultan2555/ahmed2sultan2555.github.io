@@ -1,186 +1,115 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AdSense Verification -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
-    <title>GPT Hub | موقع التطبيقات والمقالات التقنية</title>
-    <meta name="description" content="موقع GPT Hub يقدم مقالات تقنية وتطبيقات تعليمية مثل أكاديمية الأرقام">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <title>GPT Hub | الرئيسية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Cairo', sans-serif; }
+        .ad-placeholder { background: #f9fafb; border: 1px dashed #d1d5db; min-height: 100px; display: flex; align-items: center; justify-content: center; margin: 20px 0; }
+    </style>
 </head>
-<body>
-    <!-- الهيدر -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">GPT Hub</div>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">الرئيسية</a></li>
-                    <li><a href="blog.html">المدونة</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                </ul>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">GPT Hub</div>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
+                <a href="index.html" class="text-blue-600">الرئيسية</a>
+                <a href="blog.html" class="hover:text-blue-600">المدونة</a>
+                <a href="privacy.html" class="hover:text-blue-600">الخصوصية</a>
             </nav>
+            <button class="md:hidden text-gray-600">☰</button>
         </div>
     </header>
 
-    <!-- قسم البطل -->
-    <section class="hero">
-        <div class="container">
-            <h1>مرحباً بك في GPT Hub</h1>
-            <p>منصة عربية متخصصة في التطبيقات التعليمية والمقالات التقنية المفيدة</p>
-            <div class="hero-buttons">
-                <a href="blog.html" class="btn btn-primary">استكشف المقالات</a>
-                <a href="#apps" class="btn btn-secondary">تطبيقاتنا</a>
+    <!-- Hero Section -->
+    <section class="bg-blue-600 text-white py-20 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">مرحباً بك في GPT Hub</h1>
+            <p class="text-xl mb-8 opacity-90">المنصة الرائدة للتطبيقات التعليمية والمقالات التقنية</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="blog.html" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">استكشف المدونة</a>
+                <a href="#apps" class="bg-blue-700 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-800 transition border border-blue-400">تطبيقاتنا</a>
             </div>
         </div>
     </section>
 
-    <!-- إعلان أدسنس 1 -->
-    <section class="ad-section">
-        <div class="container">
-            <div class="ad-box">
-                <!-- AdSense Code -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_AD_SLOT_ID"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- Top Ad -->
+    <div class="container mx-auto px-4">
+        <div class="ad-placeholder">
+            <!-- AdSense Auto Ads / Display Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7137238144396709"
+                 data-ad-slot="auto"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <!-- Apps Section -->
+    <section id="apps" class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">أحدث تطبيقاتنا</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- App Card 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <div class="text-4xl mb-4 text-blue-500">📘</div>
+                <h3 class="text-xl font-bold mb-2">أكاديمية الأرقام</h3>
+                <p class="text-gray-600 mb-4">تطبيق تفاعلي لتعليم الأطفال الحساب والنطق الصحيح للأرقام.</p>
+                <a href="blog.html#numbers" class="text-blue-600 font-bold hover:underline">المزيد من التفاصيل ←</a>
+            </div>
+            <!-- App Card 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition border-t-4 border-blue-500">
+                <div class="text-4xl mb-4 text-purple-500">🧠</div>
+                <h3 class="text-xl font-bold mb-2">لعبة الذاكرة</h3>
+                <p class="text-gray-600 mb-4">نمِّ مهارات طفلك الذهنية عبر ألعاب المطابقة والتركيز.</p>
+                <a href="blog.html#memory" class="text-blue-600 font-bold hover:underline">المزيد من التفاصيل ←</a>
+            </div>
+            <!-- App Card 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
+                <div class="text-4xl mb-4 text-green-500">🚗</div>
+                <h3 class="text-xl font-bold mb-2">دليل صيانة السيارات</h3>
+                <p class="text-gray-600 mb-4">كل ما تحتاج معرفته للحفاظ على سيارتك وتجنب الأعطال المفاجئة.</p>
+                <a href="blog.html#car" class="text-blue-600 font-bold hover:underline">المزيد من التفاصيل ←</a>
             </div>
         </div>
     </section>
 
-    <!-- قسم المميزات -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title">لماذا GPT Hub؟</h2>
-            <div class="features-grid">
-                <div class="feature-box">
-                    <div class="feature-icon">🎓</div>
-                    <h3>محتوى تعليمي</h3>
-                    <p>نقدم محتوى تعليمي عالي الجودة مناسب لجميع الأعمار</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">📱</div>
-                    <h3>تطبيقات مبتكرة</h3>
-                    <p>تطبيقات تفاعلية مصممة بعناية لتجربة مستخدم مميزة</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">🔒</div>
-                    <h3>آمن وموثوق</h3>
-                    <p>نحترم خصوصيتك ونلتزم بأعلى معايير الأمان</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon">🌟</div>
-                    <h3>محتوى حصري</h3>
-                    <p>مقالات وأدلة حصرية باللغة العربية</p>
-                </div>
+    <!-- Download App Banner -->
+    <section class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-around">
+            <div class="mb-8 md:mb-0 text-center md:text-right">
+                <h2 class="text-3xl font-bold mb-4">حمل تطبيقنا الآن</h2>
+                <p class="text-gray-400 mb-6">استمتع بتجربة تعليمية فريدة مباشرة من هاتفك</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="bg-blue-600 px-8 py-3 rounded-lg inline-block font-bold hover:bg-blue-700 transition">تحميل من Google Play 📱</a>
+            </div>
+            <div class="w-48 h-48 bg-gray-800 rounded-full flex items-center justify-center text-7xl animate-pulse">
+                📱
             </div>
         </div>
     </section>
 
-    <!-- قسم التطبيقات -->
-    <section class="apps-section" id="apps">
-        <div class="container">
-            <h2 class="section-title">تطبيقاتنا ومقالاتنا</h2>
-            <div class="apps-grid">
-                <div class="app-card">
-                    <div class="app-icon">📘</div>
-                    <h3>أكاديمية الأرقام</h3>
-                    <p>تطبيق تعليمي شامل للأطفال لتعلم الأرقام والعد والجمع بطريقة ممتعة وتفاعلية</p>
-                    <a href="blog.html#numbers-academy" class="btn-link">قراءة المزيد ←</a>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">🧠</div>
-                    <h3>لعبة الذاكرة</h3>
-                    <p>لعبة تعليمية مسلية تساعد الأطفال على تنمية الذاكرة والتركيز بأسلوب شيق</p>
-                    <a href="blog.html#memory-game" class="btn-link">قراءة المزيد ←</a>
-                </div>
-                <div class="app-card">
-                    <div class="app-icon">🚗</div>
-                    <h3>دليل صيانة السيارة</h3>
-                    <p>دليل شامل ومبسط لصيانة السيارة وتجنب الأعطال الشائعة</p>
-                    <a href="blog.html#car-maintenance" class="btn-link">قراءة المزيد ←</a>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t py-10 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-xl font-bold text-gray-800 mb-4">GPT Hub</div>
+            <div class="flex justify-center space-x-reverse space-x-6 mb-6">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600">الرئيسية</a>
+                <a href="blog.html" class="text-gray-600 hover:text-blue-600">المدونة</a>
+                <a href="privacy.html" class="text-gray-600 hover:text-blue-600">سياسة الخصوصية</a>
             </div>
-        </div>
-    </section>
-
-    <!-- إعلان أدسنس 2 -->
-    <section class="ad-section">
-        <div class="container">
-            <div class="ad-box">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_AD_SLOT_ID"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم التطبيق -->
-    <section class="download-section">
-        <div class="container">
-            <div class="download-content">
-                <div class="download-text">
-                    <h2>حمّل تطبيق أكاديمية الأرقام</h2>
-                    <p>تطبيق تعليمي متكامل يساعد أطفالك على تعلم الأرقام والحساب بطريقة ممتعة</p>
-                    <ul class="features-list">
-                        <li>✓ واجهة سهلة الاستخدام للأطفال</li>
-                        <li>✓ ألعاب تعليمية متنوعة</li>
-                        <li>✓ مستويات متدرجة الصعوبة</li>
-                        <li>✓ بدون إعلانات مزعجة</li>
-                    </ul>
-                    <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" 
-                       target="_blank" class="btn btn-download">
-                        📱 تحميل من Google Play
-                    </a>
-                </div>
-                <div class="download-image">
-                    <div class="phone-icon">📱</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>GPT Hub</h3>
-                    <p>منصة عربية متخصصة في التطبيقات التعليمية والمقالات التقنية</p>
-                </div>
-                <div class="footer-col">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="blog.html">المدونة</a></li>
-                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>تابعنا</h4>
-                    <div class="social-links">
-                        <a href="#">📘</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📸</a>
-                        <a href="#">📺</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 GPT Hub – جميع الحقوق محفوظة</p>
-            </div>
+            <p class="text-gray-500">© 2025 GPT Hub. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
+
 </body>
 </html>
-
-
