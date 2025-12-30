@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -7,212 +6,89 @@
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
     <title>المدونة | GPT Hub</title>
-    <meta name="description" content="مدونة GPT Hub تضم مقالات عن التطبيقات التعليمية والتقنية">
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Cairo', sans-serif; } </style>
 </head>
-<body>
-    <!-- الهيدر -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <div class="logo">GPT Hub</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="blog.html" class="active">المدونة</a></li>
-                    <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                </ul>
+<body class="bg-gray-50 text-gray-900">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-600">GPT Hub</a>
+            <nav class="hidden md:flex space-x-reverse space-x-6">
+                <a href="index.html" class="hover:text-blue-600">الرئيسية</a>
+                <a href="blog.html" class="text-blue-600">المدونة</a>
+                <a href="privacy.html" class="hover:text-blue-600">الخصوصية</a>
             </nav>
         </div>
     </header>
 
-    <!-- عنوان الصفحة -->
-    <section class="page-header">
-        <div class="container">
-            <h1>المدونة</h1>
-            <p>اكتشف أحدث المقالات والأدلة التقنية</p>
-        </div>
-    </section>
+    <main class="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-8">
+        <!-- Main Content -->
+        <div class="md:w-2/3">
+            <h1 class="text-3xl font-bold mb-8 text-gray-800 border-r-4 border-blue-600 pr-4">آخر المقالات التقنية</h1>
 
-    <!-- إعلان -->
-    <section class="ad-section">
-        <div class="container">
-            <div class="ad-box">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_AD_SLOT_ID"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-        </div>
-    </section>
-
-    <!-- المقالات -->
-    <section class="blog-content">
-        <div class="container">
-            
-            <!-- مقال 1 -->
-            <article class="blog-post" id="numbers-academy">
-                <div class="post-header">
-                    <div class="post-icon">📘</div>
-                    <div class="post-meta">
-                        <span class="post-category">تطبيقات تعليمية</span>
-                        <span class="post-date">29 ديسمبر 2025</span>
-                    </div>
+            <!-- Article 1 -->
+            <article id="numbers" class="bg-white p-8 rounded-2xl shadow-sm mb-12">
+                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm mb-4 inline-block">تطبيقات تعليمية</span>
+                <h2 class="text-2xl font-bold mb-4">أكاديمية الأرقام: رفيق طفلك في رحلة التعلم</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    يعتبر تعلم الحساب من المهارات الأساسية في سن مبكرة. يقدم تطبيق أكاديمية الأرقام تجربة فريدة حيث يدمج بين اللعب والتعليم بطريقة تفاعلية تجذب انتباه الطفل وتجعله يحب الأرقام...
+                </p>
+                <div class="bg-blue-50 p-4 rounded-xl border-r-4 border-blue-400 mb-6 font-bold text-blue-800 italic">
+                    "التعليم من خلال اللعب هو أقصر طريق للتركيز المستمر عند الأطفال."
                 </div>
-                <h2>أكاديمية الأرقام - تطبيق تعليمي شامل للأطفال</h2>
-                <p class="post-intro">تطبيق أكاديمية الأرقام هو تطبيق تعليمي متكامل مصمم خصيصاً لتعليم الأطفال الأرقام والحساب بطريقة ممتعة وتفاعلية.</p>
-                
-                <h3>مميزات التطبيق:</h3>
-                <ul>
-                    <li><strong>تعلم الأرقام:</strong> واجهة تفاعلية لتعليم الأرقام من 0 إلى 100</li>
-                    <li><strong>العد والحساب:</strong> تمارين متنوعة لتعلم الجمع والطرح</li>
-                    <li><strong>الألعاب التعليمية:</strong> ألعاب ممتعة تعزز التعلم</li>
-                    <li><strong>النطق الصحيح:</strong> نطق صوتي للأرقام باللغة العربية</li>
-                    <li><strong>مستويات متدرجة:</strong> من السهل إلى الصعب حسب عمر الطفل</li>
-                </ul>
-
-                <h3>لماذا أكاديمية الأرقام؟</h3>
-                <p>التطبيق مصمم بواسطة خبراء تربويين لضمان تجربة تعليمية فعالة وآمنة. يتميز بواجهة ملونة جذابة تناسب الأطفال، مع نظام مكافآت يشجع على التعلم المستمر.</p>
-
-                <h3>كيفية الاستخدام:</h3>
-                <ol>
-                    <li>حمّل التطبيق من Google Play</li>
-                    <li>اختر المستوى المناسب لعمر طفلك</li>
-                    <li>ابدأ التعلم من خلال الألعاب التفاعلية</li>
-                    <li>تابع تقدم طفلك من خلال لوحة الإنجازات</li>
-                </ol>
-
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" 
-                   target="_blank" class="btn btn-primary">تحميل التطبيق</a>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">تحميل التطبيق الآن</a>
             </article>
 
-            <!-- إعلان -->
-            <div class="ad-box ad-inline">
+            <!-- Middle Ad -->
+            <div class="my-10">
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_AD_SLOT_ID"
-                     data-ad-format="auto"
+                     data-ad-slot="YOUR_IN_ARTICLE_SLOT_ID"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-fb+5w+4e-db+86"
                      data-full-width-responsive="true"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
-            <!-- مقال 2 -->
-            <article class="blog-post" id="memory-game">
-                <div class="post-header">
-                    <div class="post-icon">🧠</div>
-                    <div class="post-meta">
-                        <span class="post-category">ألعاب تعليمية</span>
-                        <span class="post-date">27 ديسمبر 2025</span>
-                    </div>
-                </div>
-                <h2>لعبة الذاكرة - تنمية المهارات العقلية للأطفال</h2>
-                <p class="post-intro">لعبة الذاكرة هي لعبة تعليمية ممتعة تساعد على تطوير مهارات التركيز والذاكرة البصرية لدى الأطفال.</p>
-                
-                <h3>فوائد لعبة الذاكرة:</h3>
-                <ul>
-                    <li><strong>تقوية الذاكرة:</strong> تحسين قدرة الطفل على التذكر والاسترجاع</li>
-                    <li><strong>زيادة التركيز:</strong> تعزيز القدرة على التركيز لفترات أطول</li>
-                    <li><strong>تطوير الملاحظة:</strong> تحسين مهارات الملاحظة والانتباه للتفاصيل</li>
-                    <li><strong>المرونة العقلية:</strong> تنمية القدرة على التفكير السريع</li>
-                </ul>
-
-                <h3>كيف تعمل اللعبة؟</h3>
-                <p>تعتمد اللعبة على مبدأ بسيط: مطابقة البطاقات المتشابهة. يتم عرض مجموعة من البطاقات المقلوبة، وعلى اللاعب أن يتذكر مواقع البطاقات المتطابقة ويجمعها معاً.</p>
-
-                <h3>مستويات اللعبة:</h3>
-                <ul>
-                    <li><strong>سهل:</strong> 8 بطاقات - مناسب للأطفال من 3-5 سنوات</li>
-                    <li><strong>متوسط:</strong> 16 بطاقة - مناسب للأطفال من 6-8 سنوات</li>
-                    <li><strong>صعب:</strong> 24 بطاقة - مناسب للأطفال من 9 سنوات فأكثر</li>
-                </ul>
+            <!-- Article 2 -->
+            <article id="memory" class="bg-white p-8 rounded-2xl shadow-sm mb-12 border-t-4 border-purple-500">
+                <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm mb-4 inline-block">تنمية مهارات</span>
+                <h2 class="text-2xl font-bold mb-4">كيف تساعد ألعاب الذاكرة في تحسين الذكاء البصري؟</h2>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    ألعاب المطابقة والذاكرة ليست مجرد تسلية، بل هي تمارين رياضية للعقل. تساعد هذه الألعاب في تقوية الوصلات العصبية المسؤولة عن الانتباه والتذكر السريع...
+                </p>
             </article>
+        </div>
 
-            <!-- مقال 3 -->
-            <article class="blog-post" id="car-maintenance">
-                <div class="post-header">
-                    <div class="post-icon">🚗</div>
-                    <div class="post-meta">
-                        <span class="post-category">أدلة عملية</span>
-                        <span class="post-date">25 ديسمبر 2025</span>
-                    </div>
-                </div>
-                <h2>دليل شامل لصيانة السيارة</h2>
-                <p class="post-intro">الحفاظ على سيارتك في حالة جيدة يطيل عمرها ويوفر عليك تكاليف الإصلاح الباهظة.</p>
-                
-                <h3>الصيانة الشهرية:</h3>
-                <ul>
-                    <li><strong>فحص الإطارات:</strong> تأكد من ضغط الهواء وعمق المداس</li>
-                    <li><strong>مستوى الزيت:</strong> افحص مستوى زيت المحرك وأضف إذا لزم الأمر</li>
-                    <li><strong>السوائل:</strong> تحقق من سائل التبريد وسائل الفرامل</li>
-                    <li><strong>الإضاءة:</strong> تأكد من عمل جميع الأضواء بشكل صحيح</li>
-                </ul>
-
-                <h3>الصيانة الدورية (كل 5000-10000 كم):</h3>
-                <ul>
-                    <li><strong>تغيير الزيت:</strong> ضروري للحفاظ على المحرك</li>
-                    <li><strong>فلتر الزيت:</strong> يجب تغييره مع كل تغيير زيت</li>
-                    <li><strong>فلتر الهواء:</strong> نظفه أو استبدله حسب الحاجة</li>
-                    <li><strong>الفرامل:</strong> فحص تيل الفرامل وسمكه</li>
-                </ul>
-
-                <h3>علامات تحتاج فيها سيارتك للصيانة الفورية:</h3>
-                <ul>
-                    <li>إضاءة لمبة تحذير على لوحة القيادة</li>
-                    <li>ارتفاع حرارة المحرك</li>
-                    <li>أصوات غريبة من المحرك أو الفرامل</li>
-                    <li>تسرب سوائل تحت السيارة</li>
-                </ul>
-            </article>
-
-            <!-- إعلان -->
-            <div class="ad-box ad-inline">
+        <!-- Sidebar (Ads & Sidebar Info) -->
+        <aside class="md:w-1/3 space-y-8">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border">
+                <h3 class="font-bold mb-4 text-gray-700">إعلان</h3>
                 <ins class="adsbygoogle"
                      style="display:block"
                      data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_AD_SLOT_ID"
-                     data-ad-format="auto"
+                     data-ad-slot="YOUR_SIDEBAR_SLOT_ID"
+                     data-ad-format="rectangle"
                      data-full-width-responsive="true"></ins>
                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
             </div>
 
-        </div>
-    </section>
+            <div class="bg-blue-600 p-6 rounded-2xl text-white">
+                <h3 class="font-bold mb-2">اشترك في النشرة</h3>
+                <p class="text-sm opacity-80 mb-4">ليصلك جديد تطبيقاتنا ومقالاتنا التقنية</p>
+                <input type="email" placeholder="بريدك الإلكتروني" class="w-full px-4 py-2 rounded text-gray-900 mb-2">
+                <button class="w-full bg-white text-blue-600 font-bold py-2 rounded hover:bg-gray-100 transition">اشتراك</button>
+            </div>
+        </aside>
+    </main>
 
-    <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h3>GPT Hub</h3>
-                    <p>منصة عربية متخصصة في التطبيقات التعليمية والمقالات التقنية</p>
-                </div>
-                <div class="footer-col">
-                    <h4>روابط سريعة</h4>
-                    <ul>
-                        <li><a href="index.html">الرئيسية</a></li>
-                        <li><a href="blog.html">المدونة</a></li>
-                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>تابعنا</h4>
-                    <div class="social-links">
-                        <a href="#">📘</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📸</a>
-                        <a href="#">📺</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 GPT Hub – جميع الحقوق محفوظة</p>
-            </div>
+    <footer class="bg-white border-t py-10">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>© 2025 GPT Hub. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 </body>
 </html>
-
-
