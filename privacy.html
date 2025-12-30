@@ -3,55 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- AdSense Verification -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
+    
     <title>سياسة الخصوصية | GPT Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Cairo', sans-serif; } </style>
+    
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #343a40;
+            --background-color: #f8f9fa;
+            --card-background: #ffffff;
+            --text-color: #333;
+        }
+        body { 
+            font-family: 'Cairo', Arial, sans-serif; 
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .header-custom { background: var(--secondary-color); }
+        .footer-custom { background: var(--secondary-color); }
+        .text-primary-custom { color: var(--primary-color); }
+        .underline-custom {
+            position: relative;
+            display: inline-block;
+        }
+        .underline-custom::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -5px;
+            width: 50%;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 leading-relaxed">
+<body class="leading-relaxed">
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <!-- Header -->
+    <header class="header-custom shadow-lg sticky top-0 z-50 text-white">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-600">GPT Hub</a>
-            <nav class="space-x-reverse space-x-6">
-                <a href="index.html" class="hover:text-blue-600">الرئيسية</a>
-                <a href="privacy.html" class="text-blue-600 underline">سياسة الخصوصية</a>
+            <a href="index.html" class="text-2xl font-bold text-primary-custom">GPT Hub</a>
+            <nav class="space-x-reverse space-x-6 font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition">الرئيسية</a>
+                <a href="privacy.html" class="text-primary-custom border-b-2 border-blue-600 pb-1">سياسة الخصوصية</a>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-16 max-w-4xl bg-white shadow-sm mt-10 rounded-2xl">
-        <h1 class="text-4xl font-bold mb-8 text-center text-blue-600">سياسة الخصوصية</h1>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16 max-w-4xl bg-white shadow-xl mt-12 rounded-xl mb-12">
+        <h1 class="text-4xl font-bold mb-10 text-center text-gray-800 underline-custom">سياسة الخصوصية</h1>
         
-        <p class="mb-6">تعتبر خصوصية زوارنا أهمية بالغة لنا. نوضح لك هنا أنواع المعلومات التي نجمعها وكيفية حمايتها.</p>
+        <div class="space-y-8 text-gray-700">
+            <p class="text-lg">تعتبر خصوصية زوارنا في <strong>GPT Hub</strong> ذات أهمية بالغة لنا. نوضح لك في هذه الصفحة أنواع المعلومات الشخصية التي نجمعها وكيفية استخدامها وحمايتها.</p>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">1. ملفات تعريف الارتباط وإعلانات Google</h2>
-            <p>يستخدم موقعنا <strong>Google AdSense</strong> لعرض الإعلانات. تستخدم شركة Google ملفات تعريف الارتباط لخدمة الإعلانات بناءً على زياراتك السابقة لموقعنا أو مواقع أخرى على الإنترنت.</p>
-            <p class="mt-2">يمكن للمستخدمين تعطيل استخدام ملفات تعريف الارتباط للإعلانات المخصصة من خلال زيارة <a href="https://adssettings.google.com" class="text-blue-600 underline">إعدادات الإعلانات</a>.</p>
-        </section>
+            <!-- AdSense Section -->
+            <section class="border-r-4 border-blue-500 pr-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">1. ملفات تعريف الارتباط وإعلانات Google</h2>
+                <p class="mb-3">يستخدم موقعنا خدمة <strong>Google AdSense</strong> لعرض الإعلانات. تستخدم شركة Google ملفات تعريف الارتباط (Cookies) لتقديم إعلانات مخصصة بناءً على اهتماماتك وزياراتك السابقة لموقعنا.</p>
+                <p>يمكنك في أي وقت اختيار تعطيل الإعلانات المخصصة عن طريق زيارة <a href="https://adssettings.google.com" target="_blank" class="text-blue-600 hover:underline">إعدادات إعلانات Google</a>.</p>
+            </section>
 
-        <section class="mb-8 bg-gray-50 p-6 rounded-xl border">
-            <h2 class="text-2xl font-bold mb-4">2. تطبيقات الجوال (AdMob)</h2>
-            <p>تطبيقاتنا مثل "أكاديمية الأرقام" قد تستخدم معرفات الأجهزة لعرض الإعلانات المخصصة عبر خدمة <strong>Google AdMob</strong>. نحن لا نجمع أي بيانات شخصية حساسة عن الأطفال مثل الاسم أو الموقع الدقيق، ونلتزم بمعايير COPPA (قانون حماية خصوصية الأطفال على الإنترنت).</p>
-        </section>
+            <!-- AdMob Section -->
+            <section class="bg-blue-50 p-6 rounded-lg border border-blue-100 shadow-sm">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800 flex items-center">
+                    <span class="ml-2">📱</span> تطبيقات الجوال (AdMob)
+                </h2>
+                <p class="mb-4">تطبيقاتنا المتاحة على متجر Google Play (مثل "أكاديمية الأرقام") تستخدم معرفات الأجهزة لخدمة الإعلانات عبر <strong>Google AdMob</strong>.</p>
+                <p>نحن نلتزم تماماً بسياسات حماية خصوصية الأطفال (COPPA)، حيث لا نقوم بجمع أي بيانات شخصية من المستخدمين الأطفال ولا نطلب الوصول إلى معلومات حساسة.</p>
+            </section>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">3. البيانات التي نجمعها</h2>
-            <ul class="list-disc pr-6 space-y-2 text-gray-700">
-                <li>نوع المتصفح ونظام التشغيل.</li>
-                <li>تاريخ ووقت الوصول للموقع.</li>
-                <li>الصفحات التي تشاهدها داخل الموقع.</li>
-            </ul>
-        </section>
+            <!-- Data Collection Section -->
+            <section>
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">2. المعلومات التي يتم جمعها</h2>
+                <p class="mb-4">مثل معظم المواقع الأخرى، نقوم بجمع بيانات تقنية غير شخصية تشمل:</p>
+                <ul class="list-disc pr-8 space-y-2">
+                    <li>عنوان البروتوكول الخاص بك (IP Address).</li>
+                    <li>نوع المتصفح ونظام التشغيل المستخدم.</li>
+                    <li>مزود خدمة الإنترنت (ISP).</li>
+                    <li>طابع الوقت والصفحات التي تمت زيارتها.</li>
+                </ul>
+            </section>
 
-        <p class="text-center text-gray-500 mt-12 italic border-t pt-6">تاريخ آخر تحديث: 30 ديسمبر 2025</p>
+            <!-- Contact Section -->
+            <section class="border-t pt-8 mt-8">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">3. الموافقة</h2>
+                <p>باستخدامك لموقعنا أو تطبيقاتنا، فإنك توافق على سياسة الخصوصية الخاصة بنا وعلى شروطنا.</p>
+            </section>
+        </div>
+
+        <div class="mt-12 text-center text-sm text-gray-400 italic">
+            تاريخ آخر تحديث: 30 ديسمبر 2025
+        </div>
     </main>
 
-    <footer class="text-center py-10 text-gray-400">
-        <p>© 2025 GPT Hub - حماية البيانات والخصوصية</p>
+    <!-- Footer -->
+    <footer class="footer-custom text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="text-2xl font-bold text-primary-custom mb-4">GPT Hub</div>
+            <p class="mb-6 opacity-70">منصتكم الموثوقة للتطبيقات التعليمية والمقالات التقنية.</p>
+            <div class="flex justify-center space-x-reverse space-x-8 mb-8">
+                <a href="index.html" class="hover:text-blue-400">الرئيسية</a>
+                <a href="blog.html" class="hover:text-blue-400">المدونة</a>
+                <a href="privacy.html" class="text-blue-400">الخصوصية</a>
+            </div>
+            <div class="border-t border-gray-700 pt-6 opacity-50 text-sm">
+                © 2025 GPT Hub. جميع الحقوق محفوظة.
+            </div>
+        </div>
     </footer>
 
 </body>
