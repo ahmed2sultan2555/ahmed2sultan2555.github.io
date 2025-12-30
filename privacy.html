@@ -7,7 +7,7 @@
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
     
-    <title>سياسة الخصوصية | GPT Hub</title>
+    <title>GPT Hub | المدونة وسياسة الخصوصية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     
@@ -20,106 +20,132 @@
             --text-color: #333;
         }
         body { 
-            font-family: 'Cairo', Arial, sans-serif; 
+            font-family: 'Cairo', sans-serif; 
             background-color: var(--background-color);
             color: var(--text-color);
         }
         .header-custom { background: var(--secondary-color); }
         .footer-custom { background: var(--secondary-color); }
         .text-primary-custom { color: var(--primary-color); }
-        .underline-custom {
-            position: relative;
-            display: inline-block;
-        }
-        .underline-custom::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            bottom: -5px;
-            width: 50%;
-            height: 4px;
-            background: var(--primary-color);
-            border-radius: 2px;
-        }
+        .accent-border { border-right: 4px solid var(--primary-color); }
+        .btn-blue { background-color: var(--primary-color); color: white; transition: 0.3s; }
+        .btn-blue:hover { background-color: #0056b3; transform: translateY(-2px); }
+        .card-hover:hover { transform: translateY(-5px); transition: 0.3s; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body class="leading-relaxed">
 
     <!-- Header -->
     <header class="header-custom shadow-lg sticky top-0 z-50 text-white">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center flex-wrap gap-4">
             <a href="index.html" class="text-2xl font-bold text-primary-custom">GPT Hub</a>
-            <nav class="space-x-reverse space-x-6 font-medium">
+            <nav class="flex space-x-reverse space-x-4 md:space-x-8 font-medium items-center">
                 <a href="index.html" class="hover:text-blue-400 transition">الرئيسية</a>
-                <a href="privacy.html" class="text-primary-custom border-b-2 border-blue-600 pb-1">سياسة الخصوصية</a>
+                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-4 py-2 rounded-full text-sm font-bold animate-pulse hover:bg-blue-700">مجموعة المختبرين ✨</a>
+                <a href="privacy.html" class="text-primary-custom border-b-2 border-blue-600 pb-1">الخصوصية</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-16 max-w-4xl bg-white shadow-xl mt-12 rounded-xl mb-12">
-        <h1 class="text-4xl font-bold mb-10 text-center text-gray-800 underline-custom">سياسة الخصوصية</h1>
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-4 py-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <div class="space-y-8 text-gray-700">
-            <p class="text-lg text-center bg-blue-50 p-4 rounded-lg">
-                لقد تم التحقق من ملكية الموقع وتطبيقات الجوال عبر ملفات <strong>ads.txt</strong> و <strong>app-ads.txt</strong> المرتبطة بالمعرف <code class="bg-gray-200 px-2 rounded">pub-7137238144396709</code>.
-            </p>
+        <!-- Right Column: Blog Feed (2/3 width) -->
+        <div class="lg:col-span-2 space-y-10">
+            
+            <!-- Post: Testers Experience -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm accent-border card-hover">
+                <span class="text-blue-600 font-bold text-sm">مجتمعنا ● تجربة المستخدم</span>
+                <h2 class="text-2xl font-bold mt-2 mb-4 text-gray-800">تجربة تطبيقات جوجل بلاي قبل الإصدار: لماذا يجب أن تنضم؟</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    نحن في GPT Hub نؤمن بأن المستخدم هو الشريك الأول في النجاح. انضمامك لمجموعة المختبرين يتيح لك معاينة التجربة قبل الجميع، اكتشاف الميزات الجديدة، ومساعدتنا في حل المشكلات التقنية قبل الإطلاق الرسمي. آرائكم هي التي تشكل مستقبل تطبيقاتنا.
+                </p>
+                <div class="flex items-center justify-between">
+                    <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="btn-blue px-6 py-2 rounded-lg font-bold shadow-md">انضم للمختبرين الآن 🚀</a>
+                </div>
+            </article>
 
-            <p class="text-lg">تعتبر خصوصية زوارنا في <strong>GPT Hub</strong> ذات أهمية بالغة لنا. نوضح لك في هذه الصفحة أنواع المعلومات الشخصية التي نجمعها وكيفية استخدامها وحمايتها.</p>
+            <!-- Post: Memory Master -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm card-hover border-t-4 border-blue-500">
+                <span class="text-purple-600 font-bold text-sm">ألعاب ذكاء ● إصدار جديد</span>
+                <h2 class="text-2xl font-bold mt-2 mb-4 text-gray-800">تطبيق Memory Master: كيف ترفع مستوى تركيزك؟</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    تعتبر لعبة "Memory Master" الحل الأمثل لتدريب الذاكرة البصرية. بفضل مستويات التحدي المتعددة، يمكن للمستخدمين من جميع الأعمار تحسين سرعة البديهة لديهم. التطبيق متاح الآن بنسخته الكاملة.
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="inline-flex items-center text-blue-600 font-bold hover:gap-2 transition-all">
+                    تحميل التطبيق من Google Play 🎮 <span class="mr-2">←</span>
+                </a>
+            </article>
 
-            <!-- AdSense Section -->
-            <section class="border-r-4 border-blue-500 pr-6">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">1. ملفات تعريف الارتباط وإعلانات Google</h2>
-                <p class="mb-3">يستخدم موقعنا خدمة <strong>Google AdSense</strong> لعرض الإعلانات. تستخدم شركة Google ملفات تعريف الارتباط (Cookies) لتقديم إعلانات مخصصة بناءً على اهتماماتك وزياراتك السابقة لموقعنا.</p>
-                <p>يمكنك في أي وقت اختيار تعطيل الإعلانات المخصصة عن طريق زيارة <a href="https://adssettings.google.com" target="_blank" class="text-blue-600 hover:underline">إعدادات إعلانات Google</a>.</p>
-            </section>
+            <!-- Post: Auto Care -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm card-hover border-t-4 border-gray-700">
+                <span class="text-red-600 font-bold text-sm">خدمات ● صيانة السيارات</span>
+                <h2 class="text-2xl font-bold mt-2 mb-4 text-gray-800">تطبيق Auto Care: رفيقك الذكي على الطريق</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    لا تقلق بشأن أعطال السيارة المفاجئة بعد الآن. تطبيق Auto Care يوفر لك تنبيهات الصيانة الدورية وشرح كامل لكل أجزاء السيارة وكيفية التعامل مع الطوارئ ببساطة.
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="inline-flex items-center text-blue-600 font-bold hover:gap-2 transition-all">
+                    رابط تحميل Auto Care 🚗 <span class="mr-2">←</span>
+                </a>
+            </article>
 
-            <!-- AdMob Section -->
-            <section class="bg-blue-50 p-6 rounded-lg border border-blue-100 shadow-sm">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800 flex items-center">
-                    <span class="ml-2">📱</span> تطبيقات الجوال (AdMob)
-                </h2>
-                <p class="mb-4">تطبيقاتنا المتاحة على متجر Google Play تستخدم معرفات الأجهزة لخدمة الإعلانات عبر <strong>Google AdMob</strong>. نحن نلتزم بوضع ملف <strong>app-ads.txt</strong> في المجلد الرئيسي لضمان شفافية الإعلانات وحماية المعلنين.</p>
-                <p>نحن نلتزم تماماً بسياسات حماية خصوصية الأطفال (COPPA)، حيث لا نقوم بجمع أي بيانات شخصية من المستخدمين الأطفال ولا نطلب الوصول إلى معلومات حساسة.</p>
-            </section>
+            <!-- Post: Programming -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm card-hover border-r-4 border-green-500">
+                <span class="text-green-600 font-bold text-sm">تقنية ● تطوير البرمجيات</span>
+                <h2 class="text-2xl font-bold mt-2 mb-4 text-gray-800">فلسفتنا في البرمجة وتطوير التطبيقات</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    نحن لا نكتب أكواداً فحسب، بل نصنع تجارب. في رحلة تطويرنا لتطبيقات مثل "أكاديمية الأرقام"، اعتمدنا على البساطة في الواجهات والذكاء في الأداء لضمان أفضل وصول للمستخدم.
+                </p>
+                <a href="posts/numbers-academy.html" class="bg-gray-100 text-gray-800 px-4 py-2 rounded font-bold hover:bg-gray-200 transition">اقرأ عن قصة "أكاديمية الأرقام" 📘</a>
+            </article>
 
-            <!-- Data Collection Section -->
-            <section>
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">2. المعلومات التي يتم جمعها</h2>
-                <p class="mb-4">مثل معظم المواقع الأخرى، نقوم بجمع بيانات تقنية غير شخصية تشمل:</p>
-                <ul class="list-disc pr-8 space-y-2">
-                    <li>عنوان البروتوكول الخاص بك (IP Address).</li>
-                    <li>نوع المتصفح ونظام التشغيل المستخدم.</li>
-                    <li>مزود خدمة الإنترنت (ISP).</li>
-                    <li>طابع الوقت والصفحات التي تمت زيارتها.</li>
-                </ul>
-            </section>
-
-            <!-- Contact Section -->
-            <section class="border-t pt-8 mt-8">
-                <h2 class="text-2xl font-bold mb-4 text-gray-800">3. الموافقة</h2>
-                <p>باستخدامك لموقعنا أو تطبيقاتنا، فإنك توافق على سياسة الخصوصية الخاصة بنا وعلى شروطنا.</p>
-            </section>
         </div>
 
-        <div class="mt-12 text-center text-sm text-gray-400 italic">
-            تاريخ آخر تحديث: 30 ديسمبر 2025
+        <!-- Left Column: Privacy Sidebar (1/3 width) -->
+        <div class="space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100">
+                <h1 class="text-xl font-bold mb-4 text-gray-800 border-b-2 border-primary-custom pb-2">سياسة الخصوصية</h1>
+                
+                <div class="space-y-4 text-xs text-gray-700">
+                    <div class="bg-blue-50 p-3 rounded border-r-4 border-blue-400">
+                        <strong>التوافق مع Google:</strong> 
+                        نلتزم بمتطلبات <strong>ads.txt</strong> و <strong>app-ads.txt</strong>. معرف الناشر: 
+                        <span class="font-mono block mt-1">pub-7137238144396709</span>
+                    </div>
+
+                    <section>
+                        <h3 class="font-bold text-gray-900 mb-1">بيانات الإعلانات</h3>
+                        <p>نستخدم AdSense و AdMob. يتم جمع بيانات غير شخصية لخدمة إعلانات تهمك.</p>
+                    </section>
+
+                    <section>
+                        <h3 class="font-bold text-gray-900 mb-1">خصوصية الأطفال</h3>
+                        <p>تطبيقاتنا التعليمية متوافقة تماماً مع سياسات COPPA لحماية خصوصية القُصّر.</p>
+                    </section>
+                </div>
+            </div>
+
+            <!-- AdSense Widget -->
+            <div class="bg-gray-200 h-80 rounded-2xl flex items-center justify-center text-gray-500 text-xs border-2 border-dashed border-gray-300">
+                <div class="text-center">
+                    <p>مساحة إعلانية</p>
+                    <p class="text-[10px] mt-1">Google AdSense</p>
+                </div>
+            </div>
         </div>
-    </main>
+
+    </div>
 
     <!-- Footer -->
     <footer class="footer-custom text-white py-12">
         <div class="container mx-auto px-4 text-center">
-            <div class="text-2xl font-bold text-primary-custom mb-4">GPT Hub</div>
-            <p class="mb-6 opacity-70">منصتكم الموثوقة للتطبيقات التعليمية والمقالات التقنية.</p>
-            <div class="flex justify-center space-x-reverse space-x-8 mb-8">
+            <div class="text-2xl font-bold text-primary-custom mb-6">GPT Hub</div>
+            <div class="flex justify-center flex-wrap gap-8 mb-8 text-sm">
                 <a href="index.html" class="hover:text-blue-400">الرئيسية</a>
-                <a href="blog.html" class="hover:text-blue-400">المدونة</a>
-                <a href="privacy.html" class="text-blue-400">الخصوصية</a>
+                <a href="https://groups.google.com/g/googleplay-app-testers" class="text-yellow-400 font-bold underline">مجموعة المختبرين</a>
+                <a href="privacy.html" class="hover:text-blue-400">سياسة الخصوصية</a>
             </div>
-            <div class="border-t border-gray-700 pt-6 opacity-50 text-sm">
-                © 2025 GPT Hub. جميع الحقوق محفوظة.
-            </div>
+            <p class="opacity-50 text-[10px]">© 2025 جميع الحقوق محفوظة لـ GPT Hub وتطبيقاتها التابعة.</p>
         </div>
     </footer>
 
