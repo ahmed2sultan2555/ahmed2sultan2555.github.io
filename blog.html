@@ -3,92 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-7137238144396709">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
-    <title>المدونة | GPT Hub</title>
+    <title>GPT Hub | المدونة</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <style> body { font-family: 'Cairo', sans-serif; } </style>
+    <style>
+        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        .header-custom { background: #343a40; }
+        .post-card { transition: 0.3s; }
+        .post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-600">GPT Hub</a>
-            <nav class="hidden md:flex space-x-reverse space-x-6">
-                <a href="index.html" class="hover:text-blue-600">الرئيسية</a>
-                <a href="blog.html" class="text-blue-600">المدونة</a>
-                <a href="privacy.html" class="hover:text-blue-600">الخصوصية</a>
+<body>
+    <header class="header-custom p-4 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-500">GPT Hub</a>
+            <nav class="space-x-reverse space-x-6 font-medium">
+                <a href="index.html" class="hover:text-blue-400">الرئيسية</a>
+                <a href="blog.html" class="text-blue-400 font-bold">المدونة</a>
+                <a href="privacy.html" class="hover:text-blue-400">الخصوصية</a>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12 flex flex-col md:flex-row gap-8">
-        <!-- Main Content -->
-        <div class="md:w-2/3">
-            <h1 class="text-3xl font-bold mb-8 text-gray-800 border-r-4 border-blue-600 pr-4">آخر المقالات التقنية</h1>
+    <main class="container mx-auto px-4 py-12 max-w-5xl">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">أحدث المقالات والتحديثات</h1>
 
-            <!-- Article 1 -->
-            <article id="numbers" class="bg-white p-8 rounded-2xl shadow-sm mb-12">
-                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm mb-4 inline-block">تطبيقات تعليمية</span>
-                <h2 class="text-2xl font-bold mb-4">أكاديمية الأرقام: رفيق طفلك في رحلة التعلم</h2>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                    يعتبر تعلم الحساب من المهارات الأساسية في سن مبكرة. يقدم تطبيق أكاديمية الأرقام تجربة فريدة حيث يدمج بين اللعب والتعليم بطريقة تفاعلية تجذب انتباه الطفل وتجعله يحب الأرقام...
-                </p>
-                <div class="bg-blue-50 p-4 rounded-xl border-r-4 border-blue-400 mb-6 font-bold text-blue-800 italic">
-                    "التعليم من خلال اللعب هو أقصر طريق للتركيز المستمر عند الأطفال."
-                </div>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">تحميل التطبيق الآن</a>
+        <div class="grid gap-10">
+            <!-- Blog Post 1: Testing Group -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm post-card border-r-8 border-blue-500">
+                <span class="text-blue-600 font-bold">مجتمع المختبرين</span>
+                <h2 class="text-2xl font-bold my-4">تجربة تطبيقات جوجل بلاي قبل الإصدار: انضم إلينا الآن</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">ندعو جميع المهتمين بالتقنية للانضمام إلى مجموعة المختبرين الرسمية. مساعدتكم في معاينة تجربة المستخدم واكتشاف الأخطاء قبل الإطلاق الرسمي تساهم بشكل كبير في تحسين جودة تطبيقاتنا.</p>
+                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 text-white px-6 py-2 rounded font-bold hover:bg-blue-700">انضم للمجموعة 🚀</a>
             </article>
 
-            <!-- Middle Ad -->
-            <div class="my-10">
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_IN_ARTICLE_SLOT_ID"
-                     data-ad-format="fluid"
-                     data-ad-layout-key="-fb+5w+4e-db+86"
-                     data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
+            <!-- Blog Post 2: Memory Master -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm post-card border-r-8 border-purple-500">
+                <span class="text-purple-600 font-bold">ألعاب وتطبيقات</span>
+                <h2 class="text-2xl font-bold my-4">تطبيق Memory Master: النسخة المحدثة لتقوية الذاكرة</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">تعرف على التحديثات الجديدة في لعبة ميموري ماستر، أضفنا مستويات تحدي جديدة ورسوميات مريحة للعين لتجربة لعب أطول وأكثر إفادة.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="text-blue-600 font-bold hover:underline">تحميل التطبيق 🎮</a>
+            </article>
 
-            <!-- Article 2 -->
-            <article id="memory" class="bg-white p-8 rounded-2xl shadow-sm mb-12 border-t-4 border-purple-500">
-                <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded text-sm mb-4 inline-block">تنمية مهارات</span>
-                <h2 class="text-2xl font-bold mb-4">كيف تساعد ألعاب الذاكرة في تحسين الذكاء البصري؟</h2>
-                <p class="text-gray-600 leading-relaxed mb-6">
-                    ألعاب المطابقة والذاكرة ليست مجرد تسلية، بل هي تمارين رياضية للعقل. تساعد هذه الألعاب في تقوية الوصلات العصبية المسؤولة عن الانتباه والتذكر السريع...
-                </p>
+            <!-- Blog Post 3: Auto Care -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm post-card border-r-8 border-gray-700">
+                <span class="text-gray-600 font-bold">خدمات السيارات</span>
+                <h2 class="text-2xl font-bold my-4">تطبيق Auto Care: دليلك الشامل لصيانة سيارتك</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">نستعرض في هذا البوست أهم مميزات تطبيق أوتو كير، وكيف يمكنك جدولة صياناتك الدورية والحصول على نصائح الخبراء في الحفاظ على أداء المحرك.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="text-blue-600 font-bold hover:underline">رابط التحميل 🚗</a>
+            </article>
+
+            <!-- Blog Post 4: Programming -->
+            <article class="bg-white p-8 rounded-2xl shadow-sm post-card border-r-8 border-green-500">
+                <span class="text-green-600 font-bold">تقنية وتطوير</span>
+                <h2 class="text-2xl font-bold my-4">فلسفة البرمجة وتطوير التطبيقات في GPT Hub</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">نتحدث هنا عن كواليس تطوير تطبيقاتنا، استخدام تقنيات Flutter و React وكيفية الوصول لتجربة مستخدم سلسة في تطبيق "أكاديمية الأرقام".</p>
+                <a href="posts/numbers-academy.html" class="text-blue-600 font-bold hover:underline">اقرأ القصة الكاملة 📘</a>
             </article>
         </div>
-
-        <!-- Sidebar (Ads & Sidebar Info) -->
-        <aside class="md:w-1/3 space-y-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border">
-                <h3 class="font-bold mb-4 text-gray-700">إعلان</h3>
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-7137238144396709"
-                     data-ad-slot="YOUR_SIDEBAR_SLOT_ID"
-                     data-ad-format="rectangle"
-                     data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
-
-            <div class="bg-blue-600 p-6 rounded-2xl text-white">
-                <h3 class="font-bold mb-2">اشترك في النشرة</h3>
-                <p class="text-sm opacity-80 mb-4">ليصلك جديد تطبيقاتنا ومقالاتنا التقنية</p>
-                <input type="email" placeholder="بريدك الإلكتروني" class="w-full px-4 py-2 rounded text-gray-900 mb-2">
-                <button class="w-full bg-white text-blue-600 font-bold py-2 rounded hover:bg-gray-100 transition">اشتراك</button>
-            </div>
-        </aside>
     </main>
-
-    <footer class="bg-white border-t py-10">
-        <div class="container mx-auto px-4 text-center text-gray-500">
-            <p>© 2025 GPT Hub. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
 </body>
 </html>
