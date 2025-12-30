@@ -3,113 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- AdSense Verification -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
-    
     <title>GPT Hub | الرئيسية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .ad-placeholder { background: #f9fafb; border: 1px dashed #d1d5db; min-height: 100px; display: flex; align-items: center; justify-content: center; margin: 20px 0; }
+        :root { --primary-color: #007bff; --secondary-color: #343a40; }
+        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        .header-custom { background: var(--secondary-color); }
+        .btn-blue { background-color: var(--primary-color); transition: 0.3s; }
+        .btn-blue:hover { background-color: #0056b3; transform: translateY(-2px); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
-
-    <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+<body>
+    <header class="header-custom shadow-lg sticky top-0 z-50 text-white">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-blue-600">GPT Hub</div>
-            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
-                <a href="index.html" class="text-blue-600">الرئيسية</a>
-                <a href="blog.html" class="hover:text-blue-600">المدونة</a>
-                <a href="privacy.html" class="hover:text-blue-600">الخصوصية</a>
+            <div class="text-2xl font-bold text-blue-500">GPT Hub</div>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium items-center">
+                <a href="index.html" class="text-blue-400 font-bold">الرئيسية</a>
+                <a href="blog.html" class="hover:text-blue-400 transition">المدونة</a>
+                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-4 py-2 rounded-full text-xs animate-pulse hover:bg-blue-700">مجموعة المختبرين ✨</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition">الخصوصية</a>
             </nav>
-            <button class="md:hidden text-gray-600">☰</button>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-blue-600 text-white py-20 text-center">
+    <section class="bg-white py-24 text-center border-b">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">مرحباً بك في GPT Hub</h1>
-            <p class="text-xl mb-8 opacity-90">المنصة الرائدة للتطبيقات التعليمية والمقالات التقنية</p>
+            <h1 class="text-5xl font-bold mb-6 text-gray-800">مرحباً بك في <span class="text-blue-600">GPT Hub</span></h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">منصة متخصصة في تطوير تطبيقات الأندرويد المبتكرة. استكشف مقالاتنا البرمجية وحمل تطبيقاتنا الآن.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="blog.html" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition">استكشف المدونة</a>
-                <a href="#apps" class="bg-blue-700 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-800 transition border border-blue-400">تطبيقاتنا</a>
+                <a href="blog.html" class="btn-blue text-white px-10 py-4 rounded-xl font-bold shadow-lg text-lg">زيارة المدونة</a>
+                <a href="#apps" class="bg-gray-800 text-white px-10 py-4 rounded-xl font-bold hover:bg-black transition text-lg">تطبيقاتنا 📱</a>
             </div>
         </div>
     </section>
 
-    <!-- Top Ad -->
-    <div class="container mx-auto px-4">
-        <div class="ad-placeholder">
-            <!-- AdSense Auto Ads / Display Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7137238144396709"
-                 data-ad-slot="auto"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-    </div>
-
-    <!-- Apps Section -->
     <section id="apps" class="py-16 container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">أحدث تطبيقاتنا</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- App Card 1 -->
-            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-                <div class="text-4xl mb-4 text-blue-500">📘</div>
+        <h2 class="text-3xl font-bold text-center mb-12">تطبيقاتنا الرائدة</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <div class="text-5xl mb-4">🧠</div>
+                <h3 class="text-xl font-bold mb-2">Memory Master</h3>
+                <p class="text-gray-600 mb-4">اختبار الذاكرة البصرية والذكاء.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="text-blue-600 font-bold hover:underline">المتجر ←</a>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="text-5xl mb-4">🚗</div>
+                <h3 class="text-xl font-bold mb-2">Auto Care</h3>
+                <p class="text-gray-600 mb-4">مساعدك في صيانة السيارة.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="text-blue-600 font-bold hover:underline">المتجر ←</a>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                <div class="text-5xl mb-4">🔢</div>
                 <h3 class="text-xl font-bold mb-2">أكاديمية الأرقام</h3>
-                <p class="text-gray-600 mb-4">تطبيق تفاعلي لتعليم الأطفال الحساب والنطق الصحيح للأرقام.</p>
-                <a href="blog.html#numbers" class="text-blue-600 font-bold hover:underline">المزيد من التفاصيل ←</a>
-            </div>
-            <!-- App Card 2 -->
-            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition border-t-4 border-blue-500">
-                <div class="text-4xl mb-4 text-purple-500">🧠</div>
-                <h3 class="text-xl font-bold mb-2">لعبة الذاكرة</h3>
-                <p class="text-gray-600 mb-4">نمِّ مهارات طفلك الذهنية عبر ألعاب المطابقة والتركيز.</p>
-                <a href="blog.html#memory" class="text-blue-600 font-bold hover:underline">المزيد من التفاصيل ←</a>
-            </div>
-            <!-- App Card 3 -->
-            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition">
-                <div class="text-4xl mb-4 text-green-500">🚗</div>
-                <h3 class="text-xl font-bold mb-2">دليل صيانة السيارات</h3>
-                <p class="text-gray-600 mb-4">كل ما تحتاج معرفته للحفاظ على سيارتك وتجنب الأعطال المفاجئة.</p>
-                <a href="blog.html#car" class="text-blue-600 font-bold hover:underline">المزيد من التفاصيل ←</a>
+                <p class="text-gray-600 mb-4">تعلم الحساب للأطفال بكل سهولة.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="text-blue-600 font-bold hover:underline">المتجر ←</a>
             </div>
         </div>
     </section>
 
-    <!-- Download App Banner -->
-    <section class="bg-gray-900 text-white py-16">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-around">
-            <div class="mb-8 md:mb-0 text-center md:text-right">
-                <h2 class="text-3xl font-bold mb-4">حمل تطبيقنا الآن</h2>
-                <p class="text-gray-400 mb-6">استمتع بتجربة تعليمية فريدة مباشرة من هاتفك</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="bg-blue-600 px-8 py-3 rounded-lg inline-block font-bold hover:bg-blue-700 transition">تحميل من Google Play 📱</a>
-            </div>
-            <div class="w-48 h-48 bg-gray-800 rounded-full flex items-center justify-center text-7xl animate-pulse">
-                📱
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t py-10 mt-12">
-        <div class="container mx-auto px-4 text-center">
-            <div class="text-xl font-bold text-gray-800 mb-4">GPT Hub</div>
-            <div class="flex justify-center space-x-reverse space-x-6 mb-6">
-                <a href="index.html" class="text-gray-600 hover:text-blue-600">الرئيسية</a>
-                <a href="blog.html" class="text-gray-600 hover:text-blue-600">المدونة</a>
-                <a href="privacy.html" class="text-gray-600 hover:text-blue-600">سياسة الخصوصية</a>
-            </div>
-            <p class="text-gray-500">© 2025 GPT Hub. جميع الحقوق محفوظة.</p>
-        </div>
+    <footer class="header-custom text-white py-12 mt-12 text-center text-sm">
+        <p class="opacity-50">© 2025 GPT Hub. جميع الحقوق محفوظة.</p>
     </footer>
-
 </body>
 </html>
