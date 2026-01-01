@@ -5,20 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <!-- AdSense Verification -->
+    <!-- AdSense Verification - تم وضعه في أعلى الرأس لضمان القبول السريع -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
 
     <title>المدونة - GPT Hub</title>
     
+    <!-- تحميل Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- تحميل الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #f8f9fa; 
+            -webkit-font-smoothing: antialiased;
+        }
         .header-custom { background: #343a40; }
-        .blog-card { transition: transform 0.3s ease; }
-        .blog-card:hover { transform: translateY(-5px); }
+        .blog-card { 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+        }
+        .blog-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); 
+        }
     </style>
 </head>
 <body class="text-gray-900 antialiased">
@@ -26,66 +39,82 @@
     <!-- Header -->
     <header class="header-custom shadow-lg text-white sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-500">GPT Hub</a>
-            <nav class="space-x-reverse space-x-6 font-medium">
-                <a href="index.html" class="hover:text-blue-400 transition">الرئيسية</a>
-                <a href="blog.html" class="text-blue-400">المدونة</a>
-                <a href="privacy.html" class="hover:text-blue-400 transition">الخصوصية</a>
+            <a href="index.html" class="text-2xl font-bold text-blue-500 tracking-wider">GPT Hub</a>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">الرئيسية</a>
+                <a href="blog.html" class="text-blue-400 font-bold border-b-2 border-blue-400 pb-1">المدونة</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition-colors">الخصوصية</a>
             </nav>
+            <!-- Mobile Menu Icon (Visual Only) -->
+            <div class="md:hidden text-2xl cursor-pointer">☰</div>
         </div>
     </header>
 
-    <!-- Blog Hero -->
-    <section class="bg-white py-16 border-b">
+    <!-- Blog Hero Section -->
+    <section class="bg-white py-20 border-b">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">مدونة التقنية</h1>
-            <p class="text-gray-600 max-w-2xl mx-auto">تابع أحدث المقالات حول تطوير تطبيقات الأندرويد، الذكاء الاصطناعي، ونصائح البرمجة.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">مدونة التقنية والابتكار</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                استكشف أحدث المقالات التقنية حول تطوير تطبيقات الأندرويد، حلول الذكاء الاصطناعي، ودروس البرمجة العملية.
+            </p>
         </div>
     </section>
 
     <!-- Articles Grid -->
-    <main class="container mx-auto px-4 py-12">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main class="container mx-auto px-4 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Article 1 -->
-            <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden blog-card">
-                <div class="h-48 bg-blue-100 flex items-center justify-center text-4xl">📱</div>
-                <div class="p-6">
-                    <span class="text-blue-600 text-sm font-bold">أندرويد</span>
-                    <h2 class="text-xl font-bold mt-2 mb-4">أفضل ممارسات تصميم واجهات التطبيقات في 2025</h2>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">اكتشف كيف تجعل تطبيقك أكثر جاذبية وسهولة في الاستخدام باستخدام مبايئ Material Design الحديثة.</p>
-                    <a href="#" class="text-blue-600 font-bold text-sm hover:underline">اقرأ المزيد ←</a>
+            <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden blog-card flex flex-col">
+                <div class="h-52 bg-blue-50 flex items-center justify-center text-6xl select-none">📱</div>
+                <div class="p-8 flex-grow">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-blue-100 text-blue-600 text-xs font-bold px-3 py-1 rounded-full">أندرويد</span>
+                        <span class="text-gray-400 text-xs mr-auto">2025/01/15</span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-4 text-gray-800 leading-tight">أفضل ممارسات تصميم واجهات التطبيقات (UI/UX)</h2>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">اكتشف كيف تجعل تطبيقك أكثر جاذبية وسهولة في الاستخدام باستخدام أحدث مبادئ Material Design 3.</p>
+                    <a href="#" class="text-blue-600 font-bold text-sm hover:underline mt-auto inline-block">اقرأ المقال الكامل ←</a>
                 </div>
             </article>
 
             <!-- Article 2 -->
-            <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden blog-card">
-                <div class="h-48 bg-green-100 flex items-center justify-center text-4xl">🤖</div>
-                <div class="p-6">
-                    <span class="text-green-600 text-sm font-bold">ذكاء اصطناعي</span>
-                    <h2 class="text-xl font-bold mt-2 mb-4">دمج نماذج GPT في تطبيقاتك البرمجية</h2>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">دليل شامل حول كيفية استخدام واجهات البرمجة (APIs) لإضافة ميزات الذكاء الاصطناعي لتطبيقك.</p>
-                    <a href="#" class="text-blue-600 font-bold text-sm hover:underline">اقرأ المزيد ←</a>
+            <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden blog-card flex flex-col">
+                <div class="h-52 bg-green-50 flex items-center justify-center text-6xl select-none">🤖</div>
+                <div class="p-8 flex-grow">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-green-100 text-green-600 text-xs font-bold px-3 py-1 rounded-full">ذكاء اصطناعي</span>
+                        <span class="text-gray-400 text-xs mr-auto">2025/01/10</span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-4 text-gray-800 leading-tight">دمج نماذج Gemini في تطبيقات الأندرويد</h2>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">دليل عملي للمبرمجين حول كيفية استخدام الـ APIs لإضافة ميزات الذكاء الاصطناعي التوليدي لتطبيقاتهم.</p>
+                    <a href="#" class="text-blue-600 font-bold text-sm hover:underline mt-auto inline-block">اقرأ المقال الكامل ←</a>
                 </div>
             </article>
 
             <!-- Article 3 -->
-            <article class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden blog-card">
-                <div class="h-48 bg-purple-100 flex items-center justify-center text-4xl">🛠️</div>
-                <div class="p-6">
-                    <span class="text-purple-600 text-sm font-bold">برمجة</span>
-                    <h2 class="text-xl font-bold mt-2 mb-4">كيفية اختبار التطبيق قبل النشر</h2>
-                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">تعرف على أهمية مرحلة الاختبار وكيفية الانضمام لمجموعة المختبرين لدينا لضمان جودة تطبيقك.</p>
-                    <a href="#" class="text-blue-600 font-bold text-sm hover:underline">اقرأ المزيد ←</a>
+            <article class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden blog-card flex flex-col">
+                <div class="h-52 bg-purple-50 flex items-center justify-center text-6xl select-none">🛠️</div>
+                <div class="p-8 flex-grow">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-purple-100 text-purple-600 text-xs font-bold px-3 py-1 rounded-full">برمجة</span>
+                        <span class="text-gray-400 text-xs mr-auto">2025/01/05</span>
+                    </div>
+                    <h2 class="text-xl font-bold mb-4 text-gray-800 leading-tight">أهمية اختبار التطبيقات قبل النشر النهائي</h2>
+                    <p class="text-gray-600 text-sm mb-6 leading-relaxed">لماذا يجب عليك الانضمام لمجموعة المختبرين؟ وكيف يساعدك الاختبار في رفع تقييم تطبيقك على متجر جوجل بلاي.</p>
+                    <a href="#" class="text-blue-600 font-bold text-sm hover:underline mt-auto inline-block">اقرأ المقال الكامل ←</a>
                 </div>
             </article>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="header-custom text-white py-12 text-center mt-12">
+    <footer class="header-custom text-white py-12 text-center mt-12 border-t border-gray-800">
         <div class="container mx-auto px-4">
-            <p class="font-medium mb-4">GPT Hub - بوابتك لعالم الابتكار</p>
-            <p class="text-xs opacity-50">© 2025 جميع الحقوق محفوظة</p>
+            <div class="text-2xl font-bold text-blue-500 mb-6 tracking-widest">GPT Hub</div>
+            <p class="text-sm opacity-60 mb-6 max-w-md mx-auto">بوابتك لتعلم التقنية وتطوير الحلول البرمجية المبتكرة.</p>
+            <div class="border-t border-gray-700 pt-8 opacity-50 text-xs">
+                © 2025 جميع الحقوق محفوظة لـ GPT Hub
+            </div>
         </div>
     </footer>
 
