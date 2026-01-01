@@ -6,78 +6,102 @@
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
     <title>GPT Hub | الرئيسية</title>
+    <!-- استخدام Tailwind CSS المستقر -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-color: #007bff; --secondary-color: #343a40; }
-        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        :root { 
+            --primary-color: #007bff; 
+            --secondary-color: #343a40; 
+        }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #f8f9fa; 
+            margin: 0;
+            padding: 0;
+        }
         .header-custom { background: var(--secondary-color); }
         .btn-blue { background-color: var(--primary-color); transition: 0.3s; }
         .btn-blue:hover { background-color: #0056b3; transform: translateY(-2px); }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
     </style>
 </head>
-<body>
+<body class="text-gray-900 overflow-x-hidden">
+
+    <!-- Header -->
     <header class="header-custom shadow-lg sticky top-0 z-50 text-white">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-blue-500">GPT Hub</div>
             <nav class="hidden md:flex space-x-reverse space-x-6 font-medium items-center">
-                <a href="index.html" class="text-blue-400 font-bold">الرئيسية</a>
+                <a href="index.html" class="text-blue-400 font-bold border-b-2 border-blue-400 pb-1">الرئيسية</a>
                 <a href="blog.html" class="hover:text-blue-400 transition">المدونة</a>
-                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-4 py-2 rounded-full text-xs animate-pulse hover:bg-blue-700">مجموعة المختبرين ✨</a>
+                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-4 py-2 rounded-full text-xs animate-pulse hover:bg-blue-700 whitespace-nowrap">مجموعة المختبرين ✨</a>
                 <a href="privacy.html" class="hover:text-blue-400 transition">الخصوصية</a>
             </nav>
+            <!-- Mobile Menu Icon (Visual Only) -->
+            <div class="md:hidden text-2xl">☰</div>
         </div>
     </header>
 
-    <section class="bg-white py-24 text-center border-b">
+    <!-- Hero Section -->
+    <section class="bg-white py-20 lg:py-32 text-center border-b">
         <div class="container mx-auto px-4">
-            <h1 class="text-5xl font-bold mb-6 text-gray-800">مرحباً بك في <span class="text-blue-600">GPT Hub</span></h1>
-            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-10">منصة متخصصة في تطوير تطبيقات الأندرويد المبتكرة. استكشف مقالاتنا البرمجية وحمل تطبيقاتنا الآن.</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-800 leading-tight">مرحباً بك في <span class="text-blue-600 text-shadow">GPT Hub</span></h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+                منصة متخصصة في تطوير تطبيقات الأندرويد المبتكرة وتجربة المستخدم. استكشف مقالاتنا البرمجية وحمل تطبيقاتنا التعليمية الآن.
+            </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="blog.html" class="btn-blue text-white px-10 py-4 rounded-xl font-bold shadow-lg text-lg">زيارة المدونة</a>
-                <a href="#apps" class="bg-gray-800 text-white px-10 py-4 rounded-xl font-bold hover:bg-black transition text-lg">تطبيقاتنا 📱</a>
+                <a href="blog.html" class="btn-blue text-white px-8 md:px-12 py-4 rounded-xl font-bold shadow-lg text-lg">زيارة المدونة</a>
+                <a href="#apps" class="bg-gray-800 text-white px-8 md:px-12 py-4 rounded-xl font-bold hover:bg-black transition text-lg">تطبيقاتنا 📱</a>
             </div>
         </div>
     </section>
 
-    <section id="apps" class="py-16 container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">تطبيقاتنا الرائدة</h2>
-        <div class="grid md:grid-cols-3 gap-8 text-center">
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <div class="text-5xl mb-4">🧠</div>
-                <h3 class="text-xl font-bold mb-2">Memory Master</h3>
-                <p class="text-gray-600 mb-4">اختبار الذاكرة البصرية والذكاء.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="text-blue-600 font-bold hover:underline">المتجر ←</a>
+    <!-- Apps Grid Section -->
+    <section id="apps" class="py-20 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 relative inline-block left-1/2 -translate-x-1/2">
+            تطبيقاتنا الرائدة
+            <span class="block h-1 w-1/2 bg-blue-500 mx-auto mt-2 rounded"></span>
+        </h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Memory Master -->
+            <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100 text-center hover:border-blue-300 transition-all duration-300">
+                <div class="text-6xl mb-6">🧠</div>
+                <h3 class="text-2xl font-bold mb-3">Memory Master</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-sm">تحدي الذاكرة البصرية والذكاء. صمم خصيصاً لتحفيز القدرات الذهنية بطريقة ممتعة.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="inline-block px-6 py-2 bg-blue-50 text-blue-600 rounded-full font-bold hover:bg-blue-600 hover:text-white transition-colors">تحميل من المتجر ←</a>
             </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
-                <div class="text-5xl mb-4">🚗</div>
-                <h3 class="text-xl font-bold mb-2">Auto Care</h3>
-                <p class="text-gray-600 mb-4">مساعدك في صيانة السيارة.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="text-blue-600 font-bold hover:underline">المتجر ←</a>
+
+            <!-- Auto Care -->
+            <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100 text-center hover:border-blue-300 transition-all duration-300">
+                <div class="text-6xl mb-6">🚗</div>
+                <h3 class="text-2xl font-bold mb-3">Auto Care</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-sm">مساعدك الذكي في صيانة السيارة. تابع مواعيد الزيت، الإطارات، والفحوصات الدورية بكل سهولة.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="inline-block px-6 py-2 bg-blue-50 text-blue-600 rounded-full font-bold hover:bg-blue-600 hover:text-white transition-colors">تحميل من المتجر ←</a>
             </div>
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
-                <div class="text-5xl mb-4">🔢</div>
-                <h3 class="text-xl font-bold mb-2">أكاديمية الأرقام</h3>
-                <p class="text-gray-600 mb-4">تعلم الحساب للأطفال بكل سهولة.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="text-blue-600 font-bold hover:underline">المتجر ←</a>
+
+            <!-- Numbers Academy -->
+            <div class="bg-white p-8 rounded-3xl card-shadow border border-gray-100 text-center hover:border-blue-300 transition-all duration-300">
+                <div class="text-6xl mb-6">🔢</div>
+                <h3 class="text-2xl font-bold mb-3">أكاديمية الأرقام</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-sm">تطبيق تعليمي تفاعلي للأطفال لتعلم الأرقام والحساب بطريقة شيقة ومبسطة.</p>
+                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="inline-block px-6 py-2 bg-blue-50 text-blue-600 rounded-full font-bold hover:bg-blue-600 hover:text-white transition-colors">تحميل من المتجر ←</a>
             </div>
         </div>
     </section>
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709"
-     crossorigin="anonymous"></script>
-<!-- A4 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-7137238144396709"
-     data-ad-slot="6605118900"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <footer class="header-custom text-white py-12 mt-12 text-center text-sm">
-        <p class="opacity-50">© 2025 GPT Hub. جميع الحقوق محفوظة.</p>
+
+    <!-- Footer -->
+    <footer class="header-custom text-white py-16 mt-12 text-center border-t border-gray-700">
+        <div class="container mx-auto px-4">
+            <div class="text-3xl font-bold text-blue-500 mb-6">GPT Hub</div>
+            <div class="flex justify-center space-x-reverse space-x-8 mb-8 text-gray-400">
+                <a href="index.html" class="hover:text-white transition">الرئيسية</a>
+                <a href="blog.html" class="hover:text-white transition">المدونة</a>
+                <a href="privacy.html" class="hover:text-white transition">الخصوصية</a>
+            </div>
+            <p class="opacity-50 text-xs tracking-widest">© 2025 GPT HUB PLATFORM. ALL RIGHTS RESERVED.</p>
+        </div>
     </footer>
+
 </body>
 </html>
-
