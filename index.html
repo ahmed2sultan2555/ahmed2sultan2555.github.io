@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- تحسين SEO لسرعة الفهرسة -->
+    <meta name="description" content="GPT Hub - المنصة الرائدة لتطبيقات الأندرويد المبتكرة والمقالات البرمجية.">
+    
     <!-- AdSense Verification -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
@@ -13,6 +17,8 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
@@ -27,11 +33,12 @@
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
         }
         .header-custom { background: var(--secondary-color); }
-        .btn-blue { background-color: var(--primary-color); transition: all 0.3s ease; }
-        .btn-blue:hover { background-color: #0056b3; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); }
-        .card-shadow { transition: all 0.3s ease; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .btn-blue { background-color: var(--primary-color); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-blue:hover { background-color: #0056b3; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 123, 255, 0.3); }
+        .card-shadow { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
         .card-shadow:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
         
         .nav-link { position: relative; transition: color 0.3s; }
@@ -54,9 +61,8 @@
         }
         .animate-fade-in { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         
-        /* التحقق من التفاف النص في الموبايل */
         @media (max-width: 640px) {
-            h1 { font-size: 2.5rem !important; }
+            h1 { font-size: 2.75rem !important; }
         }
     </style>
 </head>
@@ -65,29 +71,29 @@
     <!-- Header -->
     <header class="header-custom shadow-lg sticky top-0 z-50 text-white">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-500 tracking-wider">GPT Hub</a>
+            <a href="index.html" class="text-2xl font-bold text-blue-500 tracking-wider hover:opacity-80 transition">GPT Hub</a>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-reverse space-x-6 font-medium items-center">
-                <a href="index.html" class="nav-link text-blue-400 font-bold">الرئيسية</a>
+                <a href="index.html" class="nav-link text-blue-400 font-bold border-b-2 border-blue-400 pb-1">الرئيسية</a>
                 <a href="blog.html" class="nav-link">المدونة</a>
                 <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-5 py-2 rounded-full text-xs font-bold animate-pulse hover:bg-blue-700 whitespace-nowrap shadow-lg transition-all">مجموعة المختبرين ✨</a>
                 <a href="privacy.html" class="nav-link">الخصوصية</a>
             </nav>
 
             <!-- Mobile Menu Toggle -->
-            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none focus:text-blue-400 transition" aria-label="Menu">
+            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none focus:text-blue-400 transition-colors p-2" aria-label="فتح القائمة">
                 ☰
             </button>
         </div>
         
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700 transform transition-all">
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 border-t border-gray-700 overflow-hidden transition-all duration-300">
             <div class="flex flex-col p-6 space-y-4 text-center text-lg">
-                <a href="index.html" class="text-blue-400 font-bold">الرئيسية</a>
-                <a href="blog.html" class="hover:text-blue-400 transition">المدونة</a>
-                <a href="privacy.html" class="hover:text-blue-400 transition">الخصوصية</a>
-                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-4 py-2 rounded-full text-sm inline-block shadow-md">مجموعة المختبرين ✨</a>
+                <a href="index.html" class="text-blue-400 font-bold py-2">الرئيسية</a>
+                <a href="blog.html" class="hover:text-blue-400 transition py-2">المدونة</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition py-2">الخصوصية</a>
+                <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" class="bg-blue-600 px-4 py-3 rounded-xl text-sm font-bold shadow-md">مجموعة المختبرين ✨</a>
             </div>
         </div>
     </header>
@@ -105,7 +111,7 @@
             </div>
         </div>
         <!-- Simple background decoration -->
-        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-50 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-50 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-50 blur-3xl"></div>
     </section>
 
     <!-- Apps Grid Section -->
@@ -121,7 +127,7 @@
         <div class="grid md:grid-cols-3 gap-12">
             <!-- Memory Master Card -->
             <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 text-center group">
-                <div class="text-7xl mb-8 group-hover:scale-110 transition-transform duration-500">🧠</div>
+                <div class="text-7xl mb-8 group-hover:scale-110 transition-transform duration-500 select-none">🧠</div>
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">Memory Master</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">طور مهارات الذاكرة البصرية والتركيز من خلال تحديات تدريجية ممتعة مناسبة لكافة الأعمار.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="inline-block w-full px-6 py-4 bg-blue-50 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all shadow-sm">تحميل من Google Play ←</a>
@@ -129,7 +135,7 @@
 
             <!-- Auto Care Card -->
             <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 text-center group">
-                <div class="text-7xl mb-8 group-hover:scale-110 transition-transform duration-500">🚗</div>
+                <div class="text-7xl mb-8 group-hover:scale-110 transition-transform duration-500 select-none">🚗</div>
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">Auto Care</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">الرفيق الذكي لكل مالك سيارة. تذكيرات ذكية بالصيانة، تغيير الزيت، ومتابعة كفاءة الوقود.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="inline-block w-full px-6 py-4 bg-blue-50 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all shadow-sm">تحميل من Google Play ←</a>
@@ -137,7 +143,7 @@
 
             <!-- Numbers Academy Card -->
             <div class="bg-white p-10 rounded-[2.5rem] card-shadow border border-gray-100 text-center group">
-                <div class="text-7xl mb-8 group-hover:scale-110 transition-transform duration-500">🔢</div>
+                <div class="text-7xl mb-8 group-hover:scale-110 transition-transform duration-500 select-none">🔢</div>
                 <h3 class="text-2xl font-bold mb-4 text-gray-800">أكاديمية الأرقام</h3>
                 <p class="text-gray-600 mb-8 leading-relaxed">تطبيق تعليمي تفاعلي يجمع بين التعلم واللعب، مصمم لمساعدة الأطفال على إتقان الحساب بذكاء.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="inline-block w-full px-6 py-4 bg-blue-50 text-blue-600 rounded-2xl font-bold hover:bg-blue-600 hover:text-white transition-all shadow-sm">تحميل من Google Play ←</a>
@@ -169,7 +175,8 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         if(menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => {
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
                 mobileMenu.classList.toggle('hidden');
             });
 
@@ -178,6 +185,13 @@
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
+            });
+
+            // إغلاق القائمة عند الضغط في أي مكان خارجها
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
             });
         }
     </script>
