@@ -5,63 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <!-- AdSense Verification -->
+    <!-- AdSense Verification - محاذير: لا تكرر هذا الكود في الصفحة أكثر من مرة -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
 
     <title>سياسة الخصوصية - GPT Hub</title>
     
+    <!-- استخدام روابط CDN مباشرة لتقليل حجم المستودع -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f8f9fa; }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #f8f9fa; 
+            line-height: 1.8;
+        }
         .header-custom { background: #343a40; }
+        .content-card { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body class="text-gray-900">
+<body class="text-gray-900 antialiased">
 
     <!-- Header -->
-    <header class="header-custom shadow-lg text-white">
+    <header class="header-custom shadow-lg text-white sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-500">GPT Hub</a>
-            <nav class="space-x-reverse space-x-6">
-                <a href="index.html" class="hover:text-blue-400">الرئيسية</a>
-                <a href="blog.html" class="hover:text-blue-400">المدونة</a>
+            <a href="index.html" class="text-2xl font-bold text-blue-500 hover:text-blue-400 transition-colors">GPT Hub</a>
+            <nav class="space-x-reverse space-x-6 font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">الرئيسية</a>
+                <a href="blog.html" class="hover:text-blue-400 transition-colors">المدونة</a>
             </nav>
         </div>
     </header>
 
-    <!-- Content -->
+    <!-- Main Content -->
     <main class="container mx-auto px-4 py-12 max-w-4xl">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h1 class="text-3xl font-bold mb-8 text-blue-600 border-b pb-4">سياسة الخصوصية</h1>
+        <div class="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 content-card">
+            <h1 class="text-3xl md:text-4xl font-bold mb-10 text-blue-600 border-b-2 border-blue-50 pb-6">سياسة الخصوصية</h1>
             
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4">1. جمع المعلومات</h2>
-                <p class="text-gray-600 leading-relaxed">نحن نقدر خصوصيتك. المعلومات التي قد نجمعها تشمل بيانات الاستخدام التقنية لتحسين أداء تطبيقاتنا وتجربة المستخدم.</p>
-            </section>
+            <div class="space-y-10">
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center ml-3 text-sm">01</span>
+                        جمع المعلومات
+                    </h2>
+                    <p class="text-gray-600 mr-11">نحن نقدر خصوصيتك بشكل كبير. المعلومات التي قد نجمعها تشمل بيانات الاستخدام التقنية، نوع المتصفح، ووقت الزيارة، وذلك حصرياً لتحسين أداء تطبيقاتنا وتجربة المستخدم السلسة.</p>
+                </section>
 
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4">2. ملفات تعريف الارتباط (Cookies)</h2>
-                <p class="text-gray-600 leading-relaxed">نحن نستخدم ملفات تعريف الارتباط لتحليل حركة المرور وتقديم إعلانات مخصصة من خلال شركائنا مثل Google AdSense.</p>
-            </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center ml-3 text-sm">02</span>
+                        ملفات تعريف الارتباط (Cookies)
+                    </h2>
+                    <p class="text-gray-600 mr-11">نحن نستخدم ملفات تعريف الارتباط لتحليل حركة المرور، تذكر تفضيلاتك، وتقديم إعلانات مخصصة تهمك من خلال شركائنا الموثوقين مثل Google AdSense.</p>
+                </section>
 
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4">3. الإعلانات</h2>
-                <p class="text-gray-600 leading-relaxed">يستخدم طرف ثالث (مثل جوجل) ملفات تعريف الارتباط لخدمة الإعلانات بناءً على زياراتك السابقة لموقعنا أو مواقع أخرى على الإنترنت.</p>
-            </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center ml-3 text-sm">03</span>
+                        إعلانات الطرف الثالث
+                    </h2>
+                    <p class="text-gray-600 mr-11">يستخدم مزودو الخدمة من الطرف الثالث (مثل Google) ملفات تعريف الارتباط لخدمة الإعلانات بناءً على زياراتك السابقة لموقعنا. يمكنك اختيار تعطيل الإعلانات المخصصة من خلال إعدادات حساب Google الخاص بك.</p>
+                </section>
 
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4">4. التغييرات على سياسة الخصوصية</h2>
-                <p class="text-gray-600 leading-relaxed">نحتفظ بالحق في تحديث هذه السياسة في أي وقت. ننصحك بمراجعة هذه الصفحة بشكل دوري.</p>
-            </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center ml-3 text-sm">04</span>
+                        التغييرات والتحديثات
+                    </h2>
+                    <p class="text-gray-600 mr-11">نحتفظ بالحق في تحديث سياسة الخصوصية هذه لتعكس التغييرات في ممارساتنا. سيتم نشر أي تغييرات فوراً على هذه الصفحة مع تحديث تاريخ السريان.</p>
+                </section>
+            </div>
+
+            <div class="mt-16 p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                <p class="text-sm text-blue-800 text-center">
+                    إذا كان لديك أي استفسار حول سياسة الخصوصية، يرجى التواصل معنا عبر القنوات الرسمية.
+                </p>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="header-custom text-white py-10 text-center mt-12">
-        <p class="text-sm opacity-70">© 2025 GPT Hub - جميع الحقوق محفوظة</p>
+    <footer class="header-custom text-white py-12 text-center mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <p class="text-sm opacity-60 mb-2">تم التحديث في: يناير 2025</p>
+            <p class="font-medium">© 2025 GPT Hub - جميع الحقوق محفوظة</p>
+        </div>
     </footer>
 
 </body>
