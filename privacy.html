@@ -3,55 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>سياسة الخصوصية - GPT Hub</title>
+    
+    <!-- AdSense Verification -->
+    <meta name="google-adsense-account" content="ca-pub-7137238144396709">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Cairo', sans-serif; background-color: #f9fafb; }
-        .content-box { background: white; border-radius: 1rem; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            background-color: #f8f9fa; 
+            -webkit-font-smoothing: antialiased;
+        }
+        .header-custom { background: #343a40; }
+        .content-box { 
+            background: white; 
+            border-radius: 1.5rem; 
+            padding: 2.5rem; 
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); 
+        }
     </style>
 </head>
-<body class="text-gray-800 leading-relaxed">
+<body class="text-gray-900 antialiased">
 
-    <header class="bg-gray-800 text-white py-6 shadow-md">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-blue-500">GPT Hub</a>
-            <a href="index.html" class="hover:text-blue-400">العودة للرئيسية</a>
+    <!-- Header -->
+    <header class="header-custom shadow-lg text-white sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-blue-500 tracking-wider">GPT Hub</a>
+            <nav class="hidden md:flex space-x-reverse space-x-6 font-medium">
+                <a href="index.html" class="hover:text-blue-400 transition-colors">الرئيسية</a>
+                <a href="blog.html" class="hover:text-blue-400 transition-colors">المدونة</a>
+                <a href="privacy.html" class="text-blue-400 font-bold border-b-2 border-blue-400 pb-1">الخصوصية</a>
+            </nav>
+            <div class="md:hidden text-2xl cursor-pointer">☰</div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-12 max-w-4xl">
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16 max-w-4xl">
         <div class="content-box">
-            <h1 class="text-3xl font-bold mb-8 border-b pb-4 text-gray-900">سياسة الخصوصية</h1>
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 border-b pb-6 text-gray-800">سياسة الخصوصية</h1>
             
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4 text-blue-600">مقدمة</h2>
-                <p>نحن في GPT Hub نولي أهمية قصوى لخصوصية زوارنا. توضح هذه الوثيقة أنواع المعلومات الشخصية التي نجمعها وكيفية استخدامها.</p>
-            </section>
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+                        <span class="ml-2">📌</span> مقدمة
+                    </h2>
+                    <p class="leading-relaxed text-gray-700">
+                        في <strong>GPT Hub</strong>، نعتبر خصوصية زوارنا من أهم أولوياتنا. توضح هذه الوثيقة أنواع المعلومات التي نجمعها وكيفية استخدامها لحمايتك وضمان أفضل تجربة ممكنة.
+                    </p>
+                </section>
 
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4 text-blue-600">ملفات تعريف الارتباط (Cookies)</h2>
-                <p>نستخدم ملفات تعريف الارتباط لتخزين معلومات حول تفضيلات الزوار، ولتسجيل معلومات محددة عن الصفحات التي يصل إليها المستخدم، وذلك لتحسين تجربة المستخدم.</p>
-            </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+                        <span class="ml-2">🍪</span> ملفات تعريف الارتباط (Cookies)
+                    </h2>
+                    <p class="leading-relaxed text-gray-700 text-sm md:text-base">
+                        نستخدم ملفات تعريف الارتباط لتخزين معلومات حول تفضيلات الزوار، ولتسجيل معلومات محددة عن الصفحات التي يصل إليها المستخدم، وذلك لتحسين تجربة المستخدم وتخصيص المحتوى.
+                    </p>
+                </section>
 
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4 text-blue-600">إعلانات Google AdSense</h2>
-                <p>تستخدم Google، كطرف ثالث، ملفات تعريف الارتباط لخدمة الإعلانات على موقعنا. استخدام Google لملف تعريف الارتباط DART يمهد لها تقديم الإعلانات للمستخدمين بناءً على زياراتهم لموقعنا ومواقع أخرى على الإنترنت.</p>
-            </section>
+                <section class="bg-blue-50 p-6 rounded-xl border-r-4 border-blue-500">
+                    <h2 class="text-xl font-bold mb-4 text-blue-700 flex items-center">
+                        <span class="ml-2">⚖️</span> إعلانات Google AdSense
+                    </h2>
+                    <p class="leading-relaxed text-blue-900 text-sm">
+                        تستخدم شركة Google ملفات تعريف الارتباط لخدمة الإعلانات على موقعنا بناءً على زياراتك السابقة لموقعنا أو مواقع الويب الأخرى. يتيح استخدام ملف تعريف الارتباط DART لشركة Google وشركائها عرض الإعلانات للمستخدمين بناءً على زيارتهم لمواقعنا.
+                    </p>
+                </section>
 
-            <section class="mb-8">
-                <h2 class="text-xl font-bold mb-4 text-blue-600">ملفات السجل (Log Files)</h2>
-                <p>مثل العديد من مواقع الويب الأخرى، يستخدم GPT Hub ملفات السجل. المعلومات داخل ملفات السجل تشمل بروتوكول الإنترنت (IP)، نوع المتصفح، مزود خدمة الإنترنت (ISP)، وطوابع التاريخ/الوقت.</p>
-            </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+                        <span class="ml-2">📊</span> ملفات السجل (Log Files)
+                    </h2>
+                    <p class="leading-relaxed text-gray-700 text-sm">
+                        مثل معظم المواقع، يستخدم GPT Hub ملفات السجل. المعلومات تشمل: عناوين بروتوكول الإنترنت (IP)، نوع المتصفح، مزود خدمة الإنترنت (ISP)، طوابع التاريخ والوقت، وصفحات الإحالة/الخروج.
+                    </p>
+                </section>
 
-            <section class="mb-8 border-t pt-6">
-                <p class="text-sm text-gray-500 italic">آخر تحديث: يناير 2025</p>
-            </section>
+                <section>
+                    <h2 class="text-xl font-bold mb-4 text-blue-600 flex items-center">
+                        <span class="ml-2">📧</span> التواصل معنا
+                    </h2>
+                    <p class="leading-relaxed text-gray-700">
+                        إذا كان لديك أي أسئلة حول سياسة الخصوصية الخاصة بنا، فلا تتردد في الاتصال بنا عبر البريد الإلكتروني المخصص للموقع.
+                    </p>
+                </section>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-100 text-sm text-gray-400 italic">
+                آخر تحديث: 20 يناير 2025
+            </div>
         </div>
     </main>
 
-    <footer class="text-center py-8 text-gray-500 text-sm">
-        جميع الحقوق محفوظة © 2025 GPT Hub
+    <!-- Footer -->
+    <footer class="header-custom text-white py-12 text-center mt-12 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-2xl font-bold text-blue-500 mb-6 tracking-widest">GPT Hub</div>
+            <p class="text-sm opacity-60 mb-6 max-w-md mx-auto">بوابتك لتعلم التقنية وتطوير الحلول البرمجية المبتكرة.</p>
+            <div class="border-t border-gray-700 pt-8 opacity-50 text-xs text-ltr">
+                © 2025 All Rights Reserved - GPT Hub
+            </div>
+        </div>
     </footer>
 
 </body>
