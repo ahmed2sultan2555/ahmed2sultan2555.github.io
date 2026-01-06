@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://ahmed2sultan2555.github.io/website/index.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <!-- صفحة المدونة -->
+  <url>
+    <loc>https://ahmed2sultan2555.github.io/website/blog.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <!-- صفحة سياسة الخصوصية -->
+  <url>
+    <loc>https://ahmed2sultan2555.github.io/website/privacy.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <!-- صفحة مقال أكاديمية الأرقام -->
+  <url>
+    <loc>https://ahmed2sultan2555.github.io/website/posts/numbers-academy.html</loc>
+    <lastmod>2025-01-20</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>
