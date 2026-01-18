@@ -3,326 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-7137238144396709">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
-    
     <title>موسوعة GPT HUB للتقنية</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Amiri:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=IBM+Plex+Sans+Arabic:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #0f172a;
-            --accent: #f59e0b;
-        }
-        body { font-family: 'Cairo', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
-        .hero-gradient { background: radial-gradient(circle at top right, #1e293b, #0f172a); }
-        
-        .article-card { 
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-            background: white; 
-            border-radius: 2rem; 
-            overflow: hidden;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-        .article-card:hover { 
-            transform: translateY(-12px); 
-            box-shadow: 0 30px 60px -12px rgba(15, 23, 42, 0.15); 
-            border-color: var(--primary);
+        body { 
+            font-family: 'IBM Plex Sans Arabic', sans-serif; 
+            background-color: #fdfdfd; 
+            color: #0f172a;
         }
         
-        .blog-content h2 { 
-            color: var(--secondary); 
-            font-weight: 900; 
-            font-size: 2.25rem; 
-            margin: 2.5rem 0 1.5rem; 
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-        .blog-content h2::after {
-            content: "";
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(to left, var(--primary), transparent);
-        }
+        .premium-font { font-family: 'Cairo', sans-serif; }
         
-        .blog-content p { 
-            color: #334155; 
-            line-height: 2.2; 
-            margin-bottom: 1.8rem; 
-            font-size: 1.15rem; 
+        /* تأثيرات البطاقات */
+        .tech-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid #f1f5f9;
+        }
+        .tech-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border-color: #3b82f6;
+        }
+
+        /* تنسيق المقال */
+        .article-body {
+            line-height: 2.2;
+            font-size: 1.15rem;
             text-align: justify;
         }
-        
-        .app-showcase {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            border: 1px solid #bfdbfe;
-        }
-
-        .img-placeholder {
-            width: 100%;
-            height: 200px;
-            background: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 1.5rem;
+        .article-body h2 {
+            font-weight: 900;
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-top: 3rem;
             margin-bottom: 1.5rem;
-            overflow: hidden;
-        }
-        .img-placeholder img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            border-right: 5px solid #3b82f6;
+            padding-right: 15px;
         }
 
-        .nav-link {
-            position: relative;
-            transition: color 0.3s;
+        .hero-section {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         }
-        .nav-link::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            right: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s;
-        }
-        .nav-link:hover::after { width: 100%; }
 
-        .active-view { animation: slideUp 0.6s ease-out; }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .gradient-text {
+            background: linear-gradient(to left, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .app-badge {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+
+        /* لضمان التجاوب */
+        img { max-width: 100%; height: auto; border-radius: 1rem; }
     </style>
 </head>
-<body class="text-slate-900">
+<body>
 
-    <!-- Header المطور -->
-    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-[100] border-b border-slate-100">
+    <!-- نافبار -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-4 cursor-pointer" onclick="showSection('home')">
-                <div class="bg-blue-600 p-2.5 rounded-2xl text-white shadow-blue-200 shadow-lg italic font-black text-xl">GH</div>
-                <span class="text-2xl font-black text-slate-800 tracking-tight">موسوعة <span class="text-blue-600">GPT HUB</span></span>
+            <div class="flex items-center gap-3 cursor-pointer" onclick="goToHome()">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg">G</div>
+                <h1 class="text-2xl font-black tracking-tighter premium-font italic">GPT HUB <span class="text-blue-600">Tech</span></h1>
             </div>
-            <div class="hidden lg:flex items-center gap-10 font-bold text-slate-600">
-                <a href="javascript:void(0)" onclick="showSection('home')" class="nav-link hover:text-blue-600">الرئيسية</a>
-                <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="nav-link hover:text-red-600 flex items-center gap-2 text-red-500">
+            <div class="hidden md:flex items-center gap-8 font-bold text-slate-600">
+                <a href="#" onclick="goToHome()" class="hover:text-blue-600 transition">الرئيسية</a>
+                <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" class="flex items-center gap-2 text-red-600 hover:scale-105 transition">
                     <i data-lucide="youtube" class="w-5 h-5"></i> اليوتيوب
                 </a>
-                <a href="https://gpthub21.blogspot.com" target="_blank" class="nav-link hover:text-blue-600">المدونة</a>
-                <a href="https://gpthub21.blogspot.com/ads.txt" target="_blank" class="bg-slate-100 px-4 py-2 rounded-xl text-xs">Ads.txt</a>
+                <a href="https://groups.google.com/g/gpthub-testers" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm hover:bg-blue-700 transition shadow-md">انضم للمختبرين</a>
             </div>
         </div>
     </nav>
 
-    <main id="router">
+    <div id="main-content">
         <!-- الصفحة الرئيسية -->
-        <section id="page-home" class="active-view">
-            <div class="hero-gradient text-white py-28 relative overflow-hidden">
-                <div class="container mx-auto px-6 text-center relative z-10">
-                    <div class="inline-block bg-blue-500/20 text-blue-400 px-6 py-2 rounded-full text-sm font-bold mb-8 backdrop-blur-md border border-blue-500/30">
-                        مرحباً بك في مستقبل المحتوى التقني
-                    </div>
-                    <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tight">موسوعة <span class="text-blue-500">GPT HUB</span> <br> للتقنية</h1>
-                    <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-                        المنصة الأولى عربياً لتقديم شروحات حصرية في برمجة التطبيقات، أسرار الربح من AdMob، وتصدر نتائج البحث (SEO).
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-6">
-                        <button onclick="document.getElementById('grid').scrollIntoView()" class="bg-blue-600 px-12 py-5 rounded-2xl font-black hover:bg-blue-700 transition-all shadow-2xl shadow-blue-500/40 transform hover:scale-105">ابدأ التعلم الآن</button>
-                        <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="bg-white/10 backdrop-blur border border-white/20 px-12 py-5 rounded-2xl font-black hover:bg-white/20 transition flex items-center gap-3">
-                            <i data-lucide="play-circle"></i> قناة اليوتيوب
+        <section id="home-view" class="block">
+            <!-- الهيرو -->
+            <div class="hero-section text-white py-24 px-6 overflow-hidden relative">
+                <div class="container mx-auto text-center relative z-10">
+                    <span class="inline-block px-4 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-bold mb-6">موسوعة التقنية الأولى</span>
+                    <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight premium-font">موسوعة <span class="gradient-text">GPT HUB</span> للتقنية</h1>
+                    <p class="text-slate-400 max-w-2xl mx-auto text-lg mb-12 leading-relaxed font-medium">نقدم لك شروحات احترافية، استراتيجيات البرمجة الحديثة، وحلول الربح من الإنترنت المبنية على الخبرة لا العشوائية.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="bg-blue-600 px-8 py-4 rounded-2xl font-black shadow-xl shadow-blue-500/20 flex items-center gap-3 hover:bg-blue-700 transition">
+                            <i data-lucide="play"></i> تطبيق أكاديمية الأرقام
+                        </a>
+                        <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" class="bg-white/5 border border-white/10 px-8 py-4 rounded-2xl font-black hover:bg-white/10 transition flex items-center gap-3">
+                            <i data-lucide="video"></i> شروحات الفيديو
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- قسم التطبيقات (My Apps) -->
-            <div class="container mx-auto px-6 -mt-16 relative z-20">
-                <div class="app-showcase rounded-[3rem] p-10 md:p-16 shadow-2xl flex flex-col md:flex-row items-center gap-12 border-4 border-white">
-                    <div class="w-40 h-40 md:w-56 md:h-56 bg-white rounded-[2.5rem] shadow-xl flex items-center justify-center p-4 border border-blue-100 shrink-0">
-                         <img src="https://play-lh.googleusercontent.com/6vI6Kj7Z..." alt="Numbers Academy Icon" class="rounded-3xl" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3534/3534033.png'">
-                    </div>
-                    <div class="text-center md:text-right">
-                        <h2 class="text-4xl font-black text-slate-800 mb-4 italic">أكاديمية الأرقام (Speak Numbers)</h2>
-                        <p class="text-slate-600 text-lg mb-8 leading-relaxed max-w-2xl">التطبيق التعليمي الرائد للأطفال لتعلم نطق الأرقام بذكاء. انضم الآن إلى مجتمع المختبرين للمساهمة في تطوير النسخ القادمة.</p>
-                        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                            <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-black transition">
-                                <i data-lucide="download"></i> تحميل التطبيق
-                            </a>
-                            <a href="https://groups.google.com/g/gpthub-testers" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-3 hover:bg-blue-700 transition">
-                                <i data-lucide="users"></i> مجموعة المختبرين
-                            </a>
-                        </div>
-                    </div>
+            <!-- شبكة المقالات التقنية -->
+            <div class="container mx-auto px-6 py-20">
+                <div class="flex items-center justify-between mb-16">
+                    <h2 class="text-3xl font-black premium-font">آخر المقالات التقنية</h2>
+                    <div class="h-px bg-slate-100 flex-grow mx-8 hidden md:block"></div>
                 </div>
-            </div>
-
-            <!-- المقالات -->
-            <div id="grid-container" class="container mx-auto px-6 py-24">
-                <div class="flex justify-between items-end mb-16">
-                    <div>
-                        <h2 class="text-4xl font-black text-slate-800 mb-4">أحدث الدروس الحصرية</h2>
-                        <p class="text-slate-500 font-bold">تعلم من الصفر حتى الاحتراف مع GPT HUB</p>
-                    </div>
-                </div>
-                <div id="grid" class="grid md:grid-cols-3 gap-10">
-                    <!-- Articles Injected by JS -->
+                
+                <div id="posts-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- يتم الحقن هنا بواسطة JS -->
                 </div>
             </div>
         </section>
 
-        <!-- صفحة المقال التفصيلية -->
-        <section id="page-article" class="hidden container mx-auto px-6 py-16 max-w-6xl">
-            <button onclick="showSection('home')" class="flex items-center gap-3 text-blue-600 font-black mb-12 group bg-blue-50 px-6 py-3 rounded-2xl self-start hover:bg-blue-100 transition">
-                <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition"></i> العودة للموسوعة
+        <!-- صفحة المقال -->
+        <section id="article-view" class="hidden container mx-auto px-6 py-12 max-w-4xl">
+            <button onclick="goToHome()" class="flex items-center gap-2 text-blue-600 font-bold mb-10 hover:gap-4 transition-all">
+                <i data-lucide="arrow-right"></i> العودة للرئيسية
             </button>
-            <div id="article-view-content" class="bg-white p-10 md:p-20 rounded-[3.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100">
-                <!-- Data Injected Here -->
+            <div id="article-container" class="bg-white p-8 md:p-16 rounded-[2.5rem] shadow-sm border border-slate-100">
+                <!-- محتوى المقال -->
             </div>
         </section>
-    </main>
+    </div>
 
-    <footer class="bg-slate-950 text-slate-400 py-24 mt-32 border-t border-slate-900">
+    <!-- فوتر -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-12 mb-20 text-right">
-                <div class="col-span-2">
-                    <div class="text-white text-3xl font-black mb-6 italic">GPT HUB</div>
-                    <p class="leading-loose mb-8 max-w-sm">نحن نؤمن بأن المعرفة التقنية يجب أن تكون متاحة للجميع بأعلى جودة وتنسيق احترافي. تابعونا على كافة المنصات ليصلكم كل جديد.</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.youtube.com/@AhmedSultan-Tech" class="w-12 h-12 bg-red-600/10 text-red-500 rounded-xl flex items-center justify-center hover:bg-red-600 hover:text-white transition"><i data-lucide="youtube"></i></a>
-                        <a href="#" class="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center hover:bg-blue-600 hover:text-white transition"><i data-lucide="facebook"></i></a>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-16 mb-16 border-b border-slate-900 pb-16">
+                <div>
+                    <h3 class="text-2xl font-black mb-6 italic">GPT HUB</h3>
+                    <p class="text-slate-400 leading-relaxed font-medium">المرجع الأول لكل مطور يبحث عن الدقة والموضوعية في عالم البرمجيات والتطبيقات.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">روابط سريعة</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-blue-500 transition">الرئيسية</a></li>
-                        <li><a href="https://gpthub21.blogspot.com" class="hover:text-blue-500 transition">المدونة</a></li>
-                        <li><a href="https://gpthub21.blogspot.com/ads.txt" class="hover:text-blue-500 transition">Ads.txt</a></li>
+                    <h4 class="font-bold text-lg mb-6">روابط هامة</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" class="hover:text-blue-500">قناة اليوتيوب</a></li>
+                        <li><a href="https://groups.google.com/g/gpthub-testers" target="_blank" class="hover:text-blue-500">مجموعة المختبرين</a></li>
+                        <li><a href="https://gpthub21.blogspot.com" target="_blank" class="hover:text-blue-500">المدونة الرسمية</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">الدعم والخصوصية</h4>
-                    <ul class="space-y-4">
-                        <li><a href="#" class="hover:text-blue-500 transition">سياسة الخصوصية</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition">اتصل بنا</a></li>
-                        <li><a href="https://groups.google.com/g/gpthub-testers" class="hover:text-blue-500 transition text-blue-400">انضم للمختبرين</a></li>
-                    </ul>
+                    <h4 class="font-bold text-lg mb-6">تطبيقاتنا</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="app-badge p-4 rounded-2xl flex items-center gap-4 group hover:bg-blue-600/10 transition">
+                        <div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                            <i data-lucide="smartphone" class="text-blue-600"></i>
+                        </div>
+                        <div>
+                            <div class="text-sm font-bold text-slate-300">متوفر الآن</div>
+                            <div class="text-white font-black">أكاديمية الأرقام</div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="border-t border-slate-900 pt-10 text-center text-sm">
-                <p>© 2026 موسوعة GPT HUB التقنية - جميع الحقوق محفوظة.</p>
-                <p class="mt-2 opacity-30 tracking-widest uppercase">Publisher ID: ca-pub-7137238144396709</p>
-            </div>
+            <p class="text-center text-slate-500 text-sm">© 2026 موسوعة GPT HUB - جميع الحقوق محفوظة</p>
         </div>
     </footer>
 
     <script>
-        const blogPosts = [
+        // بيانات المقالات مع صور تقنية حقيقية
+        const posts = [
             {
                 id: 1,
-                title: "استراتيجيات رفع عائد ادموب (eCPM) لعام 2026",
-                category: "AdMob",
-                icon: "trending-up",
-                image: "https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=800",
-                summary: "دليل المطورين المحترف لزيادة أرباح التطبيقات من خلال هندسة الإعلانات المتقدمة.",
+                title: "هندسة البرمجيات: من أين تبدأ في 2026؟",
+                category: "برمجة",
+                image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
+                excerpt: "دليلك الشامل لتعلم لغات البرمجة الأكثر طلباً في سوق العمل وكيفية بناء منطق برمجي قوي.",
                 content: `
-                    <h2>لماذا ينخفض عائد الألف ظهور (eCPM)؟</h2>
-                    <p>يعتبر الـ eCPM هو المحرك الأساسي لأرباح المطورين في AdMob. الكثير يشتكي من انخفاضه، ولكن السبب غالباً ما يكون في التوزيع الخاطئ للإعلانات. يجب أن تعلم أن المعلن يدفع أكثر مقابل النقرات ذات الجودة العالية والتحويلات الحقيقية.</p>
-                    <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="تحليل البيانات"></div>
-                    <h2>استراتيجيات عملية لزيادة الأرباح:</h2>
-                    <ul>
-                        <li>استخدام "Ad Mediation" لربط ادموب بشركات أخرى مثل Unity Ads و AppLovin.</li>
-                        <li>تحديد سقف لعدد مرات ظهور الإعلانات (Frequency Capping) لتجنب انزعاج المستخدم.</li>
-                        <li>استهداف دول الدرجة الأولى (Tier 1) مثل الولايات المتحدة وكندا وبريطانيا.</li>
-                        <li>تفعيل نظام التنزيل المسبق للإعلانات (Pre-fetching) لضمان سرعة التحميل وعدم ضياع الانطباعات.</li>
-                    </ul>
-                    <p>تذكر دائماً أن تجربة المستخدم أهم من كثرة الإعلانات. التطبيق الذي يقدم قيمة حقيقية سيبقى المستخدم فيه فترة أطول، وبالتالي سيشاهد إعلانات أكثر بشكل طبيعي.</p>
+                    <h2>بناء الأساس البرمجي</h2>
+                    <p>في عالم اليوم، لم تعد البرمجة مجرد كتابة أكواد، بل هي فن حل المشكلات. البداية الصحيحة تبدأ بفهم الخوارزميات وهياكل البيانات قبل اختيار أي لغة.</p>
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=1200" alt="كود برمجي">
+                    <h2>لماذا يجب أن تهتم بالهندسة المعمارية؟</h2>
+                    <p>المطور المحترف هو من يكتب كوداً نظيفاً (Clean Code) يمكن قراءته وصيانته بسهولة. في هذه الموسوعة، نستعرض أفضل الممارسات التي تتبعها الشركات الكبرى مثل جوجل ومايكروسوفت.</p>
                 `
             },
             {
                 id: 2,
-                title: "دليل إعداد ملف ads.txt لمنع تقييد الأرباح",
-                category: "Google Adsense",
-                icon: "shield-check",
-                image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
-                summary: "تأكد من حماية حسابك من التقييد من خلال الضبط الصحيح لملف التحقق من الناشر.",
+                title: "أسرار رفع أرباح AdMob بطرق شرعية",
+                category: "أدوموب",
+                image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+                excerpt: "كيف تزيد من عائد الألف ظهور (eCPM) وتحافظ على سلامة حسابك من التقييد أو الإغلاق.",
                 content: `
-                    <h2>أهمية ملف ads.txt لموقعك</h2>
-                    <p>ملف ads.txt هو مبادرة تهدف إلى الشفافية في سوق الإعلانات. من خلاله، تخبر جوجل من هم البائعون المرخص لهم ببيع مساحاتك الإعلانية. بدون هذا الملف، يمكن للمخترقين انتحال شخصية موقعك.</p>
-                    <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="أمن المعلومات"></div>
-                    <h2>خطوات الضبط الصحيح للملف:</h2>
-                    <ul>
-                        <li>تأكد من السطر الخاص بك: google.com, pub-7137238144396709, DIRECT, f08c47fec0942fa0.</li>
-                        <li>يجب أن يكون الملف متاحاً عبر الرابط المباشر للموقع.</li>
-                        <li>في بلوجر، يتم تفعيل الملف من خلال الإعدادات -> ملف ads.txt مخصص.</li>
-                    </ul>
-                    <p>بعد رفع الملف، قد يستغرق جوجل من 24 ساعة إلى أسبوع كامل ليقوم بتحديث البيانات واختفاء الرسالة الحمراء من لوحتك.</p>
+                    <h2>التحليلات هي مفتاح الربح</h2>
+                    <p>لا تعتمد على العشوائية في وضع الإعلانات. استخدام التحليلات لفهم سلوك المستخدم يساهم في رفع العائد بنسبة تصل إلى 40% دون التأثير على تجربة المستخدم.</p>
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=1200" alt="تحليلات الأرباح">
+                    <h2>نصائح تقنية لتفادي التقييد</h2>
+                    <p>تأكد من تنفيذ ملف app-ads.txt بشكل صحيح، وتجنب النقرات غير الصالحة من خلال استخدام أدوات الحماية المتقدمة.</p>
                 `
             },
             {
                 id: 3,
-                title: "سيو بلوجر 2026: الهيمنة على نتائج البحث",
-                category: "SEO",
-                icon: "search",
-                image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800",
-                summary: "كيف تجعل مدونتك تتصدر المركز الأول في الكلمات المفتاحية الصعبة بطرق شرعية.",
+                title: "تطوير تطبيقات الأندرويد: دليل المبتدئين",
+                category: "تطوير تطبيقات",
+                image: "https://images.unsplash.com/photo-1521931961826-fe48677230a5?auto=format&fit=crop&q=80&w=800",
+                excerpt: "خطواتك الأولى في بناء أول تطبيق أندرويد باستخدام Flutter أو Kotlin وكيفية رفعه على المتجر.",
                 content: `
-                    <h2>قواعد الـ SEO الحديثة لمدونات بلوجر</h2>
-                    <p>السر في التصدر ليس في المنصة، بل في كيفية هيكلة المحتوى (Content Structure). يجب أن يكون مقالك متوافقاً مع معايير الـ E-E-A-T (الخبرة، المصداقية، الموثوقية).</p>
-                    <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?auto=format&fit=crop&q=80&w=800" alt="برمجة الويب"></div>
-                    <h2>نصائح ذهبية لتصدر جوجل:</h2>
-                    <ul>
-                        <li>استخدام الكلمات المفتاحية الطويلة (Long-tail keywords) في العناوين.</li>
-                        <li>تحسين سرعة القالب واختيار قوالب تدعم الـ Core Web Vitals.</li>
-                        <li>إضافة الصور بصيغة WebP مع وضع الـ Alt Text المناسب.</li>
-                    </ul>
+                    <h2>البيئة التطويرية</h2>
+                    <p>يعد اختيار الأدوات المناسبة نصف الطريق. سواء اخترت أندرويد ستوديو أو فيجوال ستوديو كود، يجب أن تكون على دراية بكيفية إدارة الموارد في التطبيق.</p>
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200" alt="تطوير تطبيقات">
                 `
             }
         ];
 
-        // Generate more professional items to reach 30
-        for(let i=4; i<=30; i++){
-            blogPosts.push({
-                id: i,
-                title: `دليل البرمجة المتقدم #${i}: تقنيات المستقبل`,
-                category: i % 2 === 0 ? "تطوير تطبيقات" : "ذكاء اصطناعي",
-                icon: i % 2 === 0 ? "code" : "cpu",
-                image: `https://picsum.photos/seed/${i}/800/500`,
-                summary: `نظرة شاملة على أحدث لغات البرمجة والتقنيات المستخدمة في بناء الأنظمة الضخمة لعام 2026.`,
-                content: `<h2>المقدمة في عالم التقنية الحديثة</h2><p>في هذا المقال التقني المتخصص، نغوص في أعماق البرمجيات الحديثة. التقنية لا تتوقف عن التطور، وما كان مستحيلاً بالأمس أصبح اليوم متاحاً للجميع.</p><div class="img-placeholder"><img src="https://picsum.photos/seed/content${i}/800/500" alt="تكنولوجيا"></div><h2>أهم النقاط التقنية:</h2><ul><li>تطوير خوارزميات البحث الذكية.</li><li>تحسين واجهات المستخدم لتناسب الشاشات الصغيرة.</li><li>تأمين البيانات باستخدام تقنيات التشفير الحديثة.</li></ul>`
-            });
-        }
-
-        function showSection(id) {
-            document.getElementById('page-home').classList.add('hidden');
-            document.getElementById('page-article').classList.add('hidden');
-            document.getElementById(`page-${id}`).classList.remove('hidden');
-            window.scrollTo(0,0);
-        }
-
-        function renderHome() {
-            const grid = document.getElementById('grid');
-            grid.innerHTML = blogPosts.map(post => `
-                <div class="article-card flex flex-col cursor-pointer group" onclick="openArticle(${post.id})">
-                    <div class="h-56 overflow-hidden">
-                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+        function renderPosts() {
+            const grid = document.getElementById('posts-grid');
+            grid.innerHTML = posts.map(post => `
+                <div class="tech-card bg-white rounded-3xl overflow-hidden flex flex-col cursor-pointer" onclick="openArticle(${post.id})">
+                    <div class="h-52 overflow-hidden">
+                        <img src="${post.image}" class="w-full h-full object-cover" alt="${post.title}">
                     </div>
                     <div class="p-8">
-                        <div class="flex items-center gap-3 mb-4">
-                            <span class="bg-blue-600/10 text-blue-600 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-widest">${post.category}</span>
-                            <div class="w-1 h-1 bg-slate-300 rounded-full"></div>
-                            <span class="text-slate-400 text-xs font-bold italic">10 min read</span>
-                        </div>
-                        <h3 class="text-2xl font-black mb-4 leading-tight group-hover:text-blue-600 transition-colors">${post.title}</h3>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed flex-grow line-clamp-2 font-medium">${post.summary}</p>
-                        <div class="flex items-center gap-2 text-blue-600 font-black group-hover:gap-4 transition-all">
-                            تفاصيل الشرح <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                        <span class="text-blue-600 text-xs font-black uppercase tracking-widest mb-3 block">${post.category}</span>
+                        <h3 class="text-xl font-black mb-4 leading-snug">${post.title}</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6 line-clamp-2 font-medium">${post.excerpt}</p>
+                        <div class="mt-auto flex items-center gap-2 text-blue-600 font-bold text-sm">
+                            اقرأ المقال الكامل <i data-lucide="arrow-left" class="w-4 h-4"></i>
                         </div>
                     </div>
                 </div>
@@ -331,48 +226,52 @@
         }
 
         function openArticle(id) {
-            const post = blogPosts.find(p => p.id === id);
-            const content = document.getElementById('article-view-content');
-            
-            content.innerHTML = `
-                <div class="mb-16">
-                    <div class="flex items-center gap-4 mb-8">
-                         <span class="bg-blue-600 text-white px-6 py-2 rounded-2xl text-sm font-black uppercase">${post.category}</span>
-                         <span class="text-slate-400 font-bold">بواسطة GPT HUB • يناير 2026</span>
-                    </div>
-                    <h1 class="text-5xl md:text-7xl font-black mb-10 leading-[1.15] text-slate-900 italic">${post.title}</h1>
-                    <div class="rounded-[3rem] overflow-hidden h-[450px] mb-16 shadow-2xl">
+            const post = posts.find(p => p.id === id);
+            if (!post) return;
+
+            const container = document.getElementById('article-container');
+            container.innerHTML = `
+                <div class="mb-10">
+                    <span class="inline-block px-4 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-black mb-6 uppercase">${post.category}</span>
+                    <h1 class="text-4xl md:text-5xl font-black premium-font leading-tight mb-8">${post.title}</h1>
+                    <div class="w-full h-96 overflow-hidden rounded-3xl shadow-lg mb-12">
                         <img src="${post.image}" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="blog-content">
+                <div class="article-body text-slate-700">
                     ${post.content}
                 </div>
-                <div class="mt-20 p-10 bg-gradient-to-r from-blue-600 to-blue-800 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div>
-                        <h4 class="text-3xl font-black mb-2">هل أعجبك الشرح؟</h4>
-                        <p class="opacity-80 font-bold">اشترك في قناة اليوتيوب ليصلك التطبيق العملي لكل مقال.</p>
+                <div class="mt-16 pt-10 border-t border-slate-100 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-black shadow-lg shadow-blue-200">G</div>
+                        <div>
+                            <div class="font-black">فريق GPT HUB</div>
+                            <div class="text-xs text-slate-400 font-bold">محرر تقني خبير</div>
+                        </div>
                     </div>
-                    <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="bg-white text-blue-600 px-10 py-5 rounded-2xl font-black hover:bg-slate-100 transition shadow-xl">اشترك الآن</a>
+                    <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" class="bg-red-600 text-white px-8 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-red-700 transition shadow-lg shadow-red-200">
+                        <i data-lucide="youtube"></i> متابعة على يوتيوب
+                    </a>
                 </div>
             `;
-
-            const recs = document.getElementById('recommendations');
-            const related = blogPosts.filter(p => p.id !== id).sort(() => 0.5 - Math.random()).slice(0, 4);
-            recs.innerHTML = related.map(r => `
-                <div onclick="openArticle(${r.id})" class="bg-white p-6 rounded-3xl border border-slate-100 hover:border-blue-500 transition-all cursor-pointer group">
-                    <div class="h-32 rounded-2xl overflow-hidden mb-4">
-                        <img src="${r.image}" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="font-black text-slate-800 text-sm leading-snug group-hover:text-blue-600 transition">${r.title}</h4>
-                </div>
-            `).join('');
-
-            showSection('article');
+            
+            document.getElementById('home-view').classList.add('hidden');
+            document.getElementById('article-view').classList.remove('hidden');
+            window.scrollTo(0,0);
             lucide.createIcons();
         }
 
-        window.onload = renderHome;
+        function goToHome() {
+            document.getElementById('article-view').classList.add('hidden');
+            document.getElementById('home-view').classList.remove('hidden');
+            window.scrollTo(0,0);
+        }
+
+        // تهيئة عند التحميل
+        document.addEventListener('DOMContentLoaded', () => {
+            renderPosts();
+            lucide.createIcons();
+        });
     </script>
 </body>
 </html>
