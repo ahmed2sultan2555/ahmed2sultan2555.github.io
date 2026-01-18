@@ -3,152 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- كود التحقق من جوجل أدسنس (AdSense) -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
-    
-    <title>GPT HUB | المنصة التقنية المتكاملة</title>
-    
-    <!-- مكتبة Tailwind CSS للتصميم -->
+    <title>GPT HUB | موسوعة التقنية والربح</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- خط القاهرة من جوجل -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Cairo', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
-        .hero-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-        .app-card { transition: all 0.3s ease; }
-        .app-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        .blog-image { background: linear-gradient(45deg, #3b82f6, #06b6d4); height: 160px; display: flex; align-items: center; justify-content: center; color: white; border-radius: 15px 15px 0 0; }
+        .article-content { display: none; }
+        .article-content.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
     </style>
 </head>
 <body class="text-slate-900">
 
-    <!-- القائمة العلوية -->
-    <header class="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black tracking-tighter">GPT <span class="text-blue-500">HUB</span></div>
-            <nav class="hidden md:flex gap-8 font-bold items-center text-sm">
-                <a href="#" class="hover:text-blue-400 transition">الرئيسية</a>
-                <a href="https://gpthub21.blogspot.com" target="_blank" class="hover:text-blue-400 transition">مدونة بلوجر</a>
-                <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="bg-red-600 px-5 py-2 rounded-full hover:bg-red-700 transition">يوتيوب</a>
+            <div class="flex items-center gap-2 cursor-pointer" onclick="showHome()">
+                <div class="bg-blue-600 p-2 rounded-xl text-white"><i data-lucide="layout-grid" class="w-6 h-6"></i></div>
+                <span class="text-2xl font-black text-slate-800 tracking-tighter">GPT HUB</span>
+            </div>
+            <nav class="hidden md:flex gap-8 font-bold items-center">
+                <a href="javascript:void(0)" onclick="showHome()" class="text-blue-600">الرئيسية</a>
+                <a href="https://gpthub21.blogspot.com" target="_blank" class="hover:text-blue-600 transition">مدونة بلوجر</a>
+                <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="text-red-600 flex items-center gap-1 hover:scale-105 transition"><i data-lucide="youtube" class="w-5 h-5"></i> اليوتيوب</a>
             </nav>
         </div>
     </header>
 
-    <!-- قسم الترحيب الرئيسي -->
-    <section class="hero-bg text-white py-24 text-center">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl md:text-6xl font-black mb-6">GPT HUB <span class="text-blue-500">للمعلوماتية</span></h1>
-            <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10">منصة متخصصة في تطوير تطبيقات الأندرويد، استراتيجيات الربح من AdMob، وشروحات التقنية الحديثة.</p>
-            <div class="flex flex-wrap justify-center gap-4 font-bold">
-                <a href="#apps" class="bg-blue-600 px-10 py-4 rounded-2xl hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">تطبيقاتنا</a>
-                <a href="https://ahmed2sultan2555.github.io/website/ads.txt" class="bg-slate-800 border border-slate-700 px-10 py-4 rounded-2xl hover:bg-slate-700 transition">ملف ads.txt</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- مساحة إعلانية لأدسنس -->
-    <div class="container mx-auto px-6 py-12 text-center">
-        <div class="bg-white p-4 rounded-2xl border border-slate-200">
-            <p class="text-gray-400 text-[10px] mb-2 uppercase">مساحة إعلانية</p>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-7137238144396709"
-                 data-ad-slot="auto"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        </div>
-    </div>
-
-    <!-- قسم التطبيقات المطور -->
-    <section id="apps" class="py-20 container mx-auto px-6">
-        <h2 class="text-4xl font-black mb-16 text-center">تطبيقاتنا الاحترافية</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- App 1 -->
-            <div class="app-card bg-white p-8 rounded-[30px] border border-slate-100 text-center">
-                <div class="text-5xl mb-6">🧠</div>
-                <h3 class="text-2xl font-black mb-4 uppercase">Memory Master</h3>
-                <p class="text-slate-500 mb-8 text-sm leading-relaxed">أفضل تطبيق لتدريب الذاكرة، مدمج بأحدث تقنيات الإعلانات الذكية.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" class="block bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-blue-600 transition">تحميل Play Store</a>
-            </div>
-            <!-- App 2 -->
-            <div class="app-card bg-white p-8 rounded-[30px] border border-slate-100 text-center">
-                <div class="text-5xl mb-6">🚗</div>
-                <h3 class="text-2xl font-black mb-4 uppercase">Auto Care</h3>
-                <p class="text-slate-500 mb-8 text-sm leading-relaxed">تطبيق شامل لمتابعة صيانة السيارات وجدول تغيير الزيوت بدقة.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" class="block bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-blue-600 transition">تحميل Play Store</a>
-            </div>
-            <!-- App 3 -->
-            <div class="app-card bg-white p-8 rounded-[30px] border border-slate-100 text-center">
-                <div class="text-5xl mb-6">🔢</div>
-                <h3 class="text-2xl font-bold mb-4">أكاديمية الأرقام</h3>
-                <p class="text-slate-500 mb-8 text-sm leading-relaxed">تطبيق تعليمي تفاعلي للأطفال لتعليم الحساب بطريقة ممتعة وشيقة.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" class="block bg-slate-900 text-white py-3 rounded-xl font-bold hover:bg-blue-600 transition">تحميل Play Store</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المدونة الحقيقي والمنظم -->
-    <section class="py-20 bg-slate-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-black mb-16 text-center">أحدث المقالات التقنية</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Post 1 -->
-                <div class="bg-white rounded-[25px] shadow-sm overflow-hidden app-card border border-slate-200">
-                    <div class="blog-image">
-                        <span class="text-3xl font-bold font-mono">ADS.TXT</span>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-blue-600 text-xs font-bold uppercase tracking-widest">شروحات أدسنس</span>
-                        <h4 class="text-xl font-black mt-3 mb-4">حل مشكلة 404 في ملف الإعلانات</h4>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">دليلك الكامل لوضع ملف ads.txt في جيت هب بشكل صحيح لتجنب أخطاء الأرشفة.</p>
-                        <a href="https://gpthub21.blogspot.com" class="text-slate-900 font-bold hover:text-blue-600 transition underline underline-offset-8 decoration-2 decoration-blue-500">اقرأ الشرح الكامل</a>
+    <main id="main-content">
+        <!-- Home Section -->
+        <section id="home-view" class="active-view">
+            <!-- Hero -->
+            <section class="hero-gradient text-white py-24 text-center">
+                <div class="container mx-auto px-6">
+                    <h1 class="text-5xl md:text-7xl font-black mb-6">احترف <span class="text-blue-500">الأندرويد</span> والربح</h1>
+                    <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">تعلم أسرار AdMob، تطوير التطبيقات، وسيو بلوجر مع أحمد سلطان.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://ahmed2sultan2555.github.io/website/ads.txt" target="_blank" class="bg-white/10 border border-white/20 px-8 py-3 rounded-2xl font-bold hover:bg-white/20 transition">فحص ads.txt</a>
+                        <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="bg-red-600 px-8 py-3 rounded-2xl font-bold hover:bg-red-700 transition">اشترك في القناة</a>
                     </div>
                 </div>
-                <!-- Post 2 -->
-                <div class="bg-white rounded-[25px] shadow-sm overflow-hidden app-card border border-slate-200">
-                    <div class="blog-image" style="background: linear-gradient(45deg, #f59e0b, #ef4444);">
-                        <span class="text-3xl font-bold font-mono">ADMOB</span>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-orange-600 text-xs font-bold uppercase tracking-widest">الربح من التطبيقات</span>
-                        <h4 class="text-xl font-black mt-3 mb-4">أسرار رفع أرباح ادموب لعام 2025</h4>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">استراتيجيات وضع الإعلانات لرفع عائد الـ eCPM وتحقيق دخل مادي مستقر من تطبيقاتك.</p>
-                        <a href="https://gpthub21.blogspot.com" class="text-slate-900 font-bold hover:text-blue-600 transition underline underline-offset-8 decoration-2 decoration-orange-500">اقرأ الشرح الكامل</a>
-                    </div>
-                </div>
-                <!-- Post 3 -->
-                <div class="bg-white rounded-[25px] shadow-sm overflow-hidden app-card border border-slate-200">
-                    <div class="blog-image" style="background: linear-gradient(45deg, #8b5cf6, #d946ef);">
-                        <span class="text-3xl font-bold font-mono">SEO</span>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-purple-600 text-xs font-bold uppercase tracking-widest">تحسين المواقع</span>
-                        <h4 class="text-xl font-black mt-3 mb-4">تصدر نتائج البحث في مدونة بلوجر</h4>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">كيف تختار الكلمات المفتاحية وتهيئ مقالاتك لتظهر في النتائج الأولى لجوجل مجاناً.</p>
-                        <a href="https://gpthub21.blogspot.com" class="text-slate-900 font-bold hover:text-blue-600 transition underline underline-offset-8 decoration-2 decoration-purple-500">اقرأ الشرح الكامل</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- الفوتر (أسفل الصفحة) -->
-    <footer class="bg-slate-900 text-slate-400 py-20 text-center border-t border-slate-800">
-        <div class="container mx-auto px-6">
-            <div class="text-white text-3xl font-black mb-8">GPT HUB</div>
-            <div class="flex flex-wrap justify-center gap-10 font-bold text-sm mb-12 uppercase tracking-widest">
-                <a href="privacy.html" class="hover:text-white transition">سياسة الخصوصية</a>
-                <a href="https://ahmed2sultan2555.github.io/website/ads.txt" class="hover:text-white transition">فحص ads.txt</a>
-                <a href="https://www.youtube.com/@AhmedSultan-Tech" class="hover:text-white transition">اليوتيوب</a>
+            <!-- Articles Grid -->
+            <section class="py-20 container mx-auto px-6">
+                <h2 class="text-3xl font-black mb-12 flex items-center gap-3"><i data-lucide="book-open" class="text-blue-600"></i> أحدث الدروس</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-200 hover:shadow-xl transition cursor-pointer" onclick="showArticle('art1')">
+                        <div class="h-40 bg-blue-100 rounded-2xl mb-6 flex items-center justify-center text-blue-600"><i data-lucide="file-text" class="w-12 h-12"></i></div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug">دليل الربح من ادموب 2026: رفع الـ eCPM</h3>
+                        <p class="text-slate-500 text-sm mb-4">تعلم كيف تضاعف أرباح تطبيقك من خلال اختيار الوحدات الإعلانية الصحيحة...</p>
+                        <span class="text-blue-600 font-bold flex items-center gap-2">اقرأ المزيد <i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-200 hover:shadow-xl transition cursor-pointer" onclick="showArticle('art2')">
+                        <div class="h-40 bg-orange-100 rounded-2xl mb-6 flex items-center justify-center text-orange-600"><i data-lucide="code-2" class="w-12 h-12"></i></div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug">إعداد ads.txt في جيت هب بدون أخطاء</h3>
+                        <p class="text-slate-500 text-sm mb-4">تجنب رسالة "أرباحك في خطر" من خلال ضبط المسار الصحيح لملف الإعلانات...</p>
+                        <span class="text-blue-600 font-bold flex items-center gap-2">اقرأ المزيد <i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="bg-white p-6 rounded-[2rem] shadow-sm border border-slate-200 hover:shadow-xl transition cursor-pointer" onclick="showArticle('art3')">
+                        <div class="h-40 bg-green-100 rounded-2xl mb-6 flex items-center justify-center text-green-600"><i data-lucide="search" class="w-12 h-12"></i></div>
+                        <h3 class="text-xl font-bold mb-3 leading-snug">أسرار SEO بلوجر لتصدر نتائج البحث</h3>
+                        <p class="text-slate-500 text-sm mb-4">كيف تجعل مدونتك في النتيجة الأولى لجوجل من خلال الكلمات المفتاحية...</p>
+                        <span class="text-blue-600 font-bold flex items-center gap-2">اقرأ المزيد <i data-lucide="arrow-left" class="w-4 h-4"></i></span>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Article View (Content) -->
+        <section id="article-view" class="hidden container mx-auto px-6 py-12 max-w-4xl">
+            <button onclick="showHome()" class="flex items-center gap-2 text-slate-500 font-bold mb-8 hover:text-blue-600"><i data-lucide="arrow-right"></i> العودة للرئيسية</button>
+            
+            <div id="art1" class="article-content">
+                <h1 class="text-4xl font-black mb-8 leading-tight">دليل الربح من ادموب 2026: كيف ترفع عائد الألف ظهور eCPM</h1>
+                <div class="prose prose-lg text-slate-700 leading-relaxed space-y-6">
+                    <p>يعتبر الـ eCPM هو المحرك الأساسي لأرباحك في ادموب. لكي ترفعه، يجب عليك التركيز على استراتيجية "الإعلانات البينية" (Interstitial) وتجربة المستخدم.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-8">خطوات عملية:</h3>
+                    <ul class="list-disc pr-6 space-y-2">
+                        <li>استخدم إعلانات "فتح التطبيق" (App Open Ads) فهي تحقق أعلى عائد حالياً.</li>
+                        <li>قم بتقليل عدد مرات ظهور الإعلانات المزعجة للحفاظ على بقاء المستخدم لفترة أطول.</li>
+                        <li>استهدف الدول ذات العائد المرتفع مثل أمريكا وأوروبا من خلال ترجمة تطبيقك.</li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-[10px] opacity-30 mb-4 tracking-widest uppercase">Publisher ID: ca-pub-7137238144396709</p>
-            <p class="text-sm font-medium">© 2025 جميع الحقوق محفوظة لـ GPT HUB</p>
+
+            <div id="art2" class="article-content">
+                <h1 class="text-4xl font-black mb-8 leading-tight">إعداد ملف ads.txt في GitHub Pages باحترافية</h1>
+                <div class="prose prose-lg text-slate-700 leading-relaxed space-y-6">
+                    <p>الكثير من المطورين يقعون في خطأ وضع الملف في مسار خاطئ مما يسبب ظهور خطأ 404.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-8">الطريقة الصحيحة:</h3>
+                    <ol class="list-decimal pr-6 space-y-2">
+                        <li>قم بإنشاء ملف باسم <b>ads.txt</b> في المجلد الرئيسي (Root) لمستودعك.</li>
+                        <li>تأكد أن الرابط هو <code class="bg-slate-100 p-1">username.github.io/repo/ads.txt</code> مباشرة.</li>
+                        <li>انتظر من 24 إلى 48 ساعة حتى يقوم جوجل بالزحف للملف.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="art3" class="article-content">
+                <h1 class="text-4xl font-black mb-8 leading-tight">أسرار SEO بلوجر لتصدر نتائج البحث في جوجل</h1>
+                <div class="prose prose-lg text-slate-700 leading-relaxed space-y-6">
+                    <p>التدوين ليس مجرد كتابة كلمات، بل هو فن إقناع محركات البحث بمحتواك.</p>
+                    <h3 class="text-2xl font-bold text-slate-900 mt-8">نصائح ذهبية:</h3>
+                    <ul class="list-disc pr-6 space-y-2">
+                        <li>ركز على العنوان (H1) بحيث يحتوي على الكلمة المفتاحية في البداية.</li>
+                        <li>اهتم بضغط الصور لتسريع تحميل الصفحة، فجوجل يحب المواقع السريعة.</li>
+                        <li>قم بعمل روابط داخلية بين مقالاتك لزيادة قوة الأرشفة.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800 text-center">
+        <div class="container mx-auto px-6">
+            <div class="text-white text-3xl font-black mb-6">GPT HUB</div>
+            <div class="flex flex-wrap justify-center gap-8 mb-10 font-bold">
+                <a href="https://gpthub21.blogspot.com" target="_blank" class="hover:text-white transition">بلوجر</a>
+                <a href="https://www.youtube.com/@AhmedSultan-Tech" target="_blank" class="hover:text-white transition">يوتيوب</a>
+                <a href="https://ahmed2sultan2555.github.io/website/ads.txt" class="hover:text-white transition">ads.txt</a>
+            </div>
+            <p class="text-xs opacity-40 mb-4">ID: ca-pub-7137238144396709</p>
+            <p>© 2026 جميع الحقوق محفوظة لأحمد سلطان - GPT HUB</p>
         </div>
     </footer>
 
+    <script>
+        lucide.createIcons();
+
+        function showArticle(id) {
+            document.getElementById('home-view').classList.add('hidden');
+            document.getElementById('article-view').classList.remove('hidden');
+            document.querySelectorAll('.article-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('home-view').classList.remove('hidden');
+            document.getElementById('article-view').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+    </script>
 </body>
 </html>
