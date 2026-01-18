@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://ahmed2sultan2555.github.io/website/sitemap.xml
