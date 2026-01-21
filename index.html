@@ -3,24 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي</title>
-    <meta name="description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Canonical Tag -->
-    <link rel="canonical" href="https://yourdomain.com/">
+    <!-- SEO Meta Tags -->
+    <title>موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي</title>
+    <meta name="description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات. أكثر من 30 مقالاً تقنياً متخصصاً وتطبيقات ذكية مبتكرة.">
+    <meta name="keywords" content="برمجة, ذكاء اصطناعي, تطبيقات أندرويد, تطوير ويب, GPT, دروس برمجة">
+    <meta name="author" content="GPT HUB">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Canonical & Alternate -->
+    <link rel="canonical" href="https://ahmed2sultan2555.github.io/website/">
     
     <!-- Open Graph -->
+    <meta property="og:locale" content="ar_AR">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي">
     <meta property="og:description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:url" content="https://ahmed2sultan2555.github.io/website/">
+    <meta property="og:site_name" content="GPT HUB">
+    <meta property="og:image" content="https://ahmed2sultan2555.github.io/website/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي">
+    <meta name="twitter:description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات">
+    <meta name="twitter:image" content="https://ahmed2sultan2555.github.io/website/og-image.jpg">
     
     <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-7137238144396709">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
     
-    <!-- Frameworks -->
+    <!-- Frameworks & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -45,6 +64,18 @@
         
         .cairo { font-family: 'Cairo', sans-serif; }
         
+        /* Page Transitions */
+        .page { display: none; }
+        .page.active { 
+            display: block; 
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         /* Navigation */
         .glass-nav {
             background: rgba(255, 255, 255, 0.98);
@@ -63,10 +94,7 @@
         .hero-gradient::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
@@ -95,22 +123,14 @@
             transition: opacity 0.5s;
         }
         
-        .article-card:hover::before {
-            opacity: 1;
-        }
-        
+        .article-card:hover::before { opacity: 1; }
         .article-card:hover {
             transform: translateY(-12px) scale(1.02);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         
-        .article-card img {
-            transition: transform 0.7s ease;
-        }
-        
-        .article-card:hover img {
-            transform: scale(1.15);
-        }
+        .article-card img { transition: transform 0.7s ease; }
+        .article-card:hover img { transform: scale(1.15); }
         
         /* Category Badge */
         .category-badge {
@@ -126,16 +146,23 @@
             padding: 20px;
             margin: 30px 0;
             text-align: center;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        /* Content */
-        .content-body {
-            line-height: 2.2;
+        /* Article Content */
+        .article-content {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            margin: 20px 0;
+            line-height: 2;
             font-size: 1.125rem;
-            color: #1e293b;
         }
         
-        .content-body h2 {
+        .article-content h2 {
             font-family: 'Cairo', sans-serif;
             font-weight: 900;
             font-size: 2rem;
@@ -144,16 +171,51 @@
             padding-right: 20px;
             border-right: 6px solid;
             border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
-            position: relative;
         }
         
-        .content-body p {
+        .article-content h3 {
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin: 2rem 0 1rem;
+        }
+        
+        .article-content p {
             margin-bottom: 1.5rem;
+            color: #334155;
         }
         
-        .content-body strong {
+        .article-content strong {
             color: #2563eb;
             font-weight: 700;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1.5rem 0;
+            padding-right: 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.75rem;
+            color: #475569;
+        }
+        
+        .article-content code {
+            background: #f1f5f9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #dc2626;
+        }
+        
+        .article-content pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
         }
         
         /* App Cards */
@@ -171,19 +233,14 @@
         .app-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
             background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
             transform: rotate(45deg);
             transition: all 0.6s;
         }
         
-        .app-card:hover::before {
-            left: 100%;
-        }
-        
+        .app-card:hover::before { left: 100%; }
         .app-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
@@ -200,9 +257,20 @@
             align-items: center;
             gap: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
         }
         
-        /* Loading Animation */
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 9999;
+            transition: width 0.1s;
+        }
+        
+        /* Loading Skeleton */
         .skeleton {
             background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
             background-size: 200% 100%;
@@ -215,31 +283,14 @@
             100% { background-position: -200% 0; }
         }
         
-        /* Floating Elements */
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        /* Scroll Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            z-index: 9999;
-            transition: width 0.1s;
-        }
-        
         /* Responsive */
         @media (max-width: 768px) {
-            .content-body { font-size: 1rem; }
-            .content-body h2 { font-size: 1.5rem; }
+            .article-content { 
+                padding: 20px; 
+                font-size: 1rem; 
+            }
+            .article-content h2 { font-size: 1.5rem; }
+            .article-content h3 { font-size: 1.25rem; }
         }
     </style>
 </head>
@@ -251,7 +302,7 @@
     <nav class="sticky top-0 z-50 glass-nav">
         <div class="container mx-auto px-4 py-4">
             <div class="flex justify-between items-center">
-                <a href="/" class="flex items-center gap-3 group">
+                <a href="#" onclick="navigateTo('home')" class="flex items-center gap-3 group">
                     <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
                         <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
@@ -262,19 +313,19 @@
                 </a>
                 
                 <div class="hidden md:flex items-center gap-6">
-                    <a href="/" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">الرئيسية</a>
-                    <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="nav-link font-bold text-slate-700 hover:text-orange-600 transition-colors flex items-center gap-1">
+                    <a href="#" onclick="navigateTo('home')" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">الرئيسية</a>
+                    <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="nav-link font-bold text-slate-700 hover:text-orange-600 transition-colors flex items-center gap-1">
                         <i data-lucide="book-open" class="w-4 h-4"></i>
                         بلوجر
                     </a>
-                    <a href="#apps" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">التطبيقات</a>
-                    <a href="#blog" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">المقالات</a>
-                    <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">الخصوصية</a>
-                    <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-full font-bold hover:from-green-700 hover:to-emerald-700 transition-all hover:scale-105">
+                    <a href="#" onclick="navigateTo('apps')" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">التطبيقات</a>
+                    <a href="#" onclick="navigateTo('blog')" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">المقالات</a>
+                    <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener noreferrer" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">الخصوصية</a>
+                    <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-full font-bold hover:from-green-700 hover:to-emerald-700 transition-all hover:scale-105">
                         <i data-lucide="users" class="w-4 h-4"></i>
                         المختبرين
                     </a>
-                    <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full font-bold hover:bg-red-700 transition-all hover:scale-105">
+                    <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full font-bold hover:bg-red-700 transition-all hover:scale-105">
                         <i data-lucide="youtube" class="w-4 h-4"></i>
                         يوتيوب
                     </a>
@@ -290,97 +341,164 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
         <div class="container mx-auto px-4 py-4 space-y-3">
-            <a href="/" class="block font-bold text-slate-700 hover:text-blue-600 py-2">الرئيسية</a>
-            <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="block font-bold text-slate-700 hover:text-orange-600 py-2 flex items-center gap-2">
+            <a href="#" onclick="navigateTo('home'); toggleMenu();" class="block font-bold text-slate-700 hover:text-blue-600 py-2">الرئيسية</a>
+            <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="block font-bold text-slate-700 hover:text-orange-600 py-2 flex items-center gap-2">
                 <i data-lucide="book-open" class="w-4 h-4"></i>
                 بلوجر
             </a>
-            <a href="#apps" class="block font-bold text-slate-700 hover:text-blue-600 py-2">التطبيقات</a>
-            <a href="#blog" class="block font-bold text-slate-700 hover:text-blue-600 py-2">المقالات</a>
-            <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener" class="block font-bold text-slate-700 hover:text-blue-600 py-2">الخصوصية</a>
-            <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="block font-bold text-green-600 hover:text-green-700 py-2 flex items-center gap-2">
-                <i data-lucide="users" class="w-4 h-4"></i>
-                المختبرين
-            </a>
-            <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="block font-bold text-red-600 hover:text-red-700 py-2 flex items-center gap-2">
-                <i data-lucide="youtube" class="w-4 h-4"></i>
-                يوتيوب
-            </a>
+            <a href="#" onclick="navigateTo('apps'); toggleMenu();" class="block font-bold text-slate-700 hover:text-blue-600 py-2">التطبيقات</a>
+            <a href="#" onclick="navigateTo('blog'); toggleMenu();" class="block font-bold text-slate-700 hover:text-blue-600 py-2">المقالات</a>
+            <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener noreferrer" class="block font-bold text-slate-700 hover:text-blue-600 py-2">الخصوصية</a>
         </div>
     </div>
 
     <!-- Main Content -->
     <main id="app-content" class="min-h-screen pb-20">
         
-        <!-- Hero Section -->
-        <section class="hero-gradient text-white py-20 relative">
-            <div class="container mx-auto px-4 text-center relative z-10">
-                <div class="inline-block mb-6 animate-bounce">
-                    <div class="w-20 h-20 bg-white/20 backdrop-blur-lg rounded-3xl flex items-center justify-center">
-                        <i data-lucide="sparkles" class="w-10 h-10"></i>
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="hero-gradient text-white py-20 relative">
+                <div class="container mx-auto px-4 text-center relative z-10">
+                    <div class="inline-block mb-6 animate-bounce">
+                        <div class="w-20 h-20 bg-white/20 backdrop-blur-lg rounded-3xl flex items-center justify-center">
+                            <i data-lucide="sparkles" class="w-10 h-10"></i>
+                        </div>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black cairo mb-6 leading-tight">
+                        بوابتك لعالم <br><span class="text-yellow-300">التقنية الذكية</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+                        استكشف أكثر من 30 مقالاً متخصصاً في البرمجة والذكاء الاصطناعي وتطوير التطبيقات
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" onclick="navigateTo('blog')" class="bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-2xl">
+                            تصفح المقالات
+                        </a>
+                        <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="bg-orange-500 text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-2xl">
+                            مدونة بلوجر
+                        </a>
+                        <a href="#" onclick="navigateTo('apps')" class="bg-white/20 backdrop-blur-lg text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform border-2 border-white/50">
+                            تطبيقاتنا
+                        </a>
                     </div>
                 </div>
-                <h2 class="text-4xl md:text-6xl font-black cairo mb-6 leading-tight">
-                    بوابتك لعالم <br><span class="text-yellow-300">التقنية الذكية</span>
-                </h2>
-                <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                    استكشف أكثر من 30 مقالاً متخصصاً في البرمجة والذكاء الاصطناعي وتطوير التطبيقات
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#blog" class="bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-2xl">
-                        تصفح المقالات
-                    </a>
-                    <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="bg-orange-500 text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-2xl">
-                        مدونة بلوجر
-                    </a>
-                    <a href="#apps" class="bg-white/20 backdrop-blur-lg text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform border-2 border-white/50">
-                        تطبيقاتنا
-                    </a>
+            </section>
+
+            <!-- Top Ad -->
+            <div class="container mx-auto px-4 mt-8">
+                <div class="ad-container">
+                    <ins class="adsbygoogle" 
+                         style="display:block" 
+                         data-ad-client="ca-pub-7137238144396709" 
+                         data-ad-slot="1234567890" 
+                         data-ad-format="auto" 
+                         data-full-width-responsive="true"></ins>
                 </div>
             </div>
-        </section>
 
-        <!-- Top Ad -->
-        <div class="container mx-auto px-4 mt-8">
-            <div class="ad-container">
-                <ins class="adsbygoogle" 
-                     style="display:block" 
-                     data-ad-client="ca-pub-7137238144396709" 
-                     data-ad-slot="9876543210" 
-                     data-ad-format="auto" 
-                     data-full-width-responsive="true"></ins>
-                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-            </div>
+            <!-- Featured Apps Section -->
+            <section class="container mx-auto px-4 mt-16">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-black cairo mb-4">تطبيقاتنا المميزة</h3>
+                    <p class="text-white text-lg">تطبيقات ذكية مدعومة بالذكاء الاصطناعي</p>
+                </div>
+                <div id="featured-apps" class="grid md:grid-cols-3 gap-8"></div>
+            </section>
+
+            <!-- Latest Articles Preview -->
+            <section class="container mx-auto px-4 mt-20">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-black cairo mb-4 text-white">أحدث المقالات</h3>
+                    <p class="text-white/80 text-lg">محتوى تقني حصري ومتجدد</p>
+                </div>
+                <div id="home-posts" class="grid md:grid-cols-3 gap-8"></div>
+                <div class="text-center mt-12">
+                    <a href="#" onclick="navigateTo('blog')" class="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-lg">
+                        عرض جميع المقالات
+                    </a>
+                </div>
+            </section>
         </div>
 
-        <!-- Featured Apps Section -->
-        <section id="apps" class="container mx-auto px-4 mt-16">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-black cairo mb-4">تطبيقاتنا المميزة</h3>
-                <p class="text-slate-600 text-lg">تطبيقات ذكية مدعومة بالذكاء الاصطناعي</p>
-            </div>
-            <div id="featured-apps" class="grid md:grid-cols-3 gap-8"></div>
-        </section>
+        <!-- Apps Page -->
+        <div id="apps-page" class="page">
+            <section class="container mx-auto px-4 py-12">
+                <div class="breadcrumb mb-8">
+                    <a href="#" onclick="navigateTo('home')" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
+                    <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
+                    <span class="font-bold text-slate-900">التطبيقات</span>
+                </div>
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-black cairo mb-4 text-white">تطبيقاتنا المميزة</h2>
+                    <p class="text-white/80 text-lg">تطبيقات ذكية مدعومة بالذكاء الاصطناعي</p>
+                </div>
+                
+                <div id="all-apps" class="grid md:grid-cols-3 gap-8"></div>
+            </section>
+        </div>
 
-        <!-- Latest Articles -->
-        <section id="blog" class="container mx-auto px-4 mt-20">
-            <div class="text-center mb-12">
-                <h3 class="text-3xl md:text-4xl font-black cairo mb-4">أحدث المقالات</h3>
-                <p class="text-slate-600 text-lg">محتوى تقني حصري ومتجدد</p>
-            </div>
-            
-            <!-- Category Filter -->
-            <div class="flex flex-wrap gap-3 justify-center mb-12" id="category-filter"></div>
-            
-            <div id="latest-posts" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-            
-            <!-- Load More Button -->
-            <div class="text-center mt-12">
-                <button onclick="loadMorePosts()" id="load-more-btn" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-lg">
-                    عرض المزيد من المقالات
-                </button>
-            </div>
-        </section>
+        <!-- Blog Page -->
+        <div id="blog-page" class="page">
+            <section class="container mx-auto px-4 py-12">
+                <div class="breadcrumb mb-8">
+                    <a href="#" onclick="navigateTo('home')" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
+                    <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
+                    <span class="font-bold text-slate-900">المقالات</span>
+                </div>
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-black cairo mb-4 text-white">مكتبة المقالات التقنية</h2>
+                    <p class="text-white/80 text-lg">محتوى تقني شامل في جميع المجالات</p>
+                </div>
+                
+                <!-- Category Filter -->
+                <div class="flex flex-wrap gap-3 justify-center mb-12" id="category-filter"></div>
+                
+                <!-- Ad Between -->
+                <div class="ad-container mb-8">
+                    <ins class="adsbygoogle" 
+                         style="display:block" 
+                         data-ad-client="ca-pub-7137238144396709" 
+                         data-ad-slot="2345678901" 
+                         data-ad-format="auto" 
+                         data-full-width-responsive="true"></ins>
+                </div>
+                
+                <div id="all-posts" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+                
+                <div class="text-center mt-12">
+                    <button onclick="loadMorePosts()" id="load-more-btn" class="bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-lg">
+                        عرض المزيد من المقالات
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Article Page -->
+        <div id="article-page" class="page">
+            <section class="container mx-auto px-4 py-12">
+                <div id="article-breadcrumb" class="breadcrumb mb-8"></div>
+                <div id="article-content"></div>
+                
+                <!-- Ad After Article -->
+                <div class="ad-container">
+                    <ins class="adsbygoogle" 
+                         style="display:block" 
+                         data-ad-client="ca-pub-7137238144396709" 
+                         data-ad-slot="3456789012" 
+                         data-ad-format="auto" 
+                         data-full-width-responsive="true"></ins>
+                </div>
+                
+                <!-- Related Articles -->
+                <div class="mt-12">
+                    <h3 class="text-2xl font-black cairo mb-6 text-white">مقالات ذات صلة</h3>
+                    <div id="related-posts" class="grid md:grid-cols-3 gap-6"></div>
+                </div>
+            </section>
+        </div>
 
     </main>
 
@@ -401,11 +519,11 @@
                 <div>
                     <h4 class="font-bold mb-6 text-lg">روابط سريعة</h4>
                     <ul class="space-y-3">
-                        <li><a href="/" class="text-slate-400 hover:text-blue-400 transition-colors">الرئيسية</a></li>
-                        <li><a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="text-slate-400 hover:text-orange-400 transition-colors">مدونة بلوجر</a></li>
-                        <li><a href="#blog" class="text-slate-400 hover:text-blue-400 transition-colors">المقالات</a></li>
-                        <li><a href="#apps" class="text-slate-400 hover:text-blue-400 transition-colors">التطبيقات</a></li>
-                        <li><a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener" class="text-slate-400 hover:text-blue-400 transition-colors">سياسة الخصوصية</a></li>
+                        <li><a href="#" onclick="navigateTo('home')" class="text-slate-400 hover:text-blue-400 transition-colors">الرئيسية</a></li>
+                        <li><a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-orange-400 transition-colors">مدونة بلوجر</a></li>
+                        <li><a href="#" onclick="navigateTo('blog')" class="text-slate-400 hover:text-blue-400 transition-colors">المقالات</a></li>
+                        <li><a href="#" onclick="navigateTo('apps')" class="text-slate-400 hover:text-blue-400 transition-colors">التطبيقات</a></li>
+                        <li><a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors">سياسة الخصوصية</a></li>
                     </ul>
                 </div>
                 
@@ -413,19 +531,19 @@
                     <h4 class="font-bold mb-6 text-lg">تابعنا</h4>
                     <ul class="space-y-3">
                         <li>
-                            <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="text-slate-400 hover:text-red-400 transition-colors flex items-center gap-2">
+                            <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-red-400 transition-colors flex items-center gap-2">
                                 <i data-lucide="youtube" class="w-4 h-4"></i>
                                 قناة Inspiring Voices
                             </a>
                         </li>
                         <li>
-                            <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="text-slate-400 hover:text-orange-400 transition-colors flex items-center gap-2">
+                            <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-orange-400 transition-colors flex items-center gap-2">
                                 <i data-lucide="book-open" class="w-4 h-4"></i>
                                 مدونة بلوجر
                             </a>
                         </li>
                         <li>
-                            <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="text-slate-400 hover:text-green-400 transition-colors flex items-center gap-2">
+                            <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-green-400 transition-colors flex items-center gap-2">
                                 <i data-lucide="users" class="w-4 h-4"></i>
                                 مجموعة المختبرين
                             </a>
@@ -437,9 +555,8 @@
                     <ins class="adsbygoogle" 
                          style="display:block" 
                          data-ad-client="ca-pub-7137238144396709" 
-                         data-ad-slot="1122334455" 
+                         data-ad-slot="4567890123" 
                          data-ad-format="rectangle"></ins>
-                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
             </div>
             
@@ -456,7 +573,7 @@
         // Configuration
         const CONFIG = {
             adsenseId: 'ca-pub-7137238144396709',
-            baseUrl: window.location.origin,
+            baseUrl: 'https://ahmed2sultan2555.github.io/website/',
             categories: ['برمجة', 'ذكاء اصطناعي', 'تطبيقات', 'أمان سيبراني', 'تطوير ويب', 'قواعد بيانات'],
             imageCategories: {
                 'برمجة': 'photo-1461749280684-dccba630e2f6',
@@ -511,7 +628,12 @@
             'بناء تطبيقات Flutter الاحترافية',
             'أمان التطبيقات: الدليل الكامل',
             'قواعد البيانات الموزعة وتطبيقاتها',
-            'تطوير واجهات المستخدم بمعايير Material Design'
+            'تطوير واجهات المستخدم بمعايير Material Design',
+            'تعلم Kotlin للمبتدئين: من الصفر للاحتراف',
+            'إدارة الحالة في React Native',
+            'تحسين أداء تطبيقات الويب',
+            'الأمن السيبراني للمطورين',
+            'MongoDB vs PostgreSQL: أيهما تختار؟'
         ];
 
         for (let i = 0; i < 30; i++) {
@@ -523,22 +645,146 @@
                 imageId: CONFIG.imageCategories[category] || 'photo-1518770660439-4636190af475',
                 summary: `استكشف أحدث التقنيات والأدوات في مجال ${category} مع دروس عملية وأمثلة تطبيقية شاملة تساعدك على تطوير مهاراتك البرمجية`,
                 date: new Date(2026, 0, Math.floor(Math.random() * 18) + 1).toLocaleDateString('ar-EG'),
-                readTime: `${Math.floor(Math.random() * 10) + 5} دقائق`
+                readTime: `${Math.floor(Math.random() * 10) + 5} دقائق`,
+                content: generateArticleContent(category, i)
             });
         }
 
+        // Generate Article Content
+        function generateArticleContent(category, index) {
+            return `
+                <h2>مقدمة حول ${category}</h2>
+                <p>في عالم التقنية المتسارع، يُعد ${category} من أهم المجالات التي تشهد تطوراً مستمراً. في هذا المقال، سنستكشف أحدث التقنيات والممارسات الفضلى في هذا المجال.</p>
+                
+                <h2>أهمية ${category} في 2026</h2>
+                <p>أصبح ${category} أكثر أهمية من أي وقت مضى، حيث تعتمد عليه الشركات والمؤسسات في تحقيق أهدافها التقنية. من خلال هذا المقال، سنتعرف على:</p>
+                <ul>
+                    <li>أحدث الأدوات والتقنيات المستخدمة</li>
+                    <li>أفضل الممارسات للمطورين المحترفين</li>
+                    <li>نصائح عملية لتحسين الأداء</li>
+                    <li>أمثلة تطبيقية من مشاريع حقيقية</li>
+                </ul>
+                
+                <h3>الأدوات الأساسية</h3>
+                <p>لتحقيق النجاح في ${category}، تحتاج إلى معرفة الأدوات المناسبة. إليك قائمة بأهم الأدوات:</p>
+                <ol>
+                    <li>أدوات التطوير الحديثة</li>
+                    <li>منصات الاختبار والنشر</li>
+                    <li>أدوات مراقبة الأداء</li>
+                    <li>أنظمة إدارة النسخ</li>
+                </ol>
+                
+                <h2>أمثلة عملية</h2>
+                <p>دعنا نستعرض بعض الأمثلة العملية التي توضح كيفية تطبيق هذه المفاهيم في مشاريع حقيقية. سنبدأ بمثال بسيط ثم ننتقل إلى أمثلة أكثر تعقيداً.</p>
+                
+                <pre><code>// مثال برمجي بسيط
+function example() {
+    console.log("مرحباً بك في GPT HUB");
+    return true;
+}
+</code></pre>
+                
+                <h3>نصائح للمطورين</h3>
+                <p>إليك بعض النصائح المهمة التي ستساعدك على التطور في مجال ${category}:</p>
+                <ul>
+                    <li><strong>التعلم المستمر:</strong> تابع أحدث التطورات في المجال</li>
+                    <li><strong>التطبيق العملي:</strong> قم ببناء مشاريع حقيقية</li>
+                    <li><strong>المشاركة:</strong> انضم إلى المجتمعات التقنية</li>
+                    <li><strong>القراءة:</strong> اطلع على الوثائق الرسمية</li>
+                </ul>
+                
+                <h2>الخلاصة</h2>
+                <p>في الختام، يُعتبر ${category} مجالاً واسعاً ومتنوعاً يتطلب التعلم المستمر والممارسة الدائمة. نأمل أن يكون هذا المقال قد قدم لك معلومات قيمة تساعدك في رحلتك التقنية.</p>
+                
+                <p>لمزيد من المقالات والدروس التقنية، تابع موقع GPT HUB ولا تنسَ الاشتراك في قناتنا على اليوتيوب.</p>
+            `;
+        }
+
         // Current State
+        let currentPage = 'home';
         let selectedCategory = 'الكل';
         let postsDisplayed = 6;
+        let currentArticle = null;
+
+        // Navigation System
+        function navigateTo(page, articleId = null) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            
+            // Update current page
+            currentPage = page;
+            
+            // Show selected page
+            const pageElement = document.getElementById(`${page}-page`);
+            if (pageElement) {
+                pageElement.classList.add('active');
+            }
+            
+            // Special handling for article page
+            if (page === 'article' && articleId) {
+                currentArticle = postsData.find(p => p.id === articleId);
+                if (currentArticle) {
+                    renderArticle(currentArticle);
+                }
+            }
+            
+            // Scroll to top
+            window.scrollTo({top: 0, behavior: 'smooth'});
+            
+            // Update URL without reload
+            const url = articleId ? `#article/${articleId}` : `#${page}`;
+            history.pushState({page, articleId}, '', url);
+            
+            // Update canonical
+            updateCanonical(url);
+            
+            // Refresh icons
+            lucide.createIcons();
+            
+            // Reload ads
+            reloadAds();
+        }
 
         // Initialize App
         function init() {
             renderFeaturedApps();
+            renderAllApps();
+            renderHomePosts();
             renderCategoryFilter();
             renderPosts();
             setupScrollProgress();
-            setupSmoothScroll();
+            setupPopState();
             lucide.createIcons();
+            
+            // Load ads
+            setTimeout(loadAds, 1000);
+            
+            // Handle initial URL
+            handleInitialRoute();
+        }
+
+        // Handle initial route from URL
+        function handleInitialRoute() {
+            const hash = window.location.hash.slice(1);
+            if (!hash || hash === 'home') return;
+            
+            const parts = hash.split('/');
+            if (parts[0] === 'article' && parts[1]) {
+                navigateTo('article', parseInt(parts[1]));
+            } else {
+                navigateTo(parts[0]);
+            }
+        }
+
+        // Setup PopState for browser back/forward
+        function setupPopState() {
+            window.addEventListener('popstate', (e) => {
+                if (e.state) {
+                    navigateTo(e.state.page, e.state.articleId);
+                } else {
+                    handleInitialRoute();
+                }
+            });
         }
 
         // Toggle Mobile Menu
@@ -547,7 +793,7 @@
             menu.classList.toggle('hidden');
         }
 
-        // Render Featured Apps
+        // Render Featured Apps (Home)
         function renderFeaturedApps() {
             const container = document.getElementById('featured-apps');
             container.innerHTML = appsData.map(app => `
@@ -570,45 +816,45 @@
                     </a>
                 </article>
             `).join('');
-            lucide.createIcons();
         }
 
-        // Category Filter
-        function renderCategoryFilter() {
-            const container = document.getElementById('category-filter');
-            const categories = ['الكل', ...CONFIG.categories];
-            
-            container.innerHTML = categories.map(cat => `
-                <button onclick="filterByCategory('${cat}')" 
-                        class="px-6 py-2.5 rounded-full font-bold transition-all ${
-                            selectedCategory === cat 
-                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105' 
-                            : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                        }"
-                        aria-label="تصفية حسب ${cat}">
-                    ${cat}
-                </button>
+        // Render All Apps (Apps Page)
+        function renderAllApps() {
+            const container = document.getElementById('all-apps');
+            if (!container) return;
+            container.innerHTML = appsData.map(app => `
+                <article class="app-card">
+                    <div class="w-20 h-20 bg-gradient-to-br ${app.color} rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i data-lucide="${app.icon}" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black cairo mb-4">${app.name}</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">${app.description}</p>
+                    <div class="space-y-3 mb-8">
+                        ${app.features.map(f => `
+                            <div class="flex items-center justify-center gap-2 text-sm text-slate-600">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
+                                <span>${f}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <a href="${app.link}" target="_blank" rel="noopener nofollow" class="block w-full bg-gradient-to-r ${app.color} text-white py-4 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg text-lg">
+                        تحميل من Google Play
+                    </a>
+                </article>
             `).join('');
         }
 
-        function filterByCategory(category) {
-            selectedCategory = category;
-            postsDisplayed = 6;
-            renderCategoryFilter();
-            renderPosts();
+        // Render Home Posts (Preview)
+        function renderHomePosts() {
+            const container = document.getElementById('home-posts');
+            const posts = postsData.slice(0, 3);
+            container.innerHTML = posts.map(post => createPostCard(post)).join('');
         }
 
-        // Render Posts
-        function renderPosts() {
-            const container = document.getElementById('latest-posts');
-            const filtered = selectedCategory === 'الكل' 
-                ? postsData 
-                : postsData.filter(p => p.category === selectedCategory);
-            
-            const posts = filtered.slice(0, postsDisplayed);
-            
-            container.innerHTML = posts.map(post => `
-                <article class="article-card" itemscope itemtype="https://schema.org/Article">
+        // Create Post Card HTML
+        function createPostCard(post) {
+            return `
+                <article class="article-card" onclick="navigateTo('article', ${post.id})" itemscope itemtype="https://schema.org/Article">
                     <div class="relative overflow-hidden h-64">
                         <img src="https://images.unsplash.com/${post.imageId}?auto=format&fit=crop&w=800&q=80&sig=${post.id}" 
                              class="w-full h-full object-cover" 
@@ -617,7 +863,6 @@
                              loading="lazy"
                              width="800"
                              height="600">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                         <span class="category-badge absolute top-4 right-4 text-white text-xs px-4 py-2 rounded-full font-bold">
                             ${post.category}
                         </span>
@@ -633,7 +878,7 @@
                                 ${post.readTime}
                             </span>
                         </div>
-                        <h3 class="text-xl font-black cairo mb-3 leading-tight group-hover:text-blue-600 transition-colors line-clamp-2" itemprop="headline">
+                        <h3 class="text-xl font-black cairo mb-3 leading-tight hover:text-blue-600 transition-colors line-clamp-2" itemprop="headline">
                             ${post.title}
                         </h3>
                         <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-6" itemprop="description">
@@ -641,19 +886,56 @@
                         </p>
                         <div class="flex items-center justify-between text-blue-600 font-bold text-sm">
                             <span>اقرأ المزيد</span>
-                            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:translate-x-[-4px] transition-transform"></i>
+                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
                         </div>
                     </div>
                     <meta itemprop="author" content="GPT HUB">
                     <meta itemprop="publisher" content="GPT HUB">
                 </article>
+            `;
+        }
+
+        // Category Filter
+        function renderCategoryFilter() {
+            const container = document.getElementById('category-filter');
+            if (!container) return;
+            
+            const categories = ['الكل', ...CONFIG.categories];
+            container.innerHTML = categories.map(cat => `
+                <button onclick="filterByCategory('${cat}')" 
+                        class="px-6 py-2.5 rounded-full font-bold transition-all ${
+                            selectedCategory === cat 
+                            ? 'bg-white text-purple-600 shadow-lg scale-105' 
+                            : 'bg-white/20 text-white hover:bg-white/30'
+                        }"
+                        aria-label="تصفية حسب ${cat}">
+                    ${cat}
+                </button>
             `).join('');
+        }
+
+        function filterByCategory(category) {
+            selectedCategory = category;
+            postsDisplayed = 6;
+            renderCategoryFilter();
+            renderPosts();
+        }
+
+        // Render Posts (Blog Page)
+        function renderPosts() {
+            const container = document.getElementById('all-posts');
+            if (!container) return;
+            
+            const filtered = selectedCategory === 'الكل' 
+                ? postsData 
+                : postsData.filter(p => p.category === selectedCategory);
+            
+            const posts = filtered.slice(0, postsDisplayed);
+            container.innerHTML = posts.map(post => createPostCard(post)).join('');
             
             const loadMoreBtn = document.getElementById('load-more-btn');
-            if (postsDisplayed >= filtered.length) {
-                loadMoreBtn.style.display = 'none';
-            } else {
-                loadMoreBtn.style.display = 'inline-block';
+            if (loadMoreBtn) {
+                loadMoreBtn.style.display = postsDisplayed >= filtered.length ? 'none' : 'inline-block';
             }
             
             lucide.createIcons();
@@ -663,6 +945,70 @@
         function loadMorePosts() {
             postsDisplayed += 6;
             renderPosts();
+        }
+
+        // Render Article
+        function renderArticle(post) {
+            const breadcrumb = document.getElementById('article-breadcrumb');
+            breadcrumb.innerHTML = `
+                <a href="#" onclick="navigateTo('home')" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
+                <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
+                <a href="#" onclick="navigateTo('blog')" class="text-slate-600 hover:text-blue-600">المقالات</a>
+                <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
+                <span class="font-bold text-slate-900">${post.category}</span>
+            `;
+            
+            const content = document.getElementById('article-content');
+            content.innerHTML = `
+                <article class="article-content" itemscope itemtype="https://schema.org/Article">
+                    <div class="mb-8">
+                        <span class="category-badge text-white text-sm px-6 py-2 rounded-full font-bold inline-block mb-4">
+                            ${post.category}
+                        </span>
+                        <h1 class="text-3xl md:text-5xl font-black cairo mb-6 leading-tight" itemprop="headline">
+                            ${post.title}
+                        </h1>
+                        <div class="flex items-center gap-6 text-slate-500 mb-8">
+                            <time datetime="${new Date().toISOString()}" itemprop="datePublished" class="flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-5 h-5"></i>
+                                ${post.date}
+                            </time>
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                                ${post.readTime}
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i data-lucide="user" class="w-5 h-5"></i>
+                                GPT HUB
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <img src="https://images.unsplash.com/${post.imageId}?auto=format&fit=crop&w=1200&q=80" 
+                         class="w-full h-96 object-cover rounded-3xl mb-8 shadow-2xl" 
+                         alt="${post.title}"
+                         itemprop="image"
+                         loading="lazy">
+                    
+                    <div itemprop="articleBody">
+                        ${post.content}
+                    </div>
+                    
+                    <meta itemprop="author" content="GPT HUB">
+                    <meta itemprop="publisher" content="GPT HUB">
+                    <meta itemprop="description" content="${post.summary}">
+                </article>
+            `;
+            
+            // Render related posts
+            const related = postsData
+                .filter(p => p.category === post.category && p.id !== post.id)
+                .slice(0, 3);
+            
+            const relatedContainer = document.getElementById('related-posts');
+            relatedContainer.innerHTML = related.map(p => createPostCard(p)).join('');
+            
+            lucide.createIcons();
         }
 
         // Scroll Progress
@@ -675,26 +1021,7 @@
             });
         }
 
-        // Smooth Scroll
-        function setupSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', init);
-
-        // Update canonical on navigation
+        // Update canonical
         function updateCanonical(path) {
             let canonical = document.querySelector('link[rel="canonical"]');
             if (!canonical) {
@@ -702,31 +1029,89 @@
                 canonical.rel = 'canonical';
                 document.head.appendChild(canonical);
             }
-            canonical.href = CONFIG.baseUrl + path;
+            canonical.href = CONFIG.baseUrl + path.replace('#', '');
         }
+
+        // Load AdSense Ads
+        function loadAds() {
+            try {
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {
+                console.log('AdSense loading...');
+            }
+        }
+
+        // Reload Ads on page change
+        function reloadAds() {
+            setTimeout(() => {
+                const ads = document.querySelectorAll('.adsbygoogle');
+                ads.forEach(ad => {
+                    try {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } catch (e) {}
+                });
+            }, 500);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data for Website -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "GPT HUB",
+        "alternateName": "موسوعة GPT HUB",
         "description": "المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات",
-        "url": "https://yourdomain.com/",
+        "url": "https://ahmed2sultan2555.github.io/website/",
+        "inLanguage": "ar",
         "publisher": {
             "@type": "Organization",
             "name": "GPT HUB",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://yourdomain.com/logo.png"
-            }
+                "url": "https://ahmed2sultan2555.github.io/website/logo.png",
+                "width": 600,
+                "height": 600
+            },
+            "sameAs": [
+                "https://www.youtube.com/@Inspiring_voices493",
+                "https://gpthub21.blogspot.com/",
+                "https://groups.google.com/g/gpt-hub"
+            ]
         },
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://yourdomain.com/search?q={search_term_string}",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://ahmed2sultan2555.github.io/website/#blog?q={search_term_string}"
+            },
             "query-input": "required name=search_term_string"
         }
+    }
+    </script>
+
+    <!-- JSON-LD for Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GPT HUB",
+        "url": "https://ahmed2sultan2555.github.io/website/",
+        "logo": "https://ahmed2sultan2555.github.io/website/logo.png",
+        "description": "المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Service",
+            "availableLanguage": "Arabic"
+        },
+        "sameAs": [
+            "https://www.youtube.com/@Inspiring_voices493",
+            "https://gpthub21.blogspot.com/",
+            "https://groups.google.com/g/gpt-hub"
+        ]
     }
     </script>
 </body>
