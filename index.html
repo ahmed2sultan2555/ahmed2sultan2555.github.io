@@ -1,1121 +1,853 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي</title>
-    <meta name="description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات. أكثر من 30 مقالاً تقنياً متخصصاً وتطبيقات ذكية مبتكرة.">
-    <meta name="keywords" content="برمجة, ذكاء اصطناعي, تطبيقات أندرويد, تطوير ويب, GPT, دروس برمجة">
-    <meta name="author" content="GPT HUB">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Canonical & Alternate -->
-    <link rel="canonical" href="https://ahmed2sultan2555.github.io/website/">
-    
-    <!-- Open Graph -->
-    <meta property="og:locale" content="ar_AR">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي">
-    <meta property="og:description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات">
-    <meta property="og:url" content="https://ahmed2sultan2555.github.io/website/">
-    <meta property="og:site_name" content="GPT HUB">
-    <meta property="og:image" content="https://ahmed2sultan2555.github.io/website/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="موسوعة GPT HUB - الحلول التقنية والذكاء الاصطناعي">
-    <meta name="twitter:description" content="المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات">
-    <meta name="twitter:image" content="https://ahmed2sultan2555.github.io/website/og-image.jpg">
-    
-    <!-- Google AdSense -->
-    <meta name="google-adsense-account" content="ca-pub-7137238144396709">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
-    
-    <!-- Frameworks & Fonts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@300;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeForge — أدوات وإضافات احترافية</title>
+<meta name="description" content="CodeForge — إضافات WordPress، ألعاب Flutter، أدوات Unity احترافية للمطورين">
+<meta name="google-adsense-account" content="ca-pub-7137238144396709">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06090f;--bg2:#0a0f1a;--bg3:#0f1623;
+  --s:#121b2d;--s2:#162035;
+  --b:rgba(255,255,255,0.06);--b2:rgba(255,255,255,0.1);
+  --c1:#00f0ff;--c2:#7c3aed;--c3:#f59e0b;
+  --gr:#22c55e;--wp:#0073aa;--un:#333;--gp:#01875f;
+  --tx:#e2e8f0;--mu:#64748b;
+  --fn:'Cairo',sans-serif;--mo:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fn);background:var(--bg);color:var(--tx);overflow-x:hidden;line-height:1.7}
+a{color:inherit;text-decoration:none}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-thumb{background:var(--c2);border-radius:2px}
 
-    <style>
-        :root {
-            --primary: #2563eb;
-            --secondary: #7c3aed;
-            --accent: #f59e0b;
-            --dark: #0f172a;
-            --light: #f8fafc;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-attachment: fixed;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-        
-        .cairo { font-family: 'Cairo', sans-serif; }
-        
-        /* Page Transitions */
-        .page { display: none; }
-        .page.active { 
-            display: block; 
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* Navigation */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        /* Hero Section */
-        .hero-gradient {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        /* Cards */
-        .article-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .article-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 24px;
-            padding: 2px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-        
-        .article-card:hover::before { opacity: 1; }
-        .article-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-        
-        .article-card img { transition: transform 0.7s ease; }
-        .article-card:hover img { transform: scale(1.15); }
-        
-        /* Category Badge */
-        .category-badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        /* Ad Container */
-        .ad-container {
-            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-            border: 2px dashed #d1d5db;
-            border-radius: 20px;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: center;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* Article Content */
-        .article-content {
-            background: white;
-            border-radius: 24px;
-            padding: 40px;
-            margin: 20px 0;
-            line-height: 2;
-            font-size: 1.125rem;
-        }
-        
-        .article-content h2 {
-            font-family: 'Cairo', sans-serif;
-            font-weight: 900;
-            font-size: 2rem;
-            color: var(--dark);
-            margin: 3rem 0 1.5rem;
-            padding-right: 20px;
-            border-right: 6px solid;
-            border-image: linear-gradient(135deg, #667eea, #764ba2) 1;
-        }
-        
-        .article-content h3 {
-            font-family: 'Cairo', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #1e293b;
-            margin: 2rem 0 1rem;
-        }
-        
-        .article-content p {
-            margin-bottom: 1.5rem;
-            color: #334155;
-        }
-        
-        .article-content strong {
-            color: #2563eb;
-            font-weight: 700;
-        }
-        
-        .article-content ul, .article-content ol {
-            margin: 1.5rem 0;
-            padding-right: 2rem;
-        }
-        
-        .article-content li {
-            margin-bottom: 0.75rem;
-            color: #475569;
-        }
-        
-        .article-content code {
-            background: #f1f5f9;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            color: #dc2626;
-        }
-        
-        .article-content pre {
-            background: #1e293b;
-            color: #e2e8f0;
-            padding: 20px;
-            border-radius: 12px;
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-        
-        /* App Cards */
-        .app-card {
-            background: white;
-            border-radius: 20px;
-            padding: 24px;
-            text-align: center;
-            transition: all 0.4s;
-            border: 2px solid #e5e7eb;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .app-card::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-        }
-        
-        .app-card:hover::before { left: 100%; }
-        .app-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: #667eea;
-        }
-        
-        /* Breadcrumb */
-        .breadcrumb {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
-            padding: 12px 24px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 20px;
-        }
-        
-        /* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0; left: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            z-index: 9999;
-            transition: width 0.1s;
-        }
-        
-        /* Loading Skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
-            border-radius: 12px;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .article-content { 
-                padding: 20px; 
-                font-size: 1rem; 
-            }
-            .article-content h2 { font-size: 1.5rem; }
-            .article-content h3 { font-size: 1.25rem; }
-        }
-    </style>
+/* PARTICLES BG */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d) ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(0)}50%{opacity:var(--op);transform:scale(1)}}
+
+/* PROGRESS */
+#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--c2),var(--c1));z-index:9999;width:0;transition:width .1s;box-shadow:0 0 10px var(--c1)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:500;background:rgba(6,9,15,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--b)}
+.ni{max-width:1280px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.35rem}
+.li{width:36px;height:36px;background:linear-gradient(135deg,var(--c2),var(--c1));border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--mo);font-weight:700;font-size:15px;color:#fff;box-shadow:0 0 16px rgba(124,58,237,.5)}
+.logo em{color:var(--c1);font-style:normal}
+.nl{display:flex;align-items:center;gap:4px;list-style:none}
+.nl a{padding:7px 15px;border-radius:40px;font-weight:600;font-size:.88rem;color:var(--mu);transition:all .2s}
+.nl a:hover,.nl a.on{color:var(--tx);background:var(--s)}
+.nl .nb{background:linear-gradient(135deg,var(--c2),#5b21b6)!important;color:#fff!important;box-shadow:0 4px 16px rgba(124,58,237,.4)}
+.nl .nb:hover{transform:translateY(-1px)}
+.ham{display:none;background:none;border:none;cursor:pointer;padding:4px;flex-direction:column;gap:5px}
+.ham span{display:block;width:20px;height:2px;background:var(--tx);border-radius:1px;transition:all .3s}
+#mn{display:none;background:var(--bg2);border-bottom:1px solid var(--b);padding:12px 24px}
+#mn a{display:block;padding:10px 0;font-weight:600;color:var(--mu);border-bottom:1px solid var(--b);transition:color .2s}
+#mn a:last-child{border-bottom:none}
+#mn a:hover{color:var(--tx)}
+
+/* PAGES */
+.pg{display:none}
+.pg.on{display:block;animation:fu .35s ease}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.ct{max-width:1280px;margin:0 auto;padding:0 24px}
+sec{padding:80px 0}
+
+/* HERO */
+.hero{min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:80px 0}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 65% 45%,rgba(124,58,237,.14) 0%,transparent 65%),radial-gradient(ellipse 55% 45% at 15% 75%,rgba(0,240,255,.08) 0%,transparent 60%)}
+.hgd{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at center,black 25%,transparent 75%)}
+.hinner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,240,255,.07);border:1px solid rgba(0,240,255,.18);border-radius:40px;padding:5px 16px;font-size:.8rem;font-family:var(--mo);color:var(--c1);margin-bottom:18px}
+.hbadge::before{content:'●';animation:pl 2s infinite}
+@keyframes pl{0%,100%{opacity:1}50%{opacity:.2}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.12;margin-bottom:18px;letter-spacing:-1px}
+.hero h1 .ca{color:var(--c1)}.hero h1 .cb{color:var(--c2)}
+.hero p{font-size:1.05rem;color:var(--mu);margin-bottom:32px;max-width:500px;line-height:1.85}
+.bg{display:flex;gap:12px;flex-wrap:wrap}
+.bt{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:40px;font-weight:700;font-size:.92rem;transition:all .25s;cursor:pointer;border:none;font-family:var(--fn)}
+.bp{background:linear-gradient(135deg,var(--c2),#5b21b6);color:#fff;box-shadow:0 6px 28px rgba(124,58,237,.4)}
+.bp:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(124,58,237,.55)}
+.bo{background:transparent;color:var(--tx);border:1px solid var(--b2)}
+.bo:hover{border-color:var(--c1);color:var(--c1);background:rgba(0,240,255,.05)}
+.bg2{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:0 6px 28px rgba(34,197,94,.35)}
+.bg2:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(34,197,94,.5)}
+.bpay{background:linear-gradient(135deg,#003087,#009cde);color:#fff;box-shadow:0 6px 28px rgba(0,48,135,.4)}
+.bpay:hover{transform:translateY(-2px)}
+
+/* HERO MOCKUP */
+.hvis{position:relative;display:flex;align-items:center;justify-content:center}
+.hmk{background:var(--s);border:1px solid var(--b2);border-radius:20px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,.6),0 0 48px rgba(0,240,255,.08);width:100%;max-width:460px}
+.mbar{background:var(--bg2);padding:11px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--b)}
+.mdt{display:flex;gap:6px}
+.mdt span{width:11px;height:11px;border-radius:50%}
+.mdt span:nth-child(1){background:#ff5f57}.mdt span:nth-child(2){background:#febc2e}.mdt span:nth-child(3){background:#28c840}
+.murl{flex:1;background:var(--bg3);border-radius:5px;padding:4px 12px;font-family:var(--mo);font-size:.73rem;color:var(--mu);text-align:center}
+.mbody{padding:18px}
+.wbtn{background:linear-gradient(135deg,#25d366,#1da851);color:#fff;border:none;border-radius:11px;padding:13px 22px;width:100%;font-family:var(--fn);font-size:.95rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 6px 20px rgba(37,211,102,.35);animation:wfl 3s ease-in-out infinite}
+@keyframes wfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.mst{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
+.ms{background:var(--bg2);border-radius:9px;padding:9px;text-align:center}
+.ms .n{font-family:var(--mo);font-size:.95rem;font-weight:700;color:var(--c1)}
+.ms .l{font-size:.68rem;color:var(--mu);margin-top:2px}
+.fb{position:absolute;background:var(--s);border:1px solid var(--b2);border-radius:10px;padding:9px 15px;font-size:.78rem;font-weight:700;white-space:nowrap;animation:fbfl 4s ease-in-out infinite}
+.fb:nth-child(2){top:-8px;left:-24px;animation-delay:.5s;color:var(--c1)}
+.fb:nth-child(3){bottom:16px;left:-28px;animation-delay:1.2s;color:#22c55e}
+@keyframes fbfl{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* STATS */
+.sbar{background:var(--s);border-top:1px solid var(--b);border-bottom:1px solid var(--b);padding:22px 0}
+.sgr{display:flex;justify-content:center;flex-wrap:wrap}
+.sit{padding:8px 44px;text-align:center;border-right:1px solid var(--b)}
+.sit:last-child{border-right:none}
+.sit .v{font-family:var(--mo);font-size:1.7rem;font-weight:700;color:var(--c1);display:block}
+.sit .k{font-size:.82rem;color:var(--mu)}
+
+/* SECTION HEADER */
+.slbl{font-family:var(--mo);font-size:.76rem;color:var(--c1);letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.slbl::before{content:'//';opacity:.45}
+.stit{font-size:clamp(1.8rem,3.2vw,2.7rem);font-weight:900;letter-spacing:-.5px;margin-bottom:14px}
+.ssub{color:var(--mu);font-size:1rem;max-width:540px;line-height:1.8}
+.sh{margin-bottom:48px}
+.shc{text-align:center}
+.shc .slbl{justify-content:center}
+.shc .ssub{margin:0 auto}
+
+/* CARDS */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:18px;overflow:hidden;transition:all .3s;position:relative}
+.card:hover{transform:translateY(-5px);border-color:rgba(0,240,255,.18);box-shadow:0 20px 52px rgba(0,0,0,.4)}
+.card-pad{padding:26px}
+
+/* CATEGORY BADGES */
+.cat{display:inline-flex;align-items:center;gap:6px;border-radius:8px;padding:4px 12px;font-size:.76rem;font-weight:700;font-family:var(--mo);margin-bottom:14px}
+.cat-wp{background:rgba(0,115,170,.15);color:#38bdf8;border:1px solid rgba(0,115,170,.3)}
+.cat-gp{background:rgba(1,135,95,.15);color:#4ade80;border:1px solid rgba(1,135,95,.3)}
+.cat-un{background:rgba(255,255,255,.08);color:#e2e8f0;border:1px solid rgba(255,255,255,.15)}
+.cat-fl{background:rgba(84,202,255,.12);color:#54caff;border:1px solid rgba(84,202,255,.25)}
+
+/* PRODUCT FEATURED */
+.pfeat{background:var(--s);border:1px solid var(--b2);border-radius:22px;overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,.45);display:grid;grid-template-columns:1.15fr 0.85fr;margin-bottom:40px}
+.pinfo{padding:48px}
+.pname{font-size:1.85rem;font-weight:900;letter-spacing:-.5px;margin-bottom:10px;line-height:1.2}
+.pdesc{color:var(--mu);line-height:1.85;margin-bottom:24px;font-size:.97rem}
+.fl{list-style:none;margin-bottom:32px}
+.fl li{display:flex;align-items:center;gap:10px;padding:7px 0;font-size:.92rem;border-bottom:1px solid var(--b)}
+.fl li:last-child{border-bottom:none}
+.fl li::before{content:'✓';width:20px;height:20px;background:rgba(34,197,94,.12);color:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:900;flex-shrink:0}
+.price{font-family:var(--mo);font-size:2.3rem;font-weight:900}
+.pnote{color:var(--mu);font-size:.82rem}
+.pmed{background:var(--bg2);border-right:1px solid var(--b);display:flex;flex-direction:column}
+.mtabs{display:flex;border-bottom:1px solid var(--b);background:var(--bg)}
+.mtab{flex:1;padding:13px;font-size:.8rem;font-weight:600;text-align:center;cursor:pointer;color:var(--mu);border:none;background:none;font-family:var(--fn);transition:all .2s;border-bottom:2px solid transparent}
+.mtab.on{color:var(--c1);border-bottom-color:var(--c1);background:rgba(0,240,255,.04)}
+.mcon{flex:1;position:relative;min-height:300px}
+.mpan{display:none;height:100%}
+.mpan.on{display:flex;flex-direction:column}
+.ssli{flex:1;overflow:hidden;position:relative}
+.sstr{display:flex;height:100%;transition:transform .38s ease}
+.ssli2{min-width:100%;height:100%;overflow:hidden}
+.ssph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg3);gap:10px;min-height:260px}
+.ssic{font-size:2.2rem}
+.sslb{font-size:.82rem;color:var(--mu);font-family:var(--mo)}
+.sc{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:var(--bg);border-top:1px solid var(--b)}
+.sd{width:7px;height:7px;border-radius:50%;background:var(--b2);cursor:pointer;transition:all .2s;border:none}
+.sd.on{background:var(--c1);transform:scale(1.35)}
+.sa{background:var(--s);border:1px solid var(--b);color:var(--tx);border-radius:50%;width:26px;height:26px;cursor:pointer;font-size:.78rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.sa:hover{background:var(--c1);color:var(--bg);border-color:var(--c1)}
+.vp{flex:1;background:#000;display:flex;align-items:center;justify-content:center;min-height:260px}
+.vembed{width:100%;height:100%;min-height:260px;border:none}
+.vph{display:flex;flex-direction:column;align-items:center;gap:14px;cursor:pointer}
+.pbtn{width:60px;height:60px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:all .3s;backdrop-filter:blur(8px)}
+.pbtn:hover{background:rgba(255,0,0,.8);border-color:red;transform:scale(1.1)}
+
+/* APP CARD */
+.acard{background:var(--s);border:1px solid var(--b);border-radius:18px;padding:24px;transition:all .3s;text-align:center;position:relative;overflow:hidden}
+.acard::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(0,240,255,.04),transparent);transform:rotate(45deg);transition:all .6s}
+.acard:hover::before{left:100%}
+.acard:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(0,0,0,.4);border-color:rgba(0,240,255,.15)}
+.aico{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.9rem;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.aname{font-size:1.1rem;font-weight:900;margin-bottom:6px}
+.adesc{font-size:.85rem;color:var(--mu);line-height:1.7;margin-bottom:16px}
+.afeats{list-style:none;margin-bottom:18px;text-align:right}
+.afeats li{font-size:.8rem;color:var(--mu);padding:3px 0;display:flex;align-items:center;gap:6px;justify-content:center}
+.afeats li::before{content:'✓';color:#22c55e;font-size:.72rem;font-weight:900}
+
+/* PLATFORM BADGE */
+.platf{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:8px;font-size:.78rem;font-weight:700;width:fit-content;margin-bottom:10px}
+.plt-wp{background:rgba(0,115,170,.12);color:#38bdf8;border:1px solid rgba(0,115,170,.25)}
+.plt-gp{background:rgba(1,135,95,.12);color:#4ade80;border:1px solid rgba(1,135,95,.25)}
+.plt-un{background:rgba(255,255,255,.07);color:var(--tx);border:1px solid var(--b2)}
+.plt-fl{background:rgba(84,202,255,.1);color:#54caff;border:1px solid rgba(84,202,255,.2)}
+
+/* PAYPAL */
+.paybox{background:var(--s2);border:1px solid rgba(0,156,222,.25);border-radius:18px;padding:32px;text-align:center;max-width:480px;margin:0 auto}
+.paybox h3{font-size:1.3rem;font-weight:900;margin-bottom:8px}
+.paybox p{color:var(--mu);font-size:.9rem;margin-bottom:24px}
+.paypal-form{display:flex;flex-direction:column;gap:12px}
+.paypal-form input{background:var(--bg3);border:1px solid var(--b2);border-radius:10px;padding:11px 16px;color:var(--tx);font-family:var(--fn);font-size:.92rem;outline:none;transition:border-color .2s}
+.paypal-form input:focus{border-color:var(--c1)}
+.paypal-form select{background:var(--bg3);border:1px solid var(--b2);border-radius:10px;padding:11px 16px;color:var(--tx);font-family:var(--fn);font-size:.92rem;outline:none;cursor:pointer}
+
+/* LINKS */
+.lgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.lc{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:14px;transition:all .3s;cursor:pointer}
+.lc:hover{border-color:var(--c1);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.lic{width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.lin h3{font-size:.92rem;font-weight:700;margin-bottom:2px}
+.lin p{font-size:.78rem;color:var(--mu)}
+.la{margin-right:auto;font-size:1rem;color:var(--mu)}
+
+/* AD */
+.adu{background:var(--s);border:1px dashed rgba(255,255,255,.07);border-radius:14px;min-height:90px;display:flex;align-items:center;justify-content:center;margin:36px 0;overflow:hidden}
+.adt{min-height:250px}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--b);padding:56px 0 28px}
+.fgr{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.fbr p{color:var(--mu);font-size:.88rem;line-height:1.8;margin-top:10px;max-width:270px}
+.fc h4{font-size:.78rem;font-family:var(--mo);color:var(--c1);letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.fc ul{list-style:none}
+.fc ul li{margin-bottom:9px}
+.fc ul li a{color:var(--mu);font-size:.88rem;transition:color .2s;display:flex;align-items:center;gap:7px}
+.fc ul li a:hover{color:var(--tx)}
+.fbot{border-top:1px solid var(--b);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.fbot p{color:var(--mu);font-size:.8rem}
+.fls{display:flex;gap:18px}
+.fls a{color:var(--mu);font-size:.8rem;transition:color .2s}
+.fls a:hover{color:var(--c1)}
+
+/* SECTION BG */
+.bg-alt{background:var(--s);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hinner{grid-template-columns:1fr}
+  .hvis{display:none}
+  .pfeat{grid-template-columns:1fr}
+  .pmed{border-right:none;border-top:1px solid var(--b)}
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nl{display:none}
+  .ham{display:flex}
+  .grid2,.grid3,.grid4{grid-template-columns:1fr}
+  .fgr{grid-template-columns:1fr;gap:28px}
+  .sgr{flex-direction:column}
+  .sit{border-right:none;border-bottom:1px solid var(--b);padding:14px 24px}
+  .sit:last-child{border-bottom:none}
+  .pinfo{padding:26px}
+}
+</style>
 </head>
 <body>
-    <!-- Progress Bar -->
-    <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 glass-nav">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#" onclick="navigateTo('home')" class="flex items-center gap-3 group">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white font-black text-xl shadow-lg group-hover:scale-110 transition-transform">
-                        <i data-lucide="zap" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-black cairo">GPT <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">HUB</span></h1>
-                        <p class="text-xs text-slate-500">موسوعة التقنية</p>
-                    </div>
-                </a>
-                
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#" onclick="navigateTo('home')" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">الرئيسية</a>
-                    <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="nav-link font-bold text-slate-700 hover:text-orange-600 transition-colors flex items-center gap-1">
-                        <i data-lucide="book-open" class="w-4 h-4"></i>
-                        بلوجر
-                    </a>
-                    <a href="#" onclick="navigateTo('apps')" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">التطبيقات</a>
-                    <a href="#" onclick="navigateTo('blog')" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">المقالات</a>
-                    <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener noreferrer" class="nav-link font-bold text-slate-700 hover:text-blue-600 transition-colors">الخصوصية</a>
-                    <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-2 rounded-full font-bold hover:from-green-700 hover:to-emerald-700 transition-all hover:scale-105">
-                        <i data-lucide="users" class="w-4 h-4"></i>
-                        المختبرين
-                    </a>
-                    <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full font-bold hover:bg-red-700 transition-all hover:scale-105">
-                        <i data-lucide="youtube" class="w-4 h-4"></i>
-                        يوتيوب
-                    </a>
-                </div>
-                
-                <button onclick="toggleMenu()" class="md:hidden" aria-label="فتح القائمة">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+<!-- PARTICLES -->
+<div id="particles"></div>
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="ni">
+    <a class="logo" href="#" onclick="G('home');return false">
+      <div class="li">&lt;/&gt;</div>
+      Code<em>Forge</em>
+    </a>
+    <ul class="nl">
+      <li><a href="#" onclick="G('home');return false" id="nh" class="on">الرئيسية</a></li>
+      <li><a href="#" onclick="G('products');return false" id="np">المنتجات</a></li>
+      <li><a href="#" onclick="G('apps');return false" id="na">التطبيقات</a></li>
+      <li><a href="#" onclick="G('links');return false" id="nl2">روابطنا</a></li>
+      <li><a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener">المدونة</a></li>
+      <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="nb">▶ يوتيوب</a></li>
+    </ul>
+    <button class="ham" onclick="TM()" aria-label="القائمة">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="mn">
+  <a href="#" onclick="G('home');TM();return false">🏠 الرئيسية</a>
+  <a href="#" onclick="G('products');TM();return false">📦 المنتجات</a>
+  <a href="#" onclick="G('apps');TM();return false">📱 التطبيقات</a>
+  <a href="#" onclick="G('links');TM();return false">🔗 روابطنا</a>
+  <a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة</a>
+  <a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a>
+  <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب</a>
+</div>
+
+<!-- ====== HOME ====== -->
+<div id="ph" class="pg on">
+  <div class="hero">
+    <div class="hbg"></div><div class="hgd"></div>
+    <div class="ct">
+      <div class="hinner">
+        <div>
+          <div class="hbadge">جديد — v1.2.1 متاح الآن</div>
+          <h1>أدوات تطوير<br><span class="ca">احترافية</span><br>لـ <span class="cb">المطورين</span></h1>
+          <p>إضافات WordPress، ألعاب Flutter، أدوات Unity — مبنية بأعلى معايير الجودة، جاهزة للبيع على الأسواق العالمية.</p>
+          <div class="bg">
+            <button class="bt bp" onclick="G('products')">🚀 تصفح المنتجات</button>
+            <button class="bt bo" onclick="G('apps')">📱 التطبيقات</button>
+            <button class="bt bo" onclick="G('links')">🔗 روابطنا</button>
+          </div>
+        </div>
+        <div class="hvis">
+          <div class="fb">⚡ HMAC-SHA256 Security</div>
+          <div class="fb">✅ WooCommerce 9.3 Ready</div>
+          <div class="hmk">
+            <div class="mbar">
+              <div class="mdt"><span></span><span></span><span></span></div>
+              <div class="murl">shop.example.com/product/</div>
             </div>
+            <div class="mbody">
+              <div style="font-size:.78rem;color:var(--mu);margin-bottom:10px;font-family:var(--mo)">WooCommerce WhatsApp Order Pro</div>
+              <button class="wbtn">💬 اطلب عبر واتساب</button>
+              <div style="margin-top:12px;text-align:center;font-size:.82rem;color:var(--mu)">السعر: <strong style="color:var(--tx);font-size:1.05rem">249.00 ريال</strong></div>
+              <div class="mst">
+                <div class="ms"><div class="n">v1.2</div><div class="l">إصدار</div></div>
+                <div class="ms"><div class="n">24+</div><div class="l">ميزة</div></div>
+                <div class="ms"><div class="n">5★</div><div class="l">تقييم</div></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-        <div class="container mx-auto px-4 py-4 space-y-3">
-            <a href="#" onclick="navigateTo('home'); toggleMenu();" class="block font-bold text-slate-700 hover:text-blue-600 py-2">الرئيسية</a>
-            <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="block font-bold text-slate-700 hover:text-orange-600 py-2 flex items-center gap-2">
-                <i data-lucide="book-open" class="w-4 h-4"></i>
-                بلوجر
-            </a>
-            <a href="#" onclick="navigateTo('apps'); toggleMenu();" class="block font-bold text-slate-700 hover:text-blue-600 py-2">التطبيقات</a>
-            <a href="#" onclick="navigateTo('blog'); toggleMenu();" class="block font-bold text-slate-700 hover:text-blue-600 py-2">المقالات</a>
-            <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener noreferrer" class="block font-bold text-slate-700 hover:text-blue-600 py-2">الخصوصية</a>
-        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Main Content -->
-    <main id="app-content" class="min-h-screen pb-20">
-        
-        <!-- Home Page -->
-        <div id="home-page" class="page active">
-            <!-- Hero Section -->
-            <section class="hero-gradient text-white py-20 relative">
-                <div class="container mx-auto px-4 text-center relative z-10">
-                    <div class="inline-block mb-6 animate-bounce">
-                        <div class="w-20 h-20 bg-white/20 backdrop-blur-lg rounded-3xl flex items-center justify-center">
-                            <i data-lucide="sparkles" class="w-10 h-10"></i>
-                        </div>
-                    </div>
-                    <h2 class="text-4xl md:text-6xl font-black cairo mb-6 leading-tight">
-                        بوابتك لعالم <br><span class="text-yellow-300">التقنية الذكية</span>
-                    </h2>
-                    <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                        استكشف أكثر من 30 مقالاً متخصصاً في البرمجة والذكاء الاصطناعي وتطوير التطبيقات
-                    </p>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <a href="#" onclick="navigateTo('blog')" class="bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-2xl">
-                            تصفح المقالات
-                        </a>
-                        <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="bg-orange-500 text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-2xl">
-                            مدونة بلوجر
-                        </a>
-                        <a href="#" onclick="navigateTo('apps')" class="bg-white/20 backdrop-blur-lg text-white px-8 py-4 rounded-full font-black hover:scale-105 transition-transform border-2 border-white/50">
-                            تطبيقاتنا
-                        </a>
-                    </div>
-                </div>
-            </section>
+  <div class="sbar">
+    <div class="ct"><div class="sgr">
+      <div class="sit"><span class="v" data-c="3">0</span><span class="k">منصات بيع</span></div>
+      <div class="sit"><span class="v" data-c="8">0</span><span class="k">منتجات ومشاريع</span></div>
+      <div class="sit"><span class="v" data-c="24">0</span><span class="k">ميزة في WOP</span></div>
+      <div class="sit"><span class="v">100%</span><span class="k">معايير CodeCanyon</span></div>
+    </div></div>
+  </div>
 
-            <!-- Top Ad -->
-            <div class="container mx-auto px-4 mt-8">
-                <div class="ad-container">
-                    <ins class="adsbygoogle" 
-                         style="display:block" 
-                         data-ad-client="ca-pub-7137238144396709" 
-                         data-ad-slot="1234567890" 
-                         data-ad-format="auto" 
-                         data-full-width-responsive="true"></ins>
+  <div class="ct"><div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div>
+
+  <!-- PLATFORMS -->
+  <sec>
+    <div class="ct">
+      <div class="sh shc">
+        <div class="slbl">منصات البيع</div>
+        <h2 class="stit">نبيع على 3 منصات عالمية</h2>
+        <p class="ssub">منتجاتنا متاحة على CodeCanyon، Unity Asset Store، و Google Play</p>
+      </div>
+      <div class="grid3">
+        <div class="card card-pad" style="text-align:center;cursor:pointer" onclick="G('products')">
+          <div style="font-size:2.8rem;margin-bottom:14px">🟦</div>
+          <div class="platf plt-wp" style="justify-content:center;margin:0 auto 12px">WordPress / CodeCanyon</div>
+          <h3 style="font-weight:900;margin-bottom:8px">إضافات WooCommerce</h3>
+          <p style="color:var(--mu);font-size:.88rem;line-height:1.75">إضافات WordPress احترافية جاهزة للبيع على CodeCanyon بأعلى معايير الجودة</p>
+        </div>
+        <div class="card card-pad" style="text-align:center;cursor:pointer" onclick="G('apps')">
+          <div style="font-size:2.8rem;margin-bottom:14px">🎮</div>
+          <div class="platf plt-un" style="justify-content:center;margin:0 auto 12px">Unity Asset Store</div>
+          <h3 style="font-weight:900;margin-bottom:8px">أدوات Unity</h3>
+          <p style="color:var(--mu);font-size:.88rem;line-height:1.75">أدوات Editor قوية للمطورين على Unity Asset Store تحت قسم Level Design</p>
+        </div>
+        <div class="card card-pad" style="text-align:center;cursor:pointer" onclick="G('apps')">
+          <div style="font-size:2.8rem;margin-bottom:14px">📱</div>
+          <div class="platf plt-gp" style="justify-content:center;margin:0 auto 12px">Google Play Store</div>
+          <h3 style="font-weight:900;margin-bottom:8px">تطبيقات Flutter</h3>
+          <p style="color:var(--mu);font-size:.88rem;line-height:1.75">ألعاب وتطبيقات أندرويد تعليمية وترفيهية مدعومة بالذكاء الاصطناعي</p>
+        </div>
+      </div>
+    </div>
+  </sec>
+
+  <!-- CTA -->
+  <div class="bg-alt" style="padding:56px 0">
+    <div class="ct" style="text-align:center">
+      <h2 class="stit">مستعد تبدأ؟</h2>
+      <p style="color:var(--mu);margin:12px auto 28px;max-width:440px">تصفح منتجاتنا أو تواصل معنا مباشرة</p>
+      <div class="bg" style="justify-content:center">
+        <button class="bt bp" onclick="G('products')">📦 تصفح المنتجات</button>
+        <button class="bt bg2" onclick="G('apps')">📱 التطبيقات</button>
+        <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="bt bo">📝 المدونة</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== PRODUCTS (WordPress) ====== -->
+<div id="pp" class="pg">
+  <sec>
+    <div class="ct">
+      <div class="sh">
+        <div class="slbl">إضافات WordPress</div>
+        <h2 class="stit">WooCommerce WhatsApp Order Pro</h2>
+        <p class="ssub">الإضافة الأولى في مجموعة CodeForge — متاحة على CodeCanyon</p>
+      </div>
+
+      <div class="pfeat">
+        <div class="pinfo">
+          <div class="platf plt-wp">🟦 WordPress / WooCommerce</div>
+          <div class="pname">WooCommerce<br>WhatsApp Order Pro</div>
+          <p class="pdesc">حوّل زوار متجرك إلى مشترين عبر واتساب مباشرة. نظام توجيه ذكي للوكلاء، قوالب رسائل مخصصة، تحليلات متقدمة، ودعم Cloud API.</p>
+          <ul class="fl">
+            <li>Smart Agent Routing — توجيه ذكي Round Robin</li>
+            <li>WhatsApp Cloud API + Business API</li>
+            <li>Cart Recovery — استرجاع سلة التسوق</li>
+            <li>Slack، Zapier، Mailchimp Integration</li>
+            <li>Google Analytics 4 + Facebook Pixel</li>
+            <li>نظام ترخيص HMAC-SHA256 — لا يمكن تزويره</li>
+            <li>دعم RTL كامل — 153 نص قابل للترجمة</li>
+          </ul>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:26px">
+            <div class="price">$39</div>
+            <div class="pnote">ترخيص دائم<br>دعم 6 أشهر</div>
+          </div>
+          <div class="bg">
+            <a href="https://codecanyon.net" target="_blank" rel="noopener" class="bt bg2">⬇️ CodeCanyon</a>
+            <button class="bt bpay" onclick="G('buy')">💳 شراء عبر PayPal</button>
+            <button class="bt bo" onclick="scrollTo2('wopf')">📋 المواصفات</button>
+          </div>
+        </div>
+
+        <div class="pmed">
+          <div class="mtabs">
+            <button class="mtab on" onclick="ST(this,'ss')">📸 Screenshots</button>
+            <button class="mtab" onclick="ST(this,'vid')">▶ فيديو</button>
+          </div>
+          <div class="mcon">
+            <div class="mpan on" id="panel-ss">
+              <div class="ssli">
+                <div class="sstr" id="sst">
+                  <div class="ssli2"><div class="ssph"><div class="ssic">🛒</div><div class="sslb">Product Page Button</div><div style="font-size:.72rem;color:var(--mu);margin-top:3px">زر الطلب على صفحة المنتج</div></div></div>
+                  <div class="ssli2"><div class="ssph"><div class="ssic">⚙️</div><div class="sslb">Admin Settings Panel</div><div style="font-size:.72rem;color:var(--mu);margin-top:3px">لوحة الإعدادات</div></div></div>
+                  <div class="ssli2"><div class="ssph"><div class="ssic">👥</div><div class="sslb">Agents Management</div><div style="font-size:.72rem;color:var(--mu);margin-top:3px">إدارة الوكلاء</div></div></div>
+                  <div class="ssli2"><div class="ssph"><div class="ssic">📊</div><div class="sslb">Analytics Dashboard</div><div style="font-size:.72rem;color:var(--mu);margin-top:3px">لوحة التحليلات</div></div></div>
+                  <div class="ssli2"><div class="ssph"><div class="ssic">🔑</div><div class="sslb">License System</div><div style="font-size:.72rem;color:var(--mu);margin-top:3px">نظام الترخيص المحمي</div></div></div>
                 </div>
+              </div>
+              <div class="sc">
+                <button class="sa" onclick="SL(-1)">›</button>
+                <button class="sd on" onclick="GS(0)"></button>
+                <button class="sd" onclick="GS(1)"></button>
+                <button class="sd" onclick="GS(2)"></button>
+                <button class="sd" onclick="GS(3)"></button>
+                <button class="sd" onclick="GS(4)"></button>
+                <button class="sa" onclick="SL(1)">‹</button>
+              </div>
             </div>
-
-            <!-- Featured Apps Section -->
-            <section class="container mx-auto px-4 mt-16">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-black cairo mb-4">تطبيقاتنا المميزة</h3>
-                    <p class="text-white text-lg">تطبيقات ذكية مدعومة بالذكاء الاصطناعي</p>
+            <div class="mpan" id="panel-vid">
+              <div class="vp" id="vc">
+                <div class="vph" onclick="LV()">
+                  <div class="pbtn">▶</div>
+                  <div style="color:var(--mu);font-size:.88rem">شاهد الفيديو التوضيحي</div>
+                  <div style="color:var(--mu);font-size:.75rem;font-family:var(--mo)">WooCommerce WhatsApp Order Pro Demo</div>
                 </div>
-                <div id="featured-apps" class="grid md:grid-cols-3 gap-8"></div>
-            </section>
-
-            <!-- Latest Articles Preview -->
-            <section class="container mx-auto px-4 mt-20">
-                <div class="text-center mb-12">
-                    <h3 class="text-3xl md:text-4xl font-black cairo mb-4 text-white">أحدث المقالات</h3>
-                    <p class="text-white/80 text-lg">محتوى تقني حصري ومتجدد</p>
-                </div>
-                <div id="home-posts" class="grid md:grid-cols-3 gap-8"></div>
-                <div class="text-center mt-12">
-                    <a href="#" onclick="navigateTo('blog')" class="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-lg">
-                        عرض جميع المقالات
-                    </a>
-                </div>
-            </section>
-        </div>
-
-        <!-- Apps Page -->
-        <div id="apps-page" class="page">
-            <section class="container mx-auto px-4 py-12">
-                <div class="breadcrumb mb-8">
-                    <a href="#" onclick="navigateTo('home')" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
-                    <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
-                    <span class="font-bold text-slate-900">التطبيقات</span>
-                </div>
-                
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-black cairo mb-4 text-white">تطبيقاتنا المميزة</h2>
-                    <p class="text-white/80 text-lg">تطبيقات ذكية مدعومة بالذكاء الاصطناعي</p>
-                </div>
-                
-                <div id="all-apps" class="grid md:grid-cols-3 gap-8"></div>
-            </section>
-        </div>
-
-        <!-- Blog Page -->
-        <div id="blog-page" class="page">
-            <section class="container mx-auto px-4 py-12">
-                <div class="breadcrumb mb-8">
-                    <a href="#" onclick="navigateTo('home')" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
-                    <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
-                    <span class="font-bold text-slate-900">المقالات</span>
-                </div>
-                
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-black cairo mb-4 text-white">مكتبة المقالات التقنية</h2>
-                    <p class="text-white/80 text-lg">محتوى تقني شامل في جميع المجالات</p>
-                </div>
-                
-                <!-- Category Filter -->
-                <div class="flex flex-wrap gap-3 justify-center mb-12" id="category-filter"></div>
-                
-                <!-- Ad Between -->
-                <div class="ad-container mb-8">
-                    <ins class="adsbygoogle" 
-                         style="display:block" 
-                         data-ad-client="ca-pub-7137238144396709" 
-                         data-ad-slot="2345678901" 
-                         data-ad-format="auto" 
-                         data-full-width-responsive="true"></ins>
-                </div>
-                
-                <div id="all-posts" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-                
-                <div class="text-center mt-12">
-                    <button onclick="loadMorePosts()" id="load-more-btn" class="bg-white text-purple-600 px-8 py-4 rounded-full font-black hover:scale-105 transition-transform shadow-lg">
-                        عرض المزيد من المقالات
-                    </button>
-                </div>
-            </section>
-        </div>
-
-        <!-- Article Page -->
-        <div id="article-page" class="page">
-            <section class="container mx-auto px-4 py-12">
-                <div id="article-breadcrumb" class="breadcrumb mb-8"></div>
-                <div id="article-content"></div>
-                
-                <!-- Ad After Article -->
-                <div class="ad-container">
-                    <ins class="adsbygoogle" 
-                         style="display:block" 
-                         data-ad-client="ca-pub-7137238144396709" 
-                         data-ad-slot="3456789012" 
-                         data-ad-format="auto" 
-                         data-full-width-responsive="true"></ins>
-                </div>
-                
-                <!-- Related Articles -->
-                <div class="mt-12">
-                    <h3 class="text-2xl font-black cairo mb-6 text-white">مقالات ذات صلة</h3>
-                    <div id="related-posts" class="grid md:grid-cols-3 gap-6"></div>
-                </div>
-            </section>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-white py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center">
-                            <i data-lucide="zap" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-2xl font-black cairo">GPT <span class="text-blue-400">HUB</span></h3>
-                    </div>
-                    <p class="text-slate-400 leading-relaxed">المصدر العربي الأول لتعلم البرمجة وتطوير التطبيقات الذكية</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6 text-lg">روابط سريعة</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" onclick="navigateTo('home')" class="text-slate-400 hover:text-blue-400 transition-colors">الرئيسية</a></li>
-                        <li><a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-orange-400 transition-colors">مدونة بلوجر</a></li>
-                        <li><a href="#" onclick="navigateTo('blog')" class="text-slate-400 hover:text-blue-400 transition-colors">المقالات</a></li>
-                        <li><a href="#" onclick="navigateTo('apps')" class="text-slate-400 hover:text-blue-400 transition-colors">التطبيقات</a></li>
-                        <li><a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-blue-400 transition-colors">سياسة الخصوصية</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6 text-lg">تابعنا</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-red-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="youtube" class="w-4 h-4"></i>
-                                قناة Inspiring Voices
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-orange-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="book-open" class="w-4 h-4"></i>
-                                مدونة بلوجر
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://groups.google.com/g/googleplay-app-testers" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-green-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="users" class="w-4 h-4"></i>
-                                مجموعة المختبرين
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="ad-container bg-slate-900 border-slate-700">
-                    <ins class="adsbygoogle" 
-                         style="display:block" 
-                         data-ad-client="ca-pub-7137238144396709" 
-                         data-ad-slot="4567890123" 
-                         data-ad-format="rectangle"></ins>
-                </div>
+              </div>
             </div>
-            
-            <div class="border-t border-slate-800 pt-8 text-center">
-                <p class="text-slate-500 text-sm">
-                    جميع الحقوق محفوظة © 2026 GPT HUB | Publisher ID: ca-pub-7137238144396709
-                </p>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Configuration
-        const CONFIG = {
-            adsenseId: 'ca-pub-7137238144396709',
-            baseUrl: 'https://ahmed2sultan2555.github.io/website/',
-            categories: ['برمجة', 'ذكاء اصطناعي', 'تطبيقات', 'أمان سيبراني', 'تطوير ويب', 'قواعد بيانات'],
-            imageCategories: {
-                'برمجة': 'photo-1461749280684-dccba630e2f6',
-                'ذكاء اصطناعي': 'photo-1677442136019-21780ecad995',
-                'تطبيقات': 'photo-1551650975-87deedd944c3',
-                'أمان سيبراني': 'photo-1550751827-4bd374c3f58b',
-                'تطوير ويب': 'photo-1547658719-da2b51169166',
-                'قواعد بيانات': 'photo-1544383835-bda2bc66a55d'
-            }
-        };
+      <!-- FULL SPECS -->
+      <div id="wopf" style="background:var(--s);border:1px solid var(--b);border-radius:20px;padding:44px;margin-bottom:40px">
+        <div class="sh"><div class="slbl">مواصفات كاملة</div><h2 class="stit" style="font-size:1.7rem">Technical Specifications</h2></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px">
+          <div style="background:var(--bg2);border-radius:11px;padding:15px 18px"><div style="font-size:.77rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">CORE FEATURES</div><ul style="list-style:none;font-size:.86rem;color:var(--mu);line-height:2.1"><li>✓ Round Robin Routing</li><li>✓ Working Hours per Agent</li><li>✓ Daily Limit per Agent</li><li>✓ WhatsApp Cloud API</li><li>✓ Cart + Checkout Button</li><li>✓ Floating WhatsApp Button</li></ul></div>
+          <div style="background:var(--bg2);border-radius:11px;padding:15px 18px"><div style="font-size:.77rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">INTEGRATIONS</div><ul style="list-style:none;font-size:.86rem;color:var(--mu);line-height:2.1"><li>✓ Google Analytics 4</li><li>✓ Facebook Pixel</li><li>✓ Slack Notifications</li><li>✓ Zapier Webhooks</li><li>✓ Mailchimp Subscribe</li><li>✓ Custom REST API</li></ul></div>
+          <div style="background:var(--bg2);border-radius:11px;padding:15px 18px"><div style="font-size:.77rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">SECURITY</div><ul style="list-style:none;font-size:.86rem;color:var(--mu);line-height:2.1"><li>✓ HMAC-SHA256 Keys</li><li>✓ Email-Bound License</li><li>✓ Rate Limiting 5/hr</li><li>✓ Nonce Verification</li><li>✓ Remote Revocation</li><li>✓ DB Tamper Detection</li></ul></div>
+          <div style="background:var(--bg2);border-radius:11px;padding:15px 18px"><div style="font-size:.77rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">REQUIREMENTS</div><ul style="list-style:none;font-size:.86rem;color:var(--mu);line-height:2.1"><li>✓ WordPress 5.9+</li><li>✓ WooCommerce 7.0+</li><li>✓ PHP 7.4+</li><li>✓ WC Tested to 9.3</li><li>✓ HPOS Compatible</li><li>✓ GPL-2.0 Licensed</li></ul></div>
+        </div>
+        <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--b);display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://codecanyon.net" target="_blank" rel="noopener" class="bt bg2">⬇️ تحميل من CodeCanyon — $39</a>
+          <button class="bt bpay" onclick="G('buy')">💳 شراء عبر PayPal</button>
+          <a href="https://ahmed2sultan2555.github.io/website/" target="_blank" rel="noopener" class="bt bo">📄 التوثيق</a>
+        </div>
+      </div>
 
-        // Apps Data
-        const appsData = [
-            {
-                id: 1,
-                name: 'Memory Master',
-                icon: 'brain',
-                color: 'from-purple-500 to-pink-500',
-                description: 'لعبة تحديات الذاكرة والذكاء المدعومة بالذكاء الاصطناعي لتطوير القدرات العقلية',
-                link: 'https://play.google.com/store/apps/details?id=com.gpthub.memory_master',
-                features: ['20+ لعبة ذكاء', 'تتبع التقدم', 'تحديات يومية']
-            },
-            {
-                id: 2,
-                name: 'AutoCare',
-                icon: 'car',
-                color: 'from-blue-500 to-cyan-500',
-                description: 'مساعدك الذكي لإدارة صيانة السيارة وتتبع المواعيد والتكاليف',
-                link: 'https://play.google.com/store/apps/details?id=com.gpthub.auto_care',
-                features: ['تذكير الصيانة', 'حساب التكاليف', 'سجل كامل']
-            },
-            {
-                id: 3,
-                name: 'أكاديمية الأرقام',
-                icon: 'graduation-cap',
-                color: 'from-green-500 to-emerald-500',
-                description: 'منصة تعليمية تفاعلية للأطفال لتعلم الأرقام والحساب بطريقة ممتعة',
-                link: 'https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers',
-                features: ['تعليم تفاعلي', 'ألعاب تعليمية', 'متابعة الأداء']
-            }
-        ];
+      <div class="adu adt"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="2345678901" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
 
-        // Generate Posts Data
-        const postsData = [];
-        const specialTitles = [
-            'Memory Master: ثورة ألعاب الذكاء بالذكاء الاصطناعي',
-            'AutoCare: نظام إدارة السيارات الذكي',
-            'أكاديمية الأرقام: مستقبل التعليم التفاعلي',
-            'دليل شامل لبرمجة تطبيقات الأندرويد 2026',
-            'الذكاء الاصطناعي في خدمة المطورين العرب',
-            'استراتيجيات SEO المتقدمة لمتجر Google Play',
-            'بناء تطبيقات Flutter الاحترافية',
-            'أمان التطبيقات: الدليل الكامل',
-            'قواعد البيانات الموزعة وتطبيقاتها',
-            'تطوير واجهات المستخدم بمعايير Material Design',
-            'تعلم Kotlin للمبتدئين: من الصفر للاحتراف',
-            'إدارة الحالة في React Native',
-            'تحسين أداء تطبيقات الويب',
-            'الأمن السيبراني للمطورين',
-            'MongoDB vs PostgreSQL: أيهما تختار؟'
-        ];
+      <!-- COMING SOON -->
+      <div style="background:var(--s);border:1px dashed var(--b2);border-radius:20px;padding:40px;text-align:center">
+        <div style="font-size:2.2rem;margin-bottom:14px">🔜</div>
+        <div style="font-family:var(--mo);font-size:.77rem;color:var(--c2);letter-spacing:2px;margin-bottom:10px">COMING SOON</div>
+        <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:8px">المزيد من إضافات WordPress</h3>
+        <p style="color:var(--mu);font-size:.88rem;max-width:380px;margin:0 auto 22px">WooCommerce Booking Pro، Advanced Order Manager، وأكثر...</p>
+        <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="bt bo">🔔 انضم لقائمة الانتظار</a>
+      </div>
+    </div>
+  </sec>
+</div>
 
-        for (let i = 0; i < 30; i++) {
-            const category = CONFIG.categories[i % CONFIG.categories.length];
-            postsData.push({
-                id: i + 1,
-                title: i < specialTitles.length ? specialTitles[i] : `${category}: تقنيات متقدمة ودروس عملية - الجزء ${i + 1}`,
-                category: category,
-                imageId: CONFIG.imageCategories[category] || 'photo-1518770660439-4636190af475',
-                summary: `استكشف أحدث التقنيات والأدوات في مجال ${category} مع دروس عملية وأمثلة تطبيقية شاملة تساعدك على تطوير مهاراتك البرمجية`,
-                date: new Date(2026, 0, Math.floor(Math.random() * 18) + 1).toLocaleDateString('ar-EG'),
-                readTime: `${Math.floor(Math.random() * 10) + 5} دقائق`,
-                content: generateArticleContent(category, i)
-            });
-        }
+<!-- ====== APPS ====== -->
+<div id="pa" class="pg">
+  <sec>
+    <div class="ct">
+      <!-- Google Play Section -->
+      <div class="sh">
+        <div class="slbl">Google Play Store</div>
+        <h2 class="stit">تطبيقات Android</h2>
+        <p class="ssub">تطبيقات ذكية ومدعومة بالذكاء الاصطناعي على Google Play</p>
+      </div>
 
-        // Generate Article Content
-        function generateArticleContent(category, index) {
-            return `
-                <h2>مقدمة حول ${category}</h2>
-                <p>في عالم التقنية المتسارع، يُعد ${category} من أهم المجالات التي تشهد تطوراً مستمراً. في هذا المقال، سنستكشف أحدث التقنيات والممارسات الفضلى في هذا المجال.</p>
-                
-                <h2>أهمية ${category} في 2026</h2>
-                <p>أصبح ${category} أكثر أهمية من أي وقت مضى، حيث تعتمد عليه الشركات والمؤسسات في تحقيق أهدافها التقنية. من خلال هذا المقال، سنتعرف على:</p>
-                <ul>
-                    <li>أحدث الأدوات والتقنيات المستخدمة</li>
-                    <li>أفضل الممارسات للمطورين المحترفين</li>
-                    <li>نصائح عملية لتحسين الأداء</li>
-                    <li>أمثلة تطبيقية من مشاريع حقيقية</li>
-                </ul>
-                
-                <h3>الأدوات الأساسية</h3>
-                <p>لتحقيق النجاح في ${category}، تحتاج إلى معرفة الأدوات المناسبة. إليك قائمة بأهم الأدوات:</p>
-                <ol>
-                    <li>أدوات التطوير الحديثة</li>
-                    <li>منصات الاختبار والنشر</li>
-                    <li>أدوات مراقبة الأداء</li>
-                    <li>أنظمة إدارة النسخ</li>
-                </ol>
-                
-                <h2>أمثلة عملية</h2>
-                <p>دعنا نستعرض بعض الأمثلة العملية التي توضح كيفية تطبيق هذه المفاهيم في مشاريع حقيقية. سنبدأ بمثال بسيط ثم ننتقل إلى أمثلة أكثر تعقيداً.</p>
-                
-                <pre><code>// مثال برمجي بسيط
-function example() {
-    console.log("مرحباً بك في GPT HUB");
-    return true;
+      <div class="grid3" style="margin-bottom:56px">
+        <div class="acard">
+          <div class="aico" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">🧠</div>
+          <div class="platf plt-gp" style="justify-content:center;margin:0 auto 10px">Google Play</div>
+          <div class="aname">Memory Master</div>
+          <p class="adesc">لعبة تحديات الذاكرة والذكاء المدعومة بالذكاء الاصطناعي لتطوير القدرات العقلية</p>
+          <ul class="afeats">
+            <li>20+ لعبة ذكاء متنوعة</li>
+            <li>تتبع التقدم اليومي</li>
+            <li>تحديات بالذكاء الاصطناعي</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" rel="noopener nofollow" class="bt bg2" style="width:100%;justify-content:center">
+            📲 تحميل من Google Play
+          </a>
+        </div>
+
+        <div class="acard">
+          <div class="aico" style="background:linear-gradient(135deg,#0073aa,#38bdf8)">🚗</div>
+          <div class="platf plt-gp" style="justify-content:center;margin:0 auto 10px">Google Play</div>
+          <div class="aname">AutoCare</div>
+          <p class="adesc">مساعدك الذكي لإدارة صيانة السيارة وتتبع المواعيد والتكاليف</p>
+          <ul class="afeats">
+            <li>تذكير مواعيد الصيانة</li>
+            <li>حساب وتتبع التكاليف</li>
+            <li>سجل كامل للسيارة</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" rel="noopener nofollow" class="bt bg2" style="width:100%;justify-content:center">
+            📲 تحميل من Google Play
+          </a>
+        </div>
+
+        <div class="acard">
+          <div class="aico" style="background:linear-gradient(135deg,#22c55e,#16a34a)">🎓</div>
+          <div class="platf plt-gp" style="justify-content:center;margin:0 auto 10px">Google Play</div>
+          <div class="aname">أكاديمية الأرقام</div>
+          <p class="adesc">منصة تعليمية تفاعلية للأطفال لتعلم الأرقام والحساب بطريقة ممتعة</p>
+          <ul class="afeats">
+            <li>تعليم تفاعلي ومشوّق</li>
+            <li>ألعاب تعليمية للأطفال</li>
+            <li>تقارير متابعة الأداء</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" rel="noopener nofollow" class="bt bg2" style="width:100%;justify-content:center">
+            📲 تحميل من Google Play
+          </a>
+        </div>
+      </div>
+
+      <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="3456789012" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+      <!-- Unity Section -->
+      <div class="sh" style="margin-top:20px">
+        <div class="slbl">Unity Asset Store</div>
+        <h2 class="stit">أدوات Unity</h2>
+        <p class="ssub">أدوات Editor احترافية للمطورين على Unity Asset Store</p>
+      </div>
+
+      <div class="grid2" style="margin-bottom:56px">
+        <div class="card" style="display:grid;grid-template-columns:auto 1fr;gap:0;overflow:hidden">
+          <div style="background:linear-gradient(135deg,#1a1a2e,#16213e);padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:160px">
+            <div style="font-size:3rem">🏗️</div>
+            <div class="platf plt-un" style="font-size:.7rem">Unity Asset Store</div>
+          </div>
+          <div class="card-pad">
+            <h3 style="font-size:1.2rem;font-weight:900;margin-bottom:8px">NovaBuild AI</h3>
+            <p style="color:var(--mu);font-size:.88rem;line-height:1.75;margin-bottom:16px">أداة Level Design ذكية للـ Unity Editor. تولّد مستويات تلقائياً بالذكاء الاصطناعي وتوفر أدوات تحرير متقدمة.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+              <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 10px;font-size:.75rem;font-family:var(--mo);color:var(--mu)">Tools → Level Design</span>
+              <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 10px;font-size:.75rem;font-family:var(--mo);color:var(--mu)">Unity 2022+</span>
+            </div>
+            <div class="bg">
+              <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="bt bo" style="font-size:.82rem;padding:9px 18px">🏪 Unity Asset Store</a>
+              <span style="font-family:var(--mo);font-size:.78rem;color:var(--c3);align-self:center">قريباً</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;text-align:center;border-style:dashed">
+          <div style="font-size:2.2rem;margin-bottom:12px">🔜</div>
+          <div style="font-family:var(--mo);font-size:.75rem;color:var(--c2);letter-spacing:2px;margin-bottom:8px">COMING SOON</div>
+          <h3 style="font-size:1.1rem;font-weight:900;margin-bottom:8px">أدوات Unity قادمة</h3>
+          <p style="color:var(--mu);font-size:.85rem;margin-bottom:18px">Scene Manager Pro، AI Pathfinding Tools، وأكثر...</p>
+          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="bt bo" style="font-size:.82rem;padding:9px 18px">🔔 أبلّغني</a>
+        </div>
+      </div>
+
+      <!-- Flutter Section -->
+      <div class="sh">
+        <div class="slbl">Flutter Games</div>
+        <h2 class="stit">ألعاب Flutter</h2>
+        <p class="ssub">ألعاب Flutter احترافية مع AdMob وIAP</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card" style="display:grid;grid-template-columns:auto 1fr;gap:0;overflow:hidden">
+          <div style="background:linear-gradient(135deg,#0f2027,#203a43);padding:32px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-width:160px">
+            <div style="font-size:3rem">🧩</div>
+            <div class="platf plt-fl" style="font-size:.7rem">Flutter</div>
+          </div>
+          <div class="card-pad">
+            <h3 style="font-size:1.2rem;font-weight:900;margin-bottom:8px">Brain Match</h3>
+            <p style="color:var(--mu);font-size:.88rem;line-height:1.75;margin-bottom:16px">لعبة مطابقة الذاكرة بـ Flutter — 5 مناطق، 150 مستوى، AdMob وIAP متكاملان.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+              <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 10px;font-size:.75rem;font-family:var(--mo);color:var(--mu)">Flutter</span>
+              <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 10px;font-size:.75rem;font-family:var(--mo);color:var(--mu)">AdMob + IAP</span>
+            </div>
+            <div class="bg">
+              <a href="https://play.google.com" target="_blank" rel="noopener" class="bt bg2" style="font-size:.82rem;padding:9px 18px">📲 Google Play</a>
+              <span style="font-family:var(--mo);font-size:.78rem;color:var(--c3);align-self:center">قريباً</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px;text-align:center;border-style:dashed">
+          <div style="font-size:2.2rem;margin-bottom:12px">🎮</div>
+          <div style="font-family:var(--mo);font-size:.75rem;color:var(--c2);letter-spacing:2px;margin-bottom:8px">COMING SOON</div>
+          <h3 style="font-size:1.1rem;font-weight:900;margin-bottom:8px">ألعاب Flutter قادمة</h3>
+          <p style="color:var(--mu);font-size:.85rem;margin-bottom:18px">Word Puzzle، Math Challenge، وأكثر...</p>
+          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="bt bo" style="font-size:.82rem;padding:9px 18px">🔔 أبلّغني</a>
+        </div>
+      </div>
+    </div>
+  </sec>
+</div>
+
+<!-- ====== BUY / PAYPAL ====== -->
+<div id="pbuy" class="pg">
+  <sec>
+    <div class="ct" style="max-width:600px">
+      <div class="sh shc">
+        <div class="slbl">إتمام الشراء</div>
+        <h2 class="stit">شراء عبر PayPal</h2>
+        <p class="ssub">اختر المنتج وأتمّ عملية الدفع الآمنة عبر PayPal</p>
+      </div>
+
+      <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="5678901234" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+      <div class="paybox">
+        <div style="font-size:2.5rem;margin-bottom:12px">💳</div>
+        <h3>اشترِ الآن بأمان</h3>
+        <p>سيتم تحويلك لـ PayPal لإتمام الدفع الآمن. ستصلك رابط التحميل والترخيص على بريدك فوراً بعد الدفع.</p>
+
+        <form class="paypal-form" onsubmit="doPay(event)">
+          <select id="pprod" required>
+            <option value="">— اختر المنتج —</option>
+            <option value="wop_39">WooCommerce WhatsApp Order Pro — $39</option>
+            <option value="wop_bundle_59">WOP + Support Bundle — $59</option>
+          </select>
+          <input type="email" id="pmail" placeholder="بريدك الإلكتروني" required>
+          <input type="text" id="pname" placeholder="اسمك الكامل" required>
+          <button type="submit" class="bt bpay" style="width:100%;justify-content:center;font-size:1rem;padding:14px">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            ادفع عبر PayPal
+          </button>
+        </form>
+
+        <p style="font-size:.78rem;color:var(--mu);margin-top:16px">
+          🔒 دفع آمن 100% عبر PayPal<br>
+          📧 الترخيص يُرسل فوراً على بريدك<br>
+          💬 دعم فني على ahmed2sultan2@gmail.com
+        </p>
+      </div>
+    </div>
+  </sec>
+</div>
+
+<!-- ====== LINKS ====== -->
+<div id="pl" class="pg">
+  <sec>
+    <div class="ct">
+      <div class="sh">
+        <div class="slbl">تواصل معنا</div>
+        <h2 class="stit">روابطنا ومجتمعاتنا</h2>
+        <p class="ssub">تابعنا على كل المنصات وانضم لمجتمع المطورين</p>
+      </div>
+
+      <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="3456789012" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+      <div class="lgrid">
+        <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(255,0,0,.12)">▶️</div><div class="lin"><h3>قناة يوتيوب</h3><p>Inspiring Voices — فيديوهات تقنية</p></div><div class="la">→</div></a>
+        <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(255,165,0,.1)">📝</div><div class="lin"><h3>مدونة بلوجر</h3><p>GPT HUB — مقالات تقنية متخصصة</p></div><div class="la">→</div></a>
+        <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(34,197,94,.1)">👥</div><div class="lin"><h3>مجتمع المختبرين</h3><p>Google Groups — انضم للاختبار المبكر</p></div><div class="la">→</div></a>
+        <a href="https://codecanyon.net" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(0,240,255,.08)">🟦</div><div class="lin"><h3>CodeCanyon</h3><p>إضافات WordPress على Envato</p></div><div class="la">→</div></a>
+        <a href="https://play.google.com" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(1,135,95,.1)">📱</div><div class="lin"><h3>Google Play</h3><p>تطبيقات وألعاب أندرويد</p></div><div class="la">→</div></a>
+        <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(255,255,255,.06)">🎮</div><div class="lin"><h3>Unity Asset Store</h3><p>أدوات تطوير Unity</p></div><div class="la">→</div></a>
+        <a href="mailto:ahmed2sultan2@gmail.com" class="lc"><div class="lic" style="background:rgba(124,58,237,.1)">📧</div><div class="lin"><h3>البريد الإلكتروني</h3><p>ahmed2sultan2@gmail.com</p></div><div class="la">→</div></a>
+        <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener" class="lc"><div class="lic" style="background:rgba(100,116,139,.08)">🔒</div><div class="lin"><h3>سياسة الخصوصية</h3><p>شروط الاستخدام وسياسة البيانات</p></div><div class="la">→</div></a>
+      </div>
+
+      <div class="adu adt" style="margin-top:36px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="4567890123" data-ad-format="rectangle"></ins></div>
+    </div>
+  </sec>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ct">
+    <div class="fgr">
+      <div class="fbr">
+        <div class="logo"><div class="li">&lt;/&gt;</div>Code<em>Forge</em></div>
+        <p>أدوات وإضافات احترافية للمطورين — WordPress، Unity، Flutter.</p>
+      </div>
+      <div class="fc">
+        <h4>المنتجات</h4>
+        <ul>
+          <li><a href="#" onclick="G('products');return false">🟦 WooCommerce WhatsApp Order Pro</a></li>
+          <li><a href="#" onclick="G('apps');return false">📱 تطبيقات Google Play</a></li>
+          <li><a href="#" onclick="G('apps');return false">🎮 أدوات Unity</a></li>
+          <li><a href="#" onclick="G('buy');return false">💳 شراء عبر PayPal</a></li>
+        </ul>
+      </div>
+      <div class="fc">
+        <h4>تواصل</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب</a></li>
+          <li><a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة</a></li>
+          <li><a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a></li>
+          <li><a href="mailto:ahmed2sultan2@gmail.com">📧 ahmed2sultan2@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <p>© 2026 CodeForge — Ahmed Sultan | Publisher: ca-pub-7137238144396709</p>
+      <div class="fls">
+        <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank">الخصوصية</a>
+        <a href="mailto:ahmed2sultan2@gmail.com">تواصل</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── PARTICLES ──
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<80;i++){
+    const s=document.createElement('div');
+    const sz=Math.random()*2+1;
+    s.className='star';
+    s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*4+2}s;--op:${Math.random()*.5+.1};animation-delay:${Math.random()*4}s`;
+    c.appendChild(s);
+  }
+})();
+
+// ── NAV ──
+const PAGES={home:'ph',products:'pp',apps:'pa',buy:'pbuy',links:'pl'};
+const NLINKS={home:'nh',products:'np',apps:'na',links:'nl2'};
+
+function G(id){
+  Object.values(PAGES).forEach(p=>{
+    const el=document.getElementById(p);
+    if(el)el.classList.remove('on');
+  });
+  Object.values(NLINKS).forEach(n=>{
+    const el=document.getElementById(n);
+    if(el)el.classList.remove('on');
+  });
+  const pg=document.getElementById(PAGES[id]);
+  if(pg)pg.classList.add('on');
+  const nl=document.getElementById(NLINKS[id]);
+  if(nl)nl.classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'});
 }
-</code></pre>
-                
-                <h3>نصائح للمطورين</h3>
-                <p>إليك بعض النصائح المهمة التي ستساعدك على التطور في مجال ${category}:</p>
-                <ul>
-                    <li><strong>التعلم المستمر:</strong> تابع أحدث التطورات في المجال</li>
-                    <li><strong>التطبيق العملي:</strong> قم ببناء مشاريع حقيقية</li>
-                    <li><strong>المشاركة:</strong> انضم إلى المجتمعات التقنية</li>
-                    <li><strong>القراءة:</strong> اطلع على الوثائق الرسمية</li>
-                </ul>
-                
-                <h2>الخلاصة</h2>
-                <p>في الختام، يُعتبر ${category} مجالاً واسعاً ومتنوعاً يتطلب التعلم المستمر والممارسة الدائمة. نأمل أن يكون هذا المقال قد قدم لك معلومات قيمة تساعدك في رحلتك التقنية.</p>
-                
-                <p>لمزيد من المقالات والدروس التقنية، تابع موقع GPT HUB ولا تنسَ الاشتراك في قناتنا على اليوتيوب.</p>
-            `;
-        }
 
-        // Current State
-        let currentPage = 'home';
-        let selectedCategory = 'الكل';
-        let postsDisplayed = 6;
-        let currentArticle = null;
+function TM(){
+  const m=document.getElementById('mn');
+  m.style.display=m.style.display==='block'?'none':'block';
+}
 
-        // Navigation System
-        function navigateTo(page, articleId = null) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            
-            // Update current page
-            currentPage = page;
-            
-            // Show selected page
-            const pageElement = document.getElementById(`${page}-page`);
-            if (pageElement) {
-                pageElement.classList.add('active');
-            }
-            
-            // Special handling for article page
-            if (page === 'article' && articleId) {
-                currentArticle = postsData.find(p => p.id === articleId);
-                if (currentArticle) {
-                    renderArticle(currentArticle);
-                }
-            }
-            
-            // Scroll to top
-            window.scrollTo({top: 0, behavior: 'smooth'});
-            
-            // Update URL without reload
-            const url = articleId ? `#article/${articleId}` : `#${page}`;
-            history.pushState({page, articleId}, '', url);
-            
-            // Update canonical
-            updateCanonical(url);
-            
-            // Refresh icons
-            lucide.createIcons();
-            
-            // Reload ads
-            reloadAds();
-        }
+function scrollTo2(id){
+  G('products');
+  setTimeout(()=>{
+    const el=document.getElementById(id);
+    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  },400);
+}
 
-        // Initialize App
-        function init() {
-            renderFeaturedApps();
-            renderAllApps();
-            renderHomePosts();
-            renderCategoryFilter();
-            renderPosts();
-            setupScrollProgress();
-            setupPopState();
-            lucide.createIcons();
-            
-            // Load ads
-            setTimeout(loadAds, 1000);
-            
-            // Handle initial URL
-            handleInitialRoute();
-        }
+// ── PROGRESS ──
+window.addEventListener('scroll',()=>{
+  const t=document.documentElement.scrollHeight-window.innerHeight;
+  const p=t>0?(window.scrollY/t)*100:0;
+  document.getElementById('prog').style.width=p+'%';
+});
 
-        // Handle initial route from URL
-        function handleInitialRoute() {
-            const hash = window.location.hash.slice(1);
-            if (!hash || hash === 'home') return;
-            
-            const parts = hash.split('/');
-            if (parts[0] === 'article' && parts[1]) {
-                navigateTo('article', parseInt(parts[1]));
-            } else {
-                navigateTo(parts[0]);
-            }
-        }
+// ── COUNTERS ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const el=e.target,t=parseInt(el.dataset.c);
+    let c=0;const s=Math.ceil(t/36);
+    const tm=setInterval(()=>{c=Math.min(c+s,t);el.textContent=c+(t>9?'+':'');if(c>=t)clearInterval(tm);},28);
+    obs.unobserve(el);
+  });
+},{threshold:0.5});
+document.querySelectorAll('[data-c]').forEach(el=>obs.observe(el));
 
-        // Setup PopState for browser back/forward
-        function setupPopState() {
-            window.addEventListener('popstate', (e) => {
-                if (e.state) {
-                    navigateTo(e.state.page, e.state.articleId);
-                } else {
-                    handleInitialRoute();
-                }
-            });
-        }
+// ── SLIDER ──
+let si=0;const ts=5;
+function US(){
+  const t=document.getElementById('sst');
+  if(t)t.style.transform=`translateX(${si*100}%)`;
+  document.querySelectorAll('.sd').forEach((d,i)=>d.classList.toggle('on',i===si));
+}
+function SL(d){si=(si+d+ts)%ts;US();}
+function GS(i){si=i;US();}
+setInterval(()=>SL(1),4200);
 
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
+// ── MEDIA TABS ──
+function ST(btn,panel){
+  document.querySelectorAll('.mtab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.mpan').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('panel-'+panel).classList.add('on');
+}
 
-        // Render Featured Apps (Home)
-        function renderFeaturedApps() {
-            const container = document.getElementById('featured-apps');
-            container.innerHTML = appsData.map(app => `
-                <article class="app-card">
-                    <div class="w-16 h-16 bg-gradient-to-br ${app.color} rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                        <i data-lucide="${app.icon}" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h4 class="text-xl font-black cairo mb-3">${app.name}</h4>
-                    <p class="text-slate-600 text-sm mb-6 leading-relaxed">${app.description}</p>
-                    <div class="space-y-2 mb-6">
-                        ${app.features.map(f => `
-                            <div class="flex items-center justify-center gap-2 text-xs text-slate-500">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
-                                <span>${f}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                    <a href="${app.link}" target="_blank" rel="noopener nofollow" class="block w-full bg-gradient-to-r ${app.color} text-white py-3 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg">
-                        تحميل التطبيق
-                    </a>
-                </article>
-            `).join('');
-        }
+// ── VIDEO ──
+function LV(){
+  const vid='YOUR_YOUTUBE_VIDEO_ID';
+  document.getElementById('vc').innerHTML=`<iframe class="vembed" src="https://www.youtube.com/embed/${vid}?autoplay=1&rel=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="width:100%;height:100%;min-height:260px;border:none"></iframe>`;
+}
 
-        // Render All Apps (Apps Page)
-        function renderAllApps() {
-            const container = document.getElementById('all-apps');
-            if (!container) return;
-            container.innerHTML = appsData.map(app => `
-                <article class="app-card">
-                    <div class="w-20 h-20 bg-gradient-to-br ${app.color} rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
-                        <i data-lucide="${app.icon}" class="w-10 h-10 text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-black cairo mb-4">${app.name}</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">${app.description}</p>
-                    <div class="space-y-3 mb-8">
-                        ${app.features.map(f => `
-                            <div class="flex items-center justify-center gap-2 text-sm text-slate-600">
-                                <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                                <span>${f}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                    <a href="${app.link}" target="_blank" rel="noopener nofollow" class="block w-full bg-gradient-to-r ${app.color} text-white py-4 rounded-2xl font-bold hover:scale-105 transition-transform shadow-lg text-lg">
-                        تحميل من Google Play
-                    </a>
-                </article>
-            `).join('');
-        }
+// ── PAYPAL ──
+function doPay(e){
+  e.preventDefault();
+  const prod=document.getElementById('pprod').value;
+  const mail=document.getElementById('pmail').value;
+  const name=document.getElementById('pname').value;
+  if(!prod||!mail||!name){alert('يرجى ملء جميع الحقول');return;}
 
-        // Render Home Posts (Preview)
-        function renderHomePosts() {
-            const container = document.getElementById('home-posts');
-            const posts = postsData.slice(0, 3);
-            container.innerHTML = posts.map(post => createPostCard(post)).join('');
-        }
+  const prices={wop_39:'39.00',wop_bundle_59:'59.00'};
+  const items={wop_39:'WooCommerce WhatsApp Order Pro',wop_bundle_59:'WOP Bundle + Support'};
+  const amount=prices[prod];
+  const item=items[prod];
 
-        // Create Post Card HTML
-        function createPostCard(post) {
-            return `
-                <article class="article-card" onclick="navigateTo('article', ${post.id})" itemscope itemtype="https://schema.org/Article">
-                    <div class="relative overflow-hidden h-64">
-                        <img src="https://images.unsplash.com/${post.imageId}?auto=format&fit=crop&w=800&q=80&sig=${post.id}" 
-                             class="w-full h-full object-cover" 
-                             alt="${post.title}"
-                             itemprop="image"
-                             loading="lazy"
-                             width="800"
-                             height="600">
-                        <span class="category-badge absolute top-4 right-4 text-white text-xs px-4 py-2 rounded-full font-bold">
-                            ${post.category}
-                        </span>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-4 text-xs text-slate-500 mb-4">
-                            <time datetime="${new Date().toISOString()}" itemprop="datePublished" class="flex items-center gap-1">
-                                <i data-lucide="calendar" class="w-3 h-3"></i>
-                                ${post.date}
-                            </time>
-                            <span class="flex items-center gap-1">
-                                <i data-lucide="clock" class="w-3 h-3"></i>
-                                ${post.readTime}
-                            </span>
-                        </div>
-                        <h3 class="text-xl font-black cairo mb-3 leading-tight hover:text-blue-600 transition-colors line-clamp-2" itemprop="headline">
-                            ${post.title}
-                        </h3>
-                        <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-6" itemprop="description">
-                            ${post.summary}
-                        </p>
-                        <div class="flex items-center justify-between text-blue-600 font-bold text-sm">
-                            <span>اقرأ المزيد</span>
-                            <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        </div>
-                    </div>
-                    <meta itemprop="author" content="GPT HUB">
-                    <meta itemprop="publisher" content="GPT HUB">
-                </article>
-            `;
-        }
+  // PayPal payment URL - replace with your PayPal Business email
+  const paypalEmail='ahmed2sultan2@gmail.com';
+  const url=`https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent(paypalEmail)}&item_name=${encodeURIComponent(item)}&amount=${amount}&currency_code=USD&buyer_email=${encodeURIComponent(mail)}`;
+  window.open(url,'_blank');
+}
 
-        // Category Filter
-        function renderCategoryFilter() {
-            const container = document.getElementById('category-filter');
-            if (!container) return;
-            
-            const categories = ['الكل', ...CONFIG.categories];
-            container.innerHTML = categories.map(cat => `
-                <button onclick="filterByCategory('${cat}')" 
-                        class="px-6 py-2.5 rounded-full font-bold transition-all ${
-                            selectedCategory === cat 
-                            ? 'bg-white text-purple-600 shadow-lg scale-105' 
-                            : 'bg-white/20 text-white hover:bg-white/30'
-                        }"
-                        aria-label="تصفية حسب ${cat}">
-                    ${cat}
-                </button>
-            `).join('');
-        }
-
-        function filterByCategory(category) {
-            selectedCategory = category;
-            postsDisplayed = 6;
-            renderCategoryFilter();
-            renderPosts();
-        }
-
-        // Render Posts (Blog Page)
-        function renderPosts() {
-            const container = document.getElementById('all-posts');
-            if (!container) return;
-            
-            const filtered = selectedCategory === 'الكل' 
-                ? postsData 
-                : postsData.filter(p => p.category === selectedCategory);
-            
-            const posts = filtered.slice(0, postsDisplayed);
-            container.innerHTML = posts.map(post => createPostCard(post)).join('');
-            
-            const loadMoreBtn = document.getElementById('load-more-btn');
-            if (loadMoreBtn) {
-                loadMoreBtn.style.display = postsDisplayed >= filtered.length ? 'none' : 'inline-block';
-            }
-            
-            lucide.createIcons();
-        }
-
-        // Load More Posts
-        function loadMorePosts() {
-            postsDisplayed += 6;
-            renderPosts();
-        }
-
-        // Render Article
-        function renderArticle(post) {
-            const breadcrumb = document.getElementById('article-breadcrumb');
-            breadcrumb.innerHTML = `
-                <a href="#" onclick="navigateTo('home')" class="text-slate-600 hover:text-blue-600">الرئيسية</a>
-                <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
-                <a href="#" onclick="navigateTo('blog')" class="text-slate-600 hover:text-blue-600">المقالات</a>
-                <i data-lucide="chevron-left" class="w-4 h-4 text-slate-400"></i>
-                <span class="font-bold text-slate-900">${post.category}</span>
-            `;
-            
-            const content = document.getElementById('article-content');
-            content.innerHTML = `
-                <article class="article-content" itemscope itemtype="https://schema.org/Article">
-                    <div class="mb-8">
-                        <span class="category-badge text-white text-sm px-6 py-2 rounded-full font-bold inline-block mb-4">
-                            ${post.category}
-                        </span>
-                        <h1 class="text-3xl md:text-5xl font-black cairo mb-6 leading-tight" itemprop="headline">
-                            ${post.title}
-                        </h1>
-                        <div class="flex items-center gap-6 text-slate-500 mb-8">
-                            <time datetime="${new Date().toISOString()}" itemprop="datePublished" class="flex items-center gap-2">
-                                <i data-lucide="calendar" class="w-5 h-5"></i>
-                                ${post.date}
-                            </time>
-                            <span class="flex items-center gap-2">
-                                <i data-lucide="clock" class="w-5 h-5"></i>
-                                ${post.readTime}
-                            </span>
-                            <span class="flex items-center gap-2">
-                                <i data-lucide="user" class="w-5 h-5"></i>
-                                GPT HUB
-                            </span>
-                        </div>
-                    </div>
-                    
-                    <img src="https://images.unsplash.com/${post.imageId}?auto=format&fit=crop&w=1200&q=80" 
-                         class="w-full h-96 object-cover rounded-3xl mb-8 shadow-2xl" 
-                         alt="${post.title}"
-                         itemprop="image"
-                         loading="lazy">
-                    
-                    <div itemprop="articleBody">
-                        ${post.content}
-                    </div>
-                    
-                    <meta itemprop="author" content="GPT HUB">
-                    <meta itemprop="publisher" content="GPT HUB">
-                    <meta itemprop="description" content="${post.summary}">
-                </article>
-            `;
-            
-            // Render related posts
-            const related = postsData
-                .filter(p => p.category === post.category && p.id !== post.id)
-                .slice(0, 3);
-            
-            const relatedContainer = document.getElementById('related-posts');
-            relatedContainer.innerHTML = related.map(p => createPostCard(p)).join('');
-            
-            lucide.createIcons();
-        }
-
-        // Scroll Progress
-        function setupScrollProgress() {
-            window.addEventListener('scroll', () => {
-                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (winScroll / height) * 100;
-                document.getElementById('progress-bar').style.width = scrolled + '%';
-            });
-        }
-
-        // Update canonical
-        function updateCanonical(path) {
-            let canonical = document.querySelector('link[rel="canonical"]');
-            if (!canonical) {
-                canonical = document.createElement('link');
-                canonical.rel = 'canonical';
-                document.head.appendChild(canonical);
-            }
-            canonical.href = CONFIG.baseUrl + path.replace('#', '');
-        }
-
-        // Load AdSense Ads
-        function loadAds() {
-            try {
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            } catch (e) {
-                console.log('AdSense loading...');
-            }
-        }
-
-        // Reload Ads on page change
-        function reloadAds() {
-            setTimeout(() => {
-                const ads = document.querySelectorAll('.adsbygoogle');
-                ads.forEach(ad => {
-                    try {
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                    } catch (e) {}
-                });
-            }, 500);
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
-
-    <!-- JSON-LD Structured Data for Website -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "GPT HUB",
-        "alternateName": "موسوعة GPT HUB",
-        "description": "المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات",
-        "url": "https://ahmed2sultan2555.github.io/website/",
-        "inLanguage": "ar",
-        "publisher": {
-            "@type": "Organization",
-            "name": "GPT HUB",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://ahmed2sultan2555.github.io/website/logo.png",
-                "width": 600,
-                "height": 600
-            },
-            "sameAs": [
-                "https://www.youtube.com/@Inspiring_voices493",
-                "https://gpthub21.blogspot.com/",
-                "https://groups.google.com/g/googleplay-app-testers"
-            ]
-        },
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://ahmed2sultan2555.github.io/website/#blog?q={search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-
-    <!-- JSON-LD for Organization -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "GPT HUB",
-        "url": "https://ahmed2sultan2555.github.io/website/",
-        "logo": "https://ahmed2sultan2555.github.io/website/logo.png",
-        "description": "المصدر العربي الأول لتعلم البرمجة والذكاء الاصطناعي وتطوير التطبيقات",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Service",
-            "availableLanguage": "Arabic"
-        },
-        "sameAs": [
-            "https://www.youtube.com/@Inspiring_voices493",
-            "https://gpthub21.blogspot.com/",
-            "https://groups.google.com/g/googleplay-app-testers"
-        ]
-    }
-    </script>
+// ── ADS ──
+function RA(){
+  setTimeout(()=>{
+    try{
+      document.querySelectorAll('.adsbygoogle:not([data-adsbygoogle-status])').forEach(()=>{
+        (adsbygoogle=window.adsbygoogle||[]).push({});
+      });
+    }catch(e){}
+  },600);
+}
+window.addEventListener('load',()=>{
+  setTimeout(()=>{try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}},1000);
+});
+</script>
 </body>
 </html>
-
-
-
