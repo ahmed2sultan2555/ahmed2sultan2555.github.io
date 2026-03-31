@@ -44,6 +44,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.94);backdrop-filte
 .tag-p{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:#a78bfa}
 .tag-b{background:rgba(56,189,248,.09);border:1px solid rgba(56,189,248,.2);color:#38bdf8}
 .tag-w{background:rgba(255,255,255,.06);border:1px solid var(--b);color:var(--tx)}
+.tag-o{background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.22);color:var(--c3)}
 .lbl{font-family:var(--mo);font-size:.74rem;color:var(--c1);letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:10px}
 .lbl::before{content:'//';opacity:.4}
 h2.sec-t{font-size:clamp(1.7rem,3vw,2.6rem);font-weight:900;letter-spacing:-.5px;margin-bottom:12px}
@@ -192,8 +193,103 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:52px 0 26px}
 .flinks{display:flex;gap:16px}
 .flinks a{color:var(--mu);font-size:.78rem;transition:color .2s}
 .flinks a:hover{color:var(--c1)}
-@media(max-width:1024px){.hero-inner,.pfeat{grid-template-columns:1fr}.vis{display:none}.pmed{border-right:none;border-top:1px solid var(--b)}.g3{grid-template-columns:1fr 1fr}}
-@media(max-width:680px){.nlinks{display:none}.ham{display:flex}.g2,.g3{grid-template-columns:1fr}.fgr{grid-template-columns:1fr;gap:28px}.sgr{flex-direction:column}.si{border-right:none;border-bottom:1px solid var(--b);padding:13px 20px}.si:last-child{border-bottom:none}.pinfo{padding:24px}.hac{grid-template-columns:1fr}.hac-ico{padding:16px;flex-direction:row;border-bottom:1px solid var(--b)}}
+
+/* ═══════════════════════════════════════════
+   PRIVACY PAGE STYLES
+═══════════════════════════════════════════ */
+/* Privacy Hub Cards */
+.prv-hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-bottom:40px}
+.prv-card{background:var(--s);border:1px solid var(--b);border-radius:18px;padding:28px 24px;cursor:pointer;transition:all .28s;position:relative;overflow:hidden;text-align:right}
+.prv-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(0,229,255,.04));opacity:0;transition:.3s}
+.prv-card:hover::before{opacity:1}
+.prv-card:hover{transform:translateY(-5px);border-color:rgba(0,229,255,.18);box-shadow:0 18px 52px rgba(0,0,0,.4)}
+.prv-card-ico{width:56px;height:56px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:16px}
+.prv-card h3{font-size:1.1rem;font-weight:900;margin-bottom:6px}
+.prv-card p{font-size:.83rem;color:var(--mu);line-height:1.7;margin-bottom:14px}
+.prv-card-arrow{font-size:.82rem;color:var(--c1);font-family:var(--mo);display:flex;align-items:center;gap:5px}
+.prv-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:20px;padding:3px 10px;font-size:.72rem;font-family:var(--mo);color:var(--gr);margin-bottom:12px}
+
+/* Policy Detail View */
+.prv-detail{display:none;animation:fu .3s ease}
+.prv-detail.on{display:block}
+.prv-hub-view{display:block}
+.prv-hub-view.hidden{display:none}
+
+/* Back button */
+.prv-back{display:inline-flex;align-items:center;gap:8px;background:var(--s);border:1px solid var(--b);border-radius:30px;padding:9px 20px;font-size:.86rem;font-weight:600;color:var(--mu);cursor:pointer;transition:all .2s;margin-bottom:28px}
+.prv-back:hover{border-color:var(--c1);color:var(--c1)}
+
+/* Policy breadcrumb */
+.prv-breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--mu);margin-bottom:20px;font-family:var(--mo)}
+.prv-breadcrumb span{color:var(--c1)}
+
+/* Policy header banner */
+.prv-banner{background:var(--s);border:1px solid var(--b);border-radius:20px;padding:36px;margin-bottom:32px;display:flex;align-items:center;gap:24px;position:relative;overflow:hidden}
+.prv-banner::after{content:'PRIVACY POLICY';position:absolute;left:20px;bottom:-10px;font-family:var(--mo);font-size:4rem;font-weight:900;color:rgba(255,255,255,.02);pointer-events:none;white-space:nowrap}
+.prv-banner-ico{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
+.prv-banner h2{font-size:1.6rem;font-weight:900;margin-bottom:4px}
+.prv-banner p{color:var(--mu);font-size:.88rem}
+
+/* Policy sections */
+.prv-body{display:grid;grid-template-columns:1fr;gap:14px}
+.prv-section{background:var(--s);border:1px solid var(--b);border-radius:14px;overflow:hidden}
+.prv-section-hd{display:flex;align-items:center;gap:12px;padding:16px 20px;cursor:pointer;user-select:none;transition:background .2s}
+.prv-section-hd:hover{background:rgba(255,255,255,.025)}
+.prv-section-hd .prv-sico{font-size:1.1rem;width:34px;height:34px;background:var(--bg2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.prv-section-hd h3{font-size:.95rem;font-weight:700;flex:1}
+.prv-section-hd .prv-arr{font-size:.7rem;color:var(--mu);transition:transform .25s}
+.prv-section.open .prv-arr{transform:rotate(90deg)}
+.prv-section-body{display:none;padding:0 20px 20px;border-top:1px solid var(--b)}
+.prv-section.open .prv-section-body{display:block;animation:fu .25s ease}
+
+/* Policy body typography */
+.prv-p{font-size:.88rem;color:var(--mu);line-height:1.9;margin-bottom:12px}
+.prv-p:last-child{margin-bottom:0}
+.prv-ul{list-style:none;margin:10px 0}
+.prv-ul li{font-size:.86rem;color:var(--mu);padding:5px 0;display:flex;align-items:flex-start;gap:8px;border-bottom:1px solid rgba(255,255,255,.04)}
+.prv-ul li:last-child{border-bottom:none}
+.prv-ul li::before{content:'▸';color:var(--c1);font-size:.7rem;margin-top:4px;flex-shrink:0}
+.prv-ul li strong{color:var(--tx)}
+.prv-tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:.82rem}
+.prv-tbl th{background:var(--bg2);color:var(--c1);font-family:var(--mo);font-size:.74rem;letter-spacing:1px;padding:9px 14px;text-align:right;font-weight:700}
+.prv-tbl td{padding:9px 14px;border-bottom:1px solid var(--b);color:var(--mu)}
+.prv-tbl tr:last-child td{border-bottom:none}
+.prv-tbl tr:hover td{background:rgba(255,255,255,.025)}
+
+/* Compliance chips row */
+.prv-comp{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.prv-comp-chip{background:var(--bg2);border:1px solid var(--b);border-radius:7px;padding:5px 13px;font-size:.76rem;font-family:var(--mo);color:var(--mu);display:flex;align-items:center;gap:5px}
+.prv-comp-chip::before{content:'✓';color:var(--gr)}
+
+/* Contact card inside policy */
+.prv-contact{background:var(--bg2);border-radius:12px;padding:18px;display:flex;align-items:center;gap:14px;margin-top:8px}
+.prv-contact-ico{font-size:1.8rem}
+.prv-contact p{font-size:.84rem;color:var(--mu);line-height:1.7}
+.prv-contact a{color:var(--c1);font-weight:700}
+.prv-contact strong{color:var(--tx);font-size:.9rem}
+
+/* Permission badge */
+.prv-perm{background:var(--bg2);border:1px solid var(--b);border-radius:10px;padding:12px 16px;margin:8px 0;display:flex;align-items:center;gap:12px}
+.prv-perm-ico{font-size:1.2rem}
+.prv-perm h4{font-size:.86rem;font-weight:700;margin-bottom:2px}
+.prv-perm p{font-size:.78rem;color:var(--mu)}
+
+/* Rights grid */
+.prv-rights{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.prv-right-item{background:var(--bg2);border-radius:9px;padding:10px 14px;display:flex;align-items:flex-start;gap:8px}
+.prv-right-item .r-ico{font-size:1rem;flex-shrink:0;margin-top:1px}
+.prv-right-item h4{font-size:.8rem;font-weight:700;margin-bottom:2px;color:var(--tx)}
+.prv-right-item p{font-size:.74rem;color:var(--mu)}
+
+/* Last updated bar */
+.prv-updated{display:flex;align-items:center;justify-content:space-between;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.1);border-radius:10px;padding:10px 16px;font-size:.78rem;font-family:var(--mo);color:var(--mu);margin-top:20px;flex-wrap:wrap;gap:8px}
+.prv-updated span{color:var(--c1)}
+
+/* Site policy tab */
+.prv-site-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+
+@media(max-width:1024px){.hero-inner,.pfeat{grid-template-columns:1fr}.vis{display:none}.pmed{border-right:none;border-top:1px solid var(--b)}.g3{grid-template-columns:1fr 1fr}.prv-site-grid{grid-template-columns:1fr}}
+@media(max-width:680px){.nlinks{display:none}.ham{display:flex}.g2,.g3{grid-template-columns:1fr}.fgr{grid-template-columns:1fr;gap:28px}.sgr{flex-direction:column}.si{border-right:none;border-bottom:1px solid var(--b);padding:13px 20px}.si:last-child{border-bottom:none}.pinfo{padding:24px}.hac{grid-template-columns:1fr}.hac-ico{padding:16px;flex-direction:row;border-bottom:1px solid var(--b)}.prv-hub{grid-template-columns:1fr}.prv-banner{flex-direction:column;text-align:center}.prv-rights{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -207,6 +303,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:52px 0 26px}
       <li><a href="#" id="la" onclick="show('apps');return false">التطبيقات</a></li>
       <li><a href="#" id="lb" onclick="show('buy');return false">💳 شراء</a></li>
       <li><a href="#" id="ll" onclick="show('links');return false">روابطنا</a></li>
+      <li><a href="#" id="lv" onclick="show('privacy');return false">🔒 الخصوصية</a></li>
       <li><a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener">المدونة</a></li>
       <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="cta">▶ يوتيوب</a></li>
     </ul>
@@ -219,6 +316,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:52px 0 26px}
   <a href="#" onclick="show('apps');closeMnu();return false">📱 التطبيقات</a>
   <a href="#" onclick="show('buy');closeMnu();return false">💳 شراء / PayPal</a>
   <a href="#" onclick="show('links');closeMnu();return false">🔗 روابطنا</a>
+  <a href="#" onclick="show('privacy');closeMnu();return false">🔒 الخصوصية</a>
   <a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة</a>
   <a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a>
   <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب</a>
@@ -417,11 +515,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:52px 0 26px}
           <span style="color:var(--mu);font-size:.84rem">⏳ جاري تحميل PayPal...</span>
         </div>
         <div id="paypal-container-FVUKC8L7EK758"></div>
-        <p class="pay-notes">
-          🔒 دفع آمن 100% عبر PayPal<br>
-          📧 الترخيص يُرسل فوراً على بريدك<br>
-          💬 دعم: ahmed2sultan2@gmail.com
-        </p>
+        <p class="pay-notes">🔒 دفع آمن 100% عبر PayPal<br>📧 الترخيص يُرسل فوراً على بريدك<br>💬 دعم: ahmed2sultan2@gmail.com</p>
       </div>
     </div>
   </section>
@@ -441,28 +535,592 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:52px 0 26px}
         <a href="https://play.google.com" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(34,197,94,.1)">📱</div><div class="lkd"><h3>Google Play</h3><p>تطبيقات وألعاب أندرويد</p></div><div class="lka">→</div></a>
         <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(255,255,255,.06)">🎮</div><div class="lkd"><h3>Unity Asset Store</h3><p>أدوات تطوير Unity</p></div><div class="lka">→</div></a>
         <a href="mailto:ahmed2sultan2@gmail.com" class="lk"><div class="lki" style="background:rgba(124,58,237,.1)">📧</div><div class="lkd"><h3>البريد الإلكتروني</h3><p>ahmed2sultan2@gmail.com</p></div><div class="lka">→</div></a>
-        <a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(100,116,139,.08)">🔒</div><div class="lkd"><h3>سياسة الخصوصية</h3><p>شروط الاستخدام والبيانات</p></div><div class="lka">→</div></a>
+        <a href="#" onclick="show('privacy');return false" class="lk"><div class="lki" style="background:rgba(100,116,139,.08)">🔒</div><div class="lkd"><h3>سياسة الخصوصية</h3><p>شروط الاستخدام والبيانات</p></div><div class="lka">→</div></a>
       </div>
       <div class="adu adu-t" style="margin-top:32px"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="6666666666" data-ad-format="rectangle"></ins></div>
     </div>
   </section>
 </div>
 
+<!-- ══════════════════════════════════════════════════════════
+     PRIVACY PAGE — Hub + 4 Policies (Site, Numbers Academy, Brain Match, AutoCare)
+══════════════════════════════════════════════════════════ -->
+<div id="privacy" class="pg">
+  <section class="sec">
+    <div class="wrap">
+
+      <!-- HUB VIEW -->
+      <div id="prv-hub-view" class="prv-hub-view">
+        <div class="sh">
+          <div class="lbl">سياسة الخصوصية</div>
+          <h2 class="sec-t">مركز الخصوصية</h2>
+          <p class="sub">سياسات خصوصية شاملة ومتوافقة مع GDPR، COPPA، CCPA ومتطلبات Google Play — اختر المنتج لعرض سياسته</p>
+        </div>
+
+        <!-- Compliance badges strip -->
+        <div style="background:var(--s);border:1px solid var(--b);border-radius:14px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <span style="font-size:.74rem;color:var(--mu);font-family:var(--mo)">متوافق مع:</span>
+          <div class="prv-comp">
+            <div class="prv-comp-chip">GDPR</div>
+            <div class="prv-comp-chip">COPPA</div>
+            <div class="prv-comp-chip">CCPA</div>
+            <div class="prv-comp-chip">Google Play Families</div>
+            <div class="prv-comp-chip">AdMob Policies</div>
+            <div class="prv-comp-chip">Google AdSense</div>
+          </div>
+        </div>
+
+        <!-- Hub Cards -->
+        <div class="prv-hub">
+          <!-- Site Policy -->
+          <div class="prv-card" onclick="openPolicy('site')">
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(0,229,255,.05));border:1px solid rgba(0,229,255,.18)">🌐</div>
+            <div class="prv-badge">✓ AdSense &amp; Analytics</div>
+            <h3>سياسة الموقع الرسمية</h3>
+            <p>سياسة خصوصية الموقع الرئيسي — تشمل Google AdSense، Google Analytics، ملفات تعريف الارتباط، وحقوق المستخدمين.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+          </div>
+          <!-- Numbers Academy -->
+          <div class="prv-card" onclick="openPolicy('numbers')">
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.2)">🎓</div>
+            <div class="prv-badge" style="background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--gr)">✓ Kids App · COPPA</div>
+            <h3>أكاديمية الأرقام</h3>
+            <p>Number Academy — تطبيق تعليمي للأطفال. سياسة مفصّلة تشمل حماية بيانات الأطفال، AdMob، وFirebase.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+          </div>
+          <!-- Brain Match -->
+          <div class="prv-card" onclick="openPolicy('brain')">
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.22)">🧩</div>
+            <div class="prv-badge" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa">✓ Game · AdMob</div>
+            <h3>Brain Match</h3>
+            <p>لعبة مطابقة الذاكرة — 5 مناطق، 150 مستوى. سياسة شاملة تشمل حفظ التقدم، AdMob، وFirebase Analytics.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+          </div>
+          <!-- AutoCare -->
+          <div class="prv-card" onclick="openPolicy('autocare')">
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(56,189,248,.05));border:1px solid rgba(56,189,248,.2)">🚗</div>
+            <div class="prv-badge" style="background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.2);color:#38bdf8">✓ Firebase · AdMob</div>
+            <h3>AutoCare</h3>
+            <p>تطبيق إدارة صيانة السيارة — جميع البيانات تُدخل يدوياً. سياسة تشمل أذونات التطبيق وFirebase.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+          </div>
+        </div>
+
+        <!-- Info note -->
+        <div style="background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.1);border-radius:12px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:1.1rem;flex-shrink:0;margin-top:2px">ℹ️</span>
+          <p style="font-size:.84rem;color:var(--mu);line-height:1.8">هذه السياسات محدّثة ومتوافقة مع أحدث متطلبات Google Play، Google AdMob، وLaws حماية البيانات الدولية. للاستفسار: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
+        </div>
+      </div><!-- /hub view -->
+
+
+      <!-- ══════ POLICY: SITE ══════ -->
+      <div id="prv-site" class="prv-detail">
+        <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
+        <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>سياسة الموقع</span></div>
+        <div class="prv-banner">
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(0,229,255,.05));border:1px solid rgba(0,229,255,.2)">🌐</div>
+          <div>
+            <div class="tag tag-c" style="margin-bottom:8px">CodeForge — الموقع الرسمي</div>
+            <h2>سياسة خصوصية الموقع</h2>
+            <p>Publisher ID: ca-pub-7137238144396709 — آخر تحديث: يناير 2026</p>
+          </div>
+        </div>
+        <div class="prv-body">
+          <div class="prv-section open">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📋</div><h3>مقدمة وهدف السياسة</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">مرحباً بك في <strong>CodeForge</strong>. نحن ملتزمون بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة كيفية جمع واستخدام وحماية المعلومات عند زيارتك لموقعنا أو استخدام تطبيقاتنا ومنتجاتنا.</p>
+              <p class="prv-p">تُطبَّق هذه السياسة على جميع صفحات الموقع وخدماته. باستخدامك للموقع، فإنك توافق على الشروط الواردة في هذه السياسة.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🍪</div><h3>ملفات تعريف الارتباط (Cookies)</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">نستخدم ملفات تعريف الارتباط لتحسين تجربتك على الموقع. هذه الملفات تساعدنا في:</p>
+              <ul class="prv-ul">
+                <li>تخزين تفضيلاتك وإعداداتك لزياراتك المستقبلية</li>
+                <li>تحليل حركة المرور على الموقع وفهم سلوك الزوار</li>
+                <li>تخصيص المحتوى وتقديم الإعلانات ذات الصلة</li>
+                <li>تذكر جلسات تسجيل الدخول عند الحاجة</li>
+              </ul>
+              <p class="prv-p">يمكنك التحكم في ملفات تعريف الارتباط من إعدادات متصفحك، إلا أن ذلك قد يؤثر على بعض وظائف الموقع.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📊</div><h3>إعلانات Google AdSense</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">يستخدم موقعنا خدمة <strong>Google AdSense</strong> (Publisher ID: <code style="background:var(--bg2);padding:2px 7px;border-radius:4px;font-family:var(--mo);font-size:.8rem">ca-pub-7137238144396709</code>) لعرض الإعلانات.</p>
+              <ul class="prv-ul">
+                <li><strong>ملف DART Cookie:</strong> تستخدم Google ملف DART لعرض إعلانات مخصصة بناءً على تاريخ تصفحك.</li>
+                <li><strong>الإعلانات المخصصة:</strong> يمكنك إيقافها عبر <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--c1)">إعدادات إعلانات Google</a>.</li>
+                <li><strong>تقنيات التتبع:</strong> قد تستخدم Google تقنيات مثل web beacons وcookies لجمع بيانات مجهولة.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📁</div><h3>ملفات السجل (Log Files)</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">يجمع الموقع تلقائياً معلومات تقنية عند كل زيارة لأغراض التحليل وتحسين الأداء:</p>
+              <div class="prv-site-grid">
+                <div style="background:var(--bg2);border-radius:10px;padding:14px"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">IP ADDRESS</div><p style="font-size:.82rem;color:var(--mu)">لتحليل حركة المرور الجغرافي</p></div>
+                <div style="background:var(--bg2);border-radius:10px;padding:14px"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">BROWSER TYPE</div><p style="font-size:.82rem;color:var(--mu)">لتحسين التوافق والأداء</p></div>
+                <div style="background:var(--bg2);border-radius:10px;padding:14px"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">TIMESTAMP</div><p style="font-size:.82rem;color:var(--mu)">تتبع أوقات وتواريخ الزيارات</p></div>
+                <div style="background:var(--bg2);border-radius:10px;padding:14px"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">PAGES VIEWED</div><p style="font-size:.82rem;color:var(--mu)">لفهم الصفحات الأكثر أهمية</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🤝</div><h3>مشاركة البيانات مع أطراف ثالثة</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">نشارك المعلومات فقط مع الأطراف التالية لأغراض تشغيلية محددة:</p>
+              <table class="prv-tbl">
+                <tr><th>الطرف الثالث</th><th>الغرض</th><th>نوع البيانات</th></tr>
+                <tr><td>Google AdSense</td><td>عرض الإعلانات</td><td>Cookies، IP</td></tr>
+                <tr><td>Google Analytics</td><td>تحليل أداء الموقع</td><td>بيانات مجهولة</td></tr>
+              </table>
+              <p class="prv-p" style="margin-top:12px">⚠️ <strong>تعهدنا:</strong> لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية مع أي طرف ثالث لأغراض تسويقية.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">⚖️</div><h3>حقوق المستخدم والامتثال القانوني</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">بموجب قوانين حماية البيانات لديك الحقوق التالية:</p>
+              <div class="prv-rights">
+                <div class="prv-right-item"><div class="r-ico">👁️</div><div><h4>الوصول</h4><p>الاطلاع على بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تعديل البيانات الخاطئة</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🗑️</div><div><h4>الحذف</h4><p>طلب حذف بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🚫</div><div><h4>الاعتراض</h4><p>رفض معالجة بياناتك</p></div></div>
+              </div>
+              <div class="prv-comp" style="margin-top:14px">
+                <div class="prv-comp-chip">GDPR</div>
+                <div class="prv-comp-chip">CCPA</div>
+                <div class="prv-comp-chip">Google AdSense Policy</div>
+              </div>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📞</div><h3>تواصل معنا</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div class="prv-contact">
+                <div class="prv-contact-ico">📧</div>
+                <div><strong>Ahmed Sultan — CodeForge</strong><p>لأي استفسار حول سياسة الخصوصية أو لممارسة حقوقك:<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prv-updated"><span>🌐 CodeForge — الموقع الرسمي</span><span>آخر تحديث: <span>يناير 2026</span></span></div>
+      </div><!-- /site policy -->
+
+
+      <!-- ══════ POLICY: NUMBERS ACADEMY ══════ -->
+      <div id="prv-numbers" class="prv-detail">
+        <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
+        <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>أكاديمية الأرقام</span></div>
+        <div class="prv-banner">
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.22)">🎓</div>
+          <div>
+            <div class="tag tag-g" style="margin-bottom:8px">Number Academy · Kids App</div>
+            <h2>سياسة الخصوصية — أكاديمية الأرقام</h2>
+            <p>Package: com.gpthub.speak_numbers · إصدار 2.0 · آخر تحديث: ديسمبر 2024</p>
+          </div>
+        </div>
+        <div class="prv-body">
+          <div class="prv-section open">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📋</div><h3>نطاق السياسة</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">تنطبق هذه السياسة على جميع مستخدمي تطبيق <strong>أكاديمية الأرقام (Number Academy)</strong> المتوفر على Google Play. باستخدامك للتطبيق فإنك توافق على جمع واستخدام المعلومات وفق هذه السياسة.</p>
+              <p class="prv-p">صُمِّم هذا التطبيق ليكون منصة تعليمية تفاعلية آمنة للأطفال لتعلم الأرقام والعمليات الحسابية الأساسية.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📊</div><h3>المعلومات التي نجمعها</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p"><strong>2.1 — معلومات تُجمع تلقائياً:</strong></p>
+              <ul class="prv-ul">
+                <li>معلومات الجهاز: النوع، الطراز، نظام التشغيل وإصداره</li>
+                <li>بيانات الاستخدام: الوقت في التطبيق، الصفحات المشاهدة، النقرات</li>
+                <li>البيانات التقنية: عنوان IP، معرف الإعلانات (Advertising ID)، اللغة</li>
+                <li>تقارير الأعطال والأخطاء البرمجية عبر Firebase Crashlytics</li>
+              </ul>
+              <p class="prv-p" style="margin-top:12px"><strong>2.2 — معلومات يقدمها المستخدم طوعاً:</strong></p>
+              <ul class="prv-ul">
+                <li>الاسم (إن أُدخل اختيارياً)</li>
+                <li>البريد الإلكتروني (للدعم الفني فقط)</li>
+                <li>تقدم الطالب التعليمي والإنجازات المحلية</li>
+                <li>التفضيلات والإعدادات الشخصية</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🎯</div><h3>كيفية استخدام المعلومات</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <ul class="prv-ul">
+                <li><strong>تحسين التجربة التعليمية:</strong> تخصيص المحتوى وفق مستوى الطالب</li>
+                <li><strong>تطوير التطبيق:</strong> تحسين الأداء وإضافة ميزات جديدة</li>
+                <li><strong>التحليلات:</strong> فهم أنماط الاستخدام لتحسين الخدمة</li>
+                <li><strong>الدعم الفني:</strong> الاستجابة للاستفسارات والمشاكل</li>
+                <li><strong>الأمان:</strong> الحماية من الاحتيال والاستخدام غير المشروع</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🤝</div><h3>مشاركة البيانات</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <table class="prv-tbl">
+                <tr><th>الطرف الثالث</th><th>الغرض</th><th>نوع البيانات</th></tr>
+                <tr><td>Google AdMob</td><td>عرض الإعلانات</td><td>معرف الإعلانات، الاستخدام</td></tr>
+                <tr><td>Firebase Analytics</td><td>تحليل الأداء</td><td>بيانات مجهولة</td></tr>
+                <tr><td>Firebase Crashlytics</td><td>تقارير الأعطال</td><td>معلومات تقنية فقط</td></tr>
+              </table>
+              <p class="prv-p" style="margin-top:10px">⚠️ لا نبيع أو نتاجر ببياناتك لأي طرف ثالث لأغراض تجارية.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">👶</div><h3>خصوصية الأطفال — COPPA</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.18);border-radius:10px;padding:14px;margin-bottom:14px;font-size:.84rem;color:var(--gr);font-weight:700">🛡️ حماية الأطفال أولوية قصوى — متوافق مع COPPA و Google Play Families</div>
+              <ul class="prv-ul">
+                <li>لا نجمع معلومات شخصية من الأطفال دون 13 عاماً عن قصد</li>
+                <li>لا يحتوي التطبيق على روابط خارجية غير آمنة</li>
+                <li>لا يسمح بالتواصل مع غرباء داخل التطبيق</li>
+                <li>جميع الإعلانات متوافقة مع Google Families Ads Policy</li>
+                <li>عند اكتشاف بيانات طفل دون 13 عاماً، نحذفها فوراً</li>
+                <li>يُنصح باستخدام التطبيق تحت إشراف الوالدين</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📱</div><h3>الإعلانات — Google AdMob</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">يستخدم التطبيق Google AdMob لعرض الإعلانات. يمكن للمستخدمين:</p>
+              <ul class="prv-ul">
+                <li>إلغاء الاشتراك في الإعلانات المخصصة من إعدادات Google على الجهاز</li>
+                <li>إعادة تعيين معرف الإعلانات (Advertising ID) في أي وقت</li>
+              </ul>
+              <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener" class="btn btn-o" style="font-size:.8rem;padding:8px 16px;margin-top:8px">سياسة إعلانات Google</a>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🔐</div><h3>أمان البيانات وحقوق المستخدم</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <ul class="prv-ul">
+                <li>تشفير البيانات أثناء النقل والتخزين (HTTPS/SSL)</li>
+                <li>وصول محدود للبيانات من قبل المصرح لهم فقط</li>
+                <li>مراجعة دورية لإجراءات الأمان</li>
+              </ul>
+              <div class="prv-rights" style="margin-top:12px">
+                <div class="prv-right-item"><div class="r-ico">👁️</div><div><h4>الوصول</h4><p>نسخة من بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🗑️</div><div><h4>الحذف</h4><p>حذف بياناتك الشخصية</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تحديث بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">📦</div><div><h4>النقل</h4><p>نقل بياناتك</p></div></div>
+              </div>
+              <div class="prv-comp" style="margin-top:14px">
+                <div class="prv-comp-chip">GDPR</div>
+                <div class="prv-comp-chip">COPPA</div>
+                <div class="prv-comp-chip">CCPA</div>
+                <div class="prv-comp-chip">Google Play Families</div>
+              </div>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📞</div><h3>تواصل معنا</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div class="prv-contact">
+                <div class="prv-contact-ico">🎓</div>
+                <div><strong>Ahmed Sultan — مطور أكاديمية الأرقام</strong><p>نلتزم بالرد خلال 48 ساعة<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prv-updated"><span>🎓 أكاديمية الأرقام · v2.0</span><span>آخر تحديث: <span>ديسمبر 2024</span></span></div>
+      </div><!-- /numbers policy -->
+
+
+      <!-- ══════ POLICY: BRAIN MATCH ══════ -->
+      <div id="prv-brain" class="prv-detail">
+        <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
+        <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>Brain Match</span></div>
+        <div class="prv-banner">
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.22)">🧩</div>
+          <div>
+            <div class="tag tag-p" style="margin-bottom:8px">Brain Match · Memory Game</div>
+            <h2>سياسة الخصوصية — Brain Match</h2>
+            <p>لعبة مطابقة الذاكرة · إصدار 1.0 · آخر تحديث: ديسمبر 2024</p>
+          </div>
+        </div>
+        <div class="prv-body">
+          <div class="prv-section open">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🎮</div><h3>عن اللعبة ونطاق السياسة</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p"><strong>Brain Match</strong> لعبة مطابقة ذاكرة ممتعة — 5 مناطق، 150 مستوى، مع AdMob و IAP متكاملان. اللاعب يكشف البطاقات المخفية ويبحث عن الأزواج المتطابقة لتحسين الذاكرة والتركيز.</p>
+              <p class="prv-p">تنطبق هذه السياسة على جميع مستخدمي اللعبة على Google Play. باستخدامك للعبة فأنت توافق على هذه الشروط.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📊</div><h3>المعلومات التي نجمعها</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p"><strong>تُجمع تلقائياً:</strong></p>
+              <ul class="prv-ul">
+                <li>معلومات الجهاز: النوع، الطراز، نظام التشغيل</li>
+                <li>إحصائيات اللعب: وقت اللعب، المستويات المكتملة، عدد المحاولات</li>
+                <li>البيانات التقنية: IP، Advertising ID، اللغة المفضلة</li>
+                <li>تقارير الأعطال وأفضل النتائج، معدل النجاح</li>
+              </ul>
+              <p class="prv-p" style="margin-top:10px"><strong>يقدمها المستخدم اختيارياً:</strong></p>
+              <ul class="prv-ul">
+                <li>اسم اللاعب (اختياري)</li>
+                <li>البريد الإلكتروني (للدعم الفني فقط)</li>
+                <li>تقدم اللاعب والإنجازات المحلية</li>
+                <li>التفضيلات: مستوى الصعوبة، الأصوات، الإشعارات</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🤝</div><h3>مشاركة البيانات</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <table class="prv-tbl">
+                <tr><th>الطرف الثالث</th><th>الغرض</th><th>نوع البيانات</th></tr>
+                <tr><td>Google AdMob</td><td>عرض الإعلانات</td><td>معرف الإعلانات، الاستخدام</td></tr>
+                <tr><td>Firebase Analytics</td><td>تحليل الأداء</td><td>بيانات الاستخدام المجهولة</td></tr>
+                <tr><td>Firebase Crashlytics</td><td>تقارير الأعطال</td><td>معلومات تقنية فقط</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">👶</div><h3>خصوصية الأطفال — COPPA</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.18);border-radius:10px;padding:14px;margin-bottom:14px;font-size:.84rem;color:#a78bfa;font-weight:700">🛡️ اللعبة آمنة تماماً للأطفال — متوافقة مع COPPA و Google Play Families</div>
+              <ul class="prv-ul">
+                <li>لا نجمع معلومات شخصية من الأطفال دون 13 عاماً عن قصد</li>
+                <li>لا تحتوي اللعبة على روابط خارجية غير آمنة</li>
+                <li>لا تسمح اللعبة بالمحادثات أو التواصل مع الغرباء</li>
+                <li>جميع المحتوى والصور مناسبة لجميع الأعمار</li>
+                <li>جميع الإعلانات متوافقة مع Google Families Ads Policy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🔐</div><h3>أمان البيانات وحقوق المستخدم</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <ul class="prv-ul">
+                <li>تخزين البيانات محلياً على الجهاز وعلى خوادم آمنة</li>
+                <li>تشفير البيانات أثناء النقل (HTTPS/SSL)</li>
+                <li>حماية ضد الاختراق والوصول غير المصرح به</li>
+                <li>عند حذف اللعبة، تُحذف البيانات المحلية تلقائياً</li>
+              </ul>
+              <div class="prv-rights" style="margin-top:12px">
+                <div class="prv-right-item"><div class="r-ico">👁️</div><div><h4>الوصول</h4><p>نسخة من بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🗑️</div><div><h4>الحذف</h4><p>حذف التقدم والبيانات</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تحديث بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🚫</div><div><h4>الاعتراض</h4><p>رفض المعالجة</p></div></div>
+              </div>
+              <div class="prv-comp" style="margin-top:14px">
+                <div class="prv-comp-chip">GDPR</div>
+                <div class="prv-comp-chip">COPPA</div>
+                <div class="prv-comp-chip">CCPA</div>
+                <div class="prv-comp-chip">Google Play Families</div>
+              </div>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📞</div><h3>تواصل معنا</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div class="prv-contact">
+                <div class="prv-contact-ico">🧩</div>
+                <div><strong>Ahmed Sultan — مطور Brain Match</strong><p>نلتزم بالرد خلال 48 ساعة<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prv-updated"><span>🧩 Brain Match · v1.0</span><span>آخر تحديث: <span>ديسمبر 2024</span></span></div>
+      </div><!-- /brain policy -->
+
+
+      <!-- ══════ POLICY: AUTOCARE ══════ -->
+      <div id="prv-autocare" class="prv-detail">
+        <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
+        <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>AutoCare</span></div>
+        <div class="prv-banner">
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(56,189,248,.05));border:1px solid rgba(56,189,248,.2)">🚗</div>
+          <div>
+            <div class="tag tag-b" style="margin-bottom:8px">AutoCare · Car Maintenance</div>
+            <h2>سياسة الخصوصية — AutoCare</h2>
+            <p>صيانة سيارتك · آخر تحديث: فبراير 2026</p>
+          </div>
+        </div>
+        <div class="prv-body">
+          <div class="prv-section open">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🚗</div><h3>عن التطبيق ونطاق السياسة</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p"><strong>AutoCare</strong> تطبيق لإدارة صيانة السيارات يساعدك على تتبع العمليات، استهلاك الوقود، والمصاريف. جميع القراءات والبيانات <strong>تُدخل يدوياً</strong> من قبل المستخدم لضمان الدقة والخصوصية الكاملة.</p>
+              <p class="prv-p">تنطبق هذه السياسة على جميع مستخدمي التطبيق على Google Play. آخر تحديث: 14 فبراير 2026.</p>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📊</div><h3>المعلومات التي نجمعها</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p"><strong>1.1 — بيانات السيارة والصيانة (يدوية):</strong></p>
+              <ul class="prv-ul">
+                <li><strong>بيانات السيارة:</strong> النوع، الموديل، سنة الصنع (تُدخل يدوياً)</li>
+                <li><strong>قراءات العداد:</strong> الكيلومترات (إدخال يدوي فقط — لا قراءة تلقائية)</li>
+                <li><strong>سجل الصيانة:</strong> التواريخ، نوع الخدمة، التكاليف</li>
+              </ul>
+              <p class="prv-p" style="margin-top:10px"><strong>1.2 — البيانات التقنية (Firebase):</strong></p>
+              <ul class="prv-ul">
+                <li>تخزين آمن للبيانات عبر Firebase</li>
+                <li>تحليل أداء التطبيق بشكل مجهول</li>
+                <li>إرسال تذكيرات الصيانة</li>
+              </ul>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🔒</div><h3>الأذونات المطلوبة</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div class="prv-perm">
+                <div class="prv-perm-ico">🌐</div>
+                <div><h4>إذن الإنترنت (INTERNET)</h4><p>لمزامنة بياناتك مع خوادم Firebase الآمنة فقط</p></div>
+              </div>
+              <div class="prv-perm">
+                <div class="prv-perm-ico">🔔</div>
+                <div><h4>إذن الإشعارات (POST_NOTIFICATIONS)</h4><p>لإرسال تذكيرات بمواعيد الصيانة القادمة</p></div>
+              </div>
+              <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:9px;padding:10px 14px;font-size:.82rem;color:var(--gr);margin-top:8px">
+                ✓ هذا التطبيق لا يطلب الوصول إلى الكاميرا أو الصور الشخصية
+              </div>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🤝</div><h3>مشاركة البيانات</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <p class="prv-p">نحن لا نبيع بياناتك. نشارك بيانات محدودة مع الخدمات التالية فقط لتشغيل التطبيق:</p>
+              <table class="prv-tbl">
+                <tr><th>الطرف الثالث</th><th>الغرض</th></tr>
+                <tr><td>Google Firebase</td><td>تخزين البيانات والمصادقة الآمنة</td></tr>
+                <tr><td>Google AdMob</td><td>عرض الإعلانات</td></tr>
+              </table>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">🔐</div><h3>أمان البيانات وحقوق المستخدم</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <ul class="prv-ul">
+                <li>جميع بيانات السيارة تُخزَّن محلياً ومشفرة على Firebase</li>
+                <li>لا يُشارك سجل الصيانة مع أي طرف ثالث</li>
+                <li>يمكنك حذف جميع بياناتك في أي وقت من إعدادات التطبيق</li>
+              </ul>
+              <div class="prv-rights" style="margin-top:12px">
+                <div class="prv-right-item"><div class="r-ico">🗑️</div><div><h4>الحذف</h4><p>حذف كل بيانات السيارة</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التعديل</h4><p>تحديث أي بيانات يدوية</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">📦</div><div><h4>التصدير</h4><p>تصدير سجل الصيانة</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🚫</div><div><h4>الاعتراض</h4><p>رفض الإعلانات المخصصة</p></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="prv-section">
+            <div class="prv-section-hd" onclick="toggleSec(this)">
+              <div class="prv-sico">📞</div><h3>تواصل معنا</h3><span class="prv-arr">›</span>
+            </div>
+            <div class="prv-section-body">
+              <div class="prv-contact">
+                <div class="prv-contact-ico">🚗</div>
+                <div><strong>Ahmed Sultan — مطور AutoCare</strong><p>لأي استفسار عن بياناتك:<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="prv-updated"><span>🚗 AutoCare</span><span>آخر تحديث: <span>فبراير 2026</span></span></div>
+      </div><!-- /autocare policy -->
+
+    </div><!-- /wrap -->
+  </section>
+</div><!-- /privacy page -->
+
+
 <footer>
   <div class="wrap">
     <div class="fgr">
       <div class="fbrand"><div class="logo"><div class="li">&lt;/&gt;</div>Code<b>Forge</b></div><p>أدوات وإضافات احترافية للمطورين — WordPress، Unity، Flutter.</p></div>
-      <div class="fcol"><h4>المنتجات</h4><ul><li><a href="#" onclick="show('products');return false">🟦 WooCommerce WhatsApp Order Pro</a></li><li><a href="#" onclick="show('apps');return false">📱 تطبيقات Google Play</a></li><li><a href="#" onclick="show('apps');return false">🎮 أدوات Unity</a></li><li><a href="#" onclick="show('buy');return false">💳 شراء عبر PayPal</a></li></ul></div>
-      <div class="fcol"><h4>تواصل</h4><ul><li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب</a></li><li><a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة</a></li><li><a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a></li><li><a href="mailto:ahmed2sultan2@gmail.com">📧 ahmed2sultan2@gmail.com</a></li></ul></div>
+      <div class="fcol"><h4>المنتجات</h4><ul>
+        <li><a href="#" onclick="show('products');return false">🟦 WooCommerce WhatsApp Order Pro</a></li>
+        <li><a href="#" onclick="show('apps');return false">📱 تطبيقات Google Play</a></li>
+        <li><a href="#" onclick="show('apps');return false">🎮 أدوات Unity</a></li>
+        <li><a href="#" onclick="show('buy');return false">💳 شراء عبر PayPal</a></li>
+      </ul></div>
+      <div class="fcol"><h4>تواصل</h4><ul>
+        <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب</a></li>
+        <li><a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة</a></li>
+        <li><a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a></li>
+        <li><a href="mailto:ahmed2sultan2@gmail.com">📧 ahmed2sultan2@gmail.com</a></li>
+        <li><a href="#" onclick="show('privacy');return false">🔒 سياسة الخصوصية</a></li>
+      </ul></div>
     </div>
-    <div class="fbot"><p>© 2026 CodeForge — Ahmed Sultan</p><div class="flinks"><a href="https://ahmed2sultan2555.github.io/website/privacy.html" target="_blank">الخصوصية</a><a href="mailto:ahmed2sultan2@gmail.com">تواصل</a></div></div>
+    <div class="fbot">
+      <p>© 2026 CodeForge — Ahmed Sultan</p>
+      <div class="flinks">
+        <a href="#" onclick="show('privacy');return false">الخصوصية</a>
+        <a href="mailto:ahmed2sultan2@gmail.com">تواصل</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
 // ═══ PAGES ═══
-var PAGES = ['home','products','apps','buy','links'];
-var NAV   = {home:'lh', products:'lp', apps:'la', buy:'lb', links:'ll'};
+var PAGES = ['home','products','apps','buy','links','privacy'];
+var NAV   = {home:'lh', products:'lp', apps:'la', buy:'lb', links:'ll', privacy:'lv'};
 
 function show(id) {
   for (var i = 0; i < PAGES.length; i++) {
@@ -477,6 +1135,8 @@ function show(id) {
   if (nl) nl.classList.add('act');
   window.scrollTo({top:0, behavior:'smooth'});
   if (id === 'buy') loadPayPal();
+  // Reset privacy to hub on re-open
+  if (id === 'privacy') closePolicy();
   initAds();
 }
 
@@ -486,27 +1146,47 @@ function toggleMnu() {
 }
 function closeMnu() { document.getElementById('mnu').style.display = 'none'; }
 
+// ═══ PRIVACY NAVIGATION ═══
+function openPolicy(key) {
+  // Hide hub
+  document.getElementById('prv-hub-view').classList.add('hidden');
+  // Hide all details
+  document.querySelectorAll('.prv-detail').forEach(function(el){ el.classList.remove('on'); });
+  // Show target
+  var target = document.getElementById('prv-' + key);
+  if (target) {
+    target.classList.add('on');
+    // Auto-open first section
+    var first = target.querySelector('.prv-section');
+    if (first && !first.classList.contains('open')) first.classList.add('open');
+  }
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function closePolicy() {
+  document.getElementById('prv-hub-view').classList.remove('hidden');
+  document.querySelectorAll('.prv-detail').forEach(function(el){ el.classList.remove('on'); });
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function toggleSec(hd) {
+  var section = hd.parentElement;
+  section.classList.toggle('open');
+}
+
 // ═══ PAYPAL — Dynamic SDK load ═══
 var ppDone = false;
 
 function loadPayPal() {
-  // Already rendered
   if (ppDone) return;
-
-  // SDK already on page
-  if (window.paypal && window.paypal.HostedButtons) {
-    renderPP();
-    return;
-  }
-
-  // Load SDK dynamically then render
+  if (window.paypal && window.paypal.HostedButtons) { renderPP(); return; }
   var s   = document.createElement('script');
   var url = 'https://www.paypal.com/sdk/js';
   url += '?client-id=BAAfAHuVXFq4pzLxCdYWGJWRBxMRRpMf1M_YsBfHVtJb_j8XGjB5l8PuEGiA-gGOXpfpJFEPYXPSPt3cDQ';
   url += '&components=hosted-buttons&disable-funding=venmo&currency=USD';
   s.src     = url;
   s.onload  = renderPP;
-  s.onerror = function() { ppErr('فشل تحميل SDK — تحقق من الاتصال'); };
+  s.onerror = function() { ppErr('فشل تحميل SDK'); };
   document.head.appendChild(s);
 }
 
@@ -519,35 +1199,16 @@ function renderPP() {
     paypal.HostedButtons({ hostedButtonId: 'FVUKC8L7EK758' })
       .render('#paypal-container-FVUKC8L7EK758');
     ppDone = true;
-  } catch(e) {
-    ppErr('خطأ في تهيئة PayPal: ' + e.message);
-  }
+  } catch(e) { ppErr('خطأ في تهيئة PayPal: ' + e.message); }
 }
 
 function ppErr(msg) {
-  // SDK blocked (sandbox/preview) — show direct PayPal fallback button
   var ct = document.getElementById('paypal-container-FVUKC8L7EK758');
   var st = document.getElementById('pp-status');
   if (ct) {
-    ct.innerHTML =
-      '<div style="margin:8px 0">' +
-      '<a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" ' +
-      'style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#003087,#009cde);' +
-      'color:#fff;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:30px;' +
-      'box-shadow:0 5px 22px rgba(0,48,135,.35);transition:all .22s;text-decoration:none">' +
-      '<svg width="22" height="22" viewBox="0 0 24 24" fill="white" style="flex-shrink:0">' +
-      '<path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 ' +
-      '4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 ' +
-      '0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.93 4.778-4.005 7.201-9.138 ' +
-      '7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 ' +
-      '.85-.334.922-.788l.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/>' +
-      '</svg>' +
-      'ادفع الآن عبر PayPal' +
-      '</a>' +
-      '</div>';
+    ct.innerHTML = '<div style="margin:8px 0"><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#003087,#009cde);color:#fff;font-weight:700;font-size:1rem;padding:14px 32px;border-radius:30px;box-shadow:0 5px 22px rgba(0,48,135,.35);text-decoration:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788l.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>ادفع الآن عبر PayPal</a></div>';
   }
   if (st) st.style.display = 'none';
-  console.log('PayPal fallback shown:', msg);
 }
 
 // ═══ PROGRESS ═══
