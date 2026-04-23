@@ -4,523 +4,902 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CodeForge | أدوات وتطبيقات احترافية للمطورين</title>
-<meta name="description" content="CodeForge — إضافات WordPress، ألعاب Flutter، أدوات Unity احترافية">
+<meta name="description" content="CodeForge — إضافات WordPress، ألعاب Flutter، أدوات Unity احترافية من أحمد سلطان">
 <meta name="robots" content="index, follow">
 <meta name="google-adsense-account" content="ca-pub-7137238144396709">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════
+/* ═══════════════════════════════════════
    DESIGN TOKENS
-══════════════════════════════════ */
-:root{
-  --bg:#07090f;
-  --bg2:#0b0f1a;
-  --bg3:#0e1322;
-  --s:#111827;
-  --s2:#161f35;
-  --b:rgba(255,255,255,.07);
-  --bh:rgba(255,255,255,.12);
-  --c1:#00e5ff;
-  --c2:#7c3aed;
-  --c3:#f59e0b;
-  --gr:#22c55e;
-  --tx:#dde6f0;
-  --mu:#64748b;
-  --fn:'Cairo',sans-serif;
-  --mo:'JetBrains Mono',monospace;
-  --r:18px;
-  --tr:all .22s cubic-bezier(.4,0,.2,1);
+═══════════════════════════════════════ */
+:root {
+  --bg:    #07090f;
+  --bg2:   #0b0f1a;
+  --bg3:   #0d1120;
+  --s:     #111827;
+  --s2:    #161f35;
+  --s3:    #1e2a45;
+  --b:     rgba(255,255,255,.07);
+  --bh:    rgba(255,255,255,.12);
+  --c1:    #00e5ff;
+  --c1d:   #00b8cc;
+  --c2:    #7c3aed;
+  --c2d:   #5b21b6;
+  --c3:    #f59e0b;
+  --gr:    #22c55e;
+  --grd:   #16a34a;
+  --rd:    #ef4444;
+  --tx:    #e2eaf4;
+  --tx2:   #a0aec0;
+  --mu:    #64748b;
+  --fn:    'Cairo', sans-serif;
+  --mo:    'JetBrains Mono', monospace;
+  --r:     16px;
+  --r2:    24px;
+  --sh:    0 4px 24px rgba(0,0,0,.35);
+  --sh2:   0 16px 56px rgba(0,0,0,.5);
+  --tr:    all .22s cubic-bezier(.4,0,.2,1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--fn);background:var(--bg);color:var(--tx);overflow-x:hidden;min-height:100vh}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer;font-family:var(--fn);border:none}
-img{display:block;max-width:100%}
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--bg2)}
-::-webkit-scrollbar-thumb{background:var(--c2);border-radius:3px}
-::selection{background:rgba(124,58,237,.3);color:#fff}
 
-/* ══════ PROGRESS BAR ══════ */
-#prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--c2),var(--c1));z-index:9999;width:0;pointer-events:none;transition:width .1s}
-
-/* ══════ NAV ══════ */
-nav{
-  position:sticky;top:0;z-index:200;
-  background:rgba(7,9,15,.92);
-  backdrop-filter:blur(24px);
-  -webkit-backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--b);
+/* ═══════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--fn);
+  background: var(--bg);
+  color: var(--tx);
+  overflow-x: hidden;
+  min-height: 100vh;
+  line-height: 1.6;
 }
-.ni{max-width:1280px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.25rem;flex-shrink:0;letter-spacing:-.5px}
-.logo-ico{
-  width:36px;height:36px;
-  background:linear-gradient(135deg,var(--c2),var(--c1));
-  border-radius:9px;display:grid;place-items:center;
-  font-family:var(--mo);font-size:12px;font-weight:700;color:#fff;
-  box-shadow:0 4px 16px rgba(124,58,237,.4);
-  flex-shrink:0;
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; font-family: var(--fn); border: none; outline: none; }
+img { display: block; max-width: 100%; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--c2); border-radius: 4px; }
+::selection { background: rgba(124,58,237,.35); color: #fff; }
+
+/* ═══════════════════════════════════════
+   PROGRESS BAR
+═══════════════════════════════════════ */
+#prog {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+  background: linear-gradient(90deg, var(--c2), var(--c1));
+  width: 0; pointer-events: none; transition: width .08s linear;
 }
-.logo b{color:var(--c1)}
-.nlinks{display:flex;align-items:center;gap:2px;list-style:none}
-.nlinks a{
-  padding:7px 12px;border-radius:30px;
-  font-weight:600;font-size:.84rem;color:var(--mu);
-  transition:var(--tr);display:block;
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+nav {
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(7,9,15,.93);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-bottom: 1px solid var(--b);
 }
-.nlinks a:hover,.nlinks a.act{color:var(--tx);background:var(--s2)}
-.nlinks .cta{
-  background:linear-gradient(135deg,var(--c2),#5b21b6)!important;
-  color:#fff!important;margin-right:6px;
-  box-shadow:0 4px 14px rgba(124,58,237,.35);
+.ni {
+  max-width: 1300px; margin: 0 auto;
+  padding: 0 28px; height: 68px;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 16px;
 }
-.ham{display:none;flex-direction:column;gap:5px;background:none;padding:8px}
-.ham span{display:block;width:20px;height:2px;background:var(--tx);border-radius:2px;transition:var(--tr)}
-#mnu{display:none;background:var(--bg2);border-bottom:1px solid var(--b);padding:12px 20px}
-#mnu a{display:block;padding:11px 6px;font-weight:600;color:var(--mu);border-bottom:1px solid var(--b);font-size:.9rem;transition:color .2s}
-#mnu a:last-child{border-bottom:none}
-#mnu a:hover{color:var(--tx)}
-
-/* ══════ PAGES ══════ */
-.pg{display:none}
-.pg.on{display:block;animation:fadeUp .35s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
-
-/* ══════ LAYOUT ══════ */
-.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
-.sec{padding:80px 0}
-.sec-sm{padding:52px 0}
-
-/* ══════ TAGS ══════ */
-.tag{display:inline-flex;align-items:center;gap:6px;border-radius:30px;padding:4px 14px;font-size:.73rem;font-weight:700;font-family:var(--mo)}
-.tag-c{background:rgba(0,229,255,.08);border:1px solid rgba(0,229,255,.18);color:var(--c1)}
-.tag-g{background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.2);color:var(--gr)}
-.tag-p{background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.25);color:#a78bfa}
-.tag-b{background:rgba(56,189,248,.09);border:1px solid rgba(56,189,248,.2);color:#38bdf8}
-.tag-w{background:rgba(255,255,255,.06);border:1px solid var(--b);color:var(--tx)}
-.tag-o{background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.22);color:var(--c3)}
-
-/* ══════ SECTION HEADERS ══════ */
-.lbl{font-family:var(--mo);font-size:.72rem;color:var(--c1);letter-spacing:3px;text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:10px}
-.lbl::before{content:'//';opacity:.35}
-h2.sec-t{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;letter-spacing:-.6px;margin-bottom:14px;line-height:1.15}
-.sub{color:var(--mu);font-size:.97rem;line-height:1.85;max-width:540px}
-.sh{margin-bottom:48px}
-.sh-c{text-align:center}
-.sh-c .lbl{justify-content:center}
-.sh-c .sub{margin:0 auto}
-
-/* ══════ BUTTONS ══════ */
-.btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:11px 24px;border-radius:30px;
-  font-weight:700;font-size:.9rem;
-  transition:var(--tr);border:none;white-space:nowrap;
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 900; font-size: 1.3rem;
+  flex-shrink: 0; letter-spacing: -.5px;
 }
-.btn-p{background:linear-gradient(135deg,var(--c2),#5b21b6);color:#fff;box-shadow:0 5px 24px rgba(124,58,237,.38)}
-.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,58,237,.5)}
-.btn-o{background:transparent;color:var(--tx);border:1px solid var(--bh)}
-.btn-o:hover{border-color:var(--c1);color:var(--c1)}
-.btn-g{background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;box-shadow:0 5px 22px rgba(34,197,94,.3)}
-.btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(34,197,94,.42)}
-.btn-pay{background:linear-gradient(135deg,#003087,#009cde);color:#fff;box-shadow:0 5px 18px rgba(0,48,135,.35)}
-.btn-pay:hover{transform:translateY(-2px)}
-.btn-yt{background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;box-shadow:0 5px 18px rgba(255,0,0,.3)}
-.btn-yt:hover{transform:translateY(-2px)}
-.brow{display:flex;gap:10px;flex-wrap:wrap}
-
-/* ══════ CARDS ══════ */
-.card{
-  background:var(--s);border:1px solid var(--b);border-radius:var(--r);
-  overflow:hidden;transition:var(--tr);
+.logo-ico {
+  width: 38px; height: 38px;
+  background: linear-gradient(135deg, var(--c2), var(--c1));
+  border-radius: 10px; display: grid; place-items: center;
+  font-family: var(--mo); font-size: 12px; font-weight: 700;
+  color: #fff; box-shadow: 0 4px 20px rgba(124,58,237,.45);
+  flex-shrink: 0;
 }
-.card:hover{transform:translateY(-5px);border-color:rgba(0,229,255,.15);box-shadow:0 20px 52px rgba(0,0,0,.42)}
-.cp{padding:26px}
-
-/* ══════ GRIDS ══════ */
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-
-/* ══════ ADS ══════ */
-.adu{background:var(--s);border:1px dashed rgba(255,255,255,.05);border-radius:12px;min-height:90px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:36px 0}
-.adu-tall{min-height:260px}
-
-/* ══════════════════════════════════
-   HERO
-══════════════════════════════════ */
-.hero{
-  position:relative;overflow:hidden;
-  padding:100px 0 80px;min-height:92vh;
-  display:flex;align-items:center;
+.logo b { color: var(--c1); }
+.nlinks { display: flex; align-items: center; gap: 2px; list-style: none; }
+.nlinks a {
+  padding: 7px 13px; border-radius: 30px;
+  font-weight: 600; font-size: .85rem;
+  color: var(--mu); transition: var(--tr); display: block;
 }
-.hero-bg{
-  position:absolute;inset:0;
+.nlinks a:hover, .nlinks a.act { color: var(--tx); background: var(--s2); }
+.nlinks .cta {
+  background: linear-gradient(135deg, var(--c2), var(--c2d)) !important;
+  color: #fff !important; margin-right: 6px;
+  box-shadow: 0 4px 16px rgba(124,58,237,.38);
+}
+.nlinks .cta:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(124,58,237,.5); }
+.ham { display: none; flex-direction: column; gap: 5px; background: none; padding: 8px; }
+.ham span { display: block; width: 22px; height: 2px; background: var(--tx); border-radius: 2px; transition: var(--tr); }
+#mnu {
+  display: none; background: var(--bg2);
+  border-bottom: 1px solid var(--b); padding: 10px 20px;
+}
+#mnu a {
+  display: block; padding: 12px 6px;
+  font-weight: 600; color: var(--mu);
+  border-bottom: 1px solid var(--b);
+  font-size: .9rem; transition: color .2s;
+}
+#mnu a:last-child { border-bottom: none; }
+#mnu a:hover { color: var(--tx); }
+
+/* ═══════════════════════════════════════
+   PAGE SYSTEM
+═══════════════════════════════════════ */
+.pg { display: none; }
+.pg.on { display: block; animation: fadeUp .3s ease; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════
+   LAYOUT UTILITIES
+═══════════════════════════════════════ */
+.wrap { max-width: 1300px; margin: 0 auto; padding: 0 28px; }
+.sec  { padding: 88px 0; }
+.sec-sm { padding: 52px 0; }
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.g3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.flex-c { display: flex; align-items: center; justify-content: center; }
+.text-c { text-align: center; }
+
+/* ═══════════════════════════════════════
+   SECTION HEADERS
+═══════════════════════════════════════ */
+.lbl {
+  font-family: var(--mo); font-size: .72rem;
+  color: var(--c1); letter-spacing: 3px;
+  text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-bottom: 12px;
+}
+.lbl::before { content: '//'; opacity: .4; }
+h2.sec-t {
+  font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+  font-weight: 900; letter-spacing: -.7px;
+  margin-bottom: 14px; line-height: 1.12;
+}
+.sub {
+  color: var(--tx2); font-size: .97rem;
+  line-height: 1.9; max-width: 560px;
+}
+.sh { margin-bottom: 52px; }
+.sh-c { text-align: center; }
+.sh-c .lbl { justify-content: center; }
+.sh-c .sub { margin: 0 auto; }
+
+/* ═══════════════════════════════════════
+   TAGS / BADGES
+═══════════════════════════════════════ */
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: 30px; padding: 4px 14px;
+  font-size: .73rem; font-weight: 700; font-family: var(--mo);
+}
+.tag-c  { background: rgba(0,229,255,.08);    border: 1px solid rgba(0,229,255,.2);    color: var(--c1); }
+.tag-g  { background: rgba(34,197,94,.09);    border: 1px solid rgba(34,197,94,.22);   color: var(--gr); }
+.tag-p  { background: rgba(124,58,237,.1);    border: 1px solid rgba(124,58,237,.26);  color: #a78bfa; }
+.tag-b  { background: rgba(56,189,248,.09);   border: 1px solid rgba(56,189,248,.22);  color: #38bdf8; }
+.tag-w  { background: rgba(255,255,255,.06);  border: 1px solid var(--b);              color: var(--tx); }
+.tag-o  { background: rgba(245,158,11,.09);   border: 1px solid rgba(245,158,11,.22);  color: var(--c3); }
+
+/* ═══════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 26px; border-radius: 30px;
+  font-weight: 700; font-size: .92rem;
+  transition: var(--tr); white-space: nowrap; cursor: pointer;
+}
+.btn-p   { background: linear-gradient(135deg,var(--c2),var(--c2d)); color: #fff; box-shadow: 0 5px 22px rgba(124,58,237,.38); }
+.btn-p:hover { transform: translateY(-2px); box-shadow: 0 9px 30px rgba(124,58,237,.52); }
+.btn-o   { background: transparent; color: var(--tx); border: 1px solid var(--bh); }
+.btn-o:hover { border-color: var(--c1); color: var(--c1); background: rgba(0,229,255,.04); }
+.btn-g   { background: linear-gradient(135deg,var(--gr),var(--grd)); color: #fff; box-shadow: 0 5px 22px rgba(34,197,94,.3); }
+.btn-g:hover { transform: translateY(-2px); box-shadow: 0 9px 30px rgba(34,197,94,.44); }
+.btn-pay { background: linear-gradient(135deg,#003087,#009cde); color: #fff; box-shadow: 0 5px 18px rgba(0,48,135,.35); }
+.btn-pay:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(0,48,135,.48); }
+.btn-yt  { background: linear-gradient(135deg,#ff0000,#c00); color: #fff; box-shadow: 0 5px 18px rgba(255,0,0,.28); }
+.btn-yt:hover { transform: translateY(-2px); }
+.btn-sm  { padding: 9px 20px; font-size: .84rem; }
+.brow    { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ═══════════════════════════════════════
+   CARDS
+═══════════════════════════════════════ */
+.card {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: var(--r); overflow: hidden; transition: var(--tr);
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,229,255,.15);
+  box-shadow: 0 22px 56px rgba(0,0,0,.44);
+}
+.cp { padding: 28px; }
+
+/* ═══════════════════════════════════════
+   AD UNITS
+═══════════════════════════════════════ */
+.adu {
+  background: var(--s); border: 1px dashed rgba(255,255,255,.05);
+  border-radius: 14px; min-height: 90px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; margin: 40px 0;
+}
+.adu-tall { min-height: 260px; }
+
+/* ══════════════════════════════════════════════
+   ████  HERO  ████
+══════════════════════════════════════════════ */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 100px 0 90px; min-height: 94vh;
+  display: flex; align-items: center;
+}
+.hero-bg {
+  position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 72% 62% at 60% 44%,rgba(124,58,237,.15) 0%,transparent 65%),
-    radial-gradient(ellipse 55% 50% at 16% 74%,rgba(0,229,255,.08) 0%,transparent 58%),
-    radial-gradient(ellipse 40% 35% at 85% 20%,rgba(34,197,94,.05) 0%,transparent 55%);
+    radial-gradient(ellipse 70% 60% at 58% 42%, rgba(124,58,237,.17) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 48% at 14% 72%, rgba(0,229,255,.08) 0%, transparent 60%),
+    radial-gradient(ellipse 42% 36% at 82% 20%, rgba(34,197,94,.06) 0%, transparent 56%);
 }
-.hero-grid{
-  position:absolute;inset:0;
+.hero-grid {
+  position: absolute; inset: 0;
   background-image:
-    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:56px 56px;
-  mask-image:radial-gradient(ellipse at 55% 50%,black 25%,transparent 72%);
+    linear-gradient(rgba(255,255,255,.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.024) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at 55% 48%, black 20%, transparent 72%);
 }
-.hero-noise{position:absolute;inset:0;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-.hero h1{font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.1;letter-spacing:-1.5px;margin-bottom:18px}
-.hero h1 .a1{color:var(--c1)}.hero h1 .a2{color:var(--c2)}
-.hero .sub{margin-bottom:32px;font-size:1.05rem}
-.hbadge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(0,229,255,.07);border:1px solid rgba(0,229,255,.18);
-  border-radius:30px;padding:5px 16px;
-  font-size:.78rem;font-family:var(--mo);color:var(--c1);margin-bottom:20px;
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1.1fr .9fr;
+  gap: 72px; align-items: center;
 }
-.hbadge em{width:7px;height:7px;background:var(--c1);border-radius:50%;display:inline-block;animation:pulse 2s infinite;font-style:normal}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.2;transform:scale(.7)}}
+.hero-content {}
+.hbadge {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: rgba(0,229,255,.07); border: 1px solid rgba(0,229,255,.2);
+  border-radius: 30px; padding: 6px 18px;
+  font-size: .78rem; font-family: var(--mo); color: var(--c1); margin-bottom: 22px;
+}
+.hbadge em {
+  width: 7px; height: 7px; background: var(--c1);
+  border-radius: 50%; display: inline-block;
+  animation: pulse 2s ease-in-out infinite; font-style: normal;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.25; transform:scale(.65); }
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5.2vw, 4.1rem);
+  font-weight: 900; line-height: 1.1;
+  letter-spacing: -1.5px; margin-bottom: 20px;
+}
+.hero h1 .a1 { color: var(--c1); }
+.hero h1 .a2 { color: var(--c2); }
+.hero .desc {
+  color: var(--tx2); font-size: 1.05rem;
+  line-height: 1.9; margin-bottom: 16px; max-width: 520px;
+}
+.hero .desc2 {
+  color: var(--mu); font-size: .92rem;
+  line-height: 1.85; margin-bottom: 32px; max-width: 500px;
+}
+.hero-pills {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px;
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: 30px; padding: 5px 14px;
+  font-size: .78rem; font-family: var(--mo); color: var(--tx2);
+}
+.pill .dot { width: 6px; height: 6px; border-radius: 50%; }
 
-/* ══════ HERO VISUAL (Mock Browser) ══════ */
-.vis{display:flex;justify-content:center;align-items:center;position:relative}
-.mk{
-  background:var(--s);border:1px solid var(--bh);
-  border-radius:var(--r);overflow:hidden;
-  box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.05);
-  width:100%;max-width:430px;
+/* Hero SVG Illustration */
+.hero-vis { position: relative; display: flex; justify-content: center; }
+.hero-card-stack { position: relative; }
+.float-badge {
+  position: absolute; background: var(--s); border: 1px solid var(--bh);
+  border-radius: 12px; padding: 10px 16px;
+  font-size: .76rem; font-weight: 700; white-space: nowrap;
+  box-shadow: var(--sh2); z-index: 10;
 }
-.mkb{background:var(--bg2);padding:11px 14px;display:flex;align-items:center;gap:9px;border-bottom:1px solid var(--b)}
-.mkd{display:flex;gap:5px}
-.mkd s{display:block;width:11px;height:11px;border-radius:50%;text-decoration:none}
-.mkd s:nth-child(1){background:#ff5f57}.mkd s:nth-child(2){background:#febc2e}.mkd s:nth-child(3){background:#28c840}
-.mku{flex:1;background:var(--bg3);border-radius:6px;padding:4px 12px;font-family:var(--mo);font-size:.7rem;color:var(--mu);text-align:center}
-.mkc{padding:18px}
-.wbtn{
-  background:linear-gradient(135deg,#25d366,#1da851);color:#fff;
-  border:none;border-radius:11px;padding:13px 20px;width:100%;
-  font-family:var(--fn);font-size:.93rem;font-weight:700;
-  display:flex;align-items:center;justify-content:center;gap:9px;
-  animation:wfloat 3s ease-in-out infinite;cursor:pointer;
+.float-badge.b1 { top: -16px; right: -10px; color: var(--c1); animation: fbf 4s ease-in-out infinite; }
+.float-badge.b2 { bottom: 10px; right: -16px; color: var(--gr); animation: fbf 4s ease-in-out infinite 1.4s; }
+.float-badge.b3 { top: 50%; left: -14px; transform: translateY(-50%); color: var(--c3); animation: fbf 4s ease-in-out infinite .8s; }
+@keyframes fbf {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
 }
-@keyframes wfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-.mkstats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px}
-.mks{background:var(--bg2);border-radius:9px;padding:9px;text-align:center;border:1px solid var(--b)}
-.mks .n{font-family:var(--mo);font-size:.92rem;font-weight:700;color:var(--c1)}
-.mks .l{font-size:.65rem;color:var(--mu);margin-top:2px}
-.vbadge{
-  position:absolute;background:var(--s);border:1px solid var(--bh);
-  border-radius:10px;padding:9px 15px;font-size:.76rem;font-weight:700;
-  white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.35);
+.float-badge.b3 { animation: fbf3 4s ease-in-out infinite .8s; }
+@keyframes fbf3 {
+  0%,100% { transform: translateY(-50%) translateX(0); }
+  50%      { transform: translateY(-50%) translateX(-5px); }
 }
-.vbadge:nth-child(2){top:-14px;right:6px;color:var(--c1);animation:vbf 4s ease-in-out infinite}
-.vbadge:nth-child(3){bottom:4px;right:0;color:var(--gr);animation:vbf 4s ease-in-out infinite 1.2s}
-@keyframes vbf{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 
-/* ══════ STATS BAR ══════ */
-.sbar{background:var(--s);border-top:1px solid var(--b);border-bottom:1px solid var(--b);padding:24px 0}
-.sgr{display:flex;justify-content:center;flex-wrap:wrap}
-.si{padding:10px 48px;text-align:center;border-right:1px solid var(--b)}
-.si:last-child{border-right:none}
-.si .v{font-family:var(--mo);font-size:1.8rem;font-weight:700;color:var(--c1);display:block;line-height:1}
-.si .k{font-size:.79rem;color:var(--mu);margin-top:4px;display:block}
+/* ═══════════════════════════════════════
+   STATS BAR
+═══════════════════════════════════════ */
+.sbar {
+  background: var(--s); border-top: 1px solid var(--b);
+  border-bottom: 1px solid var(--b); padding: 28px 0;
+}
+.sgr { display: flex; justify-content: center; flex-wrap: wrap; }
+.si {
+  padding: 12px 52px; text-align: center;
+  border-right: 1px solid var(--b);
+}
+.si:last-child { border-right: none; }
+.si .v {
+  font-family: var(--mo); font-size: 2rem;
+  font-weight: 700; color: var(--c1); display: block; line-height: 1;
+}
+.si .k { font-size: .8rem; color: var(--mu); margin-top: 5px; display: block; }
 
-/* ══════ FEATURE CARDS ══════ */
-.fc{
-  background:var(--s);border:1px solid var(--b);border-radius:14px;
-  padding:26px;transition:var(--tr);position:relative;overflow:hidden;
+/* ═══════════════════════════════════════
+   FEATURE CARDS
+═══════════════════════════════════════ */
+.fc {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: 16px; padding: 28px; transition: var(--tr);
+  position: relative; overflow: hidden;
 }
-.fc::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;
-  height:2px;background:linear-gradient(90deg,var(--c2),var(--c1));
-  transform:scaleX(0);transition:.3s cubic-bezier(.4,0,.2,1);
-  transform-origin:left;
+.fc::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: linear-gradient(90deg, var(--c2), var(--c1));
+  transform: scaleX(0); transition: .3s ease; transform-origin: left;
 }
-.fc:hover::after{transform:scaleX(1)}
-.fc:hover{border-color:rgba(0,229,255,.14);transform:translateY(-4px);box-shadow:0 16px 44px rgba(0,0,0,.36)}
-.fi{font-size:2rem;margin-bottom:14px;display:block}
-.fc h3{font-size:1rem;font-weight:700;margin-bottom:7px}
-.fc p{font-size:.85rem;color:var(--mu);line-height:1.75}
+.fc:hover::after { transform: scaleX(1); }
+.fc:hover {
+  border-color: rgba(0,229,255,.15);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(0,0,0,.38);
+}
+.fc-ico {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 18px; flex-shrink: 0;
+}
+.fc h3 { font-size: 1.05rem; font-weight: 800; margin-bottom: 9px; }
+.fc p  { font-size: .87rem; color: var(--tx2); line-height: 1.8; }
 
-/* ══════ PLATFORM CARDS ══════ */
-.platform-card{
-  background:var(--s);border:1px solid var(--b);border-radius:var(--r);
-  overflow:hidden;cursor:pointer;transition:var(--tr);
-  display:flex;flex-direction:column;align-items:center;
-  padding:36px 24px;text-align:center;
-  position:relative;
+/* ═══════════════════════════════════════
+   PLATFORM CARDS
+═══════════════════════════════════════ */
+.platform-card {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: var(--r2); overflow: hidden;
+  cursor: pointer; transition: var(--tr);
+  display: flex; flex-direction: column; align-items: center;
+  padding: 40px 28px; text-align: center; position: relative;
 }
-.platform-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent 50%,rgba(255,255,255,.02));
-  opacity:0;transition:opacity .3s;
+.platform-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 24px 60px rgba(0,0,0,.48);
 }
-.platform-card:hover::before{opacity:1}
-.platform-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.45)}
-.platform-ico{font-size:3rem;margin-bottom:16px;display:block}
-.platform-card h3{font-size:1.1rem;font-weight:900;margin-bottom:8px}
-.platform-card p{font-size:.85rem;color:var(--mu);line-height:1.75}
+.platform-card .pico-wrap {
+  width: 80px; height: 80px; border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px; font-size: 2.2rem;
+}
+.platform-card h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: 10px; }
+.platform-card p  { font-size: .87rem; color: var(--tx2); line-height: 1.8; margin-bottom: 18px; }
+.platform-card .p-count {
+  font-family: var(--mo); font-size: .75rem; color: var(--mu);
+  background: var(--bg2); border: 1px solid var(--b);
+  border-radius: 20px; padding: 4px 14px; margin-top: auto;
+}
 
-/* ══════ PRODUCT FEATURE PANEL ══════ */
-.pfeat{
-  background:var(--s);border:1px solid var(--bh);border-radius:24px;
-  overflow:hidden;box-shadow:0 28px 72px rgba(0,0,0,.45);
-  display:grid;grid-template-columns:1.1fr .9fr;margin-bottom:40px;
+/* ═══════════════════════════════════════
+   PRODUCT FEATURE PANEL
+═══════════════════════════════════════ */
+.pfeat {
+  background: var(--s); border: 1px solid var(--bh);
+  border-radius: 26px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,.5);
+  display: grid; grid-template-columns: 1.1fr .9fr;
+  margin-bottom: 44px;
 }
-.pinfo{padding:48px}
-.pname{font-size:1.9rem;font-weight:900;line-height:1.15;letter-spacing:-.6px;margin:12px 0 12px}
-.pdesc{color:var(--mu);line-height:1.9;margin-bottom:24px;font-size:.97rem}
-.fl{list-style:none;margin-bottom:30px}
-.fl li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:.9rem;border-bottom:1px solid var(--b)}
-.fl li:last-child{border-bottom:none}
-.fl li::before{
-  content:'';min-width:20px;height:20px;flex-shrink:0;
-  background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);
-  border-radius:50%;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2322c55e' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:center;background-size:10px;
-  margin-top:1px;
+.pinfo { padding: 52px; }
+.pname {
+  font-size: 2rem; font-weight: 900;
+  line-height: 1.15; letter-spacing: -.6px; margin: 14px 0 14px;
 }
-.ppr{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
-.price{font-family:var(--mo);font-size:2.4rem;font-weight:900;color:var(--c1)}
-.pnt{color:var(--mu);font-size:.82rem;line-height:1.6}
+.pdesc {
+  color: var(--tx2); line-height: 1.95;
+  margin-bottom: 26px; font-size: .97rem;
+}
+.fl { list-style: none; margin-bottom: 32px; }
+.fl li {
+  display: flex; align-items: flex-start; gap: 11px;
+  padding: 8px 0; font-size: .9rem;
+  border-bottom: 1px solid var(--b);
+}
+.fl li:last-child { border-bottom: none; }
+.fl li .chk {
+  width: 20px; height: 20px; flex-shrink: 0;
+  background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.22);
+  border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; margin-top: 1px;
+  font-size: .65rem; color: var(--gr);
+}
+.ppr { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+.price { font-family: var(--mo); font-size: 2.6rem; font-weight: 900; color: var(--c1); }
+.pnt { color: var(--mu); font-size: .83rem; line-height: 1.7; }
 
-/* ══════ PRODUCT MEDIA PANEL ══════ */
-.pmed{background:var(--bg2);border-right:1px solid var(--b);display:flex;flex-direction:column;min-height:440px}
-.mtabs{display:flex;background:var(--bg);border-bottom:1px solid var(--b)}
-.mt{
-  flex:1;padding:13px 8px;font-size:.82rem;font-weight:600;
-  text-align:center;cursor:pointer;color:var(--mu);background:none;
-  font-family:var(--fn);transition:var(--tr);border-bottom:2px solid transparent;
+/* Product Media Panel */
+.pmed {
+  background: var(--bg2); border-right: 1px solid var(--b);
+  display: flex; flex-direction: column; min-height: 460px;
 }
-.mt.on{color:var(--c1);border-bottom-color:var(--c1);background:rgba(0,229,255,.03)}
-.mcon{flex:1;display:flex;flex-direction:column}
-.mpan{display:none;flex-direction:column;height:100%}
-.mpan.on{display:flex}
-.ssl{flex:1;overflow:hidden;min-height:280px}
-.sstr{display:flex;height:100%;transition:transform .4s cubic-bezier(.4,0,.2,1)}
-.ssl2{min-width:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;background:var(--bg3);gap:10px;min-height:280px;padding:24px}
-.ssic{font-size:2.2rem}
-.sslb{font-size:.8rem;color:var(--mu);font-family:var(--mo)}
-.ssd2{font-size:.7rem;color:var(--mu);opacity:.6}
-.sctrl{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px;background:var(--bg);border-top:1px solid var(--b)}
-.sdo{width:7px;height:7px;border-radius:50%;background:var(--b);cursor:pointer;transition:all .2s;border:none}
-.sdo.on{background:var(--c1);transform:scale(1.3)}
-.sar{background:var(--s2);border:1px solid var(--b);color:var(--tx);border-radius:50%;width:26px;height:26px;cursor:pointer;font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:var(--tr)}
-.sar:hover{background:var(--c1);color:var(--bg);border-color:var(--c1)}
-.vp{flex:1;background:#000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;cursor:pointer;min-height:280px;transition:var(--tr)}
-.vp:hover .pply{background:rgba(255,0,0,.8)}
-.pply{width:60px;height:60px;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;transition:all .28s}
-.vtxt{color:var(--mu);font-size:.88rem}
-.vframe{width:100%;border:none;min-height:280px}
-
-/* ══════ SPECS BOX ══════ */
-.specs-box{background:var(--s);border:1px solid var(--b);border-radius:20px;padding:44px;margin-bottom:40px}
-.spec-col{background:var(--bg2);border-radius:11px;padding:16px 18px;border:1px solid var(--b)}
-.spec-col .spec-hd{font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:8px;letter-spacing:1px}
-.spec-col ul{list-style:none;font-size:.84rem;color:var(--mu);line-height:2.2}
-.spec-col li::before{content:'✓ ';color:var(--gr)}
-
-/* ══════ APP CARDS ══════ */
-.ac{
-  background:var(--s);border:1px solid var(--b);border-radius:var(--r);
-  padding:28px;text-align:center;transition:var(--tr);
+.mtabs { display: flex; background: var(--bg); border-bottom: 1px solid var(--b); }
+.mt {
+  flex: 1; padding: 14px 8px; font-size: .83rem; font-weight: 700;
+  text-align: center; cursor: pointer; color: var(--mu);
+  background: none; font-family: var(--fn); transition: var(--tr);
+  border-bottom: 2px solid transparent;
 }
-.ac:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.4);border-color:rgba(0,229,255,.15)}
-.aico{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.9rem;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.an{font-size:1.1rem;font-weight:900;margin:8px 0 8px;letter-spacing:-.3px}
-.ad{font-size:.85rem;color:var(--mu);line-height:1.75;margin-bottom:16px}
-.af{list-style:none;margin-bottom:18px}
-.af li{font-size:.8rem;color:var(--mu);padding:4px 0;display:flex;align-items:center;gap:6px;justify-content:center}
-.af li::before{content:'✓';color:var(--gr);font-weight:700;font-size:.75rem}
-
-/* ══════ HORIZONTAL APP CARD ══════ */
-.hac{background:var(--s);border:1px solid var(--b);border-radius:var(--r);overflow:hidden;display:grid;grid-template-columns:140px 1fr;transition:var(--tr)}
-.hac:hover{transform:translateY(-4px);border-color:rgba(0,229,255,.15);box-shadow:0 16px 44px rgba(0,0,0,.38)}
-.hac-ico{background:var(--bg2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:26px 16px}
-.hac-ico .ico{font-size:2.6rem}
-.hac-body{padding:24px}
-.hac-body h3{font-size:1.1rem;font-weight:900;margin-bottom:7px}
-.hac-body p{font-size:.86rem;color:var(--mu);line-height:1.8;margin-bottom:16px}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.chip{background:var(--bg2);border:1px solid var(--b);border-radius:5px;padding:3px 10px;font-size:.72rem;font-family:var(--mo);color:var(--mu)}
-
-/* ══════ COMING SOON BOX ══════ */
-.cs-box{
-  background:var(--s);border:1px dashed var(--bh);border-radius:var(--r);
-  padding:44px;text-align:center;display:flex;flex-direction:column;
-  align-items:center;gap:12px;
+.mt.on { color: var(--c1); border-bottom-color: var(--c1); background: rgba(0,229,255,.03); }
+.mcon  { flex: 1; display: flex; flex-direction: column; }
+.mpan  { display: none; flex-direction: column; height: 100%; }
+.mpan.on { display: flex; }
+.ssl   { flex: 1; overflow: hidden; min-height: 300px; }
+.sstr  { display: flex; height: 100%; transition: transform .42s cubic-bezier(.4,0,.2,1); }
+.ssl2  {
+  min-width: 100%; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; background: var(--bg3);
+  gap: 12px; min-height: 300px; padding: 28px;
 }
-.cs-label{font-family:var(--mo);font-size:.72rem;color:var(--c2);letter-spacing:3px}
+.sctrl {
+  display: flex; align-items: center; justify-content: center;
+  gap: 9px; padding: 14px; background: var(--bg);
+  border-top: 1px solid var(--b);
+}
+.sdo {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--b); cursor: pointer; transition: all .2s; border: none;
+}
+.sdo.on { background: var(--c1); transform: scale(1.3); }
+.sar {
+  background: var(--s2); border: 1px solid var(--b); color: var(--tx);
+  border-radius: 50%; width: 28px; height: 28px; cursor: pointer;
+  font-size: .85rem; display: flex; align-items: center; justify-content: center;
+  transition: var(--tr);
+}
+.sar:hover { background: var(--c1); color: var(--bg); border-color: var(--c1); }
+.vp {
+  flex: 1; background: #000;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 16px; cursor: pointer;
+  min-height: 300px; transition: var(--tr);
+}
+.vp:hover .pply { background: rgba(255,0,0,.75); }
+.pply {
+  width: 64px; height: 64px; background: rgba(255,255,255,.13);
+  border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; transition: all .28s;
+}
+.vtxt { color: var(--mu); font-size: .88rem; }
+.vframe { width: 100%; border: none; min-height: 300px; }
 
-/* ══════ PAYPAL ══════ */
-.paybx{
-  background:var(--s2);border:1px solid rgba(0,156,222,.22);
-  border-radius:22px;padding:44px;max-width:520px;margin:0 auto;text-align:center;
+/* ═══════════════════════════════════════
+   TECH SPECS
+═══════════════════════════════════════ */
+.specs-box {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: 22px; padding: 48px; margin-bottom: 44px;
 }
-.paybx h3{font-size:1.3rem;font-weight:900;margin-bottom:10px}
-.paybx>p{color:var(--mu);font-size:.9rem;line-height:1.8;margin-bottom:24px}
-.pp-status{min-height:60px;display:flex;align-items:center;justify-content:center;padding:8px 0}
-.pay-notes{font-size:.78rem;color:var(--mu);margin-top:18px;line-height:2;border-top:1px solid var(--b);padding-top:16px}
+.spec-col {
+  background: var(--bg2); border-radius: 13px;
+  padding: 18px 20px; border: 1px solid var(--b);
+}
+.spec-col .spec-hd {
+  font-size: .72rem; color: var(--c1); font-family: var(--mo);
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.spec-col ul { list-style: none; font-size: .86rem; color: var(--tx2); line-height: 2.3; }
+.spec-col li::before { content: '✓ '; color: var(--gr); font-weight: 700; }
 
-/* ══════ LINKS PAGE ══════ */
-.lgr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
-.lk{
-  background:var(--s);border:1px solid var(--b);border-radius:14px;
-  padding:18px 22px;display:flex;align-items:center;gap:14px;
-  transition:var(--tr);
+/* ═══════════════════════════════════════
+   APP CARDS
+═══════════════════════════════════════ */
+.ac {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: var(--r2); padding: 32px 26px;
+  text-align: center; transition: var(--tr);
+  display: flex; flex-direction: column;
 }
-.lk:hover{border-color:var(--c1);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.35)}
-.lki{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-.lkd h3{font-size:.92rem;font-weight:700;margin-bottom:2px}
-.lkd p{font-size:.78rem;color:var(--mu)}
-.lka{margin-right:auto;color:var(--mu);font-size:.9rem}
+.ac:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 22px 56px rgba(0,0,0,.42);
+  border-color: rgba(0,229,255,.15);
+}
+.aico {
+  width: 76px; height: 76px; border-radius: 20px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 18px; font-size: 2rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+}
+.an { font-size: 1.15rem; font-weight: 900; margin: 10px 0 10px; letter-spacing: -.3px; }
+.ad { font-size: .87rem; color: var(--tx2); line-height: 1.8; margin-bottom: 18px; flex: 1; }
+.af { list-style: none; margin-bottom: 20px; }
+.af li {
+  font-size: .82rem; color: var(--tx2); padding: 5px 0;
+  display: flex; align-items: center; gap: 7px; justify-content: center;
+}
+.af li::before { content: '✓'; color: var(--gr); font-weight: 700; font-size: .76rem; }
 
-/* ══════ CTA SECTION ══════ */
-.cta-sec{background:var(--s);border-top:1px solid var(--b);border-bottom:1px solid var(--b);padding:64px 0;text-align:center;position:relative;overflow:hidden}
-.cta-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(124,58,237,.08),transparent)}
-.cta-sec h2{font-size:2rem;font-weight:900;margin-bottom:12px;letter-spacing:-.5px}
-.cta-sec p{color:var(--mu);margin-bottom:30px;font-size:.97rem}
+/* Horizontal App Card */
+.hac {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: var(--r2); overflow: hidden;
+  display: grid; grid-template-columns: 150px 1fr;
+  transition: var(--tr);
+}
+.hac:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0,229,255,.15);
+  box-shadow: 0 18px 48px rgba(0,0,0,.4);
+}
+.hac-ico {
+  background: var(--bg2); display: flex;
+  flex-direction: column; align-items: center;
+  justify-content: center; gap: 10px; padding: 28px 18px;
+}
+.hac-ico .ico { font-size: 2.8rem; }
+.hac-body { padding: 28px; }
+.hac-body h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: 9px; }
+.hac-body p  { font-size: .88rem; color: var(--tx2); line-height: 1.85; margin-bottom: 18px; }
+.chips { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 18px; }
+.chip {
+  background: var(--bg2); border: 1px solid var(--b);
+  border-radius: 6px; padding: 3px 11px;
+  font-size: .73rem; font-family: var(--mo); color: var(--mu);
+}
 
-/* ══════════════════════════════════
-   PRIVACY PAGE
-══════════════════════════════════ */
-.prv-hub{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;margin-bottom:44px}
-.prv-card{
-  background:var(--s);border:1px solid var(--b);border-radius:var(--r);
-  padding:30px 26px;cursor:pointer;transition:var(--tr);position:relative;overflow:hidden;text-align:right;
+/* Coming Soon Box */
+.cs-box {
+  background: var(--s); border: 1px dashed var(--bh);
+  border-radius: var(--r2); padding: 48px;
+  text-align: center; display: flex;
+  flex-direction: column; align-items: center; gap: 14px;
 }
-.prv-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 55%,rgba(0,229,255,.04));opacity:0;transition:opacity .3s}
-.prv-card:hover::after{opacity:1}
-.prv-card:hover{transform:translateY(-6px);border-color:rgba(0,229,255,.2);box-shadow:0 20px 56px rgba(0,0,0,.44)}
-.prv-card-ico{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.65rem;margin-bottom:18px}
-.prv-card h3{font-size:1.1rem;font-weight:900;margin-bottom:8px}
-.prv-card p{font-size:.84rem;color:var(--mu);line-height:1.75;margin-bottom:16px}
-.prv-card-arrow{font-size:.82rem;color:var(--c1);font-family:var(--mo);display:flex;align-items:center;gap:5px}
-.prv-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);
-  border-radius:20px;padding:3px 11px;font-size:.72rem;font-family:var(--mo);color:var(--gr);margin-bottom:12px;
+.cs-label {
+  font-family: var(--mo); font-size: .73rem;
+  color: var(--c2); letter-spacing: 3px;
 }
-.prv-detail{display:none;animation:fadeUp .3s ease}
-.prv-detail.on{display:block}
-.prv-hub-view.hidden{display:none}
-.prv-back{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--s);border:1px solid var(--b);border-radius:30px;
-  padding:10px 22px;font-size:.86rem;font-weight:600;color:var(--mu);
-  cursor:pointer;transition:var(--tr);margin-bottom:30px;
-}
-.prv-back:hover{border-color:var(--c1);color:var(--c1)}
-.prv-breadcrumb{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--mu);margin-bottom:22px;font-family:var(--mo)}
-.prv-breadcrumb span{color:var(--c1)}
-.prv-banner{
-  background:var(--s);border:1px solid var(--b);border-radius:22px;
-  padding:40px;margin-bottom:36px;display:flex;align-items:center;gap:26px;
-  position:relative;overflow:hidden;
-}
-.prv-banner::after{content:'PRIVACY';position:absolute;left:16px;bottom:-14px;font-family:var(--mo);font-size:5rem;font-weight:900;color:rgba(255,255,255,.02);pointer-events:none}
-.prv-banner-ico{width:76px;height:76px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2.1rem;flex-shrink:0}
-.prv-banner h2{font-size:1.65rem;font-weight:900;margin-bottom:5px}
-.prv-banner p{color:var(--mu);font-size:.88rem}
-.prv-body{display:grid;gap:12px}
-.prv-section{background:var(--s);border:1px solid var(--b);border-radius:14px;overflow:hidden}
-.prv-section-hd{display:flex;align-items:center;gap:13px;padding:17px 22px;cursor:pointer;user-select:none;transition:background .2s}
-.prv-section-hd:hover{background:rgba(255,255,255,.025)}
-.prv-sico{font-size:1.1rem;width:36px;height:36px;background:var(--bg2);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--b)}
-.prv-section-hd h3{font-size:.96rem;font-weight:700;flex:1}
-.prv-arr{font-size:.72rem;color:var(--mu);transition:transform .25s}
-.prv-section.open .prv-arr{transform:rotate(90deg)}
-.prv-section-body{display:none;padding:0 22px 22px;border-top:1px solid var(--b)}
-.prv-section.open .prv-section-body{display:block;animation:fadeUp .22s ease}
-.prv-p{font-size:.88rem;color:var(--mu);line-height:1.95;margin-bottom:12px}
-.prv-p:last-child{margin-bottom:0}
-.prv-ul{list-style:none;margin:10px 0}
-.prv-ul li{font-size:.86rem;color:var(--mu);padding:6px 0;display:flex;align-items:flex-start;gap:9px;border-bottom:1px solid rgba(255,255,255,.04)}
-.prv-ul li:last-child{border-bottom:none}
-.prv-ul li::before{content:'▸';color:var(--c1);font-size:.7rem;margin-top:5px;flex-shrink:0}
-.prv-ul li strong{color:var(--tx)}
-.prv-tbl{width:100%;border-collapse:collapse;margin:12px 0;font-size:.83rem}
-.prv-tbl th{background:var(--bg2);color:var(--c1);font-family:var(--mo);font-size:.74rem;letter-spacing:1px;padding:10px 16px;text-align:right;font-weight:700}
-.prv-tbl td{padding:10px 16px;border-bottom:1px solid var(--b);color:var(--mu)}
-.prv-tbl tr:last-child td{border-bottom:none}
-.prv-tbl tr:hover td{background:rgba(255,255,255,.02)}
-.prv-comp{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
-.prv-comp-chip{background:var(--bg2);border:1px solid var(--b);border-radius:7px;padding:5px 13px;font-size:.74rem;font-family:var(--mo);color:var(--mu);display:flex;align-items:center;gap:5px}
-.prv-comp-chip::before{content:'✓';color:var(--gr)}
-.prv-contact{background:var(--bg2);border-radius:13px;padding:20px;display:flex;align-items:center;gap:16px;margin-top:8px;border:1px solid var(--b)}
-.prv-contact-ico{font-size:2rem}
-.prv-contact p{font-size:.85rem;color:var(--mu);line-height:1.75}
-.prv-contact a{color:var(--c1);font-weight:700}
-.prv-contact strong{color:var(--tx);font-size:.92rem;display:block;margin-bottom:4px}
-.prv-perm{background:var(--bg2);border:1px solid var(--b);border-radius:11px;padding:14px 18px;margin:8px 0;display:flex;align-items:flex-start;gap:14px}
-.prv-perm-ico{font-size:1.3rem;margin-top:2px}
-.prv-perm h4{font-size:.87rem;font-weight:700;margin-bottom:3px}
-.prv-perm p{font-size:.79rem;color:var(--mu)}
-.prv-rights{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:12px 0}
-.prv-right-item{background:var(--bg2);border-radius:10px;padding:12px 15px;display:flex;align-items:flex-start;gap:10px;border:1px solid var(--b)}
-.prv-right-item .r-ico{font-size:1rem;flex-shrink:0;margin-top:1px}
-.prv-right-item h4{font-size:.8rem;font-weight:700;margin-bottom:2px;color:var(--tx)}
-.prv-right-item p{font-size:.74rem;color:var(--mu)}
-.prv-updated{display:flex;align-items:center;justify-content:space-between;background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.1);border-radius:11px;padding:11px 18px;font-size:.78rem;font-family:var(--mo);color:var(--mu);margin-top:22px;flex-wrap:wrap;gap:8px}
-.prv-updated span:last-child{color:var(--c1)}
-.prv-site-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.prv-info-note{background:rgba(0,229,255,.04);border:1px solid rgba(0,229,255,.1);border-radius:13px;padding:18px 22px;display:flex;gap:14px;align-items:flex-start}
-.prv-info-note p{font-size:.85rem;color:var(--mu);line-height:1.85}
 
-/* ══════ FOOTER ══════ */
-footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
-.fgr{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:48px}
-.fbrand p{color:var(--mu);font-size:.88rem;line-height:1.85;margin-top:12px;max-width:260px}
-.fcol h4{font-size:.72rem;font-family:var(--mo);color:var(--c1);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:18px}
-.fcol ul{list-style:none}
-.fcol li{margin-bottom:9px}
-.fcol li a{color:var(--mu);font-size:.88rem;display:flex;align-items:center;gap:7px;transition:color .2s}
-.fcol li a:hover{color:var(--tx)}
-.fbot{border-top:1px solid var(--b);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.fbot p{color:var(--mu);font-size:.78rem}
-.flinks{display:flex;gap:18px}
-.flinks a{color:var(--mu);font-size:.78rem;transition:color .2s}
-.flinks a:hover{color:var(--c1)}
-
-/* ══════ RESPONSIVE ══════ */
-@media(max-width:1040px){
-  .hero-inner,.pfeat{grid-template-columns:1fr}
-  .vis{display:none}
-  .pmed{border-right:none;border-top:1px solid var(--b)}
-  .g3{grid-template-columns:1fr 1fr}
-  .prv-site-grid{grid-template-columns:1fr}
+/* ═══════════════════════════════════════
+   PAYPAL PAGE
+═══════════════════════════════════════ */
+.paybx {
+  background: var(--s2); border: 1px solid rgba(0,156,222,.22);
+  border-radius: 24px; padding: 48px; max-width: 540px;
+  margin: 0 auto; text-align: center;
 }
-@media(max-width:700px){
-  .nlinks{display:none}
-  .ham{display:flex}
-  .g2,.g3,.g4{grid-template-columns:1fr}
-  .fgr{grid-template-columns:1fr;gap:30px}
-  .sgr{flex-direction:column}
-  .si{border-right:none;border-bottom:1px solid var(--b);padding:14px 20px}
-  .si:last-child{border-bottom:none}
-  .pinfo{padding:26px}
-  .hac{grid-template-columns:1fr}
-  .hac-ico{padding:18px;flex-direction:row;border-bottom:1px solid var(--b)}
-  .prv-hub{grid-template-columns:1fr}
-  .prv-banner{flex-direction:column;text-align:center}
-  .prv-rights{grid-template-columns:1fr}
-  .hero{min-height:auto;padding:80px 0 60px}
-  .specs-box{padding:24px}
+.paybx h3 { font-size: 1.35rem; font-weight: 900; margin-bottom: 12px; }
+.paybx > p { color: var(--tx2); font-size: .92rem; line-height: 1.85; margin-bottom: 26px; }
+.pp-status {
+  min-height: 60px; display: flex;
+  align-items: center; justify-content: center; padding: 8px 0;
+}
+.pay-notes {
+  font-size: .8rem; color: var(--mu); margin-top: 20px;
+  line-height: 2.1; border-top: 1px solid var(--b); padding-top: 18px;
+}
+.pay-features {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px; margin: 24px 0;
+}
+.pay-feat {
+  background: var(--bg2); border: 1px solid var(--b);
+  border-radius: 12px; padding: 14px 16px;
+  text-align: right;
+}
+.pay-feat .pf-ico { font-size: 1.4rem; margin-bottom: 7px; }
+.pay-feat h4 { font-size: .88rem; font-weight: 700; margin-bottom: 4px; }
+.pay-feat p  { font-size: .78rem; color: var(--mu); line-height: 1.6; }
+
+/* ═══════════════════════════════════════
+   LINKS PAGE
+═══════════════════════════════════════ */
+.lgr { display: grid; grid-template-columns: repeat(auto-fill,minmax(290px,1fr)); gap: 16px; }
+.lk {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: 16px; padding: 20px 24px;
+  display: flex; align-items: center; gap: 16px; transition: var(--tr);
+}
+.lk:hover {
+  border-color: var(--c1);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0,0,0,.36);
+}
+.lki {
+  width: 50px; height: 50px; border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; flex-shrink: 0;
+}
+.lkd h3 { font-size: .94rem; font-weight: 700; margin-bottom: 3px; }
+.lkd p  { font-size: .8rem; color: var(--mu); }
+.lka    { margin-right: auto; color: var(--mu); font-size: .95rem; }
+
+/* ═══════════════════════════════════════
+   CTA SECTION
+═══════════════════════════════════════ */
+.cta-sec {
+  background: var(--s); border-top: 1px solid var(--b);
+  border-bottom: 1px solid var(--b); padding: 72px 0;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-sec::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 65% 80% at 50% 50%, rgba(124,58,237,.08), transparent);
+}
+.cta-sec h2 { font-size: 2.1rem; font-weight: 900; margin-bottom: 14px; letter-spacing: -.5px; }
+.cta-sec p  { color: var(--tx2); margin-bottom: 34px; font-size: 1rem; }
+
+/* ══════════════════════════════════════════════
+   ████  PRIVACY  ████
+══════════════════════════════════════════════ */
+.prv-hub { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 20px; margin-bottom: 44px; }
+.prv-card {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: var(--r2); padding: 32px 28px;
+  cursor: pointer; transition: var(--tr); position: relative; overflow: hidden;
+}
+.prv-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,229,255,.2);
+  box-shadow: 0 22px 60px rgba(0,0,0,.46);
+}
+.prv-card-ico {
+  width: 60px; height: 60px; border-radius: 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem; margin-bottom: 18px;
+}
+.prv-card h3  { font-size: 1.1rem; font-weight: 900; margin-bottom: 9px; }
+.prv-card p   { font-size: .86rem; color: var(--tx2); line-height: 1.8; margin-bottom: 18px; }
+.prv-card-arrow { font-size: .82rem; color: var(--c1); font-family: var(--mo); display: flex; align-items: center; gap: 5px; }
+.prv-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(34,197,94,.08); border: 1px solid rgba(34,197,94,.22);
+  border-radius: 20px; padding: 3px 12px;
+  font-size: .72rem; font-family: var(--mo); color: var(--gr); margin-bottom: 13px;
+}
+.prv-detail { display: none; animation: fadeUp .3s ease; }
+.prv-detail.on { display: block; }
+.prv-hub-view.hidden { display: none; }
+.prv-back {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: 30px; padding: 11px 24px;
+  font-size: .87rem; font-weight: 700; color: var(--mu);
+  cursor: pointer; transition: var(--tr); margin-bottom: 32px;
+}
+.prv-back:hover { border-color: var(--c1); color: var(--c1); }
+.prv-breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-size: .79rem; color: var(--mu);
+  margin-bottom: 24px; font-family: var(--mo);
+}
+.prv-breadcrumb span { color: var(--c1); }
+.prv-banner {
+  background: var(--s); border: 1px solid var(--b);
+  border-radius: 24px; padding: 42px; margin-bottom: 38px;
+  display: flex; align-items: center; gap: 28px;
+  position: relative; overflow: hidden;
+}
+.prv-banner::after {
+  content: 'PRIVACY'; position: absolute; left: 16px; bottom: -16px;
+  font-family: var(--mo); font-size: 5.5rem; font-weight: 900;
+  color: rgba(255,255,255,.02); pointer-events: none;
+}
+.prv-banner-ico {
+  width: 80px; height: 80px; border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.2rem; flex-shrink: 0;
+}
+.prv-banner h2 { font-size: 1.7rem; font-weight: 900; margin-bottom: 6px; }
+.prv-banner p  { color: var(--mu); font-size: .9rem; }
+.prv-body  { display: grid; gap: 13px; }
+.prv-section { background: var(--s); border: 1px solid var(--b); border-radius: 16px; overflow: hidden; }
+.prv-section-hd {
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 24px; cursor: pointer; user-select: none; transition: background .2s;
+}
+.prv-section-hd:hover { background: rgba(255,255,255,.022); }
+.prv-sico {
+  font-size: 1.1rem; width: 38px; height: 38px;
+  background: var(--bg2); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; border: 1px solid var(--b);
+}
+.prv-section-hd h3 { font-size: .97rem; font-weight: 700; flex: 1; }
+.prv-arr { font-size: .74rem; color: var(--mu); transition: transform .25s; }
+.prv-section.open .prv-arr { transform: rotate(90deg); }
+.prv-section-body { display: none; padding: 0 24px 24px; border-top: 1px solid var(--b); }
+.prv-section.open .prv-section-body { display: block; animation: fadeUp .22s ease; }
+.prv-p { font-size: .89rem; color: var(--tx2); line-height: 1.95; margin-bottom: 13px; }
+.prv-p:last-child { margin-bottom: 0; }
+.prv-ul { list-style: none; margin: 12px 0; }
+.prv-ul li {
+  font-size: .87rem; color: var(--tx2); padding: 7px 0;
+  display: flex; align-items: flex-start; gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.prv-ul li:last-child { border-bottom: none; }
+.prv-ul li::before { content: '▸'; color: var(--c1); font-size: .72rem; margin-top: 5px; flex-shrink: 0; }
+.prv-ul li strong { color: var(--tx); }
+.prv-tbl { width: 100%; border-collapse: collapse; margin: 13px 0; font-size: .84rem; }
+.prv-tbl th {
+  background: var(--bg2); color: var(--c1); font-family: var(--mo);
+  font-size: .74rem; letter-spacing: 1px; padding: 11px 18px;
+  text-align: right; font-weight: 700;
+}
+.prv-tbl td { padding: 11px 18px; border-bottom: 1px solid var(--b); color: var(--tx2); }
+.prv-tbl tr:last-child td { border-bottom: none; }
+.prv-tbl tr:hover td { background: rgba(255,255,255,.02); }
+.prv-comp { display: flex; gap: 8px; flex-wrap: wrap; margin: 13px 0; }
+.prv-comp-chip {
+  background: var(--bg2); border: 1px solid var(--b);
+  border-radius: 7px; padding: 5px 13px;
+  font-size: .74rem; font-family: var(--mo); color: var(--mu);
+  display: flex; align-items: center; gap: 5px;
+}
+.prv-comp-chip::before { content: '✓'; color: var(--gr); }
+.prv-contact {
+  background: var(--bg2); border-radius: 14px;
+  padding: 22px; display: flex; align-items: center;
+  gap: 18px; margin-top: 10px; border: 1px solid var(--b);
+}
+.prv-contact-ico { font-size: 2.2rem; }
+.prv-contact p   { font-size: .86rem; color: var(--tx2); line-height: 1.8; }
+.prv-contact a   { color: var(--c1); font-weight: 700; }
+.prv-contact strong { color: var(--tx); font-size: .93rem; display: block; margin-bottom: 5px; }
+.prv-perm {
+  background: var(--bg2); border: 1px solid var(--b);
+  border-radius: 12px; padding: 16px 20px; margin: 9px 0;
+  display: flex; align-items: flex-start; gap: 15px;
+}
+.prv-perm-ico { font-size: 1.4rem; margin-top: 2px; }
+.prv-perm h4  { font-size: .88rem; font-weight: 700; margin-bottom: 4px; }
+.prv-perm p   { font-size: .8rem; color: var(--mu); }
+.prv-rights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 13px 0; }
+.prv-right-item {
+  background: var(--bg2); border-radius: 11px;
+  padding: 13px 16px; display: flex; align-items: flex-start;
+  gap: 11px; border: 1px solid var(--b);
+}
+.prv-right-item .r-ico { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+.prv-right-item h4    { font-size: .81rem; font-weight: 700; margin-bottom: 3px; color: var(--tx); }
+.prv-right-item p     { font-size: .75rem; color: var(--mu); }
+.prv-updated {
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(0,229,255,.04); border: 1px solid rgba(0,229,255,.1);
+  border-radius: 12px; padding: 12px 20px;
+  font-size: .79rem; font-family: var(--mo); color: var(--mu);
+  margin-top: 24px; flex-wrap: wrap; gap: 8px;
+}
+.prv-updated span:last-child { color: var(--c1); }
+.prv-site-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 13px; }
+.prv-info-note {
+  background: rgba(0,229,255,.04); border: 1px solid rgba(0,229,255,.1);
+  border-radius: 14px; padding: 20px 24px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.prv-info-note p { font-size: .87rem; color: var(--tx2); line-height: 1.9; }
+
+/* ═══════════════════════════════════════
+   DIVIDER / SEPARATOR
+═══════════════════════════════════════ */
+.divider {
+  height: 1px; background: linear-gradient(90deg, transparent, var(--b), transparent);
+  margin: 64px 0;
+}
+
+/* ═══════════════════════════════════════
+   HIGHLIGHT BOX
+═══════════════════════════════════════ */
+.hbox {
+  border-radius: 16px; padding: 20px 24px;
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: .88rem; line-height: 1.85;
+}
+.hbox-c { background: rgba(0,229,255,.05); border: 1px solid rgba(0,229,255,.12); color: var(--c1); }
+.hbox-g { background: rgba(34,197,94,.05);  border: 1px solid rgba(34,197,94,.14);  color: var(--gr); }
+.hbox-p { background: rgba(124,58,237,.06); border: 1px solid rgba(124,58,237,.18); color: #a78bfa; }
+.hbox-o { background: rgba(245,158,11,.05); border: 1px solid rgba(245,158,11,.15); color: var(--c3); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: var(--bg2); border-top: 1px solid var(--b);
+  padding: 68px 0 30px;
+}
+.fgr {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 52px; margin-bottom: 52px;
+}
+.fbrand p {
+  color: var(--mu); font-size: .89rem;
+  line-height: 1.9; margin-top: 14px; max-width: 270px;
+}
+.fcol h4 {
+  font-size: .73rem; font-family: var(--mo); color: var(--c1);
+  letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 20px;
+}
+.fcol ul { list-style: none; }
+.fcol li { margin-bottom: 10px; }
+.fcol li a {
+  color: var(--mu); font-size: .89rem;
+  display: flex; align-items: center; gap: 7px; transition: color .2s;
+}
+.fcol li a:hover { color: var(--tx); }
+.fbot {
+  border-top: 1px solid var(--b); padding-top: 24px;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 14px;
+}
+.fbot p { color: var(--mu); font-size: .79rem; }
+.flinks { display: flex; gap: 20px; }
+.flinks a { color: var(--mu); font-size: .79rem; transition: color .2s; }
+.flinks a:hover { color: var(--c1); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1040px) {
+  .hero-inner, .pfeat { grid-template-columns: 1fr; }
+  .hero-vis { display: none; }
+  .pmed { border-right: none; border-top: 1px solid var(--b); }
+  .g3   { grid-template-columns: 1fr 1fr; }
+  .prv-site-grid { grid-template-columns: 1fr; }
+}
+@media(max-width:700px) {
+  .nlinks { display: none; }
+  .ham    { display: flex; }
+  .g2, .g3, .g4 { grid-template-columns: 1fr; }
+  .fgr   { grid-template-columns: 1fr; gap: 32px; }
+  .sgr   { flex-direction: column; }
+  .si    { border-right: none; border-bottom: 1px solid var(--b); padding: 16px 24px; }
+  .si:last-child { border-bottom: none; }
+  .pinfo { padding: 28px; }
+  .hac   { grid-template-columns: 1fr; }
+  .hac-ico { padding: 20px; flex-direction: row; border-bottom: 1px solid var(--b); }
+  .prv-hub { grid-template-columns: 1fr; }
+  .prv-banner { flex-direction: column; text-align: center; }
+  .prv-rights { grid-template-columns: 1fr; }
+  .hero  { min-height: auto; padding: 80px 0 64px; }
+  .specs-box { padding: 26px; }
+  .brow  { flex-direction: column; }
+  .brow .btn { justify-content: center; }
+  .pay-features { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 <div id="prog"></div>
 
-<!-- ══════════════════════════
+<!-- ══════════════════════════════════
      NAVIGATION
-══════════════════════════ -->
+══════════════════════════════════ -->
 <nav>
   <div class="ni">
     <div class="logo">
@@ -554,57 +933,100 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
   <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener">▶ يوتيوب</a>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      PAGE: HOME
-══════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <div id="home" class="pg on">
 
-  <!-- Hero -->
+  <!-- ── HERO ── -->
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hero-grid"></div>
-    <div class="hero-noise"></div>
     <div class="wrap">
       <div class="hero-inner">
-        <div>
-          <div class="hbadge"><em></em> v1.2.1 — الإصدار الأخير</div>
-          <h1>أدوات تطوير<br><span class="a1">احترافية</span> لـ<br><span class="a2">المطورين</span></h1>
-          <p class="sub">إضافات WordPress، ألعاب Flutter، أدوات Unity — مبنية بأعلى معايير الجودة وجاهزة للأسواق العالمية.</p>
+
+        <!-- Left: Text Content -->
+        <div class="hero-content">
+          <div class="hbadge"><em></em> v1.2.1 — الإصدار الأخير متاح الآن</div>
+          <h1>
+            أدوات تطوير<br>
+            <span class="a1">احترافية</span> لكل<br>
+            <span class="a2">مطوّر طموح</span>
+          </h1>
+          <p class="desc">
+            نبني إضافات WordPress، ألعاب Flutter، وأدوات Unity بمعايير الإنتاج العالمية — كل سطر كود يُكتب بعناية ليكون جاهزاً للأسواق الكبرى.
+          </p>
+          <p class="desc2">
+            سواء كنت تبحث عن إضافة WooCommerce تُحوّل زوارك إلى عملاء عبر واتساب، أو لعبة Flutter كاملة مع AdMob وIAP، أو أداة Unity توفّر عليك ساعات من العمل — أنت في المكان الصحيح.
+          </p>
+          <div class="hero-pills">
+            <div class="pill"><div class="dot" style="background:var(--c1)"></div>WordPress & WooCommerce</div>
+            <div class="pill"><div class="dot" style="background:var(--gr)"></div>Flutter & Dart</div>
+            <div class="pill"><div class="dot" style="background:#a78bfa"></div>Unity Editor Tools</div>
+            <div class="pill"><div class="dot" style="background:var(--c3)"></div>Google Play & AdMob</div>
+          </div>
           <div class="brow">
-            <button class="btn btn-p" onclick="show('products')">🚀 المنتجات</button>
+            <button class="btn btn-p" onclick="show('products')">🚀 تصفح المنتجات</button>
             <button class="btn btn-g" onclick="show('apps')">📱 التطبيقات</button>
-            <button class="btn btn-o" onclick="show('links')">🔗 روابطنا</button>
+            <button class="btn btn-o" onclick="show('buy')">💳 اشترِ الآن</button>
           </div>
         </div>
-        <div class="vis">
-          <div class="vbadge">⚡ HMAC-SHA256 Security</div>
-          <div class="vbadge">✅ WooCommerce 9.3 Ready</div>
-          <div class="mk">
-            <div class="mkb">
-              <div class="mkd"><s></s><s></s><s></s></div>
-              <div class="mku">shop.example.com/product</div>
-            </div>
-            <div class="mkc">
-              <div style="font-size:.74rem;color:var(--mu);margin-bottom:9px;font-family:var(--mo)">WooCommerce WhatsApp Order Pro</div>
-              <button class="wbtn">💬 اطلب عبر واتساب</button>
-              <div style="margin-top:11px;text-align:center;font-size:.8rem;color:var(--mu)">السعر: <strong style="color:var(--tx)">249.00 ريال</strong></div>
-              <div class="mkstats">
-                <div class="mks"><div class="n">v1.2</div><div class="l">إصدار</div></div>
-                <div class="mks"><div class="n">24+</div><div class="l">ميزة</div></div>
-                <div class="mks"><div class="n">5★</div><div class="l">تقييم</div></div>
-              </div>
-            </div>
-          </div>
+
+        <!-- Right: SVG Illustration -->
+        <div class="hero-vis">
+          <div class="float-badge b1">⚡ HMAC-SHA256 Security</div>
+          <div class="float-badge b3">🎮 150+ Game Levels</div>
+          <div class="float-badge b2">✅ CodeCanyon Ready</div>
+          <!-- Mock Device + Code Card -->
+          <svg width="400" height="440" viewBox="0 0 400 440" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 32px 64px rgba(0,0,0,.6))">
+            <!-- Background card -->
+            <rect x="20" y="20" width="360" height="400" rx="22" fill="#111827" stroke="rgba(255,255,255,.09)" stroke-width="1"/>
+            <!-- Top bar -->
+            <rect x="20" y="20" width="360" height="48" rx="22" fill="#0b0f1a"/>
+            <rect x="20" y="48" width="360" height="20" fill="#0b0f1a"/>
+            <!-- Traffic lights -->
+            <circle cx="52" cy="44" r="6" fill="#ff5f57"/>
+            <circle cx="72" cy="44" r="6" fill="#febc2e"/>
+            <circle cx="92" cy="44" r="6" fill="#28c840"/>
+            <!-- URL bar -->
+            <rect x="116" y="34" width="220" height="20" rx="6" fill="#0d1120"/>
+            <text x="226" y="48" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">shop.example.com/checkout</text>
+            <!-- WhatsApp Button -->
+            <rect x="44" y="88" width="312" height="54" rx="14" fill="#25d366"/>
+            <text x="200" y="121" fill="#fff" font-family="Cairo, sans-serif" font-weight="700" font-size="15" text-anchor="middle">💬 اطلب عبر واتساب</text>
+            <!-- Order summary -->
+            <rect x="44" y="158" width="312" height="80" rx="12" fill="#0b0f1a" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <text x="64" y="180" fill="#64748b" font-family="Cairo, sans-serif" font-size="10">ملخص الطلب</text>
+            <text x="64" y="200" fill="#e2eaf4" font-family="Cairo, sans-serif" font-weight="700" font-size="13">منتج تجريبي — حزمة Pro</text>
+            <text x="64" y="220" fill="#00e5ff" font-family="JetBrains Mono, monospace" font-weight="700" font-size="16">249.00 ريال</text>
+            <!-- Stats row -->
+            <rect x="44" y="254" width="96" height="64" rx="12" fill="#0b0f1a" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <rect x="152" y="254" width="96" height="64" rx="12" fill="#0b0f1a" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <rect x="260" y="254" width="96" height="64" rx="12" fill="#0b0f1a" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <text x="92"  y="280" fill="#00e5ff" font-family="JetBrains Mono, monospace" font-weight="700" font-size="15" text-anchor="middle">v1.2</text>
+            <text x="200" y="280" fill="#00e5ff" font-family="JetBrains Mono, monospace" font-weight="700" font-size="15" text-anchor="middle">24+</text>
+            <text x="308" y="280" fill="#00e5ff" font-family="JetBrains Mono, monospace" font-weight="700" font-size="15" text-anchor="middle">5★</text>
+            <text x="92"  y="298" fill="#64748b" font-family="Cairo, sans-serif" font-size="10" text-anchor="middle">إصدار</text>
+            <text x="200" y="298" fill="#64748b" font-family="Cairo, sans-serif" font-size="10" text-anchor="middle">ميزة</text>
+            <text x="308" y="298" fill="#64748b" font-family="Cairo, sans-serif" font-size="10" text-anchor="middle">تقييم</text>
+            <!-- Code snippet area -->
+            <rect x="44" y="334" width="312" height="70" rx="12" fill="#0d1120" stroke="rgba(0,229,255,.1)" stroke-width="1"/>
+            <text x="64" y="354" fill="#7c3aed" font-family="JetBrains Mono, monospace" font-size="9">// Smart Agent Routing</text>
+            <text x="64" y="370" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">$agent = WOP_Router::get_next(</text>
+            <text x="64" y="384" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">  $product_id, 'round-robin'</text>
+            <text x="64" y="397" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">);</text>
+          </svg>
         </div>
+
       </div>
     </div>
   </div>
 
-  <!-- Stats Bar -->
+  <!-- ── STATS BAR ── -->
   <div class="sbar">
     <div class="wrap">
       <div class="sgr">
-        <div class="si"><span class="v" data-c="3">0</span><span class="k">منصات بيع</span></div>
+        <div class="si"><span class="v" data-c="3">0</span><span class="k">منصات بيع عالمية</span></div>
         <div class="si"><span class="v" data-c="8">0</span><span class="k">منتجات ومشاريع</span></div>
         <div class="si"><span class="v" data-c="24">0</span><span class="k">ميزة في WOP</span></div>
         <div class="si"><span class="v">100%</span><span class="k">معايير CodeCanyon</span></div>
@@ -612,68 +1034,162 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
     </div>
   </div>
 
-  <!-- Ad -->
+  <!-- ── AD ── -->
   <div class="wrap">
     <div class="adu">
       <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
     </div>
   </div>
 
-  <!-- Platforms Section -->
+  <!-- ── PLATFORMS SECTION ── -->
   <section class="sec">
     <div class="wrap">
       <div class="sh sh-c">
         <div class="lbl">منصات البيع</div>
-        <h2 class="sec-t">نبيع على 3 منصات عالمية</h2>
-        <p class="sub">CodeCanyon، Unity Asset Store، وGoogle Play — منتجاتنا متاحة في أكبر أسواق المطورين</p>
+        <h2 class="sec-t">نبيع على 3 منصات عالمية كبرى</h2>
+        <p class="sub">منتجاتنا متاحة في أكبر أسواق المطورين والتطبيقات حول العالم — من CodeCanyon إلى Google Play ووصولاً إلى Unity Asset Store.</p>
       </div>
       <div class="g3">
-        <button class="platform-card" onclick="show('products')" style="border-color:rgba(56,189,248,.15)">
-          <span class="platform-ico">🟦</span>
-          <div class="tag tag-b" style="margin-bottom:12px">WordPress / CodeCanyon</div>
+        <button class="platform-card" onclick="show('products')" style="border-color:rgba(56,189,248,.18)">
+          <div class="pico-wrap" style="background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(56,189,248,.05));border:1px solid rgba(56,189,248,.2)">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="rgba(56,189,248,.12)"/><text x="22" y="30" font-size="20" text-anchor="middle">🟦</text></svg>
+          </div>
+          <div class="tag tag-b" style="margin-bottom:14px">WordPress / CodeCanyon</div>
           <h3>إضافات WooCommerce</h3>
-          <p>إضافات WordPress احترافية جاهزة للبيع العالمي على Envato Market</p>
+          <p>إضافات WordPress احترافية تُبنى وفق معايير Envato الصارمة وتُختبر على آخر إصدارات WooCommerce.</p>
+          <div class="p-count">1 إضافة متاحة · المزيد قريباً</div>
         </button>
         <button class="platform-card" onclick="show('apps')" style="border-color:rgba(255,255,255,.1)">
-          <span class="platform-ico">🎮</span>
-          <div class="tag tag-w" style="margin-bottom:12px">Unity Asset Store</div>
+          <div class="pico-wrap" style="background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--b)">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="rgba(255,255,255,.06)"/><text x="22" y="30" font-size="20" text-anchor="middle">🎮</text></svg>
+          </div>
+          <div class="tag tag-w" style="margin-bottom:14px">Unity Asset Store</div>
           <h3>أدوات Unity Editor</h3>
-          <p>أدوات Editor احترافية لتطوير الألعاب بشكل أسرع وأكثر ذكاءً</p>
+          <p>أدوات Editor تعمل مباشرة داخل Unity لتسريع تطوير الألعاب وتوفير ساعات من البرمجة المتكررة.</p>
+          <div class="p-count">NovaBuild AI — قريباً</div>
         </button>
-        <button class="platform-card" onclick="show('apps')" style="border-color:rgba(34,197,94,.15)">
-          <span class="platform-ico">📱</span>
-          <div class="tag tag-g" style="margin-bottom:12px">Google Play Store</div>
+        <button class="platform-card" onclick="show('apps')" style="border-color:rgba(34,197,94,.18)">
+          <div class="pico-wrap" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.04));border:1px solid rgba(34,197,94,.2)">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="12" fill="rgba(34,197,94,.1)"/><text x="22" y="30" font-size="20" text-anchor="middle">📱</text></svg>
+          </div>
+          <div class="tag tag-g" style="margin-bottom:14px">Google Play Store</div>
           <h3>تطبيقات Flutter</h3>
-          <p>ألعاب وتطبيقات أندرويد مع AdMob وإشعارات Firebase</p>
+          <p>ألعاب وتطبيقات أندرويد مبنية بـ Flutter مع AdMob وFirebase وIAP مدمجة بالكامل.</p>
+          <div class="p-count">3 تطبيقات متاحة</div>
         </button>
       </div>
     </div>
   </section>
 
-  <!-- Features Section -->
+  <!-- ── STORY / WHY SECTION ── -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:72px">
+        <div>
+          <div class="lbl">قصتنا</div>
+          <h2 class="sec-t">لماذا CodeForge؟</h2>
+          <p style="color:var(--tx2);font-size:.97rem;line-height:2;margin-bottom:18px">
+            بدأنا كمطورين نبحث عن أدوات عملية تحلّ مشاكل حقيقية — فلم نجد ما يكفي، فقررنا نبنيها بأنفسنا.
+          </p>
+          <p style="color:var(--tx2);font-size:.97rem;line-height:2;margin-bottom:18px">
+            كل منتج في CodeForge وُلد من حاجة فعلية: إضافة واتساب لأن المتاجر العربية تحتاج تواصلاً مباشراً مع العملاء، وألعاب Flutter لأن سوق التعليم والترفيه الموبايل ينمو بسرعة، وأدوات Unity لأن وقت المطور ثمين.
+          </p>
+          <p style="color:var(--tx2);font-size:.97rem;line-height:2">
+            نؤمن أن الكود الجيد ليس فقط كوداً يعمل — بل كود يمكن صيانته وتطويره وبيعه بثقة في أكبر أسواق العالم.
+          </p>
+        </div>
+        <div>
+          <!-- SVG: Code quality visualization -->
+          <svg width="100%" viewBox="0 0 380 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="380" height="300" rx="18" fill="#111827" stroke="rgba(255,255,255,.07)" stroke-width="1"/>
+            <rect x="0" y="0" width="380" height="42" rx="18" fill="#0b0f1a"/>
+            <rect x="0" y="28" width="380" height="14" fill="#0b0f1a"/>
+            <circle cx="22" cy="21" r="5" fill="#ff5f57"/>
+            <circle cx="38" cy="21" r="5" fill="#febc2e"/>
+            <circle cx="54" cy="21" r="5" fill="#28c840"/>
+            <text x="190" y="25" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">WOP — woocommerce-whatsapp-order-pro.php</text>
+            <!-- Code lines -->
+            <text x="22" y="62"  fill="#7c3aed" font-family="JetBrains Mono, monospace" font-size="9">&lt;?php</text>
+            <text x="22" y="76"  fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">/**</text>
+            <text x="22" y="88"  fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9"> * Plugin Name: WooCommerce WhatsApp Order Pro</text>
+            <text x="22" y="100" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9"> * Version: 1.2.1 | Security: HMAC-SHA256</text>
+            <text x="22" y="112" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9"> */</text>
+            <text x="22" y="130" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">class <tspan fill="#22c55e">WOP_Hook_Loader</tspan> {</text>
+            <text x="22" y="144" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">  private $actions = [];</text>
+            <text x="22" y="158" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">  private $filters = [];</text>
+            <text x="22" y="178" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">  public function <tspan fill="#22c55e">run</tspan>() {</text>
+            <text x="22" y="192" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">    foreach ( $this->actions as $hook ) {</text>
+            <text x="22" y="206" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">      add_action( $hook['tag'],</text>
+            <text x="22" y="220" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">        [$hook['comp'], $hook['cb']] );</text>
+            <text x="22" y="234" fill="#64748b" font-family="JetBrains Mono, monospace" font-size="9">    }</text>
+            <text x="22" y="248" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">  }</text>
+            <text x="22" y="262" fill="#38bdf8" font-family="JetBrains Mono, monospace" font-size="9">}</text>
+            <!-- Badges -->
+            <rect x="200" y="56" width="158" height="26" rx="7" fill="rgba(34,197,94,.1)" stroke="rgba(34,197,94,.2)" stroke-width="1"/>
+            <text x="279" y="73" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">✓ PSR-4 Autoloader</text>
+            <rect x="200" y="88" width="158" height="26" rx="7" fill="rgba(0,229,255,.08)" stroke="rgba(0,229,255,.15)" stroke-width="1"/>
+            <text x="279" y="105" fill="#00e5ff" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">✓ Hook Loader Pattern</text>
+            <rect x="200" y="120" width="158" height="26" rx="7" fill="rgba(124,58,237,.08)" stroke="rgba(124,58,237,.18)" stroke-width="1"/>
+            <text x="279" y="137" fill="#a78bfa" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">✓ HMAC-SHA256 Security</text>
+            <rect x="200" y="152" width="158" height="26" rx="7" fill="rgba(245,158,11,.07)" stroke="rgba(245,158,11,.18)" stroke-width="1"/>
+            <text x="279" y="169" fill="#f59e0b" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">✓ 153 Translatable Strings</text>
+            <rect x="200" y="184" width="158" height="26" rx="7" fill="rgba(34,197,94,.08)" stroke="rgba(34,197,94,.18)" stroke-width="1"/>
+            <text x="279" y="201" fill="#22c55e" font-family="JetBrains Mono, monospace" font-size="9" text-anchor="middle">✓ GPL-2.0 Licensed</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES GRID ── -->
   <section class="sec" style="padding-top:0">
     <div class="wrap">
       <div class="sh sh-c">
         <div class="lbl">لماذا CodeForge</div>
-        <h2 class="sec-t">مبني بمعايير الإنتاج</h2>
-        <p class="sub">كل سطر كود يُكتب وفق أعلى معايير الجودة والأمان</p>
+        <h2 class="sec-t">مبني بمعايير الإنتاج الفعلي</h2>
+        <p class="sub">كل سطر كود يُكتب وفق أعلى معايير الجودة والأمان — لأننا نؤمن أن المطور يستحق أدوات تعمل حقاً.</p>
       </div>
       <div class="g3">
-        <div class="fc"><span class="fi">🔐</span><h3>أمان متقدم</h3><p>HMAC-SHA256، nonces، rate limiting، وحماية من التلاعب بقاعدة البيانات.</p></div>
-        <div class="fc"><span class="fi">🏗️</span><h3>معمارية احترافية</h3><p>Hook Loader، PSR-4 Autoloader، Singleton Pattern، وفصل كامل للطبقات.</p></div>
-        <div class="fc"><span class="fi">🌍</span><h3>دعم الترجمة</h3><p>ملف .pot جاهز مع دعم RTL كامل للعربية وجميع اللغات الأخرى.</p></div>
-        <div class="fc"><span class="fi">📦</span><h3>جاهز للسوق</h3><p>يلبي كل متطلبات CodeCanyon وWordPress.org بشكل كامل.</p></div>
-        <div class="fc"><span class="fi">⚡</span><h3>أداء محسّن</h3><p>Lazy loading، DB indexes محسّنة، وكود خفيف لا يؤثر على سرعة الموقع.</p></div>
-        <div class="fc"><span class="fi">🔄</span><h3>تكاملات متعددة</h3><p>Slack، Zapier، Mailchimp، GA4، Facebook Pixel والمزيد من التكاملات.</p></div>
+        <div class="fc">
+          <div class="fc-ico" style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.18)">🔐</div>
+          <h3>أمان متقدم من الأساس</h3>
+          <p>HMAC-SHA256 لتشفير المفاتيح، nonces لكل طلب، rate limiting ذكي، وحماية كاملة من التلاعب بقاعدة البيانات. الأمان مدمج في المعمارية وليس إضافة لاحقة.</p>
+        </div>
+        <div class="fc">
+          <div class="fc-ico" style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2)">🏗️</div>
+          <h3>معمارية احترافية</h3>
+          <p>Hook Loader Pattern، PSR-4 Autoloader، Singleton Pattern، وفصل كامل للطبقات (Services، Validators، Loggers). كود يمكن توسيعه وصيانته بسهولة.</p>
+        </div>
+        <div class="fc">
+          <div class="fc-ico" style="background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.18)">🌍</div>
+          <h3>دعم RTL والترجمة</h3>
+          <p>ملف .pot جاهز مع 153 نص قابل للترجمة، ودعم RTL كامل للعربية وجميع اللغات. موثّق بالكامل ومتوافق مع معايير WordPress.org.</p>
+        </div>
+        <div class="fc">
+          <div class="fc-ico" style="background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.2)">📦</div>
+          <h3>جاهز للسوق فوراً</h3>
+          <p>يلبي كل متطلبات CodeCanyon وWordPress.org — من التوثيق إلى أصول الـ marketplace مروراً بـ HPOS compatibility وتوافق WooCommerce 9.3.</p>
+        </div>
+        <div class="fc">
+          <div class="fc-ico" style="background:rgba(56,189,248,.09);border:1px solid rgba(56,189,248,.2)">⚡</div>
+          <h3>أداء محسّن بعناية</h3>
+          <p>Lazy loading لكل مكون، فهارس قواعد البيانات محسّنة، وكود خفيف لا يؤثر على سرعة موقعك. نقيس الأداء قبل وبعد كل تغيير.</p>
+        </div>
+        <div class="fc">
+          <div class="fc-ico" style="background:rgba(239,68,68,.09);border:1px solid rgba(239,68,68,.18)">🔄</div>
+          <h3>تكاملات شاملة</h3>
+          <p>Slack، Zapier، Mailchimp، Google Analytics 4، Facebook Pixel، وREST API كامل. ربط منتجاتك مع بقية منظومتك بدون تعقيد.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ── CTA ── -->
   <div class="cta-sec">
-    <div class="wrap">
+    <div class="wrap" style="position:relative;z-index:1">
+      <div style="font-size:2.8rem;margin-bottom:16px">🚀</div>
       <h2>مستعد تبدأ؟</h2>
-      <p>تصفح منتجاتنا أو ادفع مباشرة عبر PayPal بضغطة واحدة</p>
+      <p>تصفح منتجاتنا أو ادفع مباشرة عبر PayPal — الترخيص يصلك فوراً</p>
       <div class="brow" style="justify-content:center">
         <button class="btn btn-p" onclick="show('products')">📦 المنتجات</button>
         <button class="btn btn-g" onclick="show('apps')">📱 التطبيقات</button>
@@ -685,16 +1201,26 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 </div><!-- /home -->
 
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      PAGE: PRODUCTS
-══════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <div id="products" class="pg">
   <section class="sec">
     <div class="wrap">
+
+      <!-- Header -->
       <div class="sh">
         <div class="lbl">إضافات WordPress</div>
         <h2 class="sec-t">WooCommerce WhatsApp Order Pro</h2>
-        <p class="sub">الإضافة الأولى في مجموعة CodeForge — متاحة على CodeCanyon</p>
+        <p class="sub">الإضافة التي تحوّل متجرك WooCommerce إلى آلة مبيعات عبر واتساب — ذكية، آمنة، وجاهزة للنشر على CodeCanyon.</p>
+      </div>
+
+      <!-- Intro highlight -->
+      <div class="hbox hbox-c" style="margin-bottom:36px">
+        <span style="font-size:1.2rem;flex-shrink:0">💡</span>
+        <span>
+          <strong>ما المشكلة التي تحلّها؟</strong> — كثير من المتاجر العربية يفضّل عملاؤها الشراء عبر واتساب مباشرة بدلاً من إتمام الدفع أونلاين. هذه الإضافة تجعل العملية أتوماتيكية بالكامل: من اختيار المنتج إلى إرسال رسالة واتساب محترمة مع كل تفاصيل الطلب.
+        </span>
       </div>
 
       <!-- Product Feature Panel -->
@@ -702,40 +1228,84 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <div class="pinfo">
           <div class="tag tag-b">🟦 WordPress / WooCommerce</div>
           <div class="pname">WooCommerce<br>WhatsApp Order Pro</div>
-          <p class="pdesc">حوّل زوار متجرك إلى مشترين عبر واتساب. نظام توجيه ذكي للوكلاء، قوالب رسائل، تحليلات متقدمة، ودعم Cloud API.</p>
+          <p class="pdesc">
+            أكثر من مجرد زر واتساب — نظام متكامل لإدارة الطلبات والوكلاء والتحليلات. صُمِّم للمتاجر العربية التي تريد بيعاً أسرع ومتابعة أذكى.
+          </p>
           <ul class="fl">
-            <li>Smart Agent Routing — Round Robin وتوجيه يدوي</li>
-            <li>WhatsApp Cloud API + Business API</li>
-            <li>Cart Recovery — استرجاع سلة التسوق تلقائياً</li>
-            <li>Slack، Zapier، Mailchimp Integration</li>
-            <li>Google Analytics 4 + Facebook Pixel</li>
-            <li>نظام ترخيص HMAC-SHA256 محمي بالكامل</li>
-            <li>RTL كامل + 153 نص قابل للترجمة</li>
+            <li><span class="chk">✓</span>Smart Agent Routing — توزيع الطلبات Round Robin أو يدوياً</li>
+            <li><span class="chk">✓</span>WhatsApp Cloud API + Business API — دعم كلا الإصدارين</li>
+            <li><span class="chk">✓</span>Cart Recovery — استرجاع تلقائي لسلة مهجورة</li>
+            <li><span class="chk">✓</span>تكاملات Slack، Zapier، Mailchimp</li>
+            <li><span class="chk">✓</span>Google Analytics 4 + Facebook Pixel مدمجان</li>
+            <li><span class="chk">✓</span>نظام ترخيص HMAC-SHA256 محمي بالكامل</li>
+            <li><span class="chk">✓</span>RTL كامل + 153 نص قابل للترجمة</li>
+            <li><span class="chk">✓</span>HPOS Compatible + WooCommerce 9.3</li>
           </ul>
           <div class="ppr">
             <div class="price">$39</div>
-            <div class="pnt">ترخيص دائم<br>دعم 6 أشهر مجاناً</div>
+            <div class="pnt">ترخيص دائم<br>دعم 6 أشهر مجاناً<br>تحديثات مستمرة</div>
           </div>
           <div class="brow">
-            <a href="https://codecanyon.net" target="_blank" rel="noopener" class="btn btn-g">⬇️ CodeCanyon</a>
-            <button class="btn btn-pay" onclick="show('buy')">💳 PayPal</button>
+            <a href="https://codecanyon.net" target="_blank" rel="noopener" class="btn btn-g">⬇️ تحميل من CodeCanyon</a>
+            <button class="btn btn-pay" onclick="show('buy')">💳 شراء عبر PayPal</button>
             <a href="https://ahmed2sultan2555.github.io/website/" target="_blank" rel="noopener" class="btn btn-o">📄 التوثيق</a>
           </div>
         </div>
         <div class="pmed">
           <div class="mtabs">
-            <button class="mt on" onclick="switchTab(this,'ss')">📸 Screenshots</button>
-            <button class="mt" onclick="switchTab(this,'vid')">▶ فيديو</button>
+            <button class="mt on" onclick="switchTab(this,'ss')">📸 لقطات الشاشة</button>
+            <button class="mt" onclick="switchTab(this,'vid')">▶ فيديو توضيحي</button>
           </div>
           <div class="mcon">
+            <!-- Screenshots Slider -->
             <div class="mpan on" id="panel-ss">
               <div class="ssl">
                 <div class="sstr" id="slider-track">
-                  <div class="ssl2"><div class="ssic">🛒</div><div class="sslb">Product Page Button</div><div class="ssd2">زر الطلب على صفحة المنتج</div></div>
-                  <div class="ssl2"><div class="ssic">⚙️</div><div class="sslb">Admin Settings Panel</div><div class="ssd2">لوحة الإعدادات</div></div>
-                  <div class="ssl2"><div class="ssic">👥</div><div class="sslb">Agents Management</div><div class="ssd2">إدارة الوكلاء</div></div>
-                  <div class="ssl2"><div class="ssic">📊</div><div class="sslb">Analytics Dashboard</div><div class="ssd2">لوحة التحليلات</div></div>
-                  <div class="ssl2"><div class="ssic">🔑</div><div class="sslb">License System</div><div class="ssd2">نظام الترخيص المحمي</div></div>
+                  <!-- Slide 1 -->
+                  <div class="ssl2">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                      <rect width="120" height="120" rx="24" fill="rgba(37,211,102,.12)" stroke="rgba(37,211,102,.2)" stroke-width="1"/>
+                      <text x="60" y="70" font-size="48" text-anchor="middle">🛒</text>
+                    </svg>
+                    <div style="font-family:var(--mo);font-size:.8rem;color:var(--c1)">Product Page Button</div>
+                    <div style="font-size:.78rem;color:var(--mu);text-align:center;max-width:220px">زر "اطلب عبر واتساب" يظهر بجانب زر الشراء العادي مع دعم خيارات المنتج كاملة</div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="ssl2">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                      <rect width="120" height="120" rx="24" fill="rgba(0,229,255,.1)" stroke="rgba(0,229,255,.18)" stroke-width="1"/>
+                      <text x="60" y="70" font-size="48" text-anchor="middle">⚙️</text>
+                    </svg>
+                    <div style="font-family:var(--mo);font-size:.8rem;color:var(--c1)">Admin Settings Panel</div>
+                    <div style="font-size:.78rem;color:var(--mu);text-align:center;max-width:220px">لوحة إعدادات بديهية بـ 8 تبويبات لتخصيص كل شيء دون لمس سطر كود واحد</div>
+                  </div>
+                  <!-- Slide 3 -->
+                  <div class="ssl2">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                      <rect width="120" height="120" rx="24" fill="rgba(245,158,11,.09)" stroke="rgba(245,158,11,.18)" stroke-width="1"/>
+                      <text x="60" y="70" font-size="48" text-anchor="middle">👥</text>
+                    </svg>
+                    <div style="font-family:var(--mo);font-size:.8rem;color:var(--c1)">Agents Management</div>
+                    <div style="font-size:.78rem;color:var(--mu);text-align:center;max-width:220px">أضف وكلاء، حدد ساعات عملهم، وراقب أدائهم من لوحة واحدة</div>
+                  </div>
+                  <!-- Slide 4 -->
+                  <div class="ssl2">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                      <rect width="120" height="120" rx="24" fill="rgba(124,58,237,.1)" stroke="rgba(124,58,237,.2)" stroke-width="1"/>
+                      <text x="60" y="70" font-size="48" text-anchor="middle">📊</text>
+                    </svg>
+                    <div style="font-family:var(--mo);font-size:.8rem;color:var(--c1)">Analytics Dashboard</div>
+                    <div style="font-size:.78rem;color:var(--mu);text-align:center;max-width:220px">تتبع كل نقرة، محادثة، وعملية شراء مع تقارير مفصّلة ورسوم بيانية</div>
+                  </div>
+                  <!-- Slide 5 -->
+                  <div class="ssl2">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                      <rect width="120" height="120" rx="24" fill="rgba(34,197,94,.09)" stroke="rgba(34,197,94,.18)" stroke-width="1"/>
+                      <text x="60" y="70" font-size="48" text-anchor="middle">🔑</text>
+                    </svg>
+                    <div style="font-family:var(--mo);font-size:.8rem;color:var(--c1)">License System</div>
+                    <div style="font-size:.78rem;color:var(--mu);text-align:center;max-width:220px">نظام ترخيص مرتبط بالبريد الإلكتروني مع إمكانية الإلغاء عن بُعد</div>
+                  </div>
                 </div>
               </div>
               <div class="sctrl">
@@ -748,13 +1318,39 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
                 <button class="sar" onclick="slide(1)">‹</button>
               </div>
             </div>
+            <!-- Video Panel -->
             <div class="mpan" id="panel-vid">
               <div class="vp" id="vidbox" onclick="loadVid()">
                 <div class="pply">▶</div>
-                <div class="vtxt">شاهد الفيديو التوضيحي</div>
-                <div style="color:var(--mu);font-size:.74rem;font-family:var(--mo)">WooCommerce WhatsApp Order Pro Demo</div>
+                <div class="vtxt" style="font-weight:700">شاهد الفيديو التوضيحي</div>
+                <div style="color:var(--mu);font-size:.75rem;font-family:var(--mo);text-align:center">WooCommerce WhatsApp Order Pro — Full Demo</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <div style="margin-bottom:44px">
+        <div class="sh">
+          <div class="lbl">كيف تعمل</div>
+          <h2 class="sec-t" style="font-size:1.75rem">3 خطوات فقط للبدء</h2>
+        </div>
+        <div class="g3">
+          <div class="fc" style="text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:14px">📦</div>
+            <h3>1. ثبّت الإضافة</h3>
+            <p>ارفع الملف المضغوط من WordPress Admin › Plugins › Add New، وفعّل الإضافة. العملية تستغرق أقل من دقيقتين.</p>
+          </div>
+          <div class="fc" style="text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:14px">⚙️</div>
+            <h3>2. أضف وكلاءك</h3>
+            <p>أدخل أرقام واتساب فريق المبيعات، حدد ساعات عملهم، واختر طريقة توزيع الطلبات. لا حاجة لأي كود.</p>
+          </div>
+          <div class="fc" style="text-align:center">
+            <div style="font-size:2.5rem;margin-bottom:14px">🚀</div>
+            <h3>3. ابدأ البيع</h3>
+            <p>الزر يظهر تلقائياً على صفحات المنتجات والسلة. عملاؤك ينقرون ويبدأ الحوار على واتساب فوراً.</p>
           </div>
         </div>
       </div>
@@ -767,79 +1363,158 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
       <!-- Tech Specs -->
       <div class="specs-box">
         <div class="sh">
-          <div class="lbl">مواصفات كاملة</div>
-          <h2 class="sec-t" style="font-size:1.7rem">Technical Specifications</h2>
+          <div class="lbl">مواصفات تقنية</div>
+          <h2 class="sec-t" style="font-size:1.75rem">Technical Specifications</h2>
+          <p class="sub">كل ما تحتاج معرفته عن المكونات التقنية للإضافة قبل الشراء</p>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px">
           <div class="spec-col">
-            <div class="spec-hd">CORE</div>
-            <ul><li>Round Robin Routing</li><li>Working Hours / Agent</li><li>Daily Limit / Agent</li><li>WhatsApp Cloud API</li><li>Cart + Checkout Button</li><li>Floating Button</li></ul>
+            <div class="spec-hd">CORE FEATURES</div>
+            <ul>
+              <li>Round Robin Routing</li>
+              <li>Working Hours / Agent</li>
+              <li>Daily Limit / Agent</li>
+              <li>WhatsApp Cloud API</li>
+              <li>Cart + Checkout Button</li>
+              <li>Floating Button</li>
+              <li>Cart Recovery</li>
+            </ul>
           </div>
           <div class="spec-col">
             <div class="spec-hd">INTEGRATIONS</div>
-            <ul><li>Google Analytics 4</li><li>Facebook Pixel</li><li>Slack Notifications</li><li>Zapier Webhooks</li><li>Mailchimp</li><li>Custom REST API</li></ul>
+            <ul>
+              <li>Google Analytics 4</li>
+              <li>Facebook Pixel</li>
+              <li>Slack Notifications</li>
+              <li>Zapier Webhooks</li>
+              <li>Mailchimp</li>
+              <li>Custom REST API</li>
+              <li>Developer HOOKS.md</li>
+            </ul>
           </div>
           <div class="spec-col">
             <div class="spec-hd">SECURITY</div>
-            <ul><li>HMAC-SHA256 Keys</li><li>Email-Bound License</li><li>Rate Limit 5/hr</li><li>Nonce Verification</li><li>Remote Revocation</li><li>DB Tamper Detection</li></ul>
+            <ul>
+              <li>HMAC-SHA256 Keys</li>
+              <li>Email-Bound License</li>
+              <li>Rate Limit 5/hr</li>
+              <li>Nonce Verification</li>
+              <li>Remote Revocation</li>
+              <li>DB Tamper Detection</li>
+              <li>PSR-4 Autoloader</li>
+            </ul>
           </div>
           <div class="spec-col">
             <div class="spec-hd">REQUIREMENTS</div>
-            <ul><li>WordPress 5.9+</li><li>WooCommerce 7.0+</li><li>PHP 7.4+</li><li>WC Tested to 9.3</li><li>HPOS Compatible</li><li>GPL-2.0 Licensed</li></ul>
+            <ul>
+              <li>WordPress 5.9+</li>
+              <li>WooCommerce 7.0+</li>
+              <li>PHP 7.4+</li>
+              <li>WC Tested to 9.3</li>
+              <li>HPOS Compatible</li>
+              <li>GPL-2.0 Licensed</li>
+              <li>RTL Ready</li>
+            </ul>
           </div>
         </div>
       </div>
 
       <!-- Coming Soon -->
       <div class="cs-box">
-        <div style="font-size:2.2rem">🔜</div>
+        <div style="font-size:2.5rem">🔜</div>
         <div class="cs-label">COMING SOON</div>
-        <div style="font-size:1.1rem;font-weight:900">المزيد من إضافات WordPress</div>
-        <div style="font-size:.86rem;color:var(--mu)">WooCommerce Booking Pro وأكثر...</div>
-        <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:6px">🔔 انضم لقائمة الانتظار</a>
+        <div style="font-size:1.15rem;font-weight:900">المزيد من إضافات WordPress</div>
+        <div style="font-size:.88rem;color:var(--tx2);max-width:380px;text-align:center;line-height:1.8">
+          نعمل على WooCommerce Booking Pro وإضافات WooCommerce متخصصة أخرى. سجّل بريدك لتكون أول من يعلم.
+        </div>
+        <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:8px">🔔 انضم لقائمة الانتظار</a>
       </div>
     </div>
   </section>
 </div><!-- /products -->
 
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      PAGE: APPS
-══════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <div id="apps" class="pg">
   <section class="sec">
     <div class="wrap">
 
-      <!-- Android Apps -->
+      <!-- ── ANDROID APPS ── -->
       <div class="sh">
         <div class="lbl">Google Play Store</div>
-        <h2 class="sec-t">تطبيقات Android</h2>
-        <p class="sub">تطبيقات ذكية وألعاب مدعومة بالذكاء الاصطناعي — متاحة الآن على Google Play</p>
+        <h2 class="sec-t">تطبيقاتنا على أندرويد</h2>
+        <p class="sub">
+          ثلاثة تطبيقات متاحة الآن على Google Play — من تعليم الأطفال إلى إدارة السيارات، مروراً بتحديات الذاكرة والذكاء. كلها مبنية بـ Flutter مع AdMob وFirebase مدمجَين بشكل احترافي.
+        </p>
       </div>
       <div class="g3" style="margin-bottom:56px">
-        <div class="ac">
-          <div class="aico" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">🧠</div>
-          <div class="tag tag-g" style="margin:0 auto 12px">Google Play</div>
-          <div class="an">Memory Master</div>
-          <p class="ad">لعبة تحديات الذاكرة والذكاء المدعومة بالذكاء الاصطناعي</p>
-          <ul class="af"><li>20+ لعبة ذكاء</li><li>تتبع التقدم اليومي</li><li>تحديات AI يومية</li></ul>
-          <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" rel="noopener nofollow" class="btn btn-g" style="width:100%;justify-content:center">📲 Google Play</a>
-        </div>
-        <div class="ac">
-          <div class="aico" style="background:linear-gradient(135deg,#0073aa,#38bdf8)">🚗</div>
-          <div class="tag tag-g" style="margin:0 auto 12px">Google Play</div>
-          <div class="an">AutoCare</div>
-          <p class="ad">مساعدك الذكي لإدارة صيانة السيارة وتتبع التكاليف</p>
-          <ul class="af"><li>تذكير الصيانة</li><li>تتبع التكاليف</li><li>سجل كامل</li></ul>
-          <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" rel="noopener nofollow" class="btn btn-g" style="width:100%;justify-content:center">📲 Google Play</a>
-        </div>
+
+        <!-- Numbers Academy -->
         <div class="ac">
           <div class="aico" style="background:linear-gradient(135deg,#22c55e,#15803d)">🎓</div>
-          <div class="tag tag-g" style="margin:0 auto 12px">Google Play</div>
+          <div class="tag tag-g" style="margin:0 auto 12px">Google Play · تعليمي</div>
           <div class="an">أكاديمية الأرقام</div>
-          <p class="ad">منصة تعليمية تفاعلية للأطفال لتعلم الأرقام والعمليات الحسابية</p>
-          <ul class="af"><li>تعليم تفاعلي</li><li>ألعاب للأطفال</li><li>متابعة الأداء</li></ul>
-          <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" rel="noopener nofollow" class="btn btn-g" style="width:100%;justify-content:center">📲 Google Play</a>
+          <p class="ad">
+            منصة تعليمية تفاعلية مصمّمة خصيصاً للأطفال لتعلّم الأرقام والعمليات الحسابية الأساسية بأسلوب ممتع. تدعم 6 لغات مع تلفّظ صوتي واضح.
+          </p>
+          <ul class="af">
+            <li>تعليم تفاعلي متعدد المستويات</li>
+            <li>تلفّظ صوتي واضح بـ 6 لغات</li>
+            <li>ألعاب أرقام ومسابقات</li>
+            <li>متابعة تقدّم الطالب</li>
+            <li>آمن للأطفال — متوافق COPPA</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" rel="noopener nofollow" class="btn btn-g" style="width:100%;justify-content:center">📲 تحميل من Google Play</a>
+        </div>
+
+        <!-- Memory Master -->
+        <div class="ac">
+          <div class="aico" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">🧠</div>
+          <div class="tag tag-p" style="margin:0 auto 12px">Google Play · ألعاب ذكاء</div>
+          <div class="an">Memory Master</div>
+          <p class="ad">
+            لعبة تحديات الذاكرة والذكاء المدعومة بـ AI — أكثر من 20 نوعاً من التحديات اليومية لتحسين الذاكرة والتركيز والسرعة الذهنية.
+          </p>
+          <ul class="af">
+            <li>20+ نوع من ألعاب الذكاء</li>
+            <li>تحديات AI يومية تتطور معك</li>
+            <li>تتبع التقدم والإنجازات</li>
+            <li>إحصاءات مفصّلة للأداء</li>
+            <li>وضع مقاومة الوقت</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" rel="noopener nofollow" class="btn btn-p" style="width:100%;justify-content:center">📲 تحميل من Google Play</a>
+        </div>
+
+        <!-- AutoCare -->
+        <div class="ac">
+          <div class="aico" style="background:linear-gradient(135deg,#0073aa,#38bdf8)">🚗</div>
+          <div class="tag tag-b" style="margin:0 auto 12px">Google Play · إدارة</div>
+          <div class="an">AutoCare</div>
+          <p class="ad">
+            مساعدك الذكي لإدارة صيانة سيارتك — سجّل كل خدمة، تذكّر بمواعيد الصيانة القادمة، وتتبع التكاليف بدقة. جميع البيانات تُدخل يدوياً لضمان الدقة.
+          </p>
+          <ul class="af">
+            <li>تذكيرات ذكية بالصيانة</li>
+            <li>سجل كامل لكل خدمة</li>
+            <li>تتبع التكاليف والمصروفات</li>
+            <li>إشعارات Firebase</li>
+            <li>تصدير السجل</li>
+          </ul>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" rel="noopener nofollow" class="btn btn-b" style="width:100%;justify-content:center;background:linear-gradient(135deg,#0073aa,#38bdf8);color:#fff;box-shadow:0 5px 18px rgba(0,115,170,.3)">📲 تحميل من Google Play</a>
+        </div>
+
+      </div>
+
+      <!-- Numbers Academy deep dive -->
+      <div class="hbox hbox-g" style="margin-bottom:44px">
+        <span style="font-size:1.3rem;flex-shrink:0">🎓</span>
+        <div>
+          <strong style="color:var(--tx)">أكاديمية الأرقام — مميزة بين التطبيقات التعليمية</strong>
+          <p style="color:var(--tx2);margin-top:6px;font-size:.88rem;line-height:1.85">
+            صُمِّمت بمعمارية BLoC للفصل الكامل بين منطق العمل وواجهة المستخدم، مع معالجة دقيقة لـ TTS (Text-to-Speech) بدون تسرّب صوتي، ونظام تقييم يحفظ النتائج بشكل موثوق. متوافقة تماماً مع Google Play Families Ads Policy وCOPPA.
+          </p>
         </div>
       </div>
 
@@ -848,74 +1523,100 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
 
-      <!-- Unity Tools -->
-      <div class="sh" style="margin-top:16px">
+      <!-- ── UNITY TOOLS ── -->
+      <div class="sh" style="margin-top:20px">
         <div class="lbl">Unity Asset Store</div>
         <h2 class="sec-t">أدوات Unity Editor</h2>
-        <p class="sub">أدوات احترافية للمطورين — قسم Level Design بالذكاء الاصطناعي</p>
+        <p class="sub">
+          أدوات تعمل مباشرة داخل Unity Editor — مصمّمة لمطوري الألعاب الذين يريدون توفير الوقت وتركيز جهودهم على الإبداع لا على المهام المتكررة.
+        </p>
       </div>
       <div class="g2" style="margin-bottom:56px">
         <div class="hac">
           <div class="hac-ico">
             <div class="ico">🏗️</div>
-            <div class="tag tag-w" style="font-size:.67rem">Unity Asset Store</div>
+            <div class="tag tag-w" style="font-size:.68rem">Unity Asset Store</div>
           </div>
           <div class="hac-body">
             <h3>NovaBuild AI</h3>
-            <p>أداة Level Design ذكية للـ Unity Editor. تولّد مستويات تلقائياً بالذكاء الاصطناعي وتوفر ساعات من العمل اليدوي.</p>
+            <p>
+              أداة Level Design ذكية تعمل داخل Unity Editor. تولّد تلائم المستويات تلقائياً بالذكاء الاصطناعي — من وضع العناصر إلى توازن الصعوبة. توفّر ساعات من العمل اليدوي في كل مرحلة تطوير.
+            </p>
             <div class="chips">
               <span class="chip">Tools → Level Design</span>
               <span class="chip">Unity 2022+</span>
               <span class="chip">AI-Powered</span>
+              <span class="chip">Editor Extension</span>
             </div>
             <div class="brow">
-              <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="btn btn-o" style="font-size:.83rem;padding:9px 18px">🏪 Unity Asset Store</a>
-              <span style="font-family:var(--mo);font-size:.76rem;color:var(--c3);align-self:center">قريباً</span>
+              <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="btn btn-o btn-sm">🏪 Unity Asset Store</a>
+              <span style="font-family:var(--mo);font-size:.77rem;color:var(--c3);align-self:center">⏳ قريباً</span>
             </div>
           </div>
         </div>
         <div class="cs-box">
-          <div style="font-size:2.2rem">🎮</div>
+          <div style="font-size:2.5rem">🎮</div>
           <div class="cs-label">COMING SOON</div>
           <div style="font-size:1.05rem;font-weight:900">أدوات Unity قادمة</div>
-          <div style="font-size:.85rem;color:var(--mu)">Scene Manager Pro، AI Pathfinding Tools...</div>
-          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:6px;font-size:.84rem">🔔 أبلّغني</a>
+          <div style="font-size:.87rem;color:var(--tx2);text-align:center;line-height:1.8">
+            Scene Manager Pro، AI Pathfinding Tools، وأدوات أخرى لتسريع دورة تطوير ألعابك.
+          </div>
+          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o btn-sm" style="margin-top:8px">🔔 أبلّغني عند الإطلاق</a>
         </div>
       </div>
 
-      <!-- Flutter Games -->
+      <!-- ── FLUTTER GAMES ── -->
       <div class="sh">
         <div class="lbl">Flutter Games</div>
-        <h2 class="sec-t">ألعاب Flutter</h2>
-        <p class="sub">ألعاب Flutter احترافية مع AdMob و IAP متكاملان</p>
+        <h2 class="sec-t">ألعاب Flutter احترافية</h2>
+        <p class="sub">
+          ألعاب Flutter كاملة مع AdMob وIAP مدمجَين باحترافية — لا حلول وسط في الجودة، لا اختصارات في التجربة.
+        </p>
       </div>
       <div class="g2">
         <div class="hac">
           <div class="hac-ico">
             <div class="ico">🧩</div>
-            <div class="tag tag-b" style="font-size:.67rem">Flutter</div>
+            <div class="tag tag-b" style="font-size:.68rem">Flutter</div>
           </div>
           <div class="hac-body">
-            <h3>Brain Match</h3>
-            <p>لعبة مطابقة الذاكرة — 5 مناطق، 150 مستوى، AdMob و IAP متكاملان بشكل كامل.</p>
+            <h3>Brain Match Pro</h3>
+            <p>
+              لعبة مطابقة الذاكرة الأسطورية — 7 عوالم (مصري وإغريقي وأكثر)، 210 مستوى، 12 تمثال، 5 لعنات، وصناديق غنائم. AdMob وIAP مدمجَين بشكل كامل ومثبّت.
+            </p>
             <div class="chips">
               <span class="chip">Flutter</span>
               <span class="chip">AdMob</span>
               <span class="chip">IAP</span>
-              <span class="chip">150 Level</span>
+              <span class="chip">210 Levels</span>
+              <span class="chip">7 Worlds</span>
+              <span class="chip">Firebase</span>
             </div>
             <div class="brow">
-              <a href="https://play.google.com" target="_blank" rel="noopener" class="btn btn-g" style="font-size:.83rem;padding:9px 18px">📲 Google Play</a>
-              <span style="font-family:var(--mo);font-size:.76rem;color:var(--c3);align-self:center">قريباً</span>
+              <a href="https://play.google.com" target="_blank" rel="noopener" class="btn btn-g btn-sm">📲 Google Play</a>
+              <span style="font-family:var(--mo);font-size:.77rem;color:var(--c3);align-self:center">⏳ قريباً</span>
             </div>
           </div>
         </div>
         <div class="cs-box">
-          <div style="font-size:2.2rem">🎯</div>
+          <div style="font-size:2.5rem">🎯</div>
           <div class="cs-label">COMING SOON</div>
           <div style="font-size:1.05rem;font-weight:900">ألعاب Flutter قادمة</div>
-          <div style="font-size:.85rem;color:var(--mu)">Word Puzzle، Math Challenge وأكثر...</div>
-          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:6px;font-size:.84rem">🔔 أبلّغني</a>
+          <div style="font-size:.87rem;color:var(--tx2);text-align:center;line-height:1.8">
+            Word Puzzle، Math Challenge، Trivia King وأكثر — ألعاب كاملة بتجارب مصقولة.
+          </div>
+          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o btn-sm" style="margin-top:8px">🔔 أبلّغني عند الإطلاق</a>
+        </div>
+      </div>
+
+      <!-- Brain Match visual description -->
+      <div style="margin-top:36px" class="hbox hbox-p">
+        <span style="font-size:1.3rem;flex-shrink:0">🧩</span>
+        <div>
+          <strong style="color:var(--tx)">Brain Match Pro — لعبة بمعمارية متكاملة</strong>
+          <p style="color:var(--tx2);margin-top:6px;font-size:.88rem;line-height:1.85">
+            7 عوالم بثيمات أسطورية (مصري وإغريقي وأكثر)، 210 مستوى متصاعد الصعوبة، نظام اقتصاد للعملات والمكافآت، 12 تمثال بقدرات سلبية ونشطة، 5 لعنات تؤثر على اللعب، وصناديق غنائم بنظام نُدرة. كل هذا مع AdMob Banner/Interstitial/Rewarded وIAP للمشتريات الداخلية.
+          </p>
         </div>
       </div>
 
@@ -924,16 +1625,37 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 </div><!-- /apps -->
 
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      PAGE: BUY
-══════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <div id="buy" class="pg">
   <section class="sec">
     <div class="wrap">
       <div class="sh sh-c">
         <div class="lbl">إتمام الشراء</div>
-        <h2 class="sec-t">شراء عبر PayPal</h2>
-        <p class="sub">ادفع بأمان عبر PayPal — الترخيص يُرسل فوراً على بريدك الإلكتروني</p>
+        <h2 class="sec-t">شراء آمن عبر PayPal</h2>
+        <p class="sub">
+          ادفع بثقة تامة عبر PayPal — الطريقة الأسرع والأأمن للحصول على ترخيصك فوراً على بريدك الإلكتروني.
+        </p>
+      </div>
+
+      <!-- How it works -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px" class="g3-buy">
+        <div class="hbox hbox-c" style="flex-direction:column;text-align:center;gap:10px">
+          <span style="font-size:2rem">💳</span>
+          <strong>1. ادفع بأمان</strong>
+          <span style="color:var(--mu);font-size:.84rem">اضغط زر PayPal وأتمّ الدفع بحسابك أو بطاقتك البنكية</span>
+        </div>
+        <div class="hbox hbox-g" style="flex-direction:column;text-align:center;gap:10px">
+          <span style="font-size:2rem">📧</span>
+          <strong>2. استلم ترخيصك</strong>
+          <span style="color:var(--mu);font-size:.84rem">يُرسل رابط التحميل ومفتاح الترخيص فوراً لبريدك</span>
+        </div>
+        <div class="hbox hbox-p" style="flex-direction:column;text-align:center;gap:10px">
+          <span style="font-size:2rem">🚀</span>
+          <strong>3. ابدأ التثبيت</strong>
+          <span style="color:var(--mu);font-size:.84rem">ثبّت الإضافة وادخل مفتاح الترخيص — وابدأ البيع</span>
+        </div>
       </div>
 
       <!-- Ad -->
@@ -943,18 +1665,51 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 
       <!-- PayPal Box -->
       <div class="paybx">
-        <div style="font-size:2.6rem;margin-bottom:14px">💳</div>
+        <div style="font-size:2.8rem;margin-bottom:16px">💳</div>
         <h3>WooCommerce WhatsApp Order Pro</h3>
-        <p>اضغط زر PayPal أدناه لإتمام الدفع الآمن. ستصلك رابط التحميل والترخيص فوراً بعد تأكيد الدفع.</p>
+        <p>
+          ترخيص دائم يشمل 6 أشهر دعم مجاني وتحديثات مستمرة. السعر $39 — دفعة واحدة، لا اشتراك شهري.
+        </p>
+        <div class="pay-features">
+          <div class="pay-feat">
+            <div class="pf-ico">📥</div>
+            <h4>تحميل فوري</h4>
+            <p>رابط التحميل يصلك في ثوانٍ بعد تأكيد الدفع</p>
+          </div>
+          <div class="pay-feat">
+            <div class="pf-ico">🔑</div>
+            <h4>ترخيص دائم</h4>
+            <p>مفتاح ترخيص شخصي مرتبط ببريدك الإلكتروني</p>
+          </div>
+          <div class="pay-feat">
+            <div class="pf-ico">🛠️</div>
+            <h4>دعم 6 أشهر</h4>
+            <p>دعم تقني مجاني عبر البريد لمدة 6 أشهر كاملة</p>
+          </div>
+          <div class="pay-feat">
+            <div class="pf-ico">🔄</div>
+            <h4>تحديثات مجانية</h4>
+            <p>كل التحديثات المستقبلية مجانية لحاملي الترخيص</p>
+          </div>
+        </div>
         <div class="pp-status" id="pp-status">
-          <span style="color:var(--mu);font-size:.84rem">⏳ جاري تحميل PayPal...</span>
+          <span style="color:var(--mu);font-size:.85rem">⏳ جاري تحميل زر الدفع...</span>
         </div>
         <div id="paypal-container-FVUKC8L7EK758"></div>
         <p class="pay-notes">
-          🔒 دفع آمن 100% عبر PayPal<br>
-          📧 الترخيص يُرسل فوراً على بريدك<br>
-          💬 دعم: ahmed2sultan2@gmail.com
+          🔒 دفع آمن 100% عبر PayPal — بياناتك محمية<br>
+          📧 الترخيص يُرسل فوراً على: بريدك الإلكتروني<br>
+          💬 دعم فني: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a>
         </p>
+      </div>
+
+      <div style="height:32px"></div>
+      <!-- Alternative: CodeCanyon -->
+      <div class="hbox hbox-o" style="max-width:540px;margin:0 auto">
+        <span style="font-size:1.2rem;flex-shrink:0">💡</span>
+        <span style="font-size:.88rem;color:var(--tx2)">
+          <strong style="color:var(--tx)">تفضّل CodeCanyon؟</strong> — الإضافة ستكون قريباً على <a href="https://codecanyon.net" target="_blank" rel="noopener" style="color:var(--c3);font-weight:700">CodeCanyon / Envato Market</a> للشراء عبر المنصة الرسمية.
+        </span>
       </div>
 
     </div>
@@ -962,16 +1717,18 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 </div><!-- /buy -->
 
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      PAGE: LINKS
-══════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <div id="links" class="pg">
   <section class="sec">
     <div class="wrap">
       <div class="sh">
         <div class="lbl">تواصل معنا</div>
         <h2 class="sec-t">روابطنا ومجتمعاتنا</h2>
-        <p class="sub">تابعنا على كل المنصات وكن جزءاً من مجتمع CodeForge</p>
+        <p class="sub">
+          نتواجد على كل المنصات الرئيسية — تابعنا للبقاء على اطلاع بآخر المنتجات والتحديثات، أو انضم لمجتمعنا وكن من أوائل المختبرين.
+        </p>
       </div>
 
       <!-- Ad -->
@@ -982,48 +1739,80 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
       <div class="lgr">
         <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="lk">
           <div class="lki" style="background:rgba(255,0,0,.12)">▶️</div>
-          <div class="lkd"><h3>قناة يوتيوب</h3><p>Inspiring Voices — فيديوهات تقنية</p></div>
+          <div class="lkd">
+            <h3>قناة يوتيوب — Inspiring Voices</h3>
+            <p>فيديوهات تقنية، شروحات، وعروض للمنتجات</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="lk">
           <div class="lki" style="background:rgba(255,150,0,.12)">📝</div>
-          <div class="lkd"><h3>مدونة بلوجر</h3><p>GPT HUB — مقالات تقنية</p></div>
+          <div class="lkd">
+            <h3>مدونة GPT HUB</h3>
+            <p>مقالات تقنية متعمّقة وتحليلات للمطورين</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="lk">
           <div class="lki" style="background:rgba(34,197,94,.12)">👥</div>
-          <div class="lkd"><h3>مجتمع المختبرين</h3><p>Google Groups</p></div>
+          <div class="lkd">
+            <h3>مجتمع المختبرين</h3>
+            <p>Google Groups — كن أول من يجرب المنتجات الجديدة</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="https://codecanyon.net" target="_blank" rel="noopener" class="lk">
           <div class="lki" style="background:rgba(56,189,248,.12)">🟦</div>
-          <div class="lkd"><h3>CodeCanyon</h3><p>إضافات WordPress على Envato</p></div>
+          <div class="lkd">
+            <h3>CodeCanyon / Envato Market</h3>
+            <p>إضافات WordPress واسكريبتات احترافية</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="https://play.google.com/store/apps/developer?id=gpthub" target="_blank" rel="noopener" class="lk">
           <div class="lki" style="background:rgba(34,197,94,.12)">📱</div>
-          <div class="lkd"><h3>Google Play</h3><p>تطبيقات وألعاب أندرويد</p></div>
+          <div class="lkd">
+            <h3>صفحتنا على Google Play</h3>
+            <p>تطبيقات وألعاب أندرويد من تطوير gpthub</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="lk">
           <div class="lki" style="background:rgba(255,255,255,.07)">🎮</div>
-          <div class="lkd"><h3>Unity Asset Store</h3><p>أدوات تطوير Unity</p></div>
+          <div class="lkd">
+            <h3>Unity Asset Store</h3>
+            <p>أدوات تطوير Unity Editor — NovaBuild AI قريباً</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="mailto:ahmed2sultan2@gmail.com" class="lk">
           <div class="lki" style="background:rgba(124,58,237,.12)">📧</div>
-          <div class="lkd"><h3>البريد الإلكتروني</h3><p>ahmed2sultan2@gmail.com</p></div>
+          <div class="lkd">
+            <h3>البريد الإلكتروني</h3>
+            <p>ahmed2sultan2@gmail.com — للدعم والاستفسارات</p>
+          </div>
           <div class="lka">→</div>
         </a>
         <a href="#" onclick="show('privacy');return false" class="lk">
           <div class="lki" style="background:rgba(100,116,139,.1)">🔒</div>
-          <div class="lkd"><h3>سياسة الخصوصية</h3><p>شروط الاستخدام والبيانات</p></div>
+          <div class="lkd">
+            <h3>مركز الخصوصية</h3>
+            <p>سياسات خصوصية جميع منتجاتنا وتطبيقاتنا</p>
+          </div>
+          <div class="lka">→</div>
+        </a>
+        <a href="https://ahmed2sultan2555.github.io/website/" target="_blank" rel="noopener" class="lk">
+          <div class="lki" style="background:rgba(0,229,255,.1)">🌐</div>
+          <div class="lkd">
+            <h3>الموقع الرسمي / Portfolio</h3>
+            <p>ahmed2sultan2555.github.io — التوثيق الكامل</p>
+          </div>
           <div class="lka">→</div>
         </a>
       </div>
 
       <!-- Big Ad -->
-      <div class="adu adu-tall" style="margin-top:36px">
+      <div class="adu adu-tall" style="margin-top:40px">
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="6666666666" data-ad-format="rectangle"></ins>
       </div>
     </div>
@@ -1031,23 +1820,25 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 </div><!-- /links -->
 
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════════════════════════
      PAGE: PRIVACY
-══════════════════════════════════════════ -->
+══════════════════════════════════════════════════════ -->
 <div id="privacy" class="pg">
   <section class="sec">
     <div class="wrap">
 
-      <!-- HUB VIEW -->
+      <!-- ═══ HUB VIEW ═══ -->
       <div id="prv-hub-view" class="prv-hub-view">
         <div class="sh">
           <div class="lbl">سياسة الخصوصية</div>
           <h2 class="sec-t">مركز الخصوصية</h2>
-          <p class="sub">سياسات خصوصية شاملة متوافقة مع GDPR، COPPA، CCPA ومتطلبات Google Play — اختر المنتج لعرض سياسته</p>
+          <p class="sub">
+            سياسات خصوصية شاملة ومحدّثة لكل منتجاتنا وتطبيقاتنا — متوافقة مع GDPR وCOPPA وCCPA ومتطلبات Google Play. اختر المنتج لعرض سياسته التفصيلية.
+          </p>
         </div>
 
         <!-- Compliance Strip -->
-        <div style="background:var(--s);border:1px solid var(--b);border-radius:14px;padding:18px 22px;margin-bottom:36px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <div style="background:var(--s);border:1px solid var(--b);border-radius:16px;padding:20px 24px;margin-bottom:38px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
           <span style="font-size:.74rem;color:var(--mu);font-family:var(--mo);white-space:nowrap">متوافق مع:</span>
           <div class="prv-comp">
             <div class="prv-comp-chip">GDPR</div>
@@ -1062,50 +1853,50 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <!-- Hub Cards -->
         <div class="prv-hub">
           <div class="prv-card" onclick="openPolicy('site')">
-            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(0,229,255,.05));border:1px solid rgba(0,229,255,.18)">🌐</div>
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(0,229,255,.12),rgba(0,229,255,.04));border:1px solid rgba(0,229,255,.18)">🌐</div>
             <div class="prv-badge">✓ AdSense &amp; Analytics</div>
-            <h3>سياسة الموقع الرسمية</h3>
-            <p>سياسة خصوصية الموقع الرئيسي — تشمل Google AdSense، Google Analytics، ملفات تعريف الارتباط، وحقوق المستخدمين.</p>
-            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+            <h3>سياسة الموقع الرسمي</h3>
+            <p>سياسة خصوصية الموقع الرئيسي — تشمل Google AdSense (ca-pub-7137238144396709)، Google Analytics، ملفات Cookies، وحقوق المستخدمين كاملة.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة التفصيلية</span> ←</div>
           </div>
           <div class="prv-card" onclick="openPolicy('numbers')">
-            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.2)">🎓</div>
-            <div class="prv-badge" style="background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--gr)">✓ Kids App · COPPA</div>
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.04));border:1px solid rgba(34,197,94,.2)">🎓</div>
+            <div class="prv-badge" style="background:rgba(34,197,94,.08);border-color:rgba(34,197,94,.2);color:var(--gr)">✓ Kids App · COPPA Compliant</div>
             <h3>أكاديمية الأرقام</h3>
-            <p>Number Academy — تطبيق تعليمي للأطفال. سياسة مفصّلة تشمل حماية بيانات الأطفال، AdMob، وFirebase.</p>
-            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+            <p>Number Academy (com.gpthub.speak_numbers) — تطبيق أطفال تعليمي. سياسة مفصّلة لحماية بيانات الأطفال، AdMob، Firebase، وتوافق Google Play Families.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة التفصيلية</span> ←</div>
           </div>
           <div class="prv-card" onclick="openPolicy('brain')">
-            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.22)">🧩</div>
-            <div class="prv-badge" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa">✓ Game · AdMob</div>
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(124,58,237,.04));border:1px solid rgba(124,58,237,.22)">🧩</div>
+            <div class="prv-badge" style="background:rgba(124,58,237,.08);border-color:rgba(124,58,237,.2);color:#a78bfa">✓ Game · AdMob · IAP</div>
             <h3>Brain Match</h3>
-            <p>لعبة مطابقة الذاكرة — 5 مناطق، 150 مستوى. سياسة شاملة تشمل حفظ التقدم، AdMob، وFirebase Analytics.</p>
-            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+            <p>لعبة مطابقة الذاكرة — 5 مناطق، 150 مستوى. سياسة شاملة لحفظ التقدم، AdMob، IAP، وFirebase Analytics. آمنة للأطفال ومتوافقة COPPA.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة التفصيلية</span> ←</div>
           </div>
           <div class="prv-card" onclick="openPolicy('autocare')">
-            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(56,189,248,.05));border:1px solid rgba(56,189,248,.2)">🚗</div>
+            <div class="prv-card-ico" style="background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(56,189,248,.04));border:1px solid rgba(56,189,248,.2)">🚗</div>
             <div class="prv-badge" style="background:rgba(56,189,248,.08);border-color:rgba(56,189,248,.2);color:#38bdf8">✓ Firebase · AdMob</div>
             <h3>AutoCare</h3>
-            <p>تطبيق إدارة صيانة السيارة — جميع البيانات تُدخل يدوياً. سياسة تشمل أذونات التطبيق وFirebase.</p>
-            <div class="prv-card-arrow"><span>عرض السياسة</span> ←</div>
+            <p>تطبيق إدارة صيانة السيارة (com.gpthub.auto_care) — جميع البيانات تُدخل يدوياً. سياسة تشمل أذونات التطبيق وFirebase والإشعارات.</p>
+            <div class="prv-card-arrow"><span>عرض السياسة التفصيلية</span> ←</div>
           </div>
         </div>
 
         <div class="prv-info-note">
-          <span style="font-size:1.1rem;flex-shrink:0;margin-top:2px">ℹ️</span>
-          <p>هذه السياسات محدّثة ومتوافقة مع أحدث متطلبات Google Play، Google AdMob، وقوانين حماية البيانات الدولية. للاستفسار: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
+          <span style="font-size:1.2rem;flex-shrink:0;margin-top:2px">ℹ️</span>
+          <p>هذه السياسات محدّثة ومتوافقة مع أحدث متطلبات Google Play، Google AdMob، وقوانين حماية البيانات الدولية. آخر مراجعة: يناير 2026. للاستفسار أو طلب حذف بياناتك: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
         </div>
       </div><!-- /hub view -->
 
 
-      <!-- ══ POLICY: SITE ══ -->
+      <!-- ═══ POLICY: SITE ═══ -->
       <div id="prv-site" class="prv-detail">
         <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
         <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>سياسة الموقع</span></div>
         <div class="prv-banner">
-          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(0,229,255,.05));border:1px solid rgba(0,229,255,.2)">🌐</div>
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(0,229,255,.15),rgba(0,229,255,.04));border:1px solid rgba(0,229,255,.2)">🌐</div>
           <div>
-            <div class="tag tag-c" style="margin-bottom:8px">CodeForge — الموقع الرسمي</div>
+            <div class="tag tag-c" style="margin-bottom:9px">CodeForge — الموقع الرسمي</div>
             <h2>سياسة خصوصية الموقع</h2>
             <p>Publisher ID: ca-pub-7137238144396709 · آخر تحديث: يناير 2026</p>
           </div>
@@ -1128,7 +1919,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
                 <li>تخصيص المحتوى وتقديم الإعلانات ذات الصلة</li>
                 <li>تذكر جلسات تسجيل الدخول عند الحاجة</li>
               </ul>
-              <p class="prv-p">يمكنك التحكم في ملفات تعريف الارتباط من إعدادات متصفحك.</p>
+              <p class="prv-p">يمكنك التحكم في ملفات تعريف الارتباط من إعدادات متصفحك في أي وقت.</p>
             </div>
           </div>
           <div class="prv-section">
@@ -1138,7 +1929,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
               <ul class="prv-ul">
                 <li><strong>ملف DART Cookie:</strong> تستخدم Google ملف DART لعرض إعلانات مخصصة بناءً على تاريخ تصفحك.</li>
                 <li><strong>الإعلانات المخصصة:</strong> يمكنك إيقافها عبر <a href="https://www.google.com/settings/ads" target="_blank" style="color:var(--c1)">إعدادات إعلانات Google</a>.</li>
-                <li><strong>تقنيات التتبع:</strong> قد تستخدم Google تقنيات مثل web beacons وcookies لجمع بيانات مجهولة.</li>
+                <li><strong>تقنيات التتبع:</strong> قد تستخدم Google تقنيات مثل web beacons وcookies لجمع بيانات مجهولة الهوية.</li>
               </ul>
             </div>
           </div>
@@ -1147,10 +1938,10 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
             <div class="prv-section-body">
               <p class="prv-p">يجمع الموقع تلقائياً معلومات تقنية عند كل زيارة:</p>
               <div class="prv-site-grid">
-                <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">IP ADDRESS</div><p style="font-size:.82rem;color:var(--mu)">لتحليل حركة المرور الجغرافي</p></div>
-                <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">BROWSER TYPE</div><p style="font-size:.82rem;color:var(--mu)">لتحسين التوافق والأداء</p></div>
-                <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">TIMESTAMP</div><p style="font-size:.82rem;color:var(--mu)">تتبع أوقات وتواريخ الزيارات</p></div>
-                <div style="background:var(--bg2);border-radius:10px;padding:14px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:6px">PAGES VIEWED</div><p style="font-size:.82rem;color:var(--mu)">لفهم الصفحات الأكثر أهمية</p></div>
+                <div style="background:var(--bg2);border-radius:11px;padding:15px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:7px">IP ADDRESS</div><p style="font-size:.83rem;color:var(--mu)">لتحليل حركة المرور الجغرافي</p></div>
+                <div style="background:var(--bg2);border-radius:11px;padding:15px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:7px">BROWSER TYPE</div><p style="font-size:.83rem;color:var(--mu)">لتحسين التوافق والأداء</p></div>
+                <div style="background:var(--bg2);border-radius:11px;padding:15px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:7px">TIMESTAMP</div><p style="font-size:.83rem;color:var(--mu)">تتبع أوقات وتواريخ الزيارات</p></div>
+                <div style="background:var(--bg2);border-radius:11px;padding:15px;border:1px solid var(--b)"><div style="font-size:.72rem;color:var(--c1);font-family:var(--mo);margin-bottom:7px">PAGES VIEWED</div><p style="font-size:.83rem;color:var(--mu)">لفهم الصفحات الأكثر أهمية</p></div>
               </div>
             </div>
           </div>
@@ -1162,19 +1953,19 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
                 <tr><td>Google AdSense</td><td>عرض الإعلانات</td><td>Cookies، IP</td></tr>
                 <tr><td>Google Analytics</td><td>تحليل أداء الموقع</td><td>بيانات مجهولة</td></tr>
               </table>
-              <p class="prv-p" style="margin-top:12px">⚠️ <strong>تعهدنا:</strong> لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية مع أي طرف ثالث لأغراض تسويقية.</p>
+              <p class="prv-p" style="margin-top:13px">⚠️ <strong>تعهدنا:</strong> لا نبيع أو نؤجر أو نتاجر ببياناتك الشخصية مع أي طرف ثالث لأغراض تسويقية تحت أي ظرف.</p>
             </div>
           </div>
           <div class="prv-section">
             <div class="prv-section-hd" onclick="toggleSec(this)"><div class="prv-sico">⚖️</div><h3>حقوق المستخدم والامتثال القانوني</h3><span class="prv-arr">›</span></div>
             <div class="prv-section-body">
               <div class="prv-rights">
-                <div class="prv-right-item"><div class="r-ico">👁️</div><div><h4>الوصول</h4><p>الاطلاع على بياناتك</p></div></div>
-                <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تعديل البيانات الخاطئة</p></div></div>
-                <div class="prv-right-item"><div class="r-ico">🗑️</div><div><h4>الحذف</h4><p>طلب حذف بياناتك</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">👁️</div><div><h4>الوصول</h4><p>الاطلاع على بياناتك المحفوظة</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تعديل البيانات غير الدقيقة</p></div></div>
+                <div class="prv-right-item"><div class="r-ico">🗑️</div><div><h4>الحذف</h4><p>طلب حذف بياناتك الشخصية</p></div></div>
                 <div class="prv-right-item"><div class="r-ico">🚫</div><div><h4>الاعتراض</h4><p>رفض معالجة بياناتك</p></div></div>
               </div>
-              <div class="prv-comp" style="margin-top:14px">
+              <div class="prv-comp" style="margin-top:16px">
                 <div class="prv-comp-chip">GDPR</div>
                 <div class="prv-comp-chip">CCPA</div>
                 <div class="prv-comp-chip">Google AdSense Policy</div>
@@ -1186,7 +1977,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
             <div class="prv-section-body">
               <div class="prv-contact">
                 <div class="prv-contact-ico">📧</div>
-                <div><strong>Ahmed Sultan — CodeForge</strong><p>لأي استفسار حول سياسة الخصوصية أو لممارسة حقوقك:<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+                <div><strong>Ahmed Sultan — CodeForge</strong><p>لأي استفسار حول سياسة الخصوصية أو لممارسة حقوقك، تواصل معنا وسنرد خلال 48 ساعة:<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
               </div>
             </div>
           </div>
@@ -1194,14 +1985,14 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <div class="prv-updated"><span>🌐 CodeForge — الموقع الرسمي</span><span>آخر تحديث: يناير 2026</span></div>
       </div>
 
-      <!-- ══ POLICY: NUMBERS ACADEMY ══ -->
+      <!-- ═══ POLICY: NUMBERS ACADEMY ═══ -->
       <div id="prv-numbers" class="prv-detail">
         <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
         <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>أكاديمية الأرقام</span></div>
         <div class="prv-banner">
-          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.05));border:1px solid rgba(34,197,94,.22)">🎓</div>
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.04));border:1px solid rgba(34,197,94,.22)">🎓</div>
           <div>
-            <div class="tag tag-g" style="margin-bottom:8px">Number Academy · Kids App</div>
+            <div class="tag tag-g" style="margin-bottom:9px">Number Academy · Kids App</div>
             <h2>سياسة الخصوصية — أكاديمية الأرقام</h2>
             <p>Package: com.gpthub.speak_numbers · إصدار 2.0 · آخر تحديث: ديسمبر 2024</p>
           </div>
@@ -1210,7 +2001,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
           <div class="prv-section open">
             <div class="prv-section-hd" onclick="toggleSec(this)"><div class="prv-sico">📋</div><h3>نطاق السياسة</h3><span class="prv-arr">›</span></div>
             <div class="prv-section-body">
-              <p class="prv-p">تنطبق هذه السياسة على جميع مستخدمي تطبيق <strong>أكاديمية الأرقام</strong> المتوفر على Google Play. صُمِّم هذا التطبيق ليكون منصة تعليمية تفاعلية آمنة للأطفال لتعلم الأرقام والعمليات الحسابية الأساسية.</p>
+              <p class="prv-p">تنطبق هذه السياسة على جميع مستخدمي تطبيق <strong>أكاديمية الأرقام</strong> المتوفر على Google Play. صُمِّم هذا التطبيق ليكون منصة تعليمية تفاعلية آمنة للأطفال لتعلم الأرقام والعمليات الحسابية الأساسية بأسلوب ممتع وتفاعلي.</p>
             </div>
           </div>
           <div class="prv-section">
@@ -1223,7 +2014,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
                 <li>البيانات التقنية: عنوان IP، معرف الإعلانات (Advertising ID)، اللغة</li>
                 <li>تقارير الأعطال والأخطاء البرمجية عبر Firebase Crashlytics</li>
               </ul>
-              <p class="prv-p" style="margin-top:12px"><strong>يقدمها المستخدم طوعاً:</strong></p>
+              <p class="prv-p" style="margin-top:13px"><strong>يقدمها المستخدم طوعاً:</strong></p>
               <ul class="prv-ul">
                 <li>الاسم (إن أُدخل اختيارياً)</li>
                 <li>البريد الإلكتروني (للدعم الفني فقط)</li>
@@ -1245,7 +2036,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
           <div class="prv-section">
             <div class="prv-section-hd" onclick="toggleSec(this)"><div class="prv-sico">👶</div><h3>خصوصية الأطفال — COPPA</h3><span class="prv-arr">›</span></div>
             <div class="prv-section-body">
-              <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.18);border-radius:10px;padding:14px;margin-bottom:14px;font-size:.84rem;color:var(--gr);font-weight:700">🛡️ حماية الأطفال أولوية قصوى — متوافق مع COPPA و Google Play Families</div>
+              <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.18);border-radius:11px;padding:15px;margin-bottom:15px;font-size:.85rem;color:var(--gr);font-weight:700">🛡️ حماية الأطفال أولوية قصوى — متوافق مع COPPA و Google Play Families</div>
               <ul class="prv-ul">
                 <li>لا نجمع معلومات شخصية من الأطفال دون 13 عاماً عن قصد</li>
                 <li>لا يحتوي التطبيق على روابط خارجية غير آمنة</li>
@@ -1264,7 +2055,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
                 <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تحديث بياناتك</p></div></div>
                 <div class="prv-right-item"><div class="r-ico">📦</div><div><h4>النقل</h4><p>نقل بياناتك</p></div></div>
               </div>
-              <div class="prv-comp" style="margin-top:14px">
+              <div class="prv-comp" style="margin-top:16px">
                 <div class="prv-comp-chip">GDPR</div><div class="prv-comp-chip">COPPA</div>
                 <div class="prv-comp-chip">CCPA</div><div class="prv-comp-chip">Google Play Families</div>
               </div>
@@ -1275,7 +2066,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
             <div class="prv-section-body">
               <div class="prv-contact">
                 <div class="prv-contact-ico">🎓</div>
-                <div><strong>Ahmed Sultan — مطور أكاديمية الأرقام</strong><p>نلتزم بالرد خلال 48 ساعة<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+                <div><strong>Ahmed Sultan — مطور أكاديمية الأرقام</strong><p>نلتزم بالرد خلال 48 ساعة على جميع الاستفسارات المتعلقة بالخصوصية.<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
               </div>
             </div>
           </div>
@@ -1283,14 +2074,14 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <div class="prv-updated"><span>🎓 أكاديمية الأرقام · v2.0</span><span>آخر تحديث: ديسمبر 2024</span></div>
       </div>
 
-      <!-- ══ POLICY: BRAIN MATCH ══ -->
+      <!-- ═══ POLICY: BRAIN MATCH ═══ -->
       <div id="prv-brain" class="prv-detail">
         <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
         <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>Brain Match</span></div>
         <div class="prv-banner">
-          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(124,58,237,.05));border:1px solid rgba(124,58,237,.22)">🧩</div>
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(124,58,237,.04));border:1px solid rgba(124,58,237,.22)">🧩</div>
           <div>
-            <div class="tag tag-p" style="margin-bottom:8px">Brain Match · Memory Game</div>
+            <div class="tag tag-p" style="margin-bottom:9px">Brain Match · Memory Game</div>
             <h2>سياسة الخصوصية — Brain Match</h2>
             <p>لعبة مطابقة الذاكرة · إصدار 1.0 · آخر تحديث: ديسمبر 2024</p>
           </div>
@@ -1299,7 +2090,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
           <div class="prv-section open">
             <div class="prv-section-hd" onclick="toggleSec(this)"><div class="prv-sico">🎮</div><h3>عن اللعبة ونطاق السياسة</h3><span class="prv-arr">›</span></div>
             <div class="prv-section-body">
-              <p class="prv-p"><strong>Brain Match</strong> لعبة مطابقة ذاكرة ممتعة — 5 مناطق، 150 مستوى، مع AdMob و IAP متكاملان. اللاعب يكشف البطاقات المخفية ويبحث عن الأزواج المتطابقة لتحسين الذاكرة والتركيز.</p>
+              <p class="prv-p"><strong>Brain Match</strong> لعبة مطابقة ذاكرة ممتعة — 5 مناطق، 150 مستوى، مع AdMob و IAP متكاملان. اللاعب يكشف البطاقات المخفية ويبحث عن الأزواج المتطابقة لتحسين الذاكرة والتركيز. اللعبة مناسبة لجميع الأعمار وآمنة للأطفال.</p>
             </div>
           </div>
           <div class="prv-section">
@@ -1327,7 +2118,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
           <div class="prv-section">
             <div class="prv-section-hd" onclick="toggleSec(this)"><div class="prv-sico">👶</div><h3>خصوصية الأطفال — COPPA</h3><span class="prv-arr">›</span></div>
             <div class="prv-section-body">
-              <div style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.18);border-radius:10px;padding:14px;margin-bottom:14px;font-size:.84rem;color:#a78bfa;font-weight:700">🛡️ اللعبة آمنة تماماً للأطفال — متوافقة مع COPPA و Google Play Families</div>
+              <div style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.18);border-radius:11px;padding:15px;margin-bottom:15px;font-size:.85rem;color:#a78bfa;font-weight:700">🛡️ اللعبة آمنة تماماً للأطفال — متوافقة مع COPPA و Google Play Families</div>
               <ul class="prv-ul">
                 <li>لا نجمع معلومات شخصية من الأطفال دون 13 عاماً عن قصد</li>
                 <li>لا تحتوي اللعبة على روابط خارجية غير آمنة</li>
@@ -1345,7 +2136,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
                 <div class="prv-right-item"><div class="r-ico">✏️</div><div><h4>التصحيح</h4><p>تحديث بياناتك</p></div></div>
                 <div class="prv-right-item"><div class="r-ico">🚫</div><div><h4>الاعتراض</h4><p>رفض المعالجة</p></div></div>
               </div>
-              <div class="prv-comp" style="margin-top:14px">
+              <div class="prv-comp" style="margin-top:16px">
                 <div class="prv-comp-chip">GDPR</div><div class="prv-comp-chip">COPPA</div>
                 <div class="prv-comp-chip">CCPA</div><div class="prv-comp-chip">Google Play Families</div>
               </div>
@@ -1356,7 +2147,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
             <div class="prv-section-body">
               <div class="prv-contact">
                 <div class="prv-contact-ico">🧩</div>
-                <div><strong>Ahmed Sultan — مطور Brain Match</strong><p>نلتزم بالرد خلال 48 ساعة<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+                <div><strong>Ahmed Sultan — مطور Brain Match</strong><p>نلتزم بالرد خلال 48 ساعة.<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
               </div>
             </div>
           </div>
@@ -1364,23 +2155,23 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <div class="prv-updated"><span>🧩 Brain Match · v1.0</span><span>آخر تحديث: ديسمبر 2024</span></div>
       </div>
 
-      <!-- ══ POLICY: AUTOCARE ══ -->
+      <!-- ═══ POLICY: AUTOCARE ═══ -->
       <div id="prv-autocare" class="prv-detail">
         <button class="prv-back" onclick="closePolicy()">← العودة إلى مركز الخصوصية</button>
         <div class="prv-breadcrumb">الخصوصية <span>/</span> <span>AutoCare</span></div>
         <div class="prv-banner">
-          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(56,189,248,.05));border:1px solid rgba(56,189,248,.2)">🚗</div>
+          <div class="prv-banner-ico" style="background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(56,189,248,.04));border:1px solid rgba(56,189,248,.2)">🚗</div>
           <div>
-            <div class="tag tag-b" style="margin-bottom:8px">AutoCare · Car Maintenance</div>
+            <div class="tag tag-b" style="margin-bottom:9px">AutoCare · Car Maintenance</div>
             <h2>سياسة الخصوصية — AutoCare</h2>
-            <p>صيانة سيارتك · آخر تحديث: فبراير 2026</p>
+            <p>Package: com.gpthub.auto_care · آخر تحديث: فبراير 2026</p>
           </div>
         </div>
         <div class="prv-body">
           <div class="prv-section open">
             <div class="prv-section-hd" onclick="toggleSec(this)"><div class="prv-sico">🚗</div><h3>عن التطبيق ونطاق السياسة</h3><span class="prv-arr">›</span></div>
             <div class="prv-section-body">
-              <p class="prv-p"><strong>AutoCare</strong> تطبيق لإدارة صيانة السيارات. جميع القراءات والبيانات <strong>تُدخل يدوياً</strong> من قبل المستخدم لضمان الدقة والخصوصية الكاملة.</p>
+              <p class="prv-p"><strong>AutoCare</strong> تطبيق لإدارة صيانة السيارات بشكل شخصي ودقيق. جميع القراءات والبيانات <strong>تُدخل يدوياً</strong> من قبل المستخدم لضمان الدقة الكاملة وعدم الاتكال على أي حساسات أو بيانات السيارة الآلية.</p>
             </div>
           </div>
           <div class="prv-section">
@@ -1399,7 +2190,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
             <div class="prv-section-body">
               <div class="prv-perm"><div class="prv-perm-ico">🌐</div><div><h4>إذن الإنترنت (INTERNET)</h4><p>لمزامنة بياناتك مع خوادم Firebase الآمنة فقط</p></div></div>
               <div class="prv-perm"><div class="prv-perm-ico">🔔</div><div><h4>إذن الإشعارات (POST_NOTIFICATIONS)</h4><p>لإرسال تذكيرات بمواعيد الصيانة القادمة</p></div></div>
-              <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:9px;padding:10px 14px;font-size:.83rem;color:var(--gr);margin-top:10px">✓ هذا التطبيق لا يطلب الوصول إلى الكاميرا أو الصور الشخصية</div>
+              <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.15);border-radius:10px;padding:11px 15px;font-size:.84rem;color:var(--gr);margin-top:11px">✓ هذا التطبيق لا يطلب الوصول إلى الكاميرا أو الصور الشخصية أو الموقع الجغرافي</div>
             </div>
           </div>
           <div class="prv-section">
@@ -1428,12 +2219,12 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
             <div class="prv-section-body">
               <div class="prv-contact">
                 <div class="prv-contact-ico">🚗</div>
-                <div><strong>Ahmed Sultan — مطور AutoCare</strong><p>لأي استفسار عن بياناتك:<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
+                <div><strong>Ahmed Sultan — مطور AutoCare</strong><p>لأي استفسار عن بياناتك أو طلب الحذف:<br><a href="mailto:ahmed2sultan2@gmail.com">ahmed2sultan2@gmail.com</a></p></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="prv-updated"><span>🚗 AutoCare</span><span>آخر تحديث: فبراير 2026</span></div>
+        <div class="prv-updated"><span>🚗 AutoCare · com.gpthub.auto_care</span><span>آخر تحديث: فبراير 2026</span></div>
       </div>
 
     </div>
@@ -1441,33 +2232,42 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 </div><!-- /privacy -->
 
 
-<!-- ══════════════════════════════════════════
+<!-- ══════════════════════════════════
      FOOTER
-══════════════════════════════════════════ -->
+══════════════════════════════════ -->
 <footer>
   <div class="wrap">
     <div class="fgr">
       <div class="fbrand">
         <div class="logo"><div class="logo-ico">&lt;/&gt;</div>Code<b>Forge</b></div>
-        <p>أدوات وإضافات احترافية للمطورين — WordPress، Unity، Flutter. مبنية بمعايير الإنتاج.</p>
+        <p>أدوات وإضافات احترافية للمطورين — WordPress، Unity، Flutter. نبني بمعايير الإنتاج لأن المطور يستحق أفضل.</p>
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" style="width:36px;height:36px;border-radius:9px;background:rgba(255,0,0,.12);border:1px solid rgba(255,0,0,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--tr)" title="يوتيوب">▶️</a>
+          <a href="https://gpthub21.blogspot.com/" target="_blank" style="width:36px;height:36px;border-radius:9px;background:rgba(255,150,0,.1);border:1px solid rgba(255,150,0,.18);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--tr)" title="المدونة">📝</a>
+          <a href="https://groups.google.com/g/gpt-hub" target="_blank" style="width:36px;height:36px;border-radius:9px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.18);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--tr)" title="المجتمع">👥</a>
+          <a href="mailto:ahmed2sultan2@gmail.com" style="width:36px;height:36px;border-radius:9px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.18);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--tr)" title="البريد">📧</a>
+        </div>
       </div>
       <div class="fcol">
         <h4>المنتجات</h4>
         <ul>
           <li><a href="#" onclick="show('products');return false">🟦 WooCommerce WhatsApp Order Pro</a></li>
-          <li><a href="#" onclick="show('apps');return false">📱 تطبيقات Google Play</a></li>
-          <li><a href="#" onclick="show('apps');return false">🎮 أدوات Unity Editor</a></li>
+          <li><a href="#" onclick="show('apps');return false">🎓 أكاديمية الأرقام</a></li>
+          <li><a href="#" onclick="show('apps');return false">🧠 Memory Master</a></li>
+          <li><a href="#" onclick="show('apps');return false">🚗 AutoCare</a></li>
+          <li><a href="#" onclick="show('apps');return false">🏗️ NovaBuild AI — قريباً</a></li>
           <li><a href="#" onclick="show('buy');return false">💳 شراء عبر PayPal</a></li>
         </ul>
       </div>
       <div class="fcol">
         <h4>تواصل</h4>
         <ul>
-          <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب</a></li>
-          <li><a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة</a></li>
+          <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب — Inspiring Voices</a></li>
+          <li><a href="https://gpthub21.blogspot.com/" target="_blank">📝 المدونة — GPT HUB</a></li>
           <li><a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a></li>
           <li><a href="mailto:ahmed2sultan2@gmail.com">📧 ahmed2sultan2@gmail.com</a></li>
-          <li><a href="#" onclick="show('privacy');return false">🔒 سياسة الخصوصية</a></li>
+          <li><a href="https://ahmed2sultan2555.github.io/website/" target="_blank">🌐 الموقع / Portfolio</a></li>
+          <li><a href="#" onclick="show('privacy');return false">🔒 مركز الخصوصية</a></li>
         </ul>
       </div>
     </div>
@@ -1477,6 +2277,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
         <a href="#" onclick="show('privacy');return false">الخصوصية</a>
         <a href="mailto:ahmed2sultan2@gmail.com">تواصل</a>
         <a href="https://codecanyon.net" target="_blank">CodeCanyon</a>
+        <a href="https://play.google.com/store/apps/developer?id=gpthub" target="_blank">Google Play</a>
       </div>
     </div>
   </div>
@@ -1485,7 +2286,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:64px 0 28px}
 
 <script>
 /* ══════════════════════════════════
-   PAGES NAVIGATION
+   PAGE NAVIGATION
 ══════════════════════════════════ */
 var PAGES = ['home','products','apps','buy','links','privacy'];
 var NAV   = {home:'lh',products:'lp',apps:'la',buy:'lb',links:'ll',privacy:'lv'};
@@ -1502,8 +2303,8 @@ function show(id) {
   var nl = document.getElementById(NAV[id]);
   if (nl) nl.classList.add('act');
   window.scrollTo({top:0,behavior:'smooth'});
-  if (id === 'buy') loadPayPal();
-  if (id === 'privacy') closePolicy();
+  if (id === 'buy')     { loadPayPal(); }
+  if (id === 'privacy') { closePolicy(); }
   initAds();
 }
 
@@ -1513,10 +2314,12 @@ function toggleMnu() {
 }
 function closeMnu() { document.getElementById('mnu').style.display = 'none'; }
 
-/* ══════ PRIVACY NAV ══════ */
+/* ══════════════════════════════════
+   PRIVACY POLICY NAVIGATION
+══════════════════════════════════ */
 function openPolicy(key) {
   document.getElementById('prv-hub-view').classList.add('hidden');
-  document.querySelectorAll('.prv-detail').forEach(function(el){ el.classList.remove('on'); });
+  document.querySelectorAll('.prv-detail').forEach(function(el) { el.classList.remove('on'); });
   var target = document.getElementById('prv-' + key);
   if (target) {
     target.classList.add('on');
@@ -1528,14 +2331,16 @@ function openPolicy(key) {
 function closePolicy() {
   var hub = document.getElementById('prv-hub-view');
   if (hub) hub.classList.remove('hidden');
-  document.querySelectorAll('.prv-detail').forEach(function(el){ el.classList.remove('on'); });
+  document.querySelectorAll('.prv-detail').forEach(function(el) { el.classList.remove('on'); });
   window.scrollTo({top:0,behavior:'smooth'});
 }
 function toggleSec(hd) {
   hd.parentElement.classList.toggle('open');
 }
 
-/* ══════ PAYPAL ══════ */
+/* ══════════════════════════════════
+   PAYPAL
+══════════════════════════════════ */
 var ppDone = false;
 function loadPayPal() {
   if (ppDone) return;
@@ -1543,7 +2348,7 @@ function loadPayPal() {
   var s = document.createElement('script');
   s.src = 'https://www.paypal.com/sdk/js?client-id=BAAfAHuVXFq4pzLxCdYWGJWRBxMRRpMf1M_YsBfHVtJb_j8XGjB5l8PuEGiA-gGOXpfpJFEPYXPSPt3cDQ&components=hosted-buttons&disable-funding=venmo&currency=USD';
   s.onload  = renderPP;
-  s.onerror = function(){ ppErr(); };
+  s.onerror = ppErr;
   document.head.appendChild(s);
 }
 function renderPP() {
@@ -1559,44 +2364,56 @@ function renderPP() {
 function ppErr() {
   var ct = document.getElementById('paypal-container-FVUKC8L7EK758');
   var st = document.getElementById('pp-status');
-  if (ct) ct.innerHTML = '<div style="margin:10px 0"><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:11px;background:linear-gradient(135deg,#003087,#009cde);color:#fff;font-weight:700;font-size:1rem;padding:15px 36px;border-radius:30px;box-shadow:0 6px 24px rgba(0,48,135,.38);text-decoration:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788l.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>ادفع الآن عبر PayPal</a></div>';
+  if (ct) ct.innerHTML = '<div style="margin:12px 0"><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#003087,#009cde);color:#fff;font-weight:700;font-size:1rem;padding:16px 38px;border-radius:30px;box-shadow:0 6px 24px rgba(0,48,135,.4);text-decoration:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788l.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>ادفع الآن عبر PayPal</a></div>';
   if (st) st.style.display = 'none';
 }
 
-/* ══════ PROGRESS BAR ══════ */
+/* ══════════════════════════════════
+   PROGRESS BAR
+══════════════════════════════════ */
 window.addEventListener('scroll', function() {
   var h = document.documentElement.scrollHeight - window.innerHeight;
   document.getElementById('prog').style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
-});
+}, {passive: true});
 
-/* ══════ COUNTERS ══════ */
+/* ══════════════════════════════════
+   COUNTER ANIMATION
+══════════════════════════════════ */
 var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) {
     if (!e.isIntersecting) return;
-    var el = e.target, t = parseInt(el.dataset.c), c = 0;
-    var step = Math.ceil(t / 36);
+    var el = e.target;
+    var t  = parseInt(el.dataset.c);
+    var c  = 0;
+    var step = Math.ceil(t / 40);
     var tm = setInterval(function() {
       c = Math.min(c + step, t);
       el.textContent = c + (t > 9 ? '+' : '');
       if (c >= t) clearInterval(tm);
-    }, 28);
+    }, 25);
     obs.unobserve(el);
   });
 }, {threshold: 0.5});
 document.querySelectorAll('[data-c]').forEach(function(el) { obs.observe(el); });
 
-/* ══════ SCREENSHOT SLIDER ══════ */
+/* ══════════════════════════════════
+   SCREENSHOT SLIDER
+══════════════════════════════════ */
 var si = 0, SLIDES = 5;
 function updateSlider() {
   var t = document.getElementById('slider-track');
   if (t) t.style.transform = 'translateX(' + (si * 100) + '%)';
-  document.querySelectorAll('.sdo').forEach(function(d, i) { d.classList.toggle('on', i === si); });
+  document.querySelectorAll('.sdo').forEach(function(d, i) {
+    d.classList.toggle('on', i === si);
+  });
 }
-function slide(d) { si = (si + d + SLIDES) % SLIDES; updateSlider(); }
-function goSlide(i) { si = i; updateSlider(); }
-setInterval(function() { slide(1); }, 4000);
+function slide(d)  { si = (si + d + SLIDES) % SLIDES; updateSlider(); }
+function goSlide(i){ si = i; updateSlider(); }
+setInterval(function() { slide(1); }, 4200);
 
-/* ══════ MEDIA TABS ══════ */
+/* ══════════════════════════════════
+   MEDIA TABS
+══════════════════════════════════ */
 function switchTab(btn, panel) {
   document.querySelectorAll('.mt').forEach(function(t) { t.classList.remove('on'); });
   document.querySelectorAll('.mpan').forEach(function(p) { p.classList.remove('on'); });
@@ -1605,14 +2422,18 @@ function switchTab(btn, panel) {
   if (p) p.classList.add('on');
 }
 
-/* ══════ VIDEO ══════ */
+/* ══════════════════════════════════
+   VIDEO EMBED
+══════════════════════════════════ */
 function loadVid() {
-  var vid = 'YOUR_YOUTUBE_VIDEO_ID';
+  var vid = 'YOUR_YOUTUBE_VIDEO_ID'; // ← ضع معرف الفيديو هنا
   var box = document.getElementById('vidbox');
   if (box) box.outerHTML = '<iframe class="vframe" src="https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>';
 }
 
-/* ══════ ADS ══════ */
+/* ══════════════════════════════════
+   ADS INIT
+══════════════════════════════════ */
 function initAds() {
   setTimeout(function() {
     try {
