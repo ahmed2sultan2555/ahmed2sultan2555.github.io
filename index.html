@@ -224,6 +224,469 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
 .flinks{display:flex;gap:20px}.flinks a{color:var(--mu);font-size:.79rem;transition:color .2s}.flinks a:hover{color:var(--c1)}
 @media(max-width:1100px){.hero-inner,.pfeat,.bm-hero-inner{grid-template-columns:1fr}.pmed{border-right:none;border-top:1px solid var(--b)}.g3{grid-template-columns:1fr 1fr}.worlds-grid{grid-template-columns:repeat(4,1fr)}.modes-row{grid-template-columns:1fr 1fr}.related-apps{grid-template-columns:1fr}}
 @media(max-width:700px){.nlinks{display:none}.ham{display:flex}.g2,.g3{grid-template-columns:1fr}.fgr{grid-template-columns:1fr;gap:32px}.sgr{flex-direction:column}.si{border-right:none;border-bottom:1px solid var(--b);padding:16px 24px}.si:last-child{border-bottom:none}.pinfo{padding:28px}.hac{grid-template-columns:1fr}.hero{min-height:auto;padding:80px 0 64px}.brow{flex-direction:column}.brow .btn{justify-content:center}.pay-features{grid-template-columns:1fr}.worlds-grid{grid-template-columns:repeat(4,1fr)}.info-grid{grid-template-columns:1fr}.prv-rights{grid-template-columns:1fr}.prv-banner{flex-direction:column;text-align:center}}
+
+/* ══════════════════════════════════════
+   PROFESSIONAL TYPOGRAPHY SYSTEM
+══════════════════════════════════════ */
+
+/* Google Fonts upgrade */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+/* ── Type Scale ── */
+:root {
+  --ts-xs:   .72rem;   /* 11.5px — labels, caps, mono */
+  --ts-sm:   .82rem;   /* 13px   — captions, meta */
+  --ts-base: .92rem;   /* 14.7px — body text */
+  --ts-md:   1rem;     /* 16px   — lead text */
+  --ts-lg:   1.15rem;  /* 18.4px — card titles */
+  --ts-xl:   1.35rem;  /* 21.6px — section sub-heads */
+  --ts-2xl:  1.7rem;   /* 27px   — h3 major */
+  --ts-3xl:  2.1rem;   /* 33.6px — h2 medium */
+  --ts-4xl:  2.8rem;   /* 44.8px — h2 large */
+  --ts-hero: clamp(2.6rem, 5.5vw, 4.4rem);
+
+  /* Spacing scale */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+
+  /* Line heights */
+  --lh-tight:  1.1;
+  --lh-snug:   1.3;
+  --lh-normal: 1.6;
+  --lh-relaxed:1.85;
+  --lh-loose:  2.1;
+
+  /* Letter spacing */
+  --ls-tight:  -.03em;
+  --ls-normal:  0;
+  --ls-wide:   .05em;
+  --ls-wider:  .1em;
+  --ls-widest: .2em;
+}
+
+/* ── Global body typography ── */
+body {
+  font-size: 15px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Heading hierarchy ── */
+h1 {
+  font-size: var(--ts-hero);
+  font-weight: 900;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+h2 {
+  font-size: var(--ts-3xl);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+h3 {
+  font-size: var(--ts-xl);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -.02em;
+}
+h4 {
+  font-size: var(--ts-lg);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ── Section headers refined ── */
+h2.sec-t {
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+  margin-bottom: var(--sp-4);
+  color: var(--tx);
+}
+.lbl {
+  font-size: var(--ts-xs);
+  letter-spacing: var(--ls-widest);
+  font-weight: 700;
+  margin-bottom: var(--sp-3);
+  text-transform: uppercase;
+}
+.sub {
+  font-size: var(--ts-base);
+  line-height: var(--lh-relaxed);
+  color: var(--tx2);
+  max-width: 580px;
+  font-weight: 400;
+}
+.sh { margin-bottom: var(--sp-12); }
+.sh-c .sub { margin: 0 auto; }
+
+/* ── NAV typography ── */
+.nlinks a {
+  font-size: var(--ts-sm);
+  font-weight: 600;
+  letter-spacing: .01em;
+  padding: 7px 14px;
+}
+.logo { font-size: 1.28rem; letter-spacing: -.04em; }
+
+/* ── Hero typography ── */
+.hero h1 {
+  font-size: var(--ts-hero);
+  letter-spacing: -.05em;
+  line-height: 1.05;
+  margin-bottom: var(--sp-5);
+}
+.hero .desc {
+  font-size: var(--ts-md);
+  line-height: var(--lh-relaxed);
+  font-weight: 400;
+  margin-bottom: var(--sp-4);
+  max-width: 500px;
+}
+.hero .desc2 {
+  font-size: var(--ts-base);
+  line-height: var(--lh-loose);
+  color: var(--mu);
+  margin-bottom: var(--sp-8);
+  max-width: 480px;
+}
+
+/* ── Feature cards typography ── */
+.fc h3 {
+  font-size: 1.02rem;
+  font-weight: 800;
+  margin-bottom: var(--sp-2);
+  letter-spacing: -.01em;
+}
+.fc p {
+  font-size: var(--ts-sm);
+  line-height: var(--lh-relaxed);
+  color: var(--tx2);
+}
+
+/* ── App cards typography ── */
+.an {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  margin: var(--sp-2) 0 var(--sp-2);
+}
+.ad {
+  font-size: var(--ts-sm);
+  line-height: var(--lh-relaxed);
+}
+.af li { font-size: var(--ts-sm); line-height: 1.5; }
+
+/* ── Info blocks typography ── */
+.info-block h4 {
+  font-size: .9rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  margin-bottom: var(--sp-3);
+}
+.info-block li {
+  font-size: var(--ts-sm);
+  line-height: 1.65;
+}
+
+/* ── Product panel typography ── */
+.pname {
+  font-size: 1.85rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -.05em;
+  margin: var(--sp-3) 0 var(--sp-3);
+}
+.pdesc {
+  font-size: var(--ts-base);
+  line-height: var(--lh-relaxed);
+  color: var(--tx2);
+  margin-bottom: var(--sp-6);
+}
+.fl li { font-size: var(--ts-base); padding: 9px 0; }
+
+/* ── Stats bar ── */
+.si .v {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+.si .k {
+  font-size: var(--ts-xs);
+  letter-spacing: .02em;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+/* ── Tags ── */
+.tag {
+  font-size: var(--ts-xs);
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: 5px 14px;
+}
+
+/* ── Buttons ── */
+.btn {
+  font-size: var(--ts-base);
+  font-weight: 700;
+  letter-spacing: .01em;
+  padding: 13px 28px;
+  border-radius: 32px;
+  gap: 9px;
+}
+.btn-sm { padding: 9px 20px; font-size: var(--ts-sm); }
+
+/* ── Privacy & Links ── */
+.prv-section-hd h3 { font-size: .95rem; font-weight: 700; }
+.prv-p { font-size: var(--ts-sm); line-height: var(--lh-relaxed); }
+.prv-ul li { font-size: var(--ts-sm); line-height: 1.7; }
+.lkd h3 { font-size: .92rem; font-weight: 700; letter-spacing: -.01em; }
+.lkd p  { font-size: var(--ts-xs); letter-spacing: .01em; }
+
+/* ── Footer ── */
+.fbrand p { font-size: var(--ts-sm); line-height: var(--lh-relaxed); }
+.fcol h4  { font-size: var(--ts-xs); letter-spacing: var(--ls-widest); }
+.fcol li a{ font-size: var(--ts-sm); }
+.fbot p   { font-size: var(--ts-xs); letter-spacing: .01em; }
+
+/* ══════════════════════════════════════
+   SPACING & LAYOUT REFINEMENTS
+══════════════════════════════════════ */
+
+/* ── Sections ── */
+.sec    { padding: var(--sp-24) 0; }
+.sec-sm { padding: var(--sp-16) 0; }
+.wrap   { padding: 0 var(--sp-8); max-width: 1280px; }
+
+/* ── NAV height & spacing ── */
+.ni { height: 70px; padding: 0 var(--sp-8); gap: var(--sp-4); }
+.nlinks { gap: var(--sp-1); }
+
+/* ── Hero spacing ── */
+.hero { padding: 110px 0 96px; }
+.hero-inner { gap: 80px; }
+.hero-pills { gap: var(--sp-3); margin-bottom: var(--sp-10); }
+.pill { padding: 6px 16px; gap: 7px; border-radius: 32px; }
+.hbadge { padding: 7px 20px; margin-bottom: var(--sp-5); }
+.brow { gap: var(--sp-3); }
+
+/* ── Stats bar ── */
+.sbar  { padding: var(--sp-8) 0; }
+.si    { padding: var(--sp-4) 56px; }
+
+/* ── Section headers ── */
+.sh    { margin-bottom: var(--sp-12); }
+.sh-c  { margin-bottom: var(--sp-12); }
+
+/* ── Feature cards ── */
+.g3 { gap: var(--sp-5); }
+.g2 { gap: var(--sp-5); }
+.fc { padding: var(--sp-8); border-radius: 18px; }
+.fc-ico { width: 54px; height: 54px; border-radius: 15px; margin-bottom: var(--sp-5); font-size: 1.55rem; }
+
+/* ── Platform cards ── */
+.platform-card { padding: 44px var(--sp-8); border-radius: 22px; gap: 0; }
+.platform-card .pico-wrap { width: 76px; height: 76px; margin-bottom: var(--sp-5); font-size: 2rem; }
+.platform-card h3 { margin-bottom: var(--sp-3); }
+.platform-card p  { margin-bottom: var(--sp-5); }
+
+/* ── Product panel ── */
+.pfeat  { border-radius: 24px; margin-bottom: var(--sp-12); }
+.pinfo  { padding: var(--sp-12) var(--sp-12) var(--sp-12); }
+.ppr    { margin-bottom: var(--sp-8); gap: var(--sp-5); }
+.price  { font-size: 2.8rem; }
+.fl     { margin-bottom: var(--sp-8); }
+.fl li  { padding: 9px 0; gap: var(--sp-3); }
+.fl li .chk { width: 22px; height: 22px; }
+.mtabs  {}
+.mt     { padding: 15px var(--sp-4); }
+
+/* ── App cards ── */
+.g3.apps-g { gap: var(--sp-6); }
+.ac-card { padding: var(--sp-8) var(--sp-6); border-radius: 22px; gap: 0; }
+.aico { width: 80px; height: 80px; border-radius: 22px; margin-bottom: var(--sp-5); font-size: 2.1rem; }
+.af   { margin-bottom: var(--sp-5); }
+.af li { padding: 6px 0; gap: var(--sp-2); }
+
+/* ── Horizontal app cards ── */
+.hac { border-radius: 22px; }
+.hac-ico  { padding: var(--sp-8) var(--sp-5); gap: var(--sp-3); }
+.hac-ico .ico { font-size: 3rem; }
+.hac-body { padding: var(--sp-8); }
+.hac-body h3 { margin-bottom: var(--sp-3); }
+.hac-body p  { margin-bottom: var(--sp-5); }
+.chips { gap: var(--sp-2); margin-bottom: var(--sp-5); }
+.chip  { padding: 4px 12px; font-size: .7rem; border-radius: 6px; }
+
+/* ── Info blocks ── */
+.info-grid  { gap: var(--sp-5); margin-bottom: var(--sp-8); }
+.info-block { padding: var(--sp-6); border-radius: 18px; }
+.info-block h4 { margin-bottom: var(--sp-4); }
+.info-block li { padding: 7px 0; gap: var(--sp-2); }
+
+/* ── Mode cards ── */
+.modes-row { gap: var(--sp-4); margin-bottom: var(--sp-12); }
+.mode-card { padding: var(--sp-6) var(--sp-5); border-radius: 16px; }
+.mode-card .mi { margin-bottom: var(--sp-3); }
+.mode-card h4  { margin-bottom: var(--sp-2); }
+
+/* ── Economy table ── */
+.econ-table th { padding: 13px var(--sp-5); }
+.econ-table td { padding: 13px var(--sp-5); }
+
+/* ── Worlds grid ── */
+.worlds-grid { gap: var(--sp-3); margin-bottom: var(--sp-10); }
+.world-c { padding: var(--sp-5) var(--sp-2); border-radius: 14px; }
+.world-c .wi  { font-size: 2rem; margin-bottom: var(--sp-2); }
+.world-c .wn  { font-size: .62rem; letter-spacing: .18em; }
+.world-c .wch { font-size: .58rem; margin-top: var(--sp-1); }
+
+/* ── Related apps ── */
+.related-apps { gap: var(--sp-5); margin-top: var(--sp-16); }
+.ra-card { padding: var(--sp-6); border-radius: 18px; gap: var(--sp-4); }
+.ra-ico  { width: 56px; height: 56px; border-radius: 15px; font-size: 1.7rem; }
+.ra-info h4 { font-size: var(--ts-base); margin-bottom: var(--sp-1); }
+.ra-info p  { font-size: var(--ts-xs); }
+
+/* ── Links ── */
+.lgr { gap: var(--sp-4); }
+.lk  { padding: var(--sp-5) var(--sp-6); border-radius: 16px; gap: var(--sp-4); }
+.lki { width: 48px; height: 48px; border-radius: 13px; }
+
+/* ── CTA section ── */
+.cta-sec { padding: var(--sp-20) 0; }
+.cta-sec h2 { font-size: 2.2rem; margin-bottom: var(--sp-3); }
+.cta-sec p  { margin-bottom: var(--sp-10); }
+
+/* ── Hbox ── */
+.hbox { padding: var(--sp-5) var(--sp-6); border-radius: 16px; gap: var(--sp-4); }
+
+/* ── PayPal ── */
+.paybx { padding: var(--sp-12); border-radius: 26px; max-width: 560px; }
+.paybx h3 { margin-bottom: var(--sp-3); }
+.paybx>p  { margin-bottom: var(--sp-8); }
+.pay-features { gap: var(--sp-3); margin: var(--sp-6) 0; }
+.pay-feat     { padding: var(--sp-4) var(--sp-5); border-radius: 14px; }
+.pay-feat .pf-ico { margin-bottom: var(--sp-2); }
+
+/* ── Privacy ── */
+.prv-hub  { gap: var(--sp-5); margin-bottom: var(--sp-12); }
+.prv-card { padding: var(--sp-8) var(--sp-7); border-radius: 22px; }
+.prv-card-ico { width: 62px; height: 62px; border-radius: 18px; margin-bottom: var(--sp-5); }
+.prv-card h3  { margin-bottom: var(--sp-3); }
+.prv-card p   { margin-bottom: var(--sp-5); }
+.prv-banner   { padding: var(--sp-10); border-radius: 22px; margin-bottom: var(--sp-10); gap: var(--sp-7); }
+.prv-banner-ico { width: 82px; height: 82px; }
+.prv-banner h2  { font-size: 1.65rem; margin-bottom: var(--sp-2); }
+.prv-body { gap: var(--sp-3); }
+.prv-section { border-radius: 16px; }
+.prv-section-hd { padding: 18px var(--sp-6); gap: var(--sp-4); }
+.prv-sico   { width: 38px; height: 38px; border-radius: 10px; }
+.prv-section-body { padding: 0 var(--sp-6) var(--sp-6); }
+.prv-p  { margin-bottom: var(--sp-3); }
+.prv-ul li { padding: 8px 0; gap: var(--sp-3); }
+.prv-tbl th, .prv-tbl td { padding: 12px var(--sp-5); }
+.prv-comp-chip { padding: 5px 14px; border-radius: 8px; }
+.prv-contact { padding: var(--sp-6); border-radius: 15px; gap: var(--sp-5); }
+.prv-rights { gap: var(--sp-3); margin: var(--sp-4) 0; }
+.prv-right-item { padding: var(--sp-4) var(--sp-5); border-radius: 12px; gap: var(--sp-3); }
+.prv-updated { padding: 13px var(--sp-5); border-radius: 12px; margin-top: var(--sp-6); }
+.prv-info-note { padding: var(--sp-5) var(--sp-6); border-radius: 16px; gap: var(--sp-4); }
+.prv-back { padding: 11px var(--sp-6); border-radius: 32px; margin-bottom: var(--sp-8); }
+.prv-perm { padding: var(--sp-4) var(--sp-5); border-radius: 13px; margin: var(--sp-2) 0; gap: var(--sp-4); }
+
+/* ── CS Box ── */
+.cs-box { padding: var(--sp-12); border-radius: 22px; gap: var(--sp-4); }
+
+/* ── Ads ── */
+.adu      { border-radius: 16px; margin: var(--sp-10) 0; }
+.adu-tall { min-height: 280px; }
+
+/* ── Spec cols ── */
+.specs-box { padding: var(--sp-12); border-radius: 24px; margin-bottom: var(--sp-12); }
+.spec-col  { padding: var(--sp-5) var(--sp-6); border-radius: 14px; }
+.spec-col .spec-hd { margin-bottom: var(--sp-3); letter-spacing: .18em; }
+.spec-col ul { line-height: 2.4; }
+
+/* ── Footer ── */
+footer      { padding: var(--sp-20) 0 var(--sp-8); }
+.fgr        { gap: var(--sp-16); margin-bottom: var(--sp-16); }
+.fbrand p   { margin-top: var(--sp-4); max-width: 280px; }
+.fcol h4    { margin-bottom: var(--sp-5); letter-spacing: .22em; }
+.fcol li    { margin-bottom: var(--sp-3); }
+.fbot       { padding-top: var(--sp-6); gap: var(--sp-4); }
+.flinks     { gap: var(--sp-5); }
+
+/* ── BM hero spacing ── */
+.bm-hero       { padding: 88px 0 64px; }
+.bm-hero-inner { gap: 64px; }
+.bm-title      { font-size: clamp(2.6rem,5.5vw,4.2rem); margin-bottom: var(--sp-5); line-height: 1.0; }
+
+/* ══════════════════════════════════════
+   DIVIDERS & VISUAL SEPARATORS
+══════════════════════════════════════ */
+
+/* Subtle border between major sections */
+.sec + .sec { border-top: 1px solid var(--b); }
+
+/* ── Consistent card shadows ── */
+.fc:hover,
+.ac-card:hover,
+.hac:hover,
+.platform-card:hover,
+.prv-card:hover,
+.ra-card:hover,
+.lk:hover {
+  box-shadow: 0 20px 52px rgba(0,0,0,.42), 0 4px 16px rgba(0,0,0,.24);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE TYPOGRAPHY
+══════════════════════════════════════ */
+@media(max-width:900px) {
+  .sec     { padding: var(--sp-16) 0; }
+  .wrap    { padding: 0 var(--sp-5); }
+  .pinfo   { padding: var(--sp-8); }
+  .g2,.g3  { gap: var(--sp-4); }
+  .info-grid { gap: var(--sp-4); }
+  .modes-row { grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+  .worlds-grid { grid-template-columns: repeat(4,1fr); gap: var(--sp-2); }
+  .fgr     { gap: var(--sp-10); }
+}
+@media(max-width:600px) {
+  .sec     { padding: var(--sp-12) 0; }
+  .sh      { margin-bottom: var(--sp-8); }
+  .wrap    { padding: 0 var(--sp-4); }
+  .ni      { padding: 0 var(--sp-5); height: 64px; }
+  .hero    { padding: 80px 0 56px; }
+  .hero h1 { font-size: 2.4rem; }
+  .brow    { gap: var(--sp-3); }
+  .si      { padding: var(--sp-4) var(--sp-5); }
+  .bm-hero { padding: 68px 0 48px; }
+  .bm-title{ font-size: 2.5rem; }
+  .fgr     { gap: var(--sp-8); }
+  .paybx   { padding: var(--sp-8); }
+  h2.sec-t { font-size: 1.75rem; }
+  .pname   { font-size: 1.6rem; }
+  .worlds-grid { grid-template-columns: repeat(4,1fr); gap: var(--sp-2); }
+  .world-c { padding: var(--sp-3) var(--sp-1); }
+}
 </style>
 </head>
 <body>
@@ -240,7 +703,6 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
     <li><a href="#" id="lb" onclick="show('buy');return false">💳 شراء</a></li>
     <li><a href="#" id="ll" onclick="show('links');return false">روابطنا</a></li>
     <li><a href="#" id="lv" onclick="show('privacy');return false">🔒 الخصوصية</a></li>
-    <li><a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener">المدونة</a></li>
     <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="cta">▶ يوتيوب</a></li>
   </ul>
   <button class="ham" onclick="toggleMnu()" aria-label="قائمة"><span></span><span></span><span></span></button>
@@ -256,7 +718,6 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
   <a href="#" onclick="show('buy');closeMnu();return false">💳 شراء / PayPal</a>
   <a href="#" onclick="show('links');closeMnu();return false">🔗 روابطنا</a>
   <a href="#" onclick="show('privacy');closeMnu();return false">🔒 الخصوصية</a>
-  <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener">📝 المدونة</a>
   <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener">▶ يوتيوب</a>
 </div>
 
@@ -267,10 +728,10 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
   <div class="wrap">
     <div class="hero-inner">
       <div>
-        <div class="hbadge"><em></em> v1.2.1 — الإصدار الأخير متاح الآن</div>
-        <h1>أدوات تطوير<br><span class="a1">احترافية</span> لكل<br><span class="a2">مطوّر طموح</span></h1>
-        <p class="desc">نُبدع في بناء إضافات WordPress وألعاب Flutter وأدوات Unity — بمعايير الإنتاج العالمية وشغف حقيقي بكل تفصيلة.</p>
-        <p class="desc2">كل ما تراه في CodeForge وُلد من حاجة فعلية، وحُقِن بمئات ساعات التطوير والاختبار، ليصل إليك جاهزاً للنشر.</p>
+        <div class="hbadge"><em></em> WOP v1.2.1 — متاح الآن</div>
+        <h1>إضافات <span class="a1">WordPress</span><br>تطبيقات وألعاب <span class="a2">Flutter</span><br>وأدوات Unity</h1>
+        <p class="desc">إضافات WordPress وألعاب Flutter وأدوات Unity — مبنية بمعايير CodeCanyon وGoogle Play وجاهزة للنشر.</p>
+        <p class="desc2">كل منتج يمر بمراحل اختبار كاملة قبل النشر، ويأتي بكود مرتّب وتوثيق واضح.</p>
         <div class="hero-pills">
           <div class="pill"><div class="dot" style="background:var(--c1)"></div>WordPress &amp; WooCommerce</div>
           <div class="pill"><div class="dot" style="background:var(--gr)"></div>Flutter &amp; Dart</div>
@@ -329,55 +790,171 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
 
 <section class="sec"><div class="wrap">
   <div class="sh sh-c">
-    <div class="lbl">حضورنا العالمي</div>
-    <h2 class="sec-t">نختار الأفضل لكل تجربة</h2>
-    <p class="sub">حضور متميز في أرقى منصات التطوير والنشر العالمية — لأن جودة المنتج تستحق منصة بمستواها.</p>
+    <div class="lbl">منتجاتنا</div>
+    <h2 class="sec-t">ما نقدّمه</h2>
+    <p class="sub">ثلاثة منتجات على ثلاث منصات — كل منتج مكتمل بكوده وتوثيقه وجاهز للنشر.</p>
   </div>
-  <div class="g3">
-    <button class="platform-card" onclick="show('products')" style="border-color:rgba(56,189,248,.18)">
-      <div class="pico-wrap" style="background:linear-gradient(135deg,rgba(56,189,248,.15),rgba(56,189,248,.05));border:1px solid rgba(56,189,248,.2)">🟦</div>
-      <div class="tag tag-b" style="margin-bottom:14px">CodeCanyon / Envato</div>
-      <h3>إضافات WooCommerce</h3>
-      <p>إضافات WordPress تُبنى بمعايير Envato الصارمة وتُختبر مع كل إصدار جديد من WooCommerce.</p>
-      <div class="p-count">1 إضافة متاحة · المزيد قريباً</div>
-    </button>
-    <button class="platform-card" onclick="show('apps')" style="border-color:rgba(255,255,255,.1)">
-      <div class="pico-wrap" style="background:rgba(255,255,255,.06);border:1px solid var(--b)">🎮</div>
-      <div class="tag tag-w" style="margin-bottom:14px">Unity Asset Store</div>
-      <h3>أدوات Unity Editor</h3>
-      <p>أدوات Editor تعمل مباشرة داخل Unity وتوفّر ساعات من البرمجة المتكررة على مطوري الألعاب.</p>
-      <div class="p-count">NovaBuild AI — قريباً</div>
-    </button>
-    <button class="platform-card" onclick="show('apps')" style="border-color:rgba(34,197,94,.18)">
-      <div class="pico-wrap" style="background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(34,197,94,.04));border:1px solid rgba(34,197,94,.2)">📱</div>
-      <div class="tag tag-g" style="margin-bottom:14px">Google Play Store</div>
-      <h3>تطبيقات Flutter</h3>
-      <p>ألعاب وتطبيقات أندرويد مبنية بـ Flutter مع AdMob وFirebase وIAP مدمجة باحترافية.</p>
-      <div class="p-count">3 تطبيقات متاحة الآن</div>
-    </button>
+
+  <!-- ── CodeCanyon ── -->
+  <div style="background:var(--s);border:1px solid rgba(56,189,248,.2);border-radius:22px;overflow:hidden;margin-bottom:24px">
+    <div style="background:rgba(56,189,248,.06);padding:20px 32px;border-bottom:1px solid rgba(56,189,248,.12);display:flex;align-items:center;gap:14px">
+      <span style="font-size:1.3rem">🟦</span>
+      <div>
+        <div style="font-family:var(--mo);font-size:.7rem;color:#38bdf8;letter-spacing:.15em;text-transform:uppercase;margin-bottom:3px">CodeCanyon / Envato</div>
+        <div style="font-weight:800;font-size:1rem;color:var(--tx)">إضافات WordPress</div>
+      </div>
+      <div style="margin-right:auto"><div class="tag tag-b">متاح</div></div>
+    </div>
+    <div style="padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:start">
+      <div style="grid-column:1/3">
+        <div style="font-size:.8rem;font-family:var(--mo);color:var(--c1);margin-bottom:10px;letter-spacing:.05em">WooCommerce WhatsApp Order Pro — v1.2.1</div>
+        <p style="font-size:.9rem;color:var(--tx2);line-height:1.85;margin-bottom:16px">إضافة تضيف زر واتساب لمتجر WooCommerce مع نظام توجيه للوكلاء، قوالب رسائل، تقارير مبيعات، وتكاملات Slack وZapier وMailchimp.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">WordPress 5.9+</span>
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">WooCommerce 7.0+</span>
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">PHP 7.4+</span>
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">HPOS Compatible</span>
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">GPL-2.0</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-g btn-sm" onclick="show('products')">📄 تفاصيل الإضافة</button>
+          <button class="btn btn-pay btn-sm" onclick="show('buy')">💳 شراء — $39</button>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--b);border-radius:14px;padding:20px">
+        <div style="font-size:.7rem;font-family:var(--mo);color:var(--mu);letter-spacing:.1em;margin-bottom:12px;text-transform:uppercase">الميزات الرئيسية</div>
+        <ul style="list-style:none;font-size:.83rem;color:var(--tx2);line-height:2.2">
+          <li>✓ Smart Agent Routing</li>
+          <li>✓ WhatsApp Cloud API</li>
+          <li>✓ Cart Recovery</li>
+          <li>✓ GA4 + Facebook Pixel</li>
+          <li>✓ HMAC-SHA256 License</li>
+          <li>✓ RTL + 153 نص مترجم</li>
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <!-- ── Google Play ── -->
+  <div style="background:var(--s);border:1px solid rgba(34,197,94,.2);border-radius:22px;overflow:hidden;margin-bottom:24px">
+    <div style="background:rgba(34,197,94,.06);padding:20px 32px;border-bottom:1px solid rgba(34,197,94,.12);display:flex;align-items:center;gap:14px">
+      <span style="font-size:1.3rem">📱</span>
+      <div>
+        <div style="font-family:var(--mo);font-size:.7rem;color:var(--gr);letter-spacing:.15em;text-transform:uppercase;margin-bottom:3px">Google Play Store</div>
+        <div style="font-weight:800;font-size:1rem;color:var(--tx)">تطبيقات Flutter</div>
+      </div>
+      <div style="margin-right:auto"><div class="tag tag-g">3 تطبيقات</div></div>
+    </div>
+    <div style="padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px">
+
+      <!-- Brain Match -->
+      <div style="background:var(--bg2);border:1px solid rgba(212,160,23,.2);border-radius:14px;padding:20px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#1C1404,#D4A017);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🧩</div>
+          <div>
+            <div style="font-weight:800;font-size:.92rem">Brain Match Pro</div>
+            <div style="font-size:.68rem;color:var(--mu);font-family:var(--mo)">Memory Master</div>
+          </div>
+        </div>
+        <p style="font-size:.81rem;color:var(--tx2);line-height:1.75;margin-bottom:14px">لعبة مطابقة ذاكرة — 7 عوالم أسطورية و210 مرحلة مع تحديات AI يومية.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+          <span style="background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:var(--goldl)">AdMob</span>
+          <span style="background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:var(--goldl)">IAP</span>
+          <span style="background:rgba(212,160,23,.08);border:1px solid rgba(212,160,23,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:var(--goldl)">Flutter</span>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-sm" style="background:linear-gradient(135deg,#D4A017,#c8960f);color:#fff;padding:8px 14px;font-size:.75rem;border-radius:20px" onclick="show('brain-match')">تفاصيل</button>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" rel="noopener" class="btn btn-g btn-sm" style="padding:8px 14px;font-size:.75rem">📲 Play</a>
+        </div>
+      </div>
+
+      <!-- Numbers Academy -->
+      <div style="background:var(--bg2);border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:20px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#22c55e,#15803d);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🎓</div>
+          <div>
+            <div style="font-weight:800;font-size:.92rem">أكاديمية الأرقام</div>
+            <div style="font-size:.68rem;color:var(--mu);font-family:var(--mo)">Number Academy</div>
+          </div>
+        </div>
+        <p style="font-size:.81rem;color:var(--tx2);line-height:1.75;margin-bottom:14px">تطبيق تعليمي للأطفال — الأرقام والحساب بـ 6 لغات مع تلفّظ صوتي.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+          <span style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:var(--gr)">COPPA</span>
+          <span style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:var(--gr)">6 لغات</span>
+          <span style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:var(--gr)">Flutter</span>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-sm" style="background:linear-gradient(135deg,#22c55e,#15803d);color:#fff;padding:8px 14px;font-size:.75rem;border-radius:20px" onclick="show('numbers-app')">تفاصيل</button>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.speak_numbers" target="_blank" rel="noopener" class="btn btn-o btn-sm" style="padding:8px 14px;font-size:.75rem">📲 Play</a>
+        </div>
+      </div>
+
+      <!-- AutoCare -->
+      <div style="background:var(--bg2);border:1px solid rgba(56,189,248,.2);border-radius:14px;padding:20px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+          <div style="width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,#0073aa,#38bdf8);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0">🚗</div>
+          <div>
+            <div style="font-weight:800;font-size:.92rem">AutoCare</div>
+            <div style="font-size:.68rem;color:var(--mu);font-family:var(--mo)">Car Maintenance</div>
+          </div>
+        </div>
+        <p style="font-size:.81rem;color:var(--tx2);line-height:1.75;margin-bottom:14px">تطبيق تتبع صيانة السيارة — تذكيرات، سجل الخدمات، ومتابعة التكاليف.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+          <span style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:#38bdf8">Firebase</span>
+          <span style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:#38bdf8">AdMob</span>
+          <span style="background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.2);border-radius:5px;padding:2px 9px;font-size:.68rem;font-family:var(--mo);color:#38bdf8">Flutter</span>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-sm" style="background:linear-gradient(135deg,#0073aa,#38bdf8);color:#fff;padding:8px 14px;font-size:.75rem;border-radius:20px" onclick="show('autocare-app')">تفاصيل</button>
+          <a href="https://play.google.com/store/apps/details?id=com.gpthub.auto_care" target="_blank" rel="noopener" class="btn btn-o btn-sm" style="padding:8px 14px;font-size:.75rem">📲 Play</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Unity Asset Store ── -->
+  <div style="background:var(--s);border:1px solid rgba(255,255,255,.1);border-radius:22px;overflow:hidden">
+    <div style="background:rgba(255,255,255,.04);padding:20px 32px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:14px">
+      <span style="font-size:1.3rem">🎮</span>
+      <div>
+        <div style="font-family:var(--mo);font-size:.7rem;color:var(--tx2);letter-spacing:.15em;text-transform:uppercase;margin-bottom:3px">Unity Asset Store</div>
+        <div style="font-weight:800;font-size:1rem;color:var(--tx)">أدوات Unity Editor</div>
+      </div>
+      <div style="margin-right:auto"><div class="tag tag-w" style="background:rgba(245,158,11,.09);border-color:rgba(245,158,11,.22);color:var(--c3)">قريباً</div></div>
+    </div>
+    <div style="padding:28px 32px;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
+      <div>
+        <div style="font-size:.8rem;font-family:var(--mo);color:var(--c1);margin-bottom:10px;letter-spacing:.05em">NovaBuild AI — Tools → Level Design</div>
+        <p style="font-size:.9rem;color:var(--tx2);line-height:1.85;margin-bottom:16px">أداة Level Design تعمل داخل Unity Editor — تولّد المستويات وتضبط الصعوبة آلياً بالذكاء الاصطناعي.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">Unity 2022+</span>
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">AI-Powered</span>
+          <span style="background:var(--bg2);border:1px solid var(--b);border-radius:6px;padding:3px 11px;font-size:.71rem;font-family:var(--mo);color:var(--mu)">Editor Extension</span>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="btn btn-o btn-sm">🏪 Unity Asset Store</a>
+          <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-sm" style="background:var(--bg2);color:var(--c3);border:1px solid rgba(245,158,11,.22);border-radius:20px">👥 انضم إلى مجموعة المختبرين عند الإطلاق</a>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--b);border-radius:14px;padding:20px;text-align:center">
+        <div style="font-size:3rem;margin-bottom:12px">🏗️</div>
+        <div style="font-size:.78rem;font-family:var(--mo);color:var(--mu);line-height:2">
+          Level Generation AI<br>
+          Difficulty Balancing<br>
+          Scene Management<br>
+          One-Click Deploy
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div></section>
 
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <div class="sh sh-c">
-    <div class="lbl">فلسفة التطوير</div>
-    <h2 class="sec-t">الكود الجيد يُولَد لا يُقبَل</h2>
-    <p class="sub">كل سطر يُكتب بنية أن يُقرأ ويُصان ويُطوَّر — لأن الكود الحقيقي يتجاوز "يعمل" إلى "يُتقَن".</p>
-  </div>
-  <div class="g3">
-    <div class="fc"><div class="fc-ico" style="background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.18)">🔐</div><h3>أمان من الصميم</h3><p>HMAC-SHA256، nonces، rate limiting ذكي، وحماية من التلاعب. الأمان مدمج في المعمارية وليس إضافة لاحقة.</p></div>
-    <div class="fc"><div class="fc-ico" style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2)">🏗️</div><h3>معمارية تدوم</h3><p>Hook Loader، PSR-4، BLoC، Singleton — فصل واضح للطبقات يجعل التوسع والصيانة متعة لا عبئاً.</p></div>
-    <div class="fc"><div class="fc-ico" style="background:rgba(245,158,11,.09);border:1px solid rgba(245,158,11,.18)">🌍</div><h3>عالمي من اليوم الأول</h3><p>دعم RTL كامل للعربية، ملف .pot جاهز، وتوطين يشمل كل نص في الواجهة بلا استثناء.</p></div>
-    <div class="fc"><div class="fc-ico" style="background:rgba(34,197,94,.09);border:1px solid rgba(34,197,94,.2)">📦</div><h3>جاهز للأسواق</h3><p>يلبي كل متطلبات CodeCanyon وWordPress.org وGoogle Play من التوثيق إلى أصول الـ marketplace.</p></div>
-    <div class="fc"><div class="fc-ico" style="background:rgba(56,189,248,.09);border:1px solid rgba(56,189,248,.2)">⚡</div><h3>أداء بلا تنازل</h3><p>Lazy loading، DB indexes محسّنة، بطارية واتصال — كل شيء مُقاس قبل الإطلاق وبعده.</p></div>
-    <div class="fc"><div class="fc-ico" style="background:rgba(239,68,68,.09);border:1px solid rgba(239,68,68,.18)">🔄</div><h3>نظام بيئي متكامل</h3><p>Slack، Zapier، Mailchimp، GA4، Firebase — منتجاتك تتحدث مع منظومتك بدون تعقيد.</p></div>
-  </div>
-</div></section>
 
 <div class="cta-sec"><div class="wrap" style="position:relative;z-index:1">
   <div style="font-size:2.8rem;margin-bottom:16px">🚀</div>
-  <h2>جاهز للانطلاق؟</h2>
-  <p>تصفّح مجموعة المنتجات أو أتمّ شراءك مباشرة — الترخيص يصلك في لحظات</p>
+  <h2>ابدأ الآن</h2>
+  <p>تصفّح المنتجات أو اشترِ مباشرة عبر PayPal — الترخيص يصل لبريدك فور الدفع.</p>
   <div class="brow" style="justify-content:center">
     <button class="btn btn-p" onclick="show('products')">📦 المنتجات</button>
     <button class="btn btn-g" onclick="show('apps')">📱 التطبيقات</button>
@@ -392,13 +969,13 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
   <div class="sh">
     <div class="lbl">إضافات WordPress</div>
     <h2 class="sec-t">WooCommerce WhatsApp Order Pro</h2>
-    <p class="sub">حوّل متجرك WooCommerce إلى آلة مبيعات عبر واتساب — ذكية، آمنة، وجاهزة للعالم.</p>
+    <p class="sub">إضافة WooCommerce تضيف زر واتساب لمتجرك مع نظام توجيه للوكلاء وتحليلات مدمجة.</p>
   </div>
   <div class="pfeat">
     <div class="pinfo">
       <div class="tag tag-b">🟦 WordPress / WooCommerce</div>
       <div class="pname">WooCommerce<br>WhatsApp Order Pro</div>
-      <p class="pdesc">نظام متكامل لإدارة الطلبات والوكلاء والتحليلات، صُمِّم للمتاجر التي تريد بيعاً أسرع ومتابعة أذكى.</p>
+      <p class="pdesc">إضافة WordPress تربط متجر WooCommerce بواتساب — مع إدارة وكلاء، قوالب رسائل، وتقارير مبيعات.</p>
       <ul class="fl">
         <li><span class="chk">✓</span>Smart Agent Routing — Round Robin أو يدوياً</li>
         <li><span class="chk">✓</span>WhatsApp Cloud API + Business API</li>
@@ -442,6 +1019,8 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       </div>
     </div>
   </div>
+  <div class="adu adu-tall"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
   <div class="specs-box">
     <div class="sh"><div class="lbl">مواصفات تقنية</div><h2 class="sec-t" style="font-size:1.75rem">Technical Specifications</h2></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px">
@@ -451,7 +1030,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       <div class="spec-col"><div class="spec-hd">REQUIREMENTS</div><ul><li>WordPress 5.9+</li><li>WooCommerce 7.0+</li><li>PHP 7.4+</li><li>WC Tested to 9.3</li><li>HPOS Compatible</li><li>GPL-2.0 Licensed</li></ul></div>
     </div>
   </div>
-  <div class="cs-box"><div style="font-size:2.5rem">🔜</div><div class="cs-label">COMING SOON</div><div style="font-size:1.15rem;font-weight:900">المزيد من إضافات WordPress</div><div style="font-size:.88rem;color:var(--tx2);max-width:380px;text-align:center;line-height:1.8">WooCommerce Booking Pro وإضافات متخصصة قادمة. سجّل اهتمامك لتكون في طليعة المُخطَّرين.</div><a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:8px">🔔 انضم لقائمة الانتظار</a></div>
+  <div class="cs-box"><div style="font-size:2.5rem">🔜</div><div class="cs-label">COMING SOON</div><div style="font-size:1.15rem;font-weight:900">المزيد من إضافات WordPress</div><div style="font-size:.88rem;color:var(--tx2);max-width:380px;text-align:center;line-height:1.8">WooCommerce Booking Pro وإضافات أخرى.</div><a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o" style="margin-top:8px">👥 انضم إلى مجموعة المختبرين</a></div>
 </div></section>
 </div><!-- /products -->
 
@@ -459,16 +1038,16 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
 <div id="apps" class="pg">
 <section class="sec"><div class="wrap">
   <div class="sh">
-    <div class="lbl">مجموعة التطبيقات</div>
-    <h2 class="sec-t">تطبيقات تُمتع وتُفيد</h2>
-    <p class="sub">من تعليم الأطفال إلى إدارة السيارات مروراً بألعاب الذاكرة الأسطورية — كل تطبيق قصة كاملة على أساس تقني صلب.</p>
+    <div class="lbl">Google Play</div>
+    <h2 class="sec-t">تطبيقاتنا على أندرويد</h2>
+    <p class="sub">ثلاثة تطبيقات على Google Play — لعبة ذاكرة، تطبيق تعليمي للأطفال، وتطبيق صيانة سيارات.</p>
   </div>
   <div class="g3" style="margin-bottom:56px">
     <div class="ac-card" style="cursor:pointer" onclick="show('brain-match')">
       <div class="aico" style="background:linear-gradient(135deg,#1C1404,#D4A017)">🧩</div>
       <div class="tag tag-gold" style="margin:0 auto 12px">Flutter · أسطوري</div>
       <div class="an">Brain Match Pro</div>
-      <p class="ad">لعبة مطابقة ذاكرة أسطورية — 7 عوالم، 210 مرحلة، وتحديات ذكاء AI يومية. تجمع بين أساطير مصر القديمة واليونان في تجربة لا تُنسى.</p>
+      <p class="ad">لعبة مطابقة ذاكرة بثيم مصري ويوناني — 7 عوالم، 210 مرحلة، وتحديات يومية بالذكاء الاصطناعي.</p>
       <ul class="af"><li>7 عوالم أسطورية فاخرة</li><li>210 مرحلة + تحديات AI يومية</li><li>12 تمثال · 5 لعنات</li><li>AdMob + IAP كاملان</li></ul>
       <div class="brow" style="justify-content:center;gap:8px">
         <button class="btn btn-gold btn-sm" onclick="event.stopPropagation();show('brain-match')">📖 التفاصيل الكاملة</button>
@@ -479,7 +1058,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       <div class="aico" style="background:linear-gradient(135deg,#22c55e,#15803d)">🎓</div>
       <div class="tag tag-g" style="margin:0 auto 12px">Flutter · تعليمي للأطفال</div>
       <div class="an">أكاديمية الأرقام</div>
-      <p class="ad">منصة تعليمية تفاعلية تأخذ طفلك لاكتشاف الأرقام والحساب بـ 6 لغات وصوت واضح وألعاب ممتعة.</p>
+      <p class="ad">تطبيق تعليمي للأطفال لتعلّم الأرقام والحساب بـ 6 لغات مع تلفّظ صوتي وألعاب بسيطة.</p>
       <ul class="af"><li>6 لغات مع تلفّظ صوتي</li><li>ألعاب ومسابقات</li><li>COPPA Compliant</li><li>Google Play Families</li></ul>
       <div class="brow" style="justify-content:center;gap:8px">
         <button class="btn btn-g btn-sm" onclick="event.stopPropagation();show('numbers-app')">📖 التفاصيل الكاملة</button>
@@ -490,7 +1069,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       <div class="aico" style="background:linear-gradient(135deg,#0073aa,#38bdf8)">🚗</div>
       <div class="tag tag-b" style="margin:0 auto 12px">Flutter · إدارة</div>
       <div class="an">AutoCare</div>
-      <p class="ad">مساعدك الذكي لصيانة سيارتك — سجّل كل خدمة واستقبل تذكيرات الصيانة وتابع التكاليف بدقة.</p>
+      <p class="ad">تطبيق لتتبع صيانة السيارة — تسجيل الخدمات، تذكيرات الصيانة، ومتابعة التكاليف.</p>
       <ul class="af"><li>تذكيرات صيانة ذكية</li><li>سجل شامل للخدمات</li><li>تتبع التكاليف</li><li>Firebase Sync</li></ul>
       <div class="brow" style="justify-content:center;gap:8px">
         <button class="btn btn-sm" style="background:linear-gradient(135deg,#0073aa,#38bdf8);color:#fff" onclick="event.stopPropagation();show('autocare-app')">📖 التفاصيل الكاملة</button>
@@ -506,7 +1085,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
   </div>
   <div class="g2">
     <div class="hac"><div class="hac-ico"><div class="ico">🏗️</div><div class="tag tag-w" style="font-size:.68rem">Unity Asset Store</div></div><div class="hac-body"><h3>NovaBuild AI</h3><p>أداة Level Design تستخدم الذكاء الاصطناعي لتوليد مستويات متوازنة آلياً — من وضع العناصر إلى ضبط الصعوبة، دون تدخل يدوي.</p><div class="chips"><span class="chip">Tools → Level Design</span><span class="chip">Unity 2022+</span><span class="chip">AI-Powered</span></div><div class="brow"><a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="btn btn-o btn-sm">🏪 Unity Asset Store</a><span style="font-family:var(--mo);font-size:.77rem;color:var(--c3);align-self:center">⏳ قريباً</span></div></div></div>
-    <div class="cs-box"><div style="font-size:2.5rem">🎮</div><div class="cs-label">COMING SOON</div><div style="font-size:1.05rem;font-weight:900">أدوات Unity قادمة</div><div style="font-size:.87rem;color:var(--tx2);text-align:center;line-height:1.8">Scene Manager Pro وAI Pathfinding Tools وسواها.</div><a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o btn-sm" style="margin-top:8px">🔔 أبلّغني</a></div>
+    <div class="cs-box"><div style="font-size:2.5rem">🎮</div><div class="cs-label">COMING SOON</div><div style="font-size:1.05rem;font-weight:900">أدوات Unity قادمة</div><div style="font-size:.87rem;color:var(--tx2);text-align:center;line-height:1.8">Scene Manager Pro وAI Pathfinding Tools وسواها.</div><a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="btn btn-o btn-sm" style="margin-top:8px">👥 انضم إلى مجموعة المختبرين</a></div>
   </div>
 </div></section>
 </div><!-- /apps -->
@@ -521,8 +1100,8 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       <div>
         <div class="tag tag-gold" style="margin-bottom:20px">🧩 Brain Match Pro · Memory Master · Google Play</div>
         <div class="bm-title"><span style="color:#EFD080">BRAIN</span><br><span style="color:#D4A017">MATCH</span><br><span style="color:#c8960f">PRO</span></div>
-        <p style="color:rgba(239,208,128,.75);font-size:1rem;line-height:1.9;margin-bottom:14px">لعبة تدريب ذاكرة من نوعين في واحد — <strong style="color:var(--goldl)">Brain Match Pro</strong> بثيم أسطوري فاخر، و<strong style="color:var(--goldl)">Memory Master</strong> بتحديات ذكاء AI يومية. تجمعهما تجربة واحدة على Google Play.</p>
-        <p style="color:var(--mu);font-size:.92rem;line-height:1.85;margin-bottom:28px">اكشف البطاقات وطابق الأزواج عبر 7 عوالم أسطورية — أو تحدّ نفسك بـ 20+ لعبة ذكاء AI تتجدد يومياً. تجربتان في تطبيق واحد.</p>
+        <p style="color:rgba(239,208,128,.75);font-size:1rem;line-height:1.9;margin-bottom:14px">لعبة مطابقة ذاكرة بثيم مصري ويوناني. تضم وضع القصة (210 مرحلة) وتحديات ذكاء AI يومية على Google Play.</p>
+        <p style="color:var(--mu);font-size:.92rem;line-height:1.85;margin-bottom:28px">اكشف البطاقات وطابق الأزواج في 7 عوالم، أو العب التحديات اليومية — كلها في تطبيق واحد.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px">
           <div class="tag tag-gold">7 عوالم أسطورية</div>
           <div class="tag tag-g">210 مرحلة</div>
@@ -584,6 +1163,8 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
     <span style="color:var(--tx2)"><strong style="color:var(--goldl)">Brain Match Pro</strong> هي لعبة تدريب ذاكرة من نوع مطابقة الأزواج، مصممة بثيم أسطوري فاخر يجمع بين حضارتَي مصر القديمة واليونان. اللاعب يواجه لوحة من البطاقات المقلوبة ويحاول كشف كل زوج متطابق قبل انتهاء العداد، مع نظام كومبو يكافئ المطابقات المتتالية السريعة بنقاط مضاعفة.</span>
   </div>
 
+  <div class="wrap"><div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="2233445566" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div>
+
   <div class="sh"><div class="lbl">خريطة العوالم</div><h2 class="sec-t" style="font-size:1.9rem">7 عوالم أسطورية متكاملة</h2><p class="sub">تمتد اللعبة عبر 7 عوالم — كل عالم قصة مستقلة بثيمة بصرية مختلفة تماماً وصعوبة متصاعدة.</p></div>
   <div class="worlds-grid" style="margin-bottom:24px">
     <div class="world-c" style="background:linear-gradient(180deg,rgba(212,160,23,.15),rgba(212,160,23,.04));border:1px solid rgba(212,160,23,.25)"><div class="wi">🏺</div><div class="wn" style="color:#EFD080">PHARAOH</div><div class="wch">الفصل I</div></div>
@@ -628,6 +1209,8 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
     <div class="info-block"><h4>💰 المشتريات الداخلية (IAP)</h4><ul><li>حزم عملات بأحجام متعددة</li><li>حزم جواهر للخيارات المتميزة</li><li>إزالة الإعلانات (Remove Ads)</li><li>باقة VIP بمزايا حصرية</li><li>ثيمات بريميوم + Power Bundle</li></ul></div>
     <div class="info-block"><h4>📈 نظام التقدم</h4><ul><li>مستوى اللاعب يرتفع بالـ XP من كل مطابقة</li><li>صناديق غنائم بنظام ندرة (عادي → أسطوري)</li><li>مهام يومية وأسبوعية بمكافآت مخصصة</li><li>50+ إنجازاً يرصد أداءك عبر الجلسات</li></ul></div>
   </div>
+
+  <div class="wrap"><div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="3344556677" data-ad-format="auto" data-full-width-responsive="true"></ins></div></div>
 
   <div class="g3" style="margin-bottom:44px">
     <div class="fc"><div class="fc-ico" style="background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2)">📡</div><h3>AdMob مدمج بالكامل</h3><p>Banner · Interstitial · Rewarded Video مع UMP Consent Form للامتثال لـ GDPR الأوروبية.</p></div>
@@ -705,6 +1288,8 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
     <div class="info-block"><h4>🛡️ حماية الأطفال</h4><ul><li>COPPA Compliant بالكامل</li><li>Google Play Families متوافق</li><li>لا روابط خارجية غير آمنة</li><li>إعلانات عائلية فقط</li></ul></div>
     <div class="info-block"><h4>⚙️ التقنية</h4><ul><li>Flutter مع BLoC Architecture</li><li>TTS بلا تسرّب صوتي</li><li>SharedPreferences للحفظ المحلي</li><li>AdMob + Firebase مدمجان</li></ul></div>
   </div>
+  <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="4455667788" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
   <div class="sh"><div class="lbl">اكتشف أيضاً</div><h2 class="sec-t" style="font-size:1.75rem">تطبيقات قد تعجبك</h2></div>
   <div class="related-apps">
     <div class="ra-card" onclick="show('brain-match')"><div class="ra-ico" style="background:linear-gradient(135deg,#1C1404,#D4A017)">🧩</div><div class="ra-info"><h4>Brain Match Pro</h4><p>لعبة ذاكرة أسطورية · 7 عوالم · 210 مرحلة</p></div><div class="ra-arrow">→</div></div>
@@ -765,6 +1350,10 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
     <div class="info-block"><h4>🔒 الخصوصية أولاً</h4><ul><li>جميع البيانات تُدخل يدوياً فقط</li><li>لا قراءة آلية لبيانات السيارة</li><li>لا طلب للموقع الجغرافي</li><li>Firebase Storage مشفّر</li></ul></div>
     <div class="info-block"><h4>⚙️ الأذونات المطلوبة</h4><ul><li>الإنترنت — للمزامنة مع Firebase</li><li>الإشعارات — لتذكيرات الصيانة</li><li>لا كاميرا · لا صور · لا موقع</li><li>بصمة إذن ضئيلة جداً</li></ul></div>
   </div>
+  <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="4455667788" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
+  <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="5566778899" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
+
   <div class="sh"><div class="lbl">اكتشف أيضاً</div><h2 class="sec-t" style="font-size:1.75rem">تطبيقات قد تعجبك</h2></div>
   <div class="related-apps">
     <div class="ra-card" onclick="show('brain-match')"><div class="ra-ico" style="background:linear-gradient(135deg,#1C1404,#D4A017)">🧩</div><div class="ra-info"><h4>Brain Match Pro</h4><p>لعبة ذاكرة أسطورية · 7 عوالم</p></div><div class="ra-arrow">→</div></div>
@@ -780,10 +1369,10 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
   <div class="sh sh-c">
     <div class="lbl">إتمام الاقتناء</div>
     <h2 class="sec-t">شراء آمن عبر PayPal</h2>
-    <p class="sub">ادفع بثقة تامة — الترخيص ورابط التحميل يصلان إلى بريدك في لحظات.</p>
+    <p class="sub">الدفع عبر PayPal — الترخيص يصل لبريدك فور تأكيد الدفع.</p>
   </div>
   <div class="g3" style="margin-bottom:48px">
-    <div class="hbox hbox-c" style="flex-direction:column;text-align:center;gap:10px"><span style="font-size:2rem">💳</span><strong>١. ادفع بأمان</strong><span style="color:var(--mu);font-size:.84rem">اضغط زر PayPal وأتمّ الدفع بحسابك أو بطاقتك</span></div>
+    <div class="hbox hbox-c" style="flex-direction:column;text-align:center;gap:10px"><span style="font-size:2rem">💳</span><strong>١. ادفع بأمان</strong><span style="color:var(--mu);font-size:.84rem">عبر PayPal أو بطاقتك مباشرة — paypal.me/ASultan86</span></div>
     <div class="hbox hbox-g" style="flex-direction:column;text-align:center;gap:10px"><span style="font-size:2rem">📧</span><strong>٢. استلم ترخيصك</strong><span style="color:var(--mu);font-size:.84rem">رابط التحميل والمفتاح يصلان فوراً على بريدك</span></div>
     <div class="hbox hbox-p" style="flex-direction:column;text-align:center;gap:10px"><span style="font-size:2rem">🚀</span><strong>٣. ابدأ على الفور</strong><span style="color:var(--mu);font-size:.84rem">ثبّت وشغّل — دون أي تعقيد</span></div>
   </div>
@@ -800,7 +1389,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
     </div>
     <div class="pp-status" id="pp-status"><span style="color:var(--mu);font-size:.85rem">⏳ جاري تحميل زر الدفع...</span></div>
     <div id="paypal-container-FVUKC8L7EK758"></div>
-    <p class="pay-notes">🔒 دفع آمن 100% عبر PayPal<br>📧 الترخيص فوري على بريدك<br>💬 دعم: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
+    <div style="margin:16px 0 8px;text-align:center"><a href="https://paypal.me/ASultan86" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,48,135,.12);border:1px solid rgba(0,156,222,.3);border-radius:20px;padding:8px 20px;font-size:.82rem;font-family:var(--mo);color:#38bdf8;text-decoration:none">🔗 paypal.me/ASultan86</a></div><p class="pay-notes">🔒 دفع آمن 100% عبر PayPal<br>📧 الترخيص فوري على بريدك<br>💬 دعم: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
   </div>
 </div></section>
 </div><!-- /buy -->
@@ -808,14 +1397,14 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
 <!-- ═══════════════ LINKS ═══════════════ -->
 <div id="links" class="pg">
 <section class="sec"><div class="wrap">
-  <div class="sh"><div class="lbl">تواصل معنا</div><h2 class="sec-t">روابطنا ومجتمعاتنا</h2><p class="sub">نتواجد حيث يتواجد المطورون والمبدعون — تابعنا لتكون في طليعة من يعلمون.</p></div>
+  <div class="sh"><div class="lbl">تواصل معنا</div><h2 class="sec-t">روابطنا ومجتمعاتنا</h2><p class="sub">روابط قنواتنا ومنصات بيعنا وطرق التواصل.</p></div>
   <div class="adu"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7137238144396709" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true"></ins></div>
   <div class="lgr">
     <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(255,0,0,.12)">▶️</div><div class="lkd"><h3>قناة يوتيوب — Inspiring Voices</h3><p>فيديوهات تقنية وعروض للمنتجات</p></div><div class="lka">→</div></a>
-    <a href="https://gpthub21.blogspot.com/" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(255,150,0,.12)">📝</div><div class="lkd"><h3>مدونة GPT HUB</h3><p>مقالات تقنية متعمّقة للمطورين</p></div><div class="lka">→</div></a>
-    <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(34,197,94,.12)">👥</div><div class="lkd"><h3>مجتمع المختبرين</h3><p>Google Groups — كن أول المُخطَّرين</p></div><div class="lka">→</div></a>
+    
+    <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="lk" style="border-color:rgba(34,197,94,.2)"><div class="lki" style="background:rgba(34,197,94,.12)">👥</div><div class="lkd"><h3>مجموعة المختبرين</h3><p>انضم لاختبار التطبيقات الجديدة قبل إطلاقها</p></div><div class="lka">→</div></a>
     <a href="https://codecanyon.net" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(56,189,248,.12)">🟦</div><div class="lkd"><h3>CodeCanyon / Envato</h3><p>إضافات WordPress الاحترافية</p></div><div class="lka">→</div></a>
-    <a href="https://play.google.com/store/apps/developer?id=gpthub" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(34,197,94,.12)">📱</div><div class="lkd"><h3>صفحتنا على Google Play</h3><p>جميع تطبيقاتنا في مكان واحد</p></div><div class="lka">→</div></a>
+    <a href="https://play.google.com/store/apps/dev?id=8214177814047833371" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(34,197,94,.12)">📱</div><div class="lkd"><h3>صفحة المطوّر على Google Play</h3><p>جميع تطبيقاتنا وألعابنا</p></div><div class="lka">→</div></a>
     <a href="https://assetstore.unity.com" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(255,255,255,.07)">🎮</div><div class="lkd"><h3>Unity Asset Store</h3><p>NovaBuild AI وأدوات Editor قادمة</p></div><div class="lka">→</div></a>
     <a href="mailto:ahmed2sultan2@gmail.com" class="lk"><div class="lki" style="background:rgba(124,58,237,.12)">📧</div><div class="lkd"><h3>البريد الإلكتروني</h3><p>ahmed2sultan2@gmail.com</p></div><div class="lka">→</div></a>
     <a href="https://ahmed2sultan2555.github.io/website/" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(0,229,255,.1)">🌐</div><div class="lkd"><h3>الموقع / Portfolio</h3><p>ahmed2sultan2555.github.io</p></div><div class="lka">→</div></a>
@@ -829,7 +1418,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
 <div id="privacy" class="pg">
 <section class="sec"><div class="wrap">
   <div id="prv-hub-view" class="prv-hub-view">
-    <div class="sh"><div class="lbl">مركز الخصوصية</div><h2 class="sec-t">سياسات واضحة وشاملة</h2><p class="sub">سياسات خصوصية متوافقة مع GDPR وCOPPA وCCPA ومتطلبات Google Play. اختر المنتج لعرض سياسته.</p></div>
+    <div class="sh"><div class="lbl">مركز الخصوصية</div><h2 class="sec-t">سياسات واضحة وشاملة</h2><p class="sub">سياسات خصوصية لجميع منتجاتنا — متوافقة مع GDPR وCOPPA وCCPA ومتطلبات Google Play.</p></div>
     <div style="background:var(--s);border:1px solid var(--b);border-radius:16px;padding:20px 24px;margin-bottom:38px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
       <span style="font-size:.74rem;color:var(--mu);font-family:var(--mo);white-space:nowrap">متوافق مع:</span>
       <div class="prv-comp"><div class="prv-comp-chip">GDPR</div><div class="prv-comp-chip">COPPA</div><div class="prv-comp-chip">CCPA</div><div class="prv-comp-chip">Google Play Families</div><div class="prv-comp-chip">AdMob Policies</div><div class="prv-comp-chip">Google AdSense</div></div>
@@ -912,10 +1501,9 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
   <div class="fgr">
     <div class="fbrand">
       <div class="logo" onclick="show('home')"><div class="logo-ico">&lt;/&gt;</div>Code<b>Forge</b></div>
-      <p>أدوات احترافية تُبنى بشغف وتُنشر بثقة — WordPress، Unity، Flutter. كل منتج قصة كاملة.</p>
+      <p>إضافات WordPress، ألعاب Flutter، أدوات Unity — مبنية ومختبرة وجاهزة للنشر.</p>
       <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
         <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" style="width:36px;height:36px;border-radius:9px;background:rgba(255,0,0,.12);border:1px solid rgba(255,0,0,.2);display:flex;align-items:center;justify-content:center;font-size:1rem" title="يوتيوب">▶️</a>
-        <a href="https://gpthub21.blogspot.com/" target="_blank" style="width:36px;height:36px;border-radius:9px;background:rgba(255,150,0,.1);border:1px solid rgba(255,150,0,.18);display:flex;align-items:center;justify-content:center;font-size:1rem" title="المدونة">📝</a>
         <a href="https://groups.google.com/g/gpt-hub" target="_blank" style="width:36px;height:36px;border-radius:9px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.18);display:flex;align-items:center;justify-content:center;font-size:1rem" title="المجتمع">👥</a>
         <a href="mailto:ahmed2sultan2@gmail.com" style="width:36px;height:36px;border-radius:9px;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.18);display:flex;align-items:center;justify-content:center;font-size:1rem" title="البريد">📧</a>
       </div>
@@ -935,10 +1523,11 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       <h4>تواصل</h4>
       <ul>
         <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب — Inspiring Voices</a></li>
-        <li><a href="https://gpthub21.blogspot.com/" target="_blank">📝 مدونة GPT HUB</a></li>
+        
         <li><a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a></li>
         <li><a href="mailto:ahmed2sultan2@gmail.com">📧 ahmed2sultan2@gmail.com</a></li>
         <li><a href="https://ahmed2sultan2555.github.io/website/" target="_blank">🌐 Portfolio</a></li>
+        <li><a href="https://paypal.me/ASultan86" target="_blank" rel="noopener">💳 paypal.me/ASultan86</a></li>
         <li><a href="#" onclick="show('privacy');return false">🔒 مركز الخصوصية</a></li>
       </ul>
     </div>
@@ -949,7 +1538,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
       <a href="#" onclick="show('privacy');return false">الخصوصية</a>
       <a href="mailto:ahmed2sultan2@gmail.com">تواصل</a>
       <a href="https://codecanyon.net" target="_blank">CodeCanyon</a>
-      <a href="https://play.google.com/store/apps/developer?id=gpthub" target="_blank">Google Play</a>
+      <a href="https://play.google.com/store/apps/dev?id=8214177814047833371" target="_blank">Google Play</a>
     </div>
   </div>
 </div>
@@ -995,7 +1584,7 @@ function renderPP(){
 function ppErr(){
   var ct=document.getElementById('paypal-container-FVUKC8L7EK758');
   var st=document.getElementById('pp-status');
-  if(ct)ct.innerHTML='<div style="margin:12px 0"><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#003087,#009cde);color:#fff;font-weight:700;font-size:1rem;padding:16px 38px;border-radius:30px;box-shadow:0 6px 24px rgba(0,48,135,.4);text-decoration:none">💳 ادفع الآن عبر PayPal</a></div>';
+  if(ct)ct.innerHTML='<div style="margin:12px 0;display:flex;flex-direction:column;align-items:center;gap:10px"><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#003087,#009cde);color:#fff;font-weight:700;font-size:1rem;padding:15px 36px;border-radius:30px;box-shadow:0 6px 24px rgba(0,48,135,.4);text-decoration:none"><svg width=\'20\' height=\'20\' viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788l.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z\'/></svg>ادفع الآن — $39</a><div style="font-size:.72rem;color:#64748b;font-family:monospace">أو: <a href=\'https://paypal.me/ASultan86\' target=\'_blank\' style=\'color:#38bdf8\'>paypal.me/ASultan86</a></div></div>';
   if(st)st.style.display='none';
 }
 window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('prog').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
