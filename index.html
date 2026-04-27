@@ -9,7 +9,8 @@
 <meta name="google-adsense-account" content="ca-pub-7137238144396709">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7137238144396709" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#07090f;--bg2:#0b0f1a;--bg3:#0d1120;
@@ -19,13 +20,14 @@
   --gr:#22c55e;--grd:#16a34a;
   --gold:#D4A017;--goldl:#EFD080;
   --tx:#e2eaf4;--tx2:#a0aec0;--mu:#64748b;
-  --fn:'Cairo',sans-serif;--mo:'JetBrains Mono',monospace;
+  --fn:'Tajawal',sans-serif;--fn-h:'Cairo',sans-serif;--mo:'JetBrains Mono',monospace;
   --r:16px;--r2:24px;
   --tr:all .22s cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--fn);background:var(--bg);color:var(--tx);overflow-x:hidden;min-height:100vh;line-height:1.6}
+h1,h2,h3,h4,h5,h6{font-family:var(--fn-h)}
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;font-family:var(--fn);border:none;outline:none}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--c2);border-radius:4px}
@@ -229,35 +231,32 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
    PROFESSIONAL TYPOGRAPHY SYSTEM
 ══════════════════════════════════════ */
 
-/* Google Fonts upgrade */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
-
 /* ── Type Scale ── */
 :root {
-  --ts-xs:   .72rem;   /* 11.5px — labels, caps, mono */
-  --ts-sm:   .82rem;   /* 13px   — captions, meta */
-  --ts-base: .92rem;   /* 14.7px — body text */
-  --ts-md:   1rem;     /* 16px   — lead text */
-  --ts-lg:   1.15rem;  /* 18.4px — card titles */
-  --ts-xl:   1.35rem;  /* 21.6px — section sub-heads */
-  --ts-2xl:  1.7rem;   /* 27px   — h3 major */
-  --ts-3xl:  2.1rem;   /* 33.6px — h2 medium */
-  --ts-4xl:  2.8rem;   /* 44.8px — h2 large */
-  --ts-hero: clamp(2.6rem, 5.5vw, 4.4rem);
+  --ts-xs:   .68rem;   /* 10.9px — labels, caps, mono */
+  --ts-sm:   .78rem;   /* 12.5px — captions, meta */
+  --ts-base: .87rem;   /* 13.9px — body text */
+  --ts-md:   .95rem;   /* 15.2px — lead text */
+  --ts-lg:   1.08rem;  /* 17.3px — card titles */
+  --ts-xl:   1.25rem;  /* 20px   — section sub-heads */
+  --ts-2xl:  1.55rem;  /* 24.8px — h3 major */
+  --ts-3xl:  1.9rem;   /* 30.4px — h2 medium */
+  --ts-4xl:  2.5rem;   /* 40px   — h2 large */
+  --ts-hero: clamp(2.2rem, 4.5vw, 3.6rem);
 
   /* Spacing scale */
-  --sp-1:  4px;
-  --sp-2:  8px;
-  --sp-3:  12px;
-  --sp-4:  16px;
-  --sp-5:  20px;
-  --sp-6:  24px;
-  --sp-8:  32px;
-  --sp-10: 40px;
-  --sp-12: 48px;
-  --sp-16: 64px;
-  --sp-20: 80px;
-  --sp-24: 96px;
+  --sp-1:  3px;
+  --sp-2:  6px;
+  --sp-3:  10px;
+  --sp-4:  14px;
+  --sp-5:  18px;
+  --sp-6:  22px;
+  --sp-8:  28px;
+  --sp-10: 36px;
+  --sp-12: 44px;
+  --sp-16: 56px;
+  --sp-20: 68px;
+  --sp-24: 80px;
 
   /* Line heights */
   --lh-tight:  1.1;
@@ -276,7 +275,7 @@ footer{background:var(--bg2);border-top:1px solid var(--b);padding:68px 0 30px}
 
 /* ── Global body typography ── */
 body {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -310,7 +309,7 @@ h4 {
 
 /* ── Section headers refined ── */
 h2.sec-t {
-  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-size: clamp(1.55rem, 2.8vw, 2.3rem);
   font-weight: 900;
   letter-spacing: -.04em;
   line-height: 1.15;
@@ -341,10 +340,11 @@ h2.sec-t {
   letter-spacing: .01em;
   padding: 7px 14px;
 }
-.logo { font-size: 1.28rem; letter-spacing: -.04em; }
+.logo { font-family: var(--fn-h); font-size: 1.22rem; letter-spacing: -.04em; }
 
 /* ── Hero typography ── */
 .hero h1 {
+  font-family: var(--fn-h);
   font-size: var(--ts-hero);
   letter-spacing: -.05em;
   line-height: 1.05;
@@ -470,18 +470,19 @@ h2.sec-t {
 ══════════════════════════════════════ */
 
 /* ── Sections ── */
-.sec    { padding: var(--sp-24) 0; }
-.sec-sm { padding: var(--sp-16) 0; }
-.wrap   { padding: 0 var(--sp-8); max-width: 1280px; }
+.sec    { padding: var(--sp-20) 0; }
+.sec-sm { padding: var(--sp-12) 0; }
+.wrap   { padding: 0 var(--sp-6); max-width: 1260px; }
 
 /* ── NAV height & spacing ── */
 .ni { height: 70px; padding: 0 var(--sp-8); gap: var(--sp-4); }
 .nlinks { gap: var(--sp-1); }
 
 /* ── Hero spacing ── */
-.hero { padding: 110px 0 96px; }
-.hero-inner { gap: 80px; }
-.hero-pills { gap: var(--sp-3); margin-bottom: var(--sp-10); }
+.hero { padding: 78px 0 68px; }
+.hero-inner { gap: 52px; }
+.hero-vis { align-self: flex-start; margin-top: -28px; }
+.hero-pills { gap: var(--sp-3); margin-bottom: var(--sp-8); }
 .pill { padding: 6px 16px; gap: 7px; border-radius: 32px; }
 .hbadge { padding: 7px 20px; margin-bottom: var(--sp-5); }
 .brow { gap: var(--sp-3); }
@@ -495,32 +496,32 @@ h2.sec-t {
 .sh-c  { margin-bottom: var(--sp-12); }
 
 /* ── Feature cards ── */
-.g3 { gap: var(--sp-5); }
-.g2 { gap: var(--sp-5); }
-.fc { padding: var(--sp-8); border-radius: 18px; }
-.fc-ico { width: 54px; height: 54px; border-radius: 15px; margin-bottom: var(--sp-5); font-size: 1.55rem; }
+.g3 { gap: var(--sp-4); }
+.g2 { gap: var(--sp-4); }
+.fc { padding: var(--sp-6); border-radius: 16px; }
+.fc-ico { width: 46px; height: 46px; border-radius: 13px; margin-bottom: var(--sp-4); font-size: 1.35rem; }
 
 /* ── Platform cards ── */
-.platform-card { padding: 44px var(--sp-8); border-radius: 22px; gap: 0; }
-.platform-card .pico-wrap { width: 76px; height: 76px; margin-bottom: var(--sp-5); font-size: 2rem; }
-.platform-card h3 { margin-bottom: var(--sp-3); }
-.platform-card p  { margin-bottom: var(--sp-5); }
+.platform-card { padding: 32px var(--sp-6); border-radius: 20px; gap: 0; }
+.platform-card .pico-wrap { width: 68px; height: 68px; margin-bottom: var(--sp-4); font-size: 1.8rem; }
+.platform-card h3 { margin-bottom: var(--sp-2); }
+.platform-card p  { margin-bottom: var(--sp-4); }
 
 /* ── Product panel ── */
-.pfeat  { border-radius: 24px; margin-bottom: var(--sp-12); }
-.pinfo  { padding: var(--sp-12) var(--sp-12) var(--sp-12); }
-.ppr    { margin-bottom: var(--sp-8); gap: var(--sp-5); }
-.price  { font-size: 2.8rem; }
-.fl     { margin-bottom: var(--sp-8); }
-.fl li  { padding: 9px 0; gap: var(--sp-3); }
-.fl li .chk { width: 22px; height: 22px; }
+.pfeat  { border-radius: 22px; margin-bottom: var(--sp-10); }
+.pinfo  { padding: var(--sp-10) var(--sp-10) var(--sp-10); }
+.ppr    { margin-bottom: var(--sp-6); gap: var(--sp-4); }
+.price  { font-size: 2.4rem; }
+.fl     { margin-bottom: var(--sp-6); }
+.fl li  { padding: 8px 0; gap: var(--sp-3); }
+.fl li .chk { width: 20px; height: 20px; }
 .mtabs  {}
-.mt     { padding: 15px var(--sp-4); }
+.mt     { padding: 13px var(--sp-4); }
 
 /* ── App cards ── */
-.g3.apps-g { gap: var(--sp-6); }
-.ac-card { padding: var(--sp-8) var(--sp-6); border-radius: 22px; gap: 0; }
-.aico { width: 80px; height: 80px; border-radius: 22px; margin-bottom: var(--sp-5); font-size: 2.1rem; }
+.g3.apps-g { gap: var(--sp-5); }
+.ac-card { padding: var(--sp-6) var(--sp-5); border-radius: 20px; gap: 0; }
+.aico { width: 68px; height: 68px; border-radius: 20px; margin-bottom: var(--sp-4); font-size: 1.8rem; }
 .af   { margin-bottom: var(--sp-5); }
 .af li { padding: 6px 0; gap: var(--sp-2); }
 
@@ -570,9 +571,9 @@ h2.sec-t {
 .lki { width: 48px; height: 48px; border-radius: 13px; }
 
 /* ── CTA section ── */
-.cta-sec { padding: var(--sp-20) 0; }
-.cta-sec h2 { font-size: 2.2rem; margin-bottom: var(--sp-3); }
-.cta-sec p  { margin-bottom: var(--sp-10); }
+.cta-sec { padding: var(--sp-16) 0; }
+.cta-sec h2 { font-size: 1.85rem; margin-bottom: var(--sp-3); }
+.cta-sec p  { margin-bottom: var(--sp-8); }
 
 /* ── Hbox ── */
 .hbox { padding: var(--sp-5) var(--sp-6); border-radius: 16px; gap: var(--sp-4); }
@@ -625,8 +626,8 @@ h2.sec-t {
 .spec-col ul { line-height: 2.4; }
 
 /* ── Footer ── */
-footer      { padding: var(--sp-20) 0 var(--sp-8); }
-.fgr        { gap: var(--sp-16); margin-bottom: var(--sp-16); }
+footer      { padding: var(--sp-16) 0 var(--sp-6); }
+.fgr        { gap: var(--sp-12); margin-bottom: var(--sp-12); }
 .fbrand p   { margin-top: var(--sp-4); max-width: 280px; }
 .fcol h4    { margin-bottom: var(--sp-5); letter-spacing: .22em; }
 .fcol li    { margin-bottom: var(--sp-3); }
