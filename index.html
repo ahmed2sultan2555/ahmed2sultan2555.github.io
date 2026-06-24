@@ -152,7 +152,6 @@ h2.sec-t{font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:900;letter-spacing:-.7
 .cs-label{font-family:var(--mo);font-size:.73rem;color:var(--c2);letter-spacing:3px}
 .paybx{background:var(--s2);border:1px solid rgba(0,156,222,.22);border-radius:24px;padding:48px;max-width:540px;margin:0 auto;text-align:center}
 .paybx h3{font-size:1.35rem;font-weight:900;margin-bottom:12px}.paybx>p{color:var(--tx2);font-size:.92rem;line-height:1.85;margin-bottom:26px}
-.pp-status{min-height:60px;display:flex;align-items:center;justify-content:center;padding:8px 0}
 .pay-notes{font-size:.8rem;color:var(--mu);margin-top:20px;line-height:2.1;border-top:1px solid var(--b);padding-top:18px}
 .pay-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
 .pay-feat{background:var(--bg2);border:1px solid var(--b);border-radius:12px;padding:14px 16px;text-align:right}
@@ -513,7 +512,6 @@ h2.sec-t {
 .fl     { margin-bottom: var(--sp-6); }
 .fl li  { padding: 8px 0; gap: var(--sp-3); }
 .fl li .chk { width: 20px; height: 20px; }
-.mtabs  {}
 .mt     { padding: 13px var(--sp-4); }
 
 /* ── App cards ── */
@@ -697,7 +695,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
     <li><a href="#" id="lh" class="act" onclick="show('home');return false">الرئيسية</a></li>
     <li><a href="#" id="lp" onclick="show('products');return false">المنتجات</a></li>
     <li><a href="#" id="la" onclick="show('apps');return false">التطبيقات</a></li>
-    <li><a href="#" id="lb" onclick="show('buy');return false">💳 شراء</a></li>
+    <li><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" id="lb" target="_blank" rel="noopener">💳 شراء</a></li>
     <li><a href="#" id="ll" onclick="show('links');return false">روابطنا</a></li>
     <li><a href="#" id="lv" onclick="show('privacy');return false">🔒 الخصوصية</a></li>
     <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="cta">▶ يوتيوب</a></li>
@@ -712,7 +710,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
   <a href="#" onclick="show('brain-match');closeMnu();return false">🧩 Brain Match Pro</a>
   <a href="#" onclick="show('numbers-app');closeMnu();return false">🎓 أكاديمية الأرقام</a>
   <a href="#" onclick="show('autocare-app');closeMnu();return false">🚗 AutoCare</a>
-  <a href="#" onclick="show('buy');closeMnu();return false">💳 شراء / PayPal</a>
+  <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener">💳 شراء / PayPal</a>
   <a href="#" onclick="show('links');closeMnu();return false">🔗 روابطنا</a>
   <a href="#" onclick="show('privacy');closeMnu();return false">🔒 الخصوصية</a>
   <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener">▶ يوتيوب</a>
@@ -738,7 +736,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
         <div class="brow">
           <button class="btn btn-p" onclick="show('products')">🚀 تصفح المنتجات</button>
           <button class="btn btn-g" onclick="show('apps')">📱 التطبيقات</button>
-          <button class="btn btn-o" onclick="show('buy')">💳 اشترِ الآن</button>
+          <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" class="btn btn-o" style="text-decoration:none">💳 اشترِ الآن</a>
         </div>
       </div>
       <div class="hero-vis">
@@ -789,7 +787,6 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
     <h2 class="sec-t">ما نقدّمه</h2>
     <p class="sub">ثلاثة منتجات على ثلاث منصات — كل منتج مكتمل بكوده وتوثيقه وجاهز للنشر.</p>
   </div>
-
 
   <!-- ── Google Play ── -->
   <div style="background:var(--s);border:1px solid rgba(34,197,94,.2);border-radius:22px;overflow:hidden;margin-bottom:24px">
@@ -868,8 +865,6 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
     </div>
   </div>
 
-
-
   <!-- ── CodeCanyon ── -->
   <div style="background:var(--s);border:1px solid rgba(56,189,248,.2);border-radius:22px;overflow:hidden;margin-bottom:24px">
     <div style="background:rgba(56,189,248,.06);padding:20px 32px;border-bottom:1px solid rgba(56,189,248,.12);display:flex;align-items:center;gap:14px">
@@ -893,7 +888,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
         </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn btn-g btn-sm" onclick="show('products')">📄 تفاصيل الإضافة</button>
-          <button class="btn btn-pay btn-sm" onclick="show('buy')">💳 شراء — $39</button>
+          <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" class="btn btn-pay btn-sm" style="text-decoration:none">💳 شراء — $39</a>
         </div>
       </div>
       <div style="background:var(--bg2);border:1px solid var(--b);border-radius:14px;padding:20px">
@@ -940,7 +935,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
       <div class="ppr"><div class="price">$39</div><div class="pnt">ترخيص دائم<br>دعم 6 أشهر مجاناً<br>تحديثات مستمرة</div></div>
       <div class="brow">
         <a href="#" onclick="alert('الإضافة قريباً على CodeCanyon — ادفع الآن عبر PayPal بالزر أدناه');return false" class="btn btn-g" style="opacity:.75;cursor:default">⏳ CodeCanyon — قريباً</a>
-        <button class="btn btn-pay" onclick="show('buy')">💳 PayPal</button>
+        <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" class="btn btn-pay" style="text-decoration:none">💳 PayPal</a>
         <a href="https://ahmed2sultan2555.github.io/website/" target="_blank" rel="noopener" class="btn btn-o">📄 التوثيق</a>
       </div>
     </div>
@@ -1059,7 +1054,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
         </div>
         <div class="brow">
           <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" rel="noopener" class="btn btn-gold">📲 تحميل من Google Play</a>
-          <button class="btn btn-o" onclick="show('buy')">💻 الكود المصدري</button>
+          <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" class="btn btn-o" style="text-decoration:none">💻 الكود المصدري</a>
           <a href="#" onclick="show('privacy');openPolicy('brain');return false" class="btn btn-o">🔒 الخصوصية</a>
         </div>
       </div>
@@ -1169,7 +1164,7 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
     <p style="color:var(--tx2);font-size:.95rem;line-height:1.9;margin-bottom:28px;max-width:500px;margin-left:auto;margin-right:auto">حمّل مجاناً من Google Play أو اقتنِ الكود المصدري الكامل وأطلق نسختك الخاصة.</p>
     <div class="brow" style="justify-content:center">
       <a href="https://play.google.com/store/apps/details?id=com.gpthub.memory_master" target="_blank" rel="noopener" class="btn btn-gold">📲 تحميل من Google Play</a>
-      <button class="btn btn-p" onclick="show('buy')">💻 اقتنِ الكود المصدري</button>
+      <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" class="btn btn-p" style="text-decoration:none">💻 اقتنِ الكود المصدري</a>
     </div>
   </div>
 
@@ -1327,9 +1322,10 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
       <div class="pay-feat"><div class="pf-ico">🛠️</div><h4>دعم 6 أشهر</h4><p>دعم تقني مجاني كامل</p></div>
       <div class="pay-feat"><div class="pf-ico">🔄</div><h4>تحديثات مجانية</h4><p>كل التحديثات المستقبلية بلا رسوم</p></div>
     </div>
-    <div class="pp-status" id="pp-status"><span style="color:var(--mu);font-size:.85rem">⏳ جاري تحميل زر الدفع...</span></div>
-    <div id="paypal-container-FVUKC8L7EK758"></div>
-    <div style="margin:16px 0 8px;text-align:center"><a href="https://paypal.me/ASultan86" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,48,135,.12);border:1px solid rgba(0,156,222,.3);border-radius:20px;padding:8px 20px;font-size:.82rem;font-family:var(--mo);color:#38bdf8;text-decoration:none">🔗 paypal.me/ASultan86</a></div><p class="pay-notes">🔒 دفع آمن 100% عبر PayPal<br>📧 الترخيص فوري على بريدك<br>💬 دعم: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
+    <div style="margin:24px 0 12px;display:flex;flex-direction:column;align-items:center;gap:14px">
+      <a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" class="btn btn-pay" style="font-size:1.1rem;padding:16px 44px;border-radius:30px;text-decoration:none">💳 ادفع الآن — $39</a>
+      <a href="https://paypal.me/ASultan86" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,48,135,.12);border:1px solid rgba(0,156,222,.3);border-radius:20px;padding:8px 20px;font-size:.82rem;font-family:var(--mo);color:#38bdf8;text-decoration:none">🔗 paypal.me/ASultan86</a>
+    </div><p class="pay-notes">🔒 دفع آمن 100% عبر PayPal<br>📧 الترخيص فوري على بريدك<br>💬 دعم: <a href="mailto:ahmed2sultan2@gmail.com" style="color:var(--c1);font-weight:700">ahmed2sultan2@gmail.com</a></p>
   </div>
 </div></section>
 </div><!-- /buy -->
@@ -1340,7 +1336,6 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
   <div class="sh"><div class="lbl">تواصل معنا</div><h2 class="sec-t">روابطنا ومجتمعاتنا</h2><p class="sub">روابط قنواتنا ومنصات بيعنا وطرق التواصل.</p></div>
   <div class="lgr">
     <a href="https://www.youtube.com/@Inspiring_voices493" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(255,0,0,.12)">▶️</div><div class="lkd"><h3>قناة يوتيوب — Inspiring Voices</h3><p>فيديوهات تقنية وعروض للمنتجات</p></div><div class="lka">→</div></a>
-    
     <a href="https://groups.google.com/g/gpt-hub" target="_blank" rel="noopener" class="lk" style="border-color:rgba(34,197,94,.2)"><div class="lki" style="background:rgba(34,197,94,.12)">👥</div><div class="lkd"><h3>مجموعة المختبرين</h3><p>انضم لاختبار التطبيقات الجديدة قبل إطلاقها</p></div><div class="lka">→</div></a>
     <a href="https://codecanyon.net" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(56,189,248,.12)">🟦</div><div class="lkd"><h3>CodeCanyon / Envato</h3><p>إضافات WordPress الاحترافية</p></div><div class="lka">→</div></a>
     <a href="https://play.google.com/store/apps/dev?id=8214177814047833371" target="_blank" rel="noopener" class="lk"><div class="lki" style="background:rgba(34,197,94,.12)">📱</div><div class="lkd"><h3>صفحة المطوّر على Google Play</h3><p>جميع تطبيقاتنا وألعابنا</p></div><div class="lka">→</div></a>
@@ -1454,14 +1449,13 @@ footer      { padding: var(--sp-16) 0 var(--sp-6); }
         <li><a href="#" onclick="show('numbers-app');return false">🎓 أكاديمية الأرقام</a></li>
         <li><a href="#" onclick="show('autocare-app');return false">🚗 AutoCare</a></li>
         <li><a href="#" onclick="show('apps');return false">🏗️ NovaBuild AI — قريباً</a></li>
-        <li><a href="#" onclick="show('buy');return false">💳 اقتنِ عبر PayPal</a></li>
+        <li><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener">💳 اقتنِ عبر PayPal</a></li>
       </ul>
     </div>
     <div class="fcol">
       <h4>تواصل</h4>
       <ul>
         <li><a href="https://www.youtube.com/@Inspiring_voices493" target="_blank">▶ يوتيوب — Inspiring Voices</a></li>
-        
         <li><a href="https://groups.google.com/g/gpt-hub" target="_blank">👥 مجتمع المختبرين</a></li>
         <li><a href="mailto:ahmed2sultan2@gmail.com">📧 ahmed2sultan2@gmail.com</a></li>
         <li><a href="https://ahmed2sultan2555.github.io/website/" target="_blank">🌐 Portfolio</a></li>
@@ -1491,7 +1485,6 @@ function show(id){
   var nl=document.getElementById(NAV[id]);if(nl)nl.classList.add('act');
   if(['brain-match','numbers-app','autocare-app'].indexOf(id)>-1){var la=document.getElementById('la');if(la)la.classList.add('act')}
   window.scrollTo({top:0,behavior:'smooth'});
-  if(id==='buy')loadPayPal();
   if(id==='privacy')closePolicy();
 }
 function toggleMnu(){var m=document.getElementById('mnu');m.style.display=(m.style.display==='block')?'none':'block'}
@@ -1504,26 +1497,6 @@ function openPolicy(key){
 }
 function closePolicy(){var h=document.getElementById('prv-hub-view');if(h)h.classList.remove('hidden');document.querySelectorAll('.prv-detail').forEach(function(el){el.classList.remove('on')})}
 function toggleSec(hd){hd.parentElement.classList.toggle('open')}
-var ppDone=false;
-function loadPayPal(){
-  if(ppDone)return;
-  if(window.paypal&&window.paypal.HostedButtons){renderPP();return}
-  var s=document.createElement('script');
-  s.src='https://www.paypal.com/sdk/js?client-id=BAAfAHuVXFq4pzLxCdYWGJWRBxMRRpMf1M_YsBfHVtJb_j8XGjB5l8PuEGiA-gGOXpfpJFEPYXPSPt3cDQ&components=hosted-buttons&disable-funding=venmo&currency=USD';
-  s.onload=renderPP;s.onerror=ppErr;document.head.appendChild(s);
-}
-function renderPP(){
-  var ct=document.getElementById('paypal-container-FVUKC8L7EK758');
-  var st=document.getElementById('pp-status');
-  if(!ct)return;if(st)st.style.display='none';
-  try{paypal.HostedButtons({hostedButtonId:'FVUKC8L7EK758'}).render('#paypal-container-FVUKC8L7EK758');ppDone=true}catch(e){ppErr()}
-}
-function ppErr(){
-  var ct=document.getElementById('paypal-container-FVUKC8L7EK758');
-  var st=document.getElementById('pp-status');
-  if(ct)ct.innerHTML='<div style="margin:12px 0;display:flex;flex-direction:column;align-items:center;gap:10px"><a href="https://www.paypal.com/ncp/payment/FVUKC8L7EK758" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#003087,#009cde);color:#fff;font-weight:700;font-size:1rem;padding:15px 36px;border-radius:30px;box-shadow:0 6px 24px rgba(0,48,135,.4);text-decoration:none"><svg width=\'20\' height=\'20\' viewBox=\'0 0 24 24\' fill=\'white\'><path d=\'M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788l.816-5.09a.932.932 0 01.923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z\'/></svg>ادفع الآن — $39</a><div style="font-size:.72rem;color:#64748b;font-family:monospace">أو: <a href=\'https://paypal.me/ASultan86\' target=\'_blank\' style=\'color:#38bdf8\'>paypal.me/ASultan86</a></div></div>';
-  if(st)st.style.display='none';
-}
 window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('prog').style.width=(h>0?(window.scrollY/h)*100:0)+'%'},{passive:true});
 var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,t=parseInt(el.dataset.c),c=0,step=Math.ceil(t/40);var tm=setInterval(function(){c=Math.min(c+step,t);el.textContent=c+(t>9?'+':'');if(c>=t)clearInterval(tm)},25);obs.unobserve(el)})},{threshold:.5});
 document.querySelectorAll('[data-c]').forEach(function(el){obs.observe(el)});
