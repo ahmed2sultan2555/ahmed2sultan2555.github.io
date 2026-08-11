@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta name="google-adsense-account" content="ca-pub-7137238144396709">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سياسة الخصوصية للعبة Galaxy Storm - Privacy Policy for Galaxy Storm Game">
+    <title>سياسة الخصوصية - Galaxy Storm | Privacy Policy</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); color: #e0e0e0; line-height: 1.8; padding: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; background: #121922; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); overflow: hidden; border: 1px solid #1e2d3d; }
+        .header { background: linear-gradient(135deg, #0f2027 0%, #203a43 100%); color: #00e5ff; padding: 50px 30px; text-align: center; border-bottom: 2px solid #00e5ff; }
+        .header h1 { font-size: 2.2em; margin-bottom: 10px; text-shadow: 0 0 10px rgba(0,229,255,0.4); }
+        .header .subtitle { font-size: 1.1em; color: #fff; opacity: 0.95; margin-top: 10px; }
+        .content { padding: 40px 30px; }
+        .developer-info { background: #1a2433; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-right: 4px solid #00e5ff; }
+        .intro { background: #16202c; padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #233342; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #00e5ff; font-size: 1.6em; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #233342; }
+        .arabic { text-align: right; direction: rtl; margin-bottom: 15px; }
+        .english { text-align: left; direction: ltr; color: #b0bec5; font-style: normal; padding: 15px; background: #16202c; border-radius: 8px; margin-bottom: 20px; }
+        .info-box { background: #16202c; border-right: 4px solid #00e5ff; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .firebase-box { background: #262111; border-right: 4px solid #ff9800; padding: 20px; margin: 20px 0; border-radius: 8px; color: #fff8e1; }
+        ul { list-style: none; padding: 0; }
+        ul li { padding: 10px 0 10px 25px; position: relative; margin-bottom: 5px; }
+        ul li:before { content: "🚀"; position: absolute; right: 0; font-size: 1em; }
+        .highlight { font-weight: bold; color: #00e5ff; }
+        .footer { background: #0b1017; color: #90a4ae; text-align: center; padding: 25px; border-top: 1px solid #1e2d3d; }
+        .permission-card { background: #16202c; border: 1px solid #233342; border-radius: 10px; padding: 15px; margin: 15px 0; }
+        .permission-card h4 { color: #00e5ff; margin-bottom: 10px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: right; border-bottom: 1px solid #233342; }
+        th { background: #0f2027; color: #00e5ff; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🔒 سياسة الخصوصية | Privacy Policy</h1>
+        <div class="subtitle">لعبة: Galaxy Storm</div>
+    </div>
+
+    <div class="content">
+        <!-- قسم معرفات المطور واللعبة المطابق لـ Google Play -->
+        <div class="developer-info">
+            <p class="arabic"><strong>اسم اللعبة على Google Play:</strong> Galaxy Storm</p>
+            <p class="arabic"><strong>المطور / الكيان القانوني:</strong> ahmed2sultan2555</p>
+            <p class="english"><strong>Application Name:</strong> Galaxy Storm</p>
+            <p class="english"><strong>Developer / Legal Entity:</strong> ahmed2sultan2555</p>
+        </div>
+
+        <div class="intro">
+            <p class="arabic">
+                مرحباً بك في لعبة <span class="highlight">Galaxy Storm</span> المطبورة بواسطة <span class="highlight">ahmed2sultan2555</span>. نحن نلتزم التزاماً تاماً بحماية خصوصيتك وبياناتك الشخصية وفقاً لمتطلبات وتوجيهات Google Play.
+            </p>
+            <p class="english">
+                Welcome to <strong>Galaxy Storm</strong>, developed by <strong>ahmed2sultan2555</strong>. We are fully committed to protecting your privacy in accordance with Google Play policies.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>🛸 عن اللعبة | About the Game</h2>
+            <p class="arabic">
+                لعبة <strong>Galaxy Storm</strong> هي لعبة تصويب فضائية ملحمية تمزج بين الأكشن وعناصر تقمص الأدوار (RPG). تتيح لك اللعبة قيادة مركبتك وترقيتها ومواجهة الأعداء. اللعبة لا تتطلب إدخال أي بيانات شخصية حساسة لتشغيلها.
+            </p>
+            <p class="english">
+                <strong>Galaxy Storm</strong> is an epic space shooter game with RPG elements. The game does not require sensitive personal information to play.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>📊 1. البيانات والمعلومات التي نجمعها | Information We Collect</h2>
+            <div class="info-box">
+                <h3 class="arabic">1.1 تقدم اللعبة والأداء (Game Progress & Analytics):</h3>
+                <ul class="arabic">
+                    <li><strong>تقدم اللعبة:</strong> المستويات المكتملة، ترقيات المركبة، والعملات داخل اللعبة (تُحفظ محلياً أو عبر السحاب).</li>
+                    <li><strong>بيانات الاستخدام:</strong> المعرفات المجهولة للجهاز، وتفاعلات اللعبة لتحسين مستوى التجربة.</li>
+                </ul>
+            </div>
+            
+            <div class="firebase-box">
+                <h3 class="arabic">1.2 الخدمات السحابية والتحليلات (Google Firebase & Unity):</h3>
+                <p class="arabic">نستخدم خدمات Google Firebase للتحليل المجهول لأداء اللعبة، وحفظ التقدم، وضمان استقرار التطبيق وحل الأخطاء (Crash Reporting).</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔐 2. الأذونات المطلوبة | Required Permissions</h2>
+            
+            <div class="permission-card">
+                <h4>🌐 إذن الوصول للإنترنت (INTERNET)</h4>
+                <p class="arabic">لمزامنة تقدمك في اللعبة، تحميل الإعلانات، وحفظ البيانات السحابية.</p>
+            </div>
+
+            <div class="permission-card">
+                <h4>🔔 إذن الإشعارات (POST_NOTIFICATIONS)</h4>
+                <p class="arabic">لإرسال تنبيهات حول التكليفات اليومية والجوائز والمكافآت داخل اللعبة.</p>
+            </div>
+
+            <p class="arabic" style="color: #ff5252; font-weight: bold;">ملاحظة: هذه اللعبة لا تطلب الوصول إلى كاميرا الهاتف، الصور، أو الموقع الجغرافي الدقيق.</p>
+            <p class="english">Note: This game does not request access to your camera, photos, or precise location.</p>
+        </div>
+
+        <div class="section">
+            <h2>🤝 3. مشاركة البيانات مع أطراف خارجية | Third-Party Services</h2>
+            <p class="arabic">نحن لا نبيع بيانات المستخدمين. يتم مشاركة بعض البيانات غير الشخصية مع شبكات الإعلانات والتحليلات المعتمدة تشغيلياً:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الطرف الثالث</th>
+                        <th>الغرض</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Google Firebase</td><td>تخزين تقدم اللعبة والتحليلات البرمجية</td></tr>
+                    <tr><td>Google AdMob</td><td>عرض الإعلانات وتوفير مكافآت داخل اللعبة</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section" style="text-align: center;">
+            <h2>📧 تواصل معنا | Contact Us</h2>
+            <p class="arabic">إذا كان لديك أي استفسار بخصوص سياسة الخصوصية للعبة <strong>Galaxy Storm</strong>، يمكنك التواصل مباشرة مع المطور عبر البريد الإلكتروني:</p>
+            <p class="highlight" style="font-size: 1.2em; margin-top: 10px;">ahmed2sultan2555@gmail.com</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 Galaxy Storm - جميع الحقوق محفوظة للمطور ahmed2sultan2555</p>
+        <p>آخر تحديث: 11 أغسطس 2026</p>
+    </div>
+</div>
+
+</body>
+</html>
